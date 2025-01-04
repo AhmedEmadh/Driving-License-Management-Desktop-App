@@ -1,6 +1,6 @@
 ﻿namespace Driving_License_Management_Desktop_App
 {
-    partial class Form1
+    partial class frmManageUsers
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.userControl21 = new Driving_License_Management_Desktop_App.UserControl2();
+            this.SuspendLayout();
+            // 
+            // userControl21
+            // 
+            this.userControl21.Location = new System.Drawing.Point(29, 12);
+            this.userControl21.Name = "userControl21";
+            this.userControl21.Size = new System.Drawing.Size(759, 426);
+            this.userControl21.TabIndex = 0;
+            // 
+            // frmManageUsers
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Controls.Add(this.userControl21);
+            this.Name = "frmManageUsers";
+            this.Text = "frmManageUsers";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private UserControl2 userControl21;
     }
 }
-
