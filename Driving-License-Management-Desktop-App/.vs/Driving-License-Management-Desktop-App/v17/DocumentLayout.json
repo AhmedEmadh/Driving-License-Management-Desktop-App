@@ -3,12 +3,88 @@
   "WorkspaceRootPath": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|d:\\github\\driving-license-management-desktop-app\\driving-license-management-desktop-app\\frmloginscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:frmloginscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmmainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:frmmainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmmainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:frmmainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmaddedituserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:frmaddedituserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|d:\\github\\driving-license-management-desktop-app\\driving-license-management-desktop-app\\frmaddedituserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:frmaddedituserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctlmanagepersons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:ctlmanagepersons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|d:\\github\\driving-license-management-desktop-app\\driving-license-management-desktop-app\\frmaddedituserinfo.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:frmaddedituserinfo.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctldataentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:ctldataentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmaddeditpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:frmaddeditpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctlpersoninformation.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:ctlpersoninformation.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctlpersoninformation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:ctlpersoninformation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmaddeditpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:frmaddeditpersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctldataentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:ctldataentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctlmanagepersons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:ctlmanagepersons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmloginscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:frmloginscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmmanageusers.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:frmmanageusers.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmloginscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85EA67DC-A9BC-4475-9BF0-297CE6A8FCDF}|Driving-License-Management-Desktop-App.csproj|solutionrelative:frmloginscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,11 +94,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmMainMenu.cs",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmMainMenu.cs",
+              "RelativeDocumentMoniker": "frmMainMenu.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmMainMenu.cs",
+              "RelativeToolTip": "frmMainMenu.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAewCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T12:20:45.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmMainMenu.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmMainMenu.cs",
+              "RelativeDocumentMoniker": "frmMainMenu.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmMainMenu.cs [Design]",
+              "RelativeToolTip": "frmMainMenu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T12:22:03.551Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Bookmark",
@@ -30,19 +131,94 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmLoginScreen.cs [Design]",
-              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmLoginScreen.cs",
-              "RelativeDocumentMoniker": "frmLoginScreen.cs",
-              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmLoginScreen.cs [Design]",
-              "RelativeToolTip": "frmLoginScreen.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAuwBIAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T01:08:48.263Z",
+              "WhenOpened": "2025-01-04T12:26:12.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmAddEditUserInfo.cs",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmAddEditUserInfo.cs",
+              "RelativeDocumentMoniker": "frmAddEditUserInfo.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmAddEditUserInfo.cs",
+              "RelativeToolTip": "frmAddEditUserInfo.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAqwDkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T16:56:09.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmManageUsers.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmManageUsers.cs",
+              "RelativeDocumentMoniker": "frmManageUsers.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmManageUsers.cs [Design]",
+              "RelativeToolTip": "frmManageUsers.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T12:14:49.907Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
+              "Title": "frmAddEditUserInfo.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmAddEditUserInfo.cs",
+              "RelativeDocumentMoniker": "frmAddEditUserInfo.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmAddEditUserInfo.cs [Design]",
+              "RelativeToolTip": "frmAddEditUserInfo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T12:51:48.059Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ctlManagePersons.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctlManagePersons.cs",
+              "RelativeDocumentMoniker": "ctlManagePersons.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctlManagePersons.cs [Design]",
+              "RelativeToolTip": "ctlManagePersons.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T12:15:03.509Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmAddEditUserInfo.Designer.cs",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmAddEditUserInfo.Designer.cs",
+              "RelativeDocumentMoniker": "frmAddEditUserInfo.Designer.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmAddEditUserInfo.Designer.cs",
+              "RelativeToolTip": "frmAddEditUserInfo.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T12:27:49.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ctlDataEntry.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctlDataEntry.cs",
+              "RelativeDocumentMoniker": "ctlDataEntry.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctlDataEntry.cs [Design]",
+              "RelativeToolTip": "ctlDataEntry.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T12:30:15.52Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "frmAddEditPersonInfo.cs [Design]",
               "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmAddEditPersonInfo.cs",
               "RelativeDocumentMoniker": "frmAddEditPersonInfo.cs",
@@ -50,6 +226,139 @@
               "RelativeToolTip": "frmAddEditPersonInfo.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-04T01:08:46.732Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ctlPersonInformation.Designer.cs",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctlPersonInformation.Designer.cs",
+              "RelativeDocumentMoniker": "ctlPersonInformation.Designer.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctlPersonInformation.Designer.cs",
+              "RelativeToolTip": "ctlPersonInformation.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T17:30:01.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ctlPersonInformation.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctlPersonInformation.cs",
+              "RelativeDocumentMoniker": "ctlPersonInformation.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctlPersonInformation.cs [Design]",
+              "RelativeToolTip": "ctlPersonInformation.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T17:29:47.28Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ctlDataEntry.cs",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctlDataEntry.cs",
+              "RelativeDocumentMoniker": "ctlDataEntry.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctlDataEntry.cs",
+              "RelativeToolTip": "ctlDataEntry.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAAEsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T16:35:12.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "frmAddEditPersonInfo.cs",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmAddEditPersonInfo.cs",
+              "RelativeDocumentMoniker": "frmAddEditPersonInfo.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmAddEditPersonInfo.cs",
+              "RelativeToolTip": "frmAddEditPersonInfo.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAD4vxUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T17:00:47.508Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "frmManagePeople.cs",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmManagePeople.cs",
+              "RelativeDocumentMoniker": "frmManagePeople.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmManagePeople.cs",
+              "RelativeToolTip": "frmManagePeople.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAxwCUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T12:25:02.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "frmManagePeople.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmManagePeople.cs",
+              "RelativeDocumentMoniker": "frmManagePeople.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmManagePeople.cs [Design]",
+              "RelativeToolTip": "frmManagePeople.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T12:14:48.678Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "frmManageUsers.cs",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmManageUsers.cs",
+              "RelativeDocumentMoniker": "frmManageUsers.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmManageUsers.cs",
+              "RelativeToolTip": "frmManageUsers.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAACYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T12:27:13.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ctlManagePersons.cs",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctlManagePersons.cs",
+              "RelativeDocumentMoniker": "ctlManagePersons.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\ctlManagePersons.cs",
+              "RelativeToolTip": "ctlManagePersons.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAuwEIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T12:17:46.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "frmLoginScreen.cs [Design]",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmLoginScreen.cs",
+              "RelativeDocumentMoniker": "frmLoginScreen.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmLoginScreen.cs [Design]",
+              "RelativeToolTip": "frmLoginScreen.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T01:08:48.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "frmManageUsers.Designer.cs",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmManageUsers.Designer.cs",
+              "RelativeDocumentMoniker": "frmManageUsers.Designer.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmManageUsers.Designer.cs",
+              "RelativeToolTip": "frmManageUsers.Designer.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAEwDgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T12:19:17.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "frmLoginScreen.cs",
+              "DocumentMoniker": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmLoginScreen.cs",
+              "RelativeDocumentMoniker": "frmLoginScreen.cs",
+              "ToolTip": "D:\\GitHub\\Driving-License-Management-Desktop-App\\Driving-License-Management-Desktop-App\\frmLoginScreen.cs",
+              "RelativeToolTip": "frmLoginScreen.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAIA1wBsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T12:20:14.463Z"
             }
           ]
         }

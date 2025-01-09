@@ -24,9 +24,11 @@ D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desk
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.frmMainMenu.resources
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.frmManageUsers.resources
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.Properties.Resources.resources
-D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.UserControl1.resources
-D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.UserControl2.resources
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving-License-Management-Desktop-App.csproj.GenerateResource.cache
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving-License-Management-Desktop-App.csproj.CoreCompileInputs.cache
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving-License-Management-Desktop-App.exe
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving-License-Management-Desktop-App.pdb
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.frmAddEditUserInfo.resources
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.ctlDataEntry.resources
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.ctlManagePersons.resources
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.ctlPersonInformation.resources

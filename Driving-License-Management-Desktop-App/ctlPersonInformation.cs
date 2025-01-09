@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Driving_License_Management_Desktop_App
 {
-    public partial class UserControl2 : UserControl
+    public partial class ctlPersonInformation : UserControl
     {
-        
-        public UserControl2()
+        public ctlPersonInformation()
         {
             InitializeComponent();
-        }
-
-        private void UserControl2_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }

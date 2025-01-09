@@ -29,7 +29,24 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmManagePeople_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
+            userControl21.Value = "People";
+            userControl21.ButtonValue = "Person";
+        }
+
+        private void userControl21_Load(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void userControl21_OnAdd(object obj)
+        {
+            new frmAddEditPersonInfo().ShowDialog();
+        }
+
+        private void userControl21_OnClose(object obj)
+        {
+            this.Close();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Driving_License_Management_Desktop_App
 {
-    partial class UserControl1
+    partial class ctlDataEntry
     {
         /// <summary> 
         /// Required designer variable.
@@ -128,7 +128,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(510, 22);
+            this.textBox4.Location = new System.Drawing.Point(510, 25);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 22);
             this.textBox4.TabIndex = 4;
@@ -173,7 +173,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(220, 57);
+            this.label6.Location = new System.Drawing.Point(233, 57);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 16);
             this.label6.TabIndex = 13;
@@ -205,6 +205,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -214,6 +215,7 @@
             this.button2.TabIndex = 15;
             this.button2.Text = "Close";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -275,32 +277,34 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(362, 6);
+            this.label11.Location = new System.Drawing.Point(393, 6);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(38, 16);
             this.label11.TabIndex = 21;
             this.label11.Text = "Third";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(541, 3);
+            this.label12.Location = new System.Drawing.Point(542, 6);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(37, 16);
             this.label12.TabIndex = 22;
             this.label12.Text = "Forth";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "yyyy/MM/dd";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePicker1.Location = new System.Drawing.Point(332, 44);
+            this.dateTimePicker1.Location = new System.Drawing.Point(331, 53);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(161, 22);
             this.dateTimePicker1.TabIndex = 6;
             // 
-            // UserControl1
+            // ctlDataEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -332,7 +336,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "UserControl1";
+            this.Name = "ctlDataEntry";
             this.Size = new System.Drawing.Size(622, 258);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

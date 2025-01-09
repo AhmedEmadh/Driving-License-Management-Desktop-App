@@ -26,7 +26,7 @@ namespace Driving_License_Management_Desktop_App
         {
             //MessageBox.Show("Invalid Username/Password.","Wrong Credintials",MessageBoxButtons.OK,MessageBoxIcon.Error);
             new frmMainMenu(this).Show();
-            this.Close();
+            
         }
     }
 }

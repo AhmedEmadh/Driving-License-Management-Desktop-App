@@ -16,5 +16,10 @@ namespace Driving_License_Management_Desktop_App
         {
             InitializeComponent();
         }
+
+        private void userControl11_OnClose(object obj)
+        {
+            this.Close();
+        }
     }
 }

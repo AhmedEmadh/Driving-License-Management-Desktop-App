@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.userControl11 = new Driving_License_Management_Desktop_App.UserControl1();
+            this.userControl11 = new Driving_License_Management_Desktop_App.ctlDataEntry();
             this.SuspendLayout();
             // 
             // label1
@@ -67,6 +67,7 @@
             this.userControl11.Name = "userControl11";
             this.userControl11.Size = new System.Drawing.Size(639, 291);
             this.userControl11.TabIndex = 3;
+            this.userControl11.OnClose += new System.Action<object>(this.userControl11_OnClose);
             // 
             // frmAddEditPersonInfo
             // 
@@ -89,6 +90,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private UserControl1 userControl11;
+        private ctlDataEntry userControl11;
     }
 }

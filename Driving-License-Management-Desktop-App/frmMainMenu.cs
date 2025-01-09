@@ -23,5 +23,25 @@ namespace Driving_License_Management_Desktop_App
             _CallerForm = form;
             form.Hide();
         }
+
+        private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _CallerForm.Close();
+        }
+
+        private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmManagePeople().Show();
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmManageUsers().Show();
+        }
+
+        private void manageApplicationTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

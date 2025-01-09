@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ctlPersonInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlPersonInformation.Designer.cs">
+      <DependentUpon>ctlPersonInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddEditPersonInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAddEditPersonInfo.Designer.cs">
       <DependentUpon>frmAddEditPersonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddEditUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEditUserInfo.Designer.cs">
+      <DependentUpon>frmAddEditUserInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmManagePeople.cs">
       <SubType>Form</SubType>
@@ -78,20 +90,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControl1.cs">
+    <Compile Include="ctlDataEntry.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="ctlDataEntry.Designer.cs">
+      <DependentUpon>ctlDataEntry.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl2.cs">
+    <Compile Include="ctlManagePersons.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl2.Designer.cs">
-      <DependentUpon>UserControl2.cs</DependentUpon>
+    <Compile Include="ctlManagePersons.Designer.cs">
+      <DependentUpon>ctlManagePersons.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ctlPersonInformation.resx">
+      <DependentUpon>ctlPersonInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddEditPersonInfo.resx">
       <DependentUpon>frmAddEditPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddEditUserInfo.resx">
+      <DependentUpon>frmAddEditUserInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoginScreen.resx">
       <DependentUpon>frmLoginScreen.cs</DependentUpon>
@@ -114,11 +132,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="ctlDataEntry.resx">
+      <DependentUpon>ctlDataEntry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl2.resx">
-      <DependentUpon>UserControl2.cs</DependentUpon>
+    <EmbeddedResource Include="ctlManagePersons.resx">
+      <DependentUpon>ctlManagePersons.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
