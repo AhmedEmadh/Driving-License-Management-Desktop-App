@@ -21,7 +21,7 @@ namespace Driving_License_Management_Desktop_App
         {
             InitializeComponent();
             _CallerForm = form;
-            form.Hide();
+            _CallerForm.Hide();
         }
 
         private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
@@ -31,7 +31,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmManagePeople().Show();
+            //new frmManagePeople().Show();
         }
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -41,7 +41,18 @@ namespace Driving_License_Management_Desktop_App
 
         private void manageApplicationTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            new frmManageApplicationTypes().Show();
+        }
 
+        private void signOutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            _CallerForm.Show();
+            this.Hide();
+        }
+
+        private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmManageTestTypes().Show();
         }
     }
 }

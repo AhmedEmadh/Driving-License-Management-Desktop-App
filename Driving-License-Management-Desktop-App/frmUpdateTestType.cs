@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Driving_License_Management_Desktop_App
 {
-    public partial class ctlPersonInformation : UserControl
+    public partial class frmUpdateTestType : Form
     {
-        public ctlPersonInformation()
+        public frmUpdateTestType()
         {
             InitializeComponent();
-        }
-
-        private void ctlPersonInformation_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
