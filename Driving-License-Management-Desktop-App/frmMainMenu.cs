@@ -36,12 +36,12 @@ namespace Driving_License_Management_Desktop_App
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmManageUsers().Show();
+            new frmManageUsers().ShowDialog();
         }
 
         private void manageApplicationTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmManageApplicationTypes().Show();
+            new frmManageApplicationTypes().ShowDialog();
         }
 
         private void signOutToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -52,7 +52,22 @@ namespace Driving_License_Management_Desktop_App
 
         private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmManageTestTypes().Show();
+            new frmManageTestTypes().ShowDialog();
+        }
+
+        private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmNewLocalDrivingLicenseApplication().ShowDialog();
+        }
+
+        private void localDrivingLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmLocalDrivingLicenseApplications().ShowDialog();
+        }
+
+        private void frmMainMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

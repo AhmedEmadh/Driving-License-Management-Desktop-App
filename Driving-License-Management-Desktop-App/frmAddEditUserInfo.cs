@@ -29,7 +29,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmAddEditUserInfo_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
+            ctlPersonInformationWithFilter1.SelectedIndex = 0;
         }
 
         private void tabPersonalInfo_Click(object sender, EventArgs e)

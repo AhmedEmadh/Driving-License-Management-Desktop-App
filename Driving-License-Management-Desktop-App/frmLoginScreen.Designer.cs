@@ -100,7 +100,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmLoginScreen";
-            this.Text = "Login Screen";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmLoginScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
