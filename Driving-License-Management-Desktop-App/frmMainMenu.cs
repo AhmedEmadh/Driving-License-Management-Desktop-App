@@ -69,5 +69,45 @@ namespace Driving_License_Management_Desktop_App
         {
 
         }
+
+        private void driversToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmManageDrivers().ShowDialog();
+        }
+
+        private void internationalLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmNewInternationalLicenseApplication().ShowDialog();
+        }
+
+        private void internationalLicesnseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmListInternationalLicenseApplications().ShowDialog();
+        }
+
+        private void renewDrivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmRenewDrivingLicense().ShowDialog();
+        }
+
+        private void replacementForLostOrDamagedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmReplacementForDamagedLicense().ShowDialog();
+        }
+
+        private void detainLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmDetainLicense().ShowDialog();
+        }
+
+        private void manageDetainedLicensesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmManageDetainedLicences().ShowDialog();
+        }
+
+        private void releaseDetainedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmReleaseDetainedLicense().ShowDialog();
+        }
     }
 }

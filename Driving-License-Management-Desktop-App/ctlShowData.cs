@@ -12,16 +12,11 @@ namespace Driving_License_Management_Desktop_App
 {
     public partial class ctlShowData : UserControl
     {
-
-        public string Title
+        public ContextMenuStrip contextMenuStrip
         {
-            get
-            {
-                return lblTitle.Text;
-            }
             set
             {
-                lblTitle.Text = value;
+                dataGridView1.ContextMenuStrip = value;
             }
         }
 
@@ -38,11 +33,6 @@ namespace Driving_License_Management_Desktop_App
         public ctlShowData()
         {
             InitializeComponent();
-        }
-        public ctlShowData(string title)
-        {
-            InitializeComponent();
-            lblTitle.Text = title;
         }
         private void ctlShowData_Load(object sender, EventArgs e)
         {

@@ -29,7 +29,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmManageApplicationTypes_Load(object sender, EventArgs e)
         {
-            ctlShowData1.Title = "Application Types";
+            //ctlShowData1.Title = "Application Types";
         }
     }
 }

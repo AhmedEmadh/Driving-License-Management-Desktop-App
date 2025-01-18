@@ -42,7 +42,6 @@
             this.ctlShowData1.Name = "ctlShowData1";
             this.ctlShowData1.Size = new System.Drawing.Size(748, 441);
             this.ctlShowData1.TabIndex = 0;
-            this.ctlShowData1.Title = "DataName";
             this.ctlShowData1.OnClose += new System.Action<object>(this.ctlShowData1_OnClose);
             // 
             // contextMenuStrip1
@@ -51,12 +50,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editTestTypeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 60);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(184, 32);
             // 
             // editTestTypeToolStripMenuItem
             // 
             this.editTestTypeToolStripMenuItem.Name = "editTestTypeToolStripMenuItem";
-            this.editTestTypeToolStripMenuItem.Size = new System.Drawing.Size(210, 28);
+            this.editTestTypeToolStripMenuItem.Size = new System.Drawing.Size(183, 28);
             this.editTestTypeToolStripMenuItem.Text = "Edit Test Type";
             this.editTestTypeToolStripMenuItem.Click += new System.EventHandler(this.editTestTypeToolStripMenuItem_Click);
             // 
@@ -64,7 +63,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(770, 325);
             this.Controls.Add(this.ctlShowData1);
             this.Name = "frmManageTestTypes";
             this.Text = "frmManageTestTypes";

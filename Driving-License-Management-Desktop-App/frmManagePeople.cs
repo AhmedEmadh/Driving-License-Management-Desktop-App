@@ -16,7 +16,11 @@ namespace Driving_License_Management_Desktop_App
         {
             InitializeComponent();
         }
+        public frmManagePeople(string Name)
+        {
+            InitializeComponent();
 
+        }
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 

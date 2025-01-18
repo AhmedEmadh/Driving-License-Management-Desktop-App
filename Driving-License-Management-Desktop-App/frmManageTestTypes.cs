@@ -19,7 +19,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmManageTestTypes_Load(object sender, EventArgs e)
         {
-            ctlShowData1.Title = "Test Types";
+            //ctlShowData1.Title = "Test Types";
         }
 
         private void ctlShowData1_OnClose(object obj)
