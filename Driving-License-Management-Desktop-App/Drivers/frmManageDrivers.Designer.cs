@@ -1,6 +1,6 @@
 ﻿namespace Driving_License_Management_Desktop_App
 {
-    partial class frmManageDetainedLicences
+    partial class frmManageDrivers
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctlFormTitle1 = new Driving_License_Management_Desktop_App.ctlFormTitle();
+            this.ctlManagePersons1 = new Driving_License_Management_Desktop_App.ctlManagePersons();
             this.SuspendLayout();
             // 
-            // ctlFormTitle1
+            // ctlManagePersons1
             // 
-            this.ctlFormTitle1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ctlFormTitle1.Location = new System.Drawing.Point(28, 12);
-            this.ctlFormTitle1.Name = "ctlFormTitle1";
-            this.ctlFormTitle1.picture = null;
-            this.ctlFormTitle1.Size = new System.Drawing.Size(760, 123);
-            this.ctlFormTitle1.TabIndex = 0;
-            this.ctlFormTitle1.titleName = "Title";
+            this.ctlManagePersons1.Location = new System.Drawing.Point(12, 12);
+            this.ctlManagePersons1.Name = "ctlManagePersons1";
+            this.ctlManagePersons1.SearchText = "";
+            this.ctlManagePersons1.Size = new System.Drawing.Size(759, 442);
+            this.ctlManagePersons1.TabIndex = 0;
+            this.ctlManagePersons1.Value = "People";
+            this.ctlManagePersons1.OnClose += new System.Action<object>(this.ctlManagePersons1_OnClose);
+            this.ctlManagePersons1.Load += new System.EventHandler(this.ctlManagePersons1_Load);
             // 
-            // frmManageDetainedLicences
+            // frmManageDrivers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.ctlFormTitle1);
-            this.Name = "frmManageDetainedLicences";
-            this.Text = "frmManageDetainedLicences";
+            this.Controls.Add(this.ctlManagePersons1);
+            this.Name = "frmManageDrivers";
+            this.Text = "frmManageDrivers";
+            this.Load += new System.EventHandler(this.frmManageDrivers_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private ctlFormTitle ctlFormTitle1;
+        private ctlManagePersons ctlManagePersons1;
     }
 }

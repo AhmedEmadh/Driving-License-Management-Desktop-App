@@ -23,5 +23,15 @@ namespace Driving_License_Management_Desktop_App
             ctlManagePersons1.ButtonValue = "Driver";
             
         }
+
+        private void ctlManagePersons1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctlManagePersons1_OnClose(object obj)
+        {
+            this.Close();
+        }
     }
 }

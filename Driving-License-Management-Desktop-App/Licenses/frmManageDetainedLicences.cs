@@ -16,5 +16,20 @@ namespace Driving_License_Management_Desktop_App
         {
             InitializeComponent();
         }
+
+        private void frmManageDetainedLicences_Load(object sender, EventArgs e)
+        {
+            ctlShowDataWithFilter1.contextMenuStrip = contextMenuStrip1;
+        }
+
+        private void ctlShowDataWithFilter1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctlShowDataWithFilter1_OnClose(object obj)
+        {
+            this.Close();
+        }
     }
 }

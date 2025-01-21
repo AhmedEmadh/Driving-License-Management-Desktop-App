@@ -26,6 +26,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
+            //if(_CallerForm != null)
             _CallerForm.Close();
         }
 
@@ -46,8 +47,8 @@ namespace Driving_License_Management_Desktop_App
 
         private void signOutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            _CallerForm.Show();
-            this.Hide();
+                _CallerForm.Show();
+                this.Hide();
         }
 
         private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,6 +107,11 @@ namespace Driving_License_Management_Desktop_App
         }
 
         private void releaseDetainedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmReleaseDetainedLicense().ShowDialog();
+        }
+
+        private void releaseDetainedDrivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new frmReleaseDetainedLicense().ShowDialog();
         }
