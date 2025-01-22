@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -118,6 +133,18 @@
     <Compile Include="People\frmAddEditPersonInfo.Designer.cs">
       <DependentUpon>frmAddEditPersonInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\ctlloginInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User\ctlloginInfo.Designer.cs">
+      <DependentUpon>ctlloginInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\ctlUserCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User\ctlUserCard.Designer.cs">
+      <DependentUpon>ctlUserCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="User\frmAddEditUserInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +216,12 @@
     </Compile>
     <Compile Include="Tests\frmManageTestTypes.Designer.cs">
       <DependentUpon>frmManageTestTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="User\frmManageUsers.cs">
       <SubType>Form</SubType>
@@ -276,6 +309,12 @@
     <Compile Include="People\ctlManagePersons.Designer.cs">
       <DependentUpon>ctlManagePersons.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\frmUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\frmUserInfo.Designer.cs">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Applications\ctlApplicationInfo.resx">
       <DependentUpon>ctlApplicationInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,6 +351,12 @@
     <EmbeddedResource Include="People\frmAddEditPersonInfo.resx">
       <DependentUpon>frmAddEditPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User\ctlloginInfo.resx">
+      <DependentUpon>ctlloginInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\ctlUserCard.resx">
+      <DependentUpon>ctlUserCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User\frmAddEditUserInfo.resx">
       <DependentUpon>frmAddEditUserInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -347,6 +392,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\frmManageTestTypes.resx">
       <DependentUpon>frmManageTestTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\frmManageUsers.resx">
       <DependentUpon>frmManageUsers.cs</DependentUpon>
@@ -399,6 +447,9 @@
     <EmbeddedResource Include="People\ctlManagePersons.resx">
       <DependentUpon>ctlManagePersons.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User\frmUserInfo.resx">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -416,6 +467,18 @@
     <Folder Include="Global Classes\" />
     <Folder Include="Login\" />
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

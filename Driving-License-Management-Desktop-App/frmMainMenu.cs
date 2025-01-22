@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Driving_License_Management_Desktop_App.User;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -114,6 +115,16 @@ namespace Driving_License_Management_Desktop_App
         private void releaseDetainedDrivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new frmReleaseDetainedLicense().ShowDialog();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmChangePassword().ShowDialog();
+        }
+
+        private void currentUserInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmUserInfo().ShowDialog();
         }
     }
 }

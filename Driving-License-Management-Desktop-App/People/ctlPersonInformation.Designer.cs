@@ -230,7 +230,7 @@
             // 
             this.groupBox1.Controls.Add(this.llEditPersonInfo);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Location = new System.Drawing.Point(16, 15);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(626, 186);
             this.groupBox1.TabIndex = 19;
@@ -280,7 +280,7 @@
             this.Controls.Add(this.lblCPersonID);
             this.Controls.Add(this.groupBox1);
             this.Name = "ctlPersonInformation";
-            this.Size = new System.Drawing.Size(660, 215);
+            this.Size = new System.Drawing.Size(636, 195);
             this.Load += new System.EventHandler(this.ctlPersonInformation_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

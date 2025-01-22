@@ -61,3 +61,7 @@ D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desk
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.ctlFormTitle.resources
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.ctlShowDataWithFilter.resources
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.frmManageDetainedLicences.resources
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.User.ctlloginInfo.resources
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.User.frmChangePassword.resources
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.User.frmUserInfo.resources
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.User.ctlUserCard.resources
