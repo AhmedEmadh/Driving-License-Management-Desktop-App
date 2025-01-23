@@ -1,0 +1,10 @@
+D:\GitHub\Driving-License-Management-Desktop-App\Test\bin\Release\Test.exe.config
+D:\GitHub\Driving-License-Management-Desktop-App\Test\bin\Release\Test.exe
+D:\GitHub\Driving-License-Management-Desktop-App\Test\bin\Release\Test.pdb
+D:\GitHub\Driving-License-Management-Desktop-App\Test\bin\Release\Driving-License-Management-DataAccessLayer.dll
+D:\GitHub\Driving-License-Management-Desktop-App\Test\bin\Release\Driving-License-Management-DataAccessLayer.pdb
+D:\GitHub\Driving-License-Management-Desktop-App\Test\obj\Release\Test.csproj.AssemblyReference.cache
+D:\GitHub\Driving-License-Management-Desktop-App\Test\obj\Release\Test.csproj.CoreCompileInputs.cache
+D:\GitHub\Driving-License-Management-Desktop-App\Test\obj\Release\Test.csproj.Up2Date
+D:\GitHub\Driving-License-Management-Desktop-App\Test\obj\Release\Test.exe
+D:\GitHub\Driving-License-Management-Desktop-App\Test\obj\Release\Test.pdb

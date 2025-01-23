@@ -1,0 +1,6 @@
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-DataAccessLayer\bin\Release\Driving-License-Management-DataAccessLayer.dll
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-DataAccessLayer\bin\Release\Driving-License-Management-DataAccessLayer.pdb
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-DataAccessLayer\obj\Release\Driving-License-Management-DataAccessLayer.csproj.AssemblyReference.cache
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-DataAccessLayer\obj\Release\Driving-License-Management-DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-DataAccessLayer\obj\Release\Driving-License-Management-DataAccessLayer.dll
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-DataAccessLayer\obj\Release\Driving-License-Management-DataAccessLayer.pdb
