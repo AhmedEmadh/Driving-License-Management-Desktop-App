@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsTest_ApplicationTypeData.cs" />
+    <Compile Include="clsTest_clsApplicationData.cs" />
+    <Compile Include="clsTest_clsCountryData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
