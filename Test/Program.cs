@@ -408,15 +408,111 @@ namespace Test
         }
         static void test_clsApplicationData_GetActiveApplicationID()
         {
-            
+            //clsApplicationData.GetActiveApplicationID(PersonID, ApplicationTypeID);
+            int PersonID = -1;
+            int ApplicationTypeID = -1;
+            Console.WriteLine("=================================");
+            Console.WriteLine("Enter Person ID:");
+            string line = Console.ReadLine();
+            if (!int.TryParse(line, out PersonID))
+            {
+                //invalid id
+                Console.WriteLine("Invalid ID");
+                return;
+            }
+            Console.WriteLine("Enter Application Type ID:");
+            line = Console.ReadLine();
+            if (!int.TryParse(line, out ApplicationTypeID))
+            {
+                //invalid id
+                Console.WriteLine("Invalid ID");
+                return;
+            }
+            int ID = clsApplicationData.GetActiveApplicationID(PersonID, ApplicationTypeID);
+            if (ID > 0)
+            {
+                Console.WriteLine($"Active Application ID: {ID}");
+                Console.WriteLine("=================================");
+            }
+            else
+            {
+                Console.WriteLine("No Active Application Found");
+            }
         }
         static void test_clsApplicationData_GetActiveApplicationIDForLicenseClass()
         {
-           
+           //clsApplicationData.GetActiveApplicationIDForLicenseClass(PersonID,ApplicationTypeID, LicenseClassID);
+            int PersonID = -1;
+            int ApplicationTypeID = -1;
+            int LicenseClassID = -1;
+            Console.WriteLine("=================================");
+            Console.WriteLine("Enter Person ID:");
+            string line = Console.ReadLine();
+            if (!int.TryParse(line, out PersonID))
+            {
+                //invalid id
+                Console.WriteLine("Invalid ID");
+                return;
+            }
+            Console.WriteLine("Enter Application Type ID:");
+            line = Console.ReadLine();
+            if (!int.TryParse(line, out ApplicationTypeID))
+            {
+                //invalid id
+                Console.WriteLine("Invalid ID");
+                return;
+            }
+            Console.WriteLine("Enter License Class ID:");
+            line = Console.ReadLine();
+            if (!int.TryParse(line, out LicenseClassID))
+            {
+                //invalid id
+                Console.WriteLine("Invalid ID");
+                return;
+            }
+            int ID = clsApplicationData.GetActiveApplicationIDForLicenseClass(PersonID, ApplicationTypeID, LicenseClassID);
+            if (ID > 0)
+            {
+                Console.WriteLine($"Active Application ID: {ID}");
+                Console.WriteLine("=================================");
+            }
+            else
+            {
+                Console.WriteLine("No Active Application Found");
+            }
         }
         static void test_clsApplicationData_UpdateStatus()
         {
-            
+            //clsApplicationData.UpdateStatus(ApplicationID, NewStatus);
+            //Status: 1-New 2-Cancelled 3-Completed
+            int ApplicationID = -1;
+            byte NewStatus = 0;
+            Console.WriteLine("=================================");
+            Console.WriteLine("Enter Application ID:");
+            string line = Console.ReadLine();
+            if (!int.TryParse(line, out ApplicationID))
+            {
+                //invalid id
+                Console.WriteLine("Invalid ID");
+                return;
+            }
+            Console.WriteLine("Enter New Status:");
+            line = Console.ReadLine();
+            if (!byte.TryParse(line, out NewStatus))
+            {
+                //invalid id
+                Console.WriteLine("Invalid ID");
+                return;
+            }
+            if (clsApplicationData.UpdateStatus(ApplicationID, NewStatus))
+            {
+                Console.WriteLine("Status Updated Successfully");
+                Console.WriteLine("=================================");
+            }
+            else
+            {
+                Console.WriteLine("Failed to Update Status");
+            }
         }
             /* Main */
             static void Main(string[] args)
@@ -438,7 +534,7 @@ namespace Test
             //test_clsApplicationData_UpdateApplication();
             //test_clsApplicationData_DeleteApplication();
             //test_clsApplicationData_IsApplicationExists();
-            test_clsApplicationData_DoesPersonHaveActiveApplication();
+            //test_clsApplicationData_DoesPersonHaveActiveApplication();
             //test_clsApplicationData_GetActiveApplicationID();
             //test_clsApplicationData_GetActiveApplicationIDForLicenseClass();
             //test_clsApplicationData_UpdateStatus();

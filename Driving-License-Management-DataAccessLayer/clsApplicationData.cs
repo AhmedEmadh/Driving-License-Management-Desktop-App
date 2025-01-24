@@ -238,11 +238,17 @@ namespace Driving_License_Management_DataAccessLayer
         {
             int result = -1;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT ApplicationID FROM Applications WHERE ApplicantPersonID = @ApplicantPersonID AND ApplicationTypeID = @ApplicationTypeID AND ApplicationStatus = @ApplicationStatus AND LicenseClassID = @LicenseClassID";
+            string query = @"   SELECT ActiveApplicationID= Applications.ApplicationID FROM Applications
+                                INNER JOIN LocalDrivingLicenseApplications
+                                ON Applications.ApplicationID = LocalDrivingLicenseApplications.ApplicationID
+                                WHERE 
+                                Applications.ApplicantPersonID = @ApplicantPersonID AND
+                                Applications.ApplicationTypeID = @ApplicationTypeID AND
+                                LocalDrivingLicenseApplications.LicenseClassID = @LicenseClassID AND
+                                Applications.ApplicationStatus = 1";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@ApplicantPersonID", PersonID);
             command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
-            command.Parameters.AddWithValue("@ApplicationStatus", (byte)ApplicationStatus.New);
             command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
             try
             {
@@ -250,7 +256,7 @@ namespace Driving_License_Management_DataAccessLayer
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    result = int.Parse(reader["ApplicationID"].ToString());
+                    result = int.Parse(reader["ActiveApplicationID"].ToString());
                 }
                 else
                 {
