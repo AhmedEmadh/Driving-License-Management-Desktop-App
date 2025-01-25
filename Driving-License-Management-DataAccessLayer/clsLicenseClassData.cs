@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Net.Http.Headers;
 namespace Driving_License_Management_DataAccessLayer
 {
-    internal class clsLicenseClassData
+    public static class clsLicenseClassData
     {
         public static bool GetLicenseClassInfoByID(int LicenseClassID, ref string ClassName, ref string ClassDescription, ref byte MinimumAllowedAge, ref byte DefaultValidityLength, ref float ClassFees)
         {

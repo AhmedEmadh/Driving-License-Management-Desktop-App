@@ -1,0 +1,95 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using Driving_License_Management_DataAccessLayer;
+namespace Test
+{
+    public static class clsTest_clsTestTypeData
+    {
+        public static void Test_GetTestTypeInfoByID()
+        {
+            //clsTestTypeData.GetTestTypeInfoByID(TestTypeID, ref TestTypeID, ref TestDescription, ref TestFees);
+            int TestTypeID = -1;
+            string TestDescription = null;
+            float TestFees = 0;
+            Console.WriteLine("=================================");
+            Console.WriteLine("Enter Test Type ID");
+            string line = Console.ReadLine();
+            if (!int.TryParse(line, out TestTypeID))
+            {
+                //invalid id
+                Console.WriteLine("Invalid ID");
+                return;
+            }
+            if (clsTestTypeData.GetTestTypeInfoByID(TestTypeID, ref TestTypeID, ref TestDescription, ref TestFees))
+            {
+                Console.WriteLine("Test Type Info");
+                Console.WriteLine(TestTypeID);
+                Console.WriteLine(TestDescription);
+                Console.WriteLine(TestFees);
+            }
+            else
+            {
+                Console.WriteLine("Invalid Test Type ID");
+            }
+
+        }
+        public static void Test_GetAllTestTypes()
+        {
+            //clsTestTypeData.GetAllTestTypes();
+            DataTable dt = clsTestTypeData.GetAllTestTypes();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Console.WriteLine(dt.Rows[i]["TestTypeID"] + " " + dt.Rows[i]["TestDescription"] + " " + dt.Rows[i]["TestFees"]);
+            }
+
+        }
+        public static void Test_AddNewTestType()
+        {
+            //clsTestTypeData.AddNewTestType(Title,Description,Fees);
+            Console.WriteLine("=================================");
+            Console.WriteLine("Enter Title");
+            string Title = Console.ReadLine();
+            Console.WriteLine("Enter Description");
+            string Description = Console.ReadLine();
+            Console.WriteLine("Enter Fees");
+            string Fees = Console.ReadLine();
+            int TestTypeID = clsTestTypeData.AddNewTestType(Title, Description, float.Parse(Fees));
+            if (TestTypeID > 0)
+            {
+                Console.WriteLine("Test Type Added Successfully");
+            }
+            else
+            {
+                Console.WriteLine("Failed to add Test Type");
+            }
+
+        }
+        public static void Test_UpdateTestType()
+        {
+            //clsTestTypeData.UpdateTestType(TestTypeID, Title, Description, Fees);
+            Console.WriteLine("=================================");
+            Console.WriteLine("Enter Test Type ID");
+            string TestTypeID = Console.ReadLine();
+            Console.WriteLine("Enter Title");
+            string Title = Console.ReadLine();
+            Console.WriteLine("Enter Description");
+            string Description = Console.ReadLine();
+            Console.WriteLine("Enter Fees");
+            string Fees = Console.ReadLine();
+            if (clsTestTypeData.UpdateTestType(int.Parse(TestTypeID), Title, Description, float.Parse(Fees)))
+            {
+                Console.WriteLine("Test Type Updated Successfully");
+            }
+            else
+            {
+                Console.WriteLine("Failed to Update Test Type");
+            }
+
+        }
+
+    }
+}
