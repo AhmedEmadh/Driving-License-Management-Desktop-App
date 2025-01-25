@@ -48,28 +48,7 @@ namespace Test
             //clsTest_DetainedLicenseData.test_clsDetainedLicenseData_GetDetainedLicenseInfoByID();
             //while (true)
             //clsTest_DetainedLicenseData.test_clsDetainedLicenseData_GetDetainedLicenseInfoByLicenseID();
-            //clsTest_DetainedLicenseData.test_clsDetainedLicenseData_AddNewDetainedLicense();
-            //while (true)
-            //clsTest_DetainedLicenseData.test_clsDetainedLicenseData_UpdateDetainedLicense();
-            //while (true)
-            //clsTest_DetainedLicenseData.test_clsDetainedLicenseData_ReleaseDetainedLicense();
-            //while (true)
-            //clsTest_DetainedLicenseData.test_clsDetainedLicenseData_IsLicenseDetained();
-            //while(true)
-            //clsTest_DetainedLicenseData.test_clsDetainedLicenseData_IsLicenseDetained();
-            //clsTest_clsDriverData.test_UpdateDriver();
-            //clsTest_clsDriverData.test_AddNewDriver();
-            //clsTest_clsDriverData.test_GetAllDrivers();
-            //clsTest_clsDriverData.test_GetDriverInfoByPersonID();            
-            //clsTest_clsDriverData.test_GetDriverInfoByDriverID();
-
-            //clsTest_clsInternationalLicenseData.test_GetInternationlLicenseInfoByID();
-            //clsTest_clsInternationalLicenseData.test_GettAllInternationalLicenses();
-            //clsTest_clsInternationalLicenseData.test_GetDriverInternationalLicenses();
-            //clsTest_clsInternationalLicenseData.test_AddNewInternationalLicense();
-            //clsTest_clsInternationalLicenseData.test_UpdateInternationalLicense();
-            //clsTest_clsInternationalLicenseData.test_GetActiveInternationalLicenseIDByDriverID();
-            //while (true)
+            clsTest_DetainedLicenseData.
         }
     }
 }

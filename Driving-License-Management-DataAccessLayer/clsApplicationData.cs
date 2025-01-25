@@ -8,14 +8,32 @@ using System.Threading.Tasks;
 
 namespace Driving_License_Management_DataAccessLayer
 {
+    /// <summary>
+    /// Provides data access methods for application data.
+    /// </summary>
     public static class clsApplicationData
     {
+        /// <summary>
+        /// Enumerates the possible application statuses.
+        /// </summary>
         enum ApplicationStatus
         {
             New = 1,
             Cancelled = 2,
             Completed = 3
         }
+        /// <summary>
+        /// Retrieves application information by application ID.
+        /// </summary>
+        /// <param name="ApplicationID">The ID of the application.</param>
+        /// <param name="ApplicantPersonID">The ID of the applicant person.</param>
+        /// <param name="ApplicationDate">The date of the application.</param>
+        /// <param name="ApplicationTypeID">The type ID of the application.</param>
+        /// <param name="ApplicationStatus">The status of the application.</param>
+        /// <param name="LastStatusDate">The date of the last status update.</param>
+        /// <param name="PaidFees">The paid fees for the application.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the application.</param>
+        /// <returns>True if the application information is retrieved successfully, false otherwise.</returns>
         public static bool GetApplicationInfoByID(int ApplicationID, ref int ApplicantPersonID, ref DateTime ApplicationDate, ref int ApplicationTypeID, ref byte ApplicationStatus, ref DateTime LastStatusDate, ref float PaidFees, ref int CreatedByUserID)
         {
             bool result = false;
@@ -53,6 +71,10 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return result;
         }
+        /// <summary>
+        /// Retrieves all applications.
+        /// </summary>
+        /// <returns>A DataTable containing all applications.</returns>
         public static DataTable GetAllApplications()
         {
             DataTable Result = new DataTable();
@@ -75,6 +97,17 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return Result;
         }
+        /// <summary>
+        /// Adds a new application to the database and returns the ID of the added application.
+        /// </summary>
+        /// <param name="ApplicantPersonID">The ID of the applicant person.</param>
+        /// <param name="ApplicationDate">The date of the application.</param>
+        /// <param name="ApplicationTypeID">The type ID of the application.</param>
+        /// <param name="ApplicationStatus">The status of the application.</param>
+        /// <param name="LastStatusDate">The date of the last status update.</param>
+        /// <param name="PaidFees">The paid fees for the application.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the application.</param>
+        /// <returns>The ID of the added application, or -1 if the operation fails.</returns>
         public static int AddNewApplication(int ApplicantPersonID, DateTime ApplicationDate, int ApplicationTypeID, byte ApplicationStatus, DateTime LastStatusDate, float PaidFees, int CreatedByUserID)
         {
             int IDOfAddedApplication = -1;
@@ -103,6 +136,18 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return IDOfAddedApplication;
         }
+        /// <summary>
+        /// Updates an existing application in the database.
+        /// </summary>
+        /// <param name="ApplicationID">The ID of the application to update.</param>
+        /// <param name="ApplicantPersonID">The ID of the applicant person.</param>
+        /// <param name="ApplicationDate">The date of the application.</param>
+        /// <param name="ApplicationTypeID">The type ID of the application.</param>
+        /// <param name="ApplicationStatus">The status of the application.</param>
+        /// <param name="LastStatusDate">The date of the last status update.</param>
+        /// <param name="PaidFees">The paid fees for the application.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the application.</param>
+        /// <returns>True if the application is updated successfully, false otherwise.</returns>
         public static bool UpdateApplication(int ApplicationID, int ApplicantPersonID, DateTime ApplicationDate, int ApplicationTypeID, byte ApplicationStatus, DateTime LastStatusDate, float PaidFees, int CreatedByUserID)
         {
             bool result = false;
@@ -139,6 +184,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return result;
         }
+        /// <summary>
+        /// Deletes an application from the database by ApplicationID.
+        /// </summary>
+        /// <param name="ApplicationID">The ID of the application to delete.</param>
+        /// <returns>True if the application is deleted successfully, false otherwise.</returns>
         public static bool DeleteApplication(int ApplicationID)
         {
             bool result = false;
@@ -168,6 +218,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return result;
         }
+        /// <summary>
+        /// Checks if an application exists in the database by ApplicationID.
+        /// </summary>
+        /// <param name="ApplicationID">The ID of the application to check.</param>
+        /// <returns>True if the application exists, false otherwise.</returns>
         public static bool IsApplicationExist(int ApplicationID)
         {
             bool result = false;
@@ -198,10 +253,22 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return result;
         }
+        /// <summary>
+        /// Checks if a person has an active application based on the provided PersonID and ApplicationTypeID.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person to check.</param>
+        /// <param name="ApplicationTypeID">The type ID of the application to check.</param>
+        /// <returns>True if the person has an active application, false otherwise.</returns>
         public static bool DoesPersonHaveActiveApplication(int PersonID, int ApplicationTypeID)
         {
             return GetActiveApplicationID(PersonID, ApplicationTypeID) != -1;
         }
+        /// <summary>
+        /// Retrieves the active application ID for a given person and application type.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person to retrieve the active application for.</param>
+        /// <param name="ApplicationTypeID">The type ID of the application to retrieve.</param>
+        /// <returns>The active application ID, or -1 if no active application is found.</returns>
         public static int GetActiveApplicationID(int PersonID, int ApplicationTypeID)
         {
             int result = -1;
@@ -234,6 +301,13 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return result;
         }
+        /// <summary>
+        /// Retrieves the active application ID for a given person, application type, and license class.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person to retrieve the active application for.</param>
+        /// <param name="ApplicationTypeID">The type ID of the application to retrieve.</param>
+        /// <param name="LicenseClassID">The ID of the license class to retrieve.</param>
+        /// <returns>The active application ID, or -1 if no active application is found.</returns>
         public static int GetActiveApplicationIDForLicenseClass(int PersonID, int ApplicationTypeID, int LicenseClassID)
         {
             int result = -1;
@@ -273,6 +347,12 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return result;
         }
+        /// <summary>
+        /// Updates the status of an application in the database.
+        /// </summary>
+        /// <param name="ApplicationID">The ID of the application to update.</param>
+        /// <param name="NewStatus">The new status of the application.</param>
+        /// <returns>True if the update is successful, false otherwise.</returns>
         public static bool UpdateStatus(int ApplicationID, short NewStatus)
         {
             bool result = false;

@@ -7,8 +7,19 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 namespace Driving_License_Management_DataAccessLayer
 {
+    /// <summary>
+    /// Provides data access methods for driver information.
+    /// </summary>
     public static class clsDriverData
     {
+        /// <summary>
+        /// Retrieves driver information by DriverID.
+        /// </summary>
+        /// <param name="DriverID">The ID of the driver.</param>
+        /// <param name="PersonID">The ID of the person associated with the driver.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the driver record.</param>
+        /// <param name="CreatedDate">The date the driver record was created.</param>
+        /// <returns>True if the driver information is retrieved successfully, false otherwise.</returns>
         public static bool GetDriverInfoByDriverID(int DriverID, ref int PersonID, ref int CreatedByUserID, ref DateTime CreatedDate)
         {
             bool isSuccess = false;
@@ -42,6 +53,14 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Retrieves driver information by PersonID.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person associated with the driver.</param>
+        /// <param name="DriverID">The ID of the driver.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the driver record.</param>
+        /// <param name="CreatedDate">The date the driver record was created.</param>
+        /// <returns>True if the driver information is retrieved successfully, false otherwise.</returns>
         public static bool GetDriverInfoByPersonID(int PersonID, ref int DriverID, ref int CreatedByUserID, ref DateTime CreatedDate)
         {
             bool isSuccess = false;
@@ -75,6 +94,10 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Retrieves all drivers from the database.
+        /// </summary>
+        /// <returns>A DataTable containing all drivers.</returns>
         public static DataTable GetAllDrivers()
         {
             DataTable Result = new DataTable();
@@ -97,14 +120,21 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return Result;
         }
+        /// <summary>
+        /// Adds a new driver to the database and returns the ID of the added driver.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person associated with the driver.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the driver record.</param>
+        /// <returns>The ID of the added driver, or -1 if the operation fails.</returns>
         public static int AddNewDriver(int PersonID, int CreatedByUserID)
         {
             int DriverID = -1;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "INSERT INTO Drivers (PersonID, CreatedByUserID) VALUES (@PersonID, @CreatedByUserID); SELECT SCOPE_IDENTITY();";
+            string query = "INSERT INTO Drivers (PersonID, CreatedByUserID, CreatedDate) VALUES (@PersonID, @CreatedByUserID, @CreatedDate); SELECT SCOPE_IDENTITY();";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@PersonID", PersonID);
             command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+            command.Parameters.AddWithValue("@CreatedDate", DateTime.Now);
             try
             {
                 connection.Open();
@@ -120,6 +150,13 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return DriverID;
         }
+        /// <summary>
+        /// Updates an existing driver record in the database.
+        /// </summary>
+        /// <param name="DriverID">The ID of the driver to be updated.</param>
+        /// <param name="PersonID">The ID of the person associated with the driver.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the driver record.</param>
+        /// <returns>True if the driver record is updated successfully, false otherwise.</returns>
         public static bool UpdateDriver(int DriverID, int PersonID, int CreatedByUserID)
         {
             bool isSuccess = false;
