@@ -43,12 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsTest_clsTestAppointmentData.cs" />
     <Compile Include="clsTest_ApplicationTypeData.cs" />
     <Compile Include="clsTest_clsApplicationData.cs" />
     <Compile Include="clsTest_clsCountryData.cs" />
     <Compile Include="clsTest_clsDriverData.cs" />
     <Compile Include="clsTest_clsInternationalLicenseData.cs" />
     <Compile Include="clsTest_clsLicenseData.cs" />
+    <Compile Include="clsTest_clsLocalDrivingLicenseApplicationData.cs" />
+    <Compile Include="clsTest_clsPersonData.cs" />
+    <Compile Include="clsTest_clsTestData.cs" />
     <Compile Include="clsTest_DetainedLicenseData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

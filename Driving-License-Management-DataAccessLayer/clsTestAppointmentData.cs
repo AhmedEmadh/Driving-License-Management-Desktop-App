@@ -127,35 +127,62 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return dataTable;
         }
-        public static bool InsertTestAppointment(int TestAppointmentID, int LocalDrivingLicenseApplicationID, int TestTypeID, DateTime AppointmentDate, float PaidFees, int CreatedByUserID, bool IsLocked, int RetakeTestApplicationID)
+        public static int AddNewTestAppointment(int TestTypeID, int LocalDrivingLicenseApplicationID, DateTime AppointmentDate, float PaidFees, int CreatedByUserID, int RetakeTestApplicationID)
         {
-            bool IsSuccess = false;
-            SqlConnection conn = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "INSERT INTO TestAppointments (TestAppointmentID, LocalDrivingLicenseApplicationID, TestTypeID, AppointmentDate, PaidFees, CreatedByUserID, IsLocked, RetakeTestApplicationID) VALUES (@TestAppointmentID, @LocalDrivingLicenseApplicationID, @TestTypeID, @AppointmentDate, @PaidFees, @CreatedByUserID, @IsLocked, @RetakeTestApplicationID)";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
-            cmd.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
-            cmd.Parameters.AddWithValue("@TestTypeID", TestTypeID);
-            cmd.Parameters.AddWithValue("@AppointmentDate", AppointmentDate);
-            cmd.Parameters.AddWithValue("@PaidFees", PaidFees);
-            cmd.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
-            cmd.Parameters.AddWithValue("@IsLocked", IsLocked);
-            cmd.Parameters.AddWithValue("@RetakeTestApplicationID", RetakeTestApplicationID);
+            int TestAppointmentID = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"Insert Into TestAppointments (TestTypeID,LocalDrivingLicenseApplicationID,AppointmentDate,PaidFees,CreatedByUserID,IsLocked,RetakeTestApplicationID)
+                            Values (@TestTypeID,@LocalDrivingLicenseApplicationID,@AppointmentDate,@PaidFees,@CreatedByUserID,0,@RetakeTestApplicationID);
+                
+                            SELECT SCOPE_IDENTITY();";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+            command.Parameters.AddWithValue("@AppointmentDate", AppointmentDate);
+            command.Parameters.AddWithValue("@PaidFees", PaidFees);
+            command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+
+            if (RetakeTestApplicationID == -1)
+
+                command.Parameters.AddWithValue("@RetakeTestApplicationID", DBNull.Value);
+            else
+                command.Parameters.AddWithValue("@RetakeTestApplicationID", RetakeTestApplicationID);
+
+
+
+
+
             try
             {
-                conn.Open();
-                int rowsAffected = cmd.ExecuteNonQuery();
-                IsSuccess = rowsAffected > 0;
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && int.TryParse(result.ToString(), out int insertedID))
+                {
+                    TestAppointmentID = insertedID;
+                }
             }
+
             catch (Exception ex)
             {
-                throw ex;
+                //Console.WriteLine("Error: " + ex.Message);
+
             }
+
             finally
             {
-                conn.Close();
+                connection.Close();
             }
-            return IsSuccess;
+
+
+            return TestAppointmentID;
+
         }
         public static bool UpdateTestAppointment(int TestAppointmentID, int TestTypeID, int LocalDrivingLicenseApplicationID, DateTime AppointmentDate, float PaidFees, int CreatedByUserID, bool IsLocked, int RetakeTestApplicationID)
         {
