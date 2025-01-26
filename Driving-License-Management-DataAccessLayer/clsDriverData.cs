@@ -169,8 +169,8 @@ namespace Driving_License_Management_DataAccessLayer
             try
             {
                 connection.Open();
-                command.ExecuteNonQuery();
-                isSuccess = true;
+                int rowsAffected = command.ExecuteNonQuery();
+                isSuccess = rowsAffected > 0;
             }
             catch (Exception ex)
             {

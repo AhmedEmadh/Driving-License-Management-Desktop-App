@@ -163,14 +163,6 @@ namespace Test
                 Console.WriteLine("Invalid ID");
                 return;
             }
-            Console.WriteLine("Enter Issue Date");
-            line = Console.ReadLine();
-            if (!DateTime.TryParse(line, out IssueDate))
-            {
-                //invalid id
-                Console.WriteLine("Invalid Issue Date");
-                return;
-            }
             Console.WriteLine("Enter Expiration Date");
             line = Console.ReadLine();
             if (!DateTime.TryParse(line, out ExpirationDate))
@@ -181,6 +173,8 @@ namespace Test
             }
             Console.WriteLine("Enter Notes");
             Notes = Console.ReadLine();
+            if(Notes == string.Empty)
+                Notes = null;
             Console.WriteLine("Enter Paid Fees");
             line = Console.ReadLine();
             if (!float.TryParse(line, out PaidFees))
@@ -323,8 +317,8 @@ namespace Test
                 Console.WriteLine("Invalid Created By User ID");
                 return;
             }
-            int result = clsLicenseData.UpdateLicense(LicenseID, ApplicationID, DriverID, LicenseClass, IssueDate, ExpirationDate, Notes, PaidFees, IsActive, IssueReason, CreatedByUserID);
-            if (result > 0)
+            
+            if (clsLicenseData.UpdateLicense(LicenseID, ApplicationID, DriverID, LicenseClass, IssueDate, ExpirationDate, Notes, PaidFees, IsActive, IssueReason, CreatedByUserID))
             {
                 Console.WriteLine("License Updated Successfully");
             }

@@ -307,7 +307,7 @@ namespace Test
                 Console.WriteLine("Invalid ID");
                 return;
             }
-            if (clsLocalDrivingLicenseApplicationData.IsThereAnActiveSchheduledTest(LocalDrivingLicenseApplicationID, TestTypeID))
+            if (clsLocalDrivingLicenseApplicationData.IsThereAnActiveScheduledTest(LocalDrivingLicenseApplicationID, TestTypeID))
             {
                 Console.WriteLine("There Is An Active Scheduled Test");
             }

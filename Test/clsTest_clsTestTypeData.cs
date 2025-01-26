@@ -11,8 +11,9 @@ namespace Test
     {
         public static void Test_GetTestTypeInfoByID()
         {
-            //clsTestTypeData.GetTestTypeInfoByID(TestTypeID, ref TestTypeID, ref TestDescription, ref TestFees);
+            //clsTestTypeData.GetTestTypeInfoByID(TestTypeID, ref TestTypeTitle, ref TestDescription, ref TestFees);
             int TestTypeID = -1;
+            string TestTypeTitle = string.Empty;
             string TestDescription = null;
             float TestFees = 0;
             Console.WriteLine("=================================");
@@ -24,10 +25,11 @@ namespace Test
                 Console.WriteLine("Invalid ID");
                 return;
             }
-            if (clsTestTypeData.GetTestTypeInfoByID(TestTypeID, ref TestTypeID, ref TestDescription, ref TestFees))
+            if (clsTestTypeData.GetTestTypeInfoByID(TestTypeID,ref TestTypeTitle, ref TestDescription, ref TestFees))
             {
                 Console.WriteLine("Test Type Info");
                 Console.WriteLine(TestTypeID);
+                Console.WriteLine(TestTypeTitle);
                 Console.WriteLine(TestDescription);
                 Console.WriteLine(TestFees);
             }

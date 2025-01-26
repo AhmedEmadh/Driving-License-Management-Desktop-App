@@ -15,7 +15,7 @@ namespace Test
             //clsTestData.GetTestInfoByID(TestID, ref TestAppointmentID, ref TestResult, ref Notes, ref CreatedByUserID); ;
             int TestID = -1;
             int TestAppointmentID = -1;
-            byte TestResult = 0;
+            bool TestResult = false;
             string Notes = null;
             int CreatedByUserID = -1;
             Console.WriteLine("=================================");
@@ -49,7 +49,7 @@ namespace Test
             int TestTypeID = -1;
             int TestID = -1;
             int TestAppointmentID = -1;
-            byte TestResult = 0;
+            bool TestResult = false;
             string Notes = null;
             int CreatedByUserID = -1;
             Console.WriteLine("=================================");

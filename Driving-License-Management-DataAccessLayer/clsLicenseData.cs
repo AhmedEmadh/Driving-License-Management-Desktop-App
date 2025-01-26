@@ -97,7 +97,7 @@ namespace Driving_License_Management_DataAccessLayer
             command.Parameters.AddWithValue("@LicenseClass", LicenseClass);
             command.Parameters.AddWithValue("@IssueDate", IssueDate);
             command.Parameters.AddWithValue("@ExpirationDate", ExpirationDate);
-            command.Parameters.AddWithValue("@Notes", Notes);
+            command.Parameters.AddWithValue("@Notes", string.IsNullOrEmpty(Notes) ? (object)DBNull.Value : (object)Notes);
             command.Parameters.AddWithValue("@PaidFees", PaidFees);
             command.Parameters.AddWithValue("@IsActive", IsActive);
             command.Parameters.AddWithValue("@IssueReason", IssueReason);
@@ -129,7 +129,7 @@ namespace Driving_License_Management_DataAccessLayer
             command.Parameters.AddWithValue("@LicenseClass", LicenseClass);
             command.Parameters.AddWithValue("@IssueDate", IssueDate);
             command.Parameters.AddWithValue("@ExpirationDate", ExpirationDate);
-            command.Parameters.AddWithValue("@Notes", Notes);
+            command.Parameters.AddWithValue("@Notes", string.IsNullOrEmpty(Notes) ? (object)DBNull.Value : Notes);
             command.Parameters.AddWithValue("@PaidFees", PaidFees);
             command.Parameters.AddWithValue("@IsActive", IsActive);
             command.Parameters.AddWithValue("@IssueReason", IssueReason);
@@ -137,8 +137,8 @@ namespace Driving_License_Management_DataAccessLayer
             try
             {
                 connection.Open();
-                command.ExecuteNonQuery();
-                isSuccess = true;
+                int rowsAffected = command.ExecuteNonQuery();
+                isSuccess = rowsAffected > 0;
             }
             catch (Exception ex)
             {
@@ -154,14 +154,21 @@ namespace Driving_License_Management_DataAccessLayer
         {
             int LicenseID = -1;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT LicenseID FROM Licenses WHERE DriverID = (SELECT DriverID FROM Drivers WHERE PersonID = @PersonID) AND LicenseClass = @LicenseClassID AND IsActive = 1";
+            //string query = "SELECT LicenseID FROM Licenses WHERE DriverID = (SELECT DriverID FROM Drivers WHERE PersonID = @PersonID) AND LicenseClass = @LicenseClassID AND IsActive = 1";
+            string query = @"SELECT Licenses.*,Drivers.PersonID FROM Licenses
+                             INNER JOIN Drivers ON Licenses.DriverID = Drivers.DriverID 
+                             WHERE Drivers.PersonID = @PersonID AND LicenseClass = @LicenseClassID AND IsActive = 1";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@PersonID", PersonID);
             command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
             try
             {
                 connection.Open();
-                LicenseID = Convert.ToInt32(command.ExecuteScalar());
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    LicenseID = Convert.ToInt32(reader["LicenseID"]);
+                }
             }
             catch (Exception ex)
             {
@@ -183,8 +190,8 @@ namespace Driving_License_Management_DataAccessLayer
             try
             {
                 connection.Open();
-                command.ExecuteNonQuery();
-                isSuccess = true;
+                int rowsAffected = command.ExecuteNonQuery();
+                isSuccess = rowsAffected > 0;
             }
             catch (Exception ex)
             {

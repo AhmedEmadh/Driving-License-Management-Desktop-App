@@ -70,7 +70,7 @@ namespace Test
                 Console.WriteLine("Invalid ID");
                 return;
             }
-            if(clsTestAppointmentData.GetLastTestAppointment(LocalDrivingLicenseApplicationID,TestTypeID,TestAppointmentID,AppointmentDate,PaindFees,CreatedByUserID,IsLocked,RetakeTestApplicationID))
+            if(clsTestAppointmentData.GetLastTestAppointment(LocalDrivingLicenseApplicationID,TestTypeID,ref TestAppointmentID,ref AppointmentDate,ref PaindFees,ref CreatedByUserID, ref IsLocked, ref RetakeTestApplicationID))
             {
                 Console.WriteLine("Test Appointment Info:");
                 Console.WriteLine(TestTypeID);

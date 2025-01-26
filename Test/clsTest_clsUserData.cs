@@ -117,7 +117,7 @@ namespace Test
             UserName = Console.ReadLine();
             Console.WriteLine("Enter Password");
             Password = Console.ReadLine();
-            int UserID = clsUserData.AddNewUser(PersonID, UserName, Password, IsActive)
+            int UserID = clsUserData.AddNewUser(PersonID, UserName, Password, IsActive);
             if (UserID > 0)
             {
                 Console.WriteLine($"User Added With ID {UserID}");

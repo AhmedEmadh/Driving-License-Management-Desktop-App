@@ -42,16 +42,17 @@ namespace Test
         }
         public static void Test_GetLicenseClassInfoByClassName()
         {
-            //clsLicenseClassData.GetLicenseClassInfoByID(LicenseClassID, ref ClassName, ref ClassDescription, ref MinimumAllowedAge, ref DefaultValidityLength, ref ClassFees);
-            string ClassName = string.Empty;
+            //clsLicenseClassData.GetLicenseClassInfoByClassName(ClassName, ref LicenseClassID, ref ClassDescription, ref MinimumAllowedAge, ref DefaultValidityLength, ref ClassFees);
+            string ClassName = null;
             byte MinimumAllowedAge = byte.MaxValue;
             byte DefaultValidityLength = byte.MaxValue;
-            float ClassFees = -1;
             string ClassDescription = null;
+            float ClassFees = -1;
+            int LicenseClassID = -1;
             Console.WriteLine("=================================");
             Console.WriteLine("Enter License Class Name");
             ClassName = Console.ReadLine();
-            if(clsLicenseClassData.GetLicenseClassInfoByClassName(ClassName, ref ClassName, ref ClassDescription, ref MinimumAllowedAge, ref DefaultValidityLength, ref ClassFees))
+            if (clsLicenseClassData.GetLicenseClassInfoByClassName(ClassName, ref LicenseClassID, ref ClassDescription, ref MinimumAllowedAge, ref DefaultValidityLength, ref ClassFees))
             {
                 Console.WriteLine("Class Name: " + ClassName);
                 Console.WriteLine("Class Description: " + ClassDescription);
