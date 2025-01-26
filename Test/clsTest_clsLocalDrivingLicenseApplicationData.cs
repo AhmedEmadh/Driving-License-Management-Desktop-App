@@ -11,7 +11,7 @@ namespace Test
 {
     public static class clsTest_clsLocalDrivingLicenseApplicationData
     {
-        public static void test_AddNewLocalDrivingLicenseApplication()
+        public static void Test_GetLocalDrivingLicenseApplicationInfoByID()
         {
             //clsLocalDrivingLicenseApplicationData.GetLocalDrivingLicenseApplicationInfoByID(LocalDrivingLicenseApplicationID, ref ApplicationID, ref LicenseClassID);
             int LocalDrivingLicenseApplicationID = -1;
@@ -20,13 +20,13 @@ namespace Test
             Console.WriteLine("=================================");
             Console.WriteLine("Enter Local Driving License Application ID");
             string line = Console.ReadLine();
-            if(!int.TryParse(line, out LocalDrivingLicenseApplicationID))
+            if (!int.TryParse(line, out LocalDrivingLicenseApplicationID))
             {
                 //invalid id
                 Console.WriteLine("Invalid ID");
                 return;
             }
-            if(clsLocalDrivingLicenseApplicationData.GetLocalDrivingLicenseApplicationInfoByID(LocalDrivingLicenseApplicationID, ref ApplicationID, ref LicenseClassID))
+            if (clsLocalDrivingLicenseApplicationData.GetLocalDrivingLicenseApplicationInfoByID(LocalDrivingLicenseApplicationID, ref ApplicationID, ref LicenseClassID))
             {
                 Console.WriteLine("Local Driving License Application Info");
                 Console.WriteLine("=================================");
@@ -38,7 +38,40 @@ namespace Test
                 Console.WriteLine("Invalid ID");
             }
 
-
+        }
+        public static void test_AddNewLocalDrivingLicenseApplication()
+        {
+            //clsLocalDrivingLicenseApplicationData.AddNewLocalDrivingLicenseApplication(ApplicationID, LicenseClassID);
+            int ApplicationID = -1;
+            int LicenseClassID = -1;
+            Console.WriteLine("=================================");
+            Console.WriteLine("Enter Application ID");
+            string line = Console.ReadLine();
+            if (!int.TryParse(line, out ApplicationID))
+            {
+                //invalid id
+                Console.WriteLine("Invalid ID");
+                return;
+            }
+            Console.WriteLine("Enter License Class ID");
+            line = Console.ReadLine();
+            if (!int.TryParse(line, out LicenseClassID))
+            {
+                //invalid id
+                Console.WriteLine("Invalid ID");
+                return;
+            }
+            int CreatedID = clsLocalDrivingLicenseApplicationData.AddNewLocalDrivingLicenseApplication(ApplicationID, LicenseClassID);
+            if (CreatedID > 0)
+            {
+                Console.WriteLine("Local Driving License Application ID");
+                Console.WriteLine(CreatedID);
+            }
+            else
+            {
+                Console.WriteLine("Invalid ID");
+            }
+            
         }
         public static void Test_GetLocalDrivingLicenseApplicationInfoByApplicationID()
         {
@@ -189,7 +222,7 @@ namespace Test
         }
         public static void Test_DoesPassTestType()
         {
-            //clsLocalDrivingLicenseApplicationData.DoesAttendTestType(LocalDrivingLicenseApplicationID, TestTypeID);
+            //clsLocalDrivingLicenseApplicationData.DoesPassTestType(LocalDrivingLicenseApplicationID,TestTypeID);
             int LocalDrivingLicenseApplicationID = -1;
             int TestTypeID = -1;
             Console.WriteLine("=================================");
@@ -209,14 +242,15 @@ namespace Test
                 Console.WriteLine("Invalid ID");
                 return;
             }
-            if (clsLocalDrivingLicenseApplicationData.DoesAttendTestType(LocalDrivingLicenseApplicationID, TestTypeID))
+            if (clsLocalDrivingLicenseApplicationData.DoesPassTestType(LocalDrivingLicenseApplicationID, TestTypeID))
             {
-                Console.WriteLine("Local Driving License Application Does Attend Test Type");
+                Console.WriteLine("Local Driving License Application Passed Test Type");
             }
             else
             {
-                Console.WriteLine("Local Driving License Application Does Not Attend Test Type");
+                Console.WriteLine("Local Driving License Application Did Not Pass Test Type");
             }
+
 
         }
         public static void Test_DoesAttendTestType()

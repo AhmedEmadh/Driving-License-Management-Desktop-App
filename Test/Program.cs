@@ -69,8 +69,10 @@ namespace Test
             //clsTest_clsInternationalLicenseData.test_AddNewInternationalLicense();
             //clsTest_clsInternationalLicenseData.test_UpdateInternationalLicense();
             //clsTest_clsInternationalLicenseData.test_GetActiveInternationalLicenseIDByDriverID();
-            while (true)
-                clsTest_clsLicenseData.Test_DeactivateLicense();
+            //while (true)
+                clsTest_clsTestData.Test_GetAllTests();
+                        
+            //clsTest_clsLicenseData.Test_DeactivateLicense();
                 //clsTest_clsLicenseData.Test_GetLicenseInfoByID();
         }
     }

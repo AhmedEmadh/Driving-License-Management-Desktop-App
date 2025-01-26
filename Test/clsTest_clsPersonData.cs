@@ -146,6 +146,55 @@ namespace Test
             {
                 LastName = line;
             }
+            Console.WriteLine("Enter National No");
+            line = Console.ReadLine();
+            if (line.Length > 0)
+            {
+                NationalNo = line;
+            }
+            Console.WriteLine("Enter Date Of Birth");
+            line = Console.ReadLine();
+            if (line.Length > 0 && DateTime.TryParse(line, out DateOfBirth))
+            {
+                DateOfBirth = Convert.ToDateTime(line);
+            }
+            Console.WriteLine("Enter Gendor");
+            line = Console.ReadLine();
+            if (line.Length > 0 && short.TryParse(line, out Gendor))
+            {
+                Gendor = Convert.ToInt16(line);
+            }
+            Console.WriteLine("Enter Address");
+            line = Console.ReadLine();
+            if (line.Length > 0)
+            {
+                Address = line;
+            }
+            Console.WriteLine("Enter Phone");
+            line = Console.ReadLine();
+            if (line.Length > 0)
+            {
+                Phone = line;
+            }
+            Console.WriteLine("Enter Email");
+            line = Console.ReadLine();
+            if (line.Length > 0)
+            {
+                Email = line;
+            }
+            Console.WriteLine("Enter Nationality Country ID");
+            line = Console.ReadLine();
+            if (line.Length > 0 && int.TryParse(line, out NationalityCountryID))
+            {
+                NationalityCountryID = Convert.ToInt32(line);
+            }
+            Console.WriteLine("Enter Image Path");
+            line = Console.ReadLine();
+            if (line.Length > 0)
+            {
+                ImagePath = line;
+            }
+
             int PersonID = clsPersonData.AddNewPerson(FirstName, SecondName, ThirdName, LastName, NationalNo, DateOfBirth, Gendor, Address, Phone, Email, NationalityCountryID, ImagePath);
             if (PersonID > 0)
             {
@@ -197,6 +246,67 @@ namespace Test
             {
                 SecondName = line;
             }
+            Console.WriteLine("Enter Third Name");
+            line = Console.ReadLine();
+            if (line.Length > 0)
+            {
+                ThirdName = line;
+            }
+            Console.WriteLine("Enter Last Name");
+            line = Console.ReadLine();
+            if (line.Length > 0)
+            {
+                LastName = line;
+            }
+            Console.WriteLine("Enter National No");
+            line = Console.ReadLine();
+            if (line.Length > 0)
+            {
+                NationalNo = line;
+            }
+            Console.WriteLine("Enter Date Of Birth");
+            line = Console.ReadLine();
+            if (line.Length > 0 && DateTime.TryParse(line, out DateOfBirth))
+            {
+                DateOfBirth = Convert.ToDateTime(line);
+            }
+            Console.WriteLine("Enter Gendor");
+            line = Console.ReadLine();
+            if (line.Length > 0 && short.TryParse(line, out Gendor))
+            {
+                Gendor = Convert.ToInt16(line);
+            }
+            Console.WriteLine("Enter Address");
+            line = Console.ReadLine();
+            if (line.Length > 0)
+            {
+                Address = line;
+            }
+            Console.WriteLine("Enter Phone");
+            line = Console.ReadLine();
+            if (line.Length > 0)
+            {
+                Phone = line;
+            }
+            Console.WriteLine("Enter Email");
+            line = Console.ReadLine();
+            if (line.Length > 0)
+            {
+                Email = line;
+            }
+            Console.WriteLine("Enter Nationality Country ID");
+            line = Console.ReadLine();
+            if (line.Length > 0 && int.TryParse(line, out NationalityCountryID))
+            {
+                NationalityCountryID = Convert.ToInt32(line);
+            }
+            Console.WriteLine("Enter Image Path");
+            line = Console.ReadLine();
+            if (line.Length > 0)
+            {
+                ImagePath = line;
+            }
+
             if(clsPersonData.UpdatePerson(PersonID, FirstName, SecondName, ThirdName, LastName, NationalNo, DateOfBirth, Gendor, Address, Phone, Email, NationalityCountryID, ImagePath))
             {
                 Console.WriteLine("Person ID Updated");

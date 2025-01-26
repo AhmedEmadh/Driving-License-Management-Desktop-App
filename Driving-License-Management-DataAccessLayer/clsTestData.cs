@@ -26,7 +26,7 @@ namespace Driving_License_Management_DataAccessLayer
                     reader.Read();
                     TestAppointmentID = reader.GetInt32(reader.GetOrdinal("TestAppointmentID"));
                     TestResult = reader.GetBoolean(reader.GetOrdinal("TestResult"));
-                    Notes = reader.GetString(reader.GetOrdinal("Notes"));
+                    Notes = reader.IsDBNull(reader.GetOrdinal("Notes")) ? null : reader.GetString(reader.GetOrdinal("Notes"));
                     CreatedByUserID = reader.GetInt32(reader.GetOrdinal("CreatedByUserID"));
                     result = true;
                 }
@@ -34,7 +34,8 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                //Console.WriteLine(ex.Message);
+                result = false;
             }
             finally
             {
@@ -61,7 +62,7 @@ namespace Driving_License_Management_DataAccessLayer
                     TestID = reader.GetInt32(reader.GetOrdinal("TestID"));
                     TestAppointmentID = reader.GetInt32(reader.GetOrdinal("TestAppointmentID"));
                     TestResult = reader.GetBoolean(reader.GetOrdinal("TestResult"));
-                    Notes = reader.GetString(reader.GetOrdinal("Notes"));
+                    Notes = reader.IsDBNull(reader.GetOrdinal("Notes")) ? null : reader.GetString(reader.GetOrdinal("Notes"));
                     CreatedByUserID = reader.GetInt32(reader.GetOrdinal("CreatedByUserID"));
                     isSuccess = true;
                 }
