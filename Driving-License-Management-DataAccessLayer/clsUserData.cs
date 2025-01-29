@@ -161,7 +161,7 @@ namespace Driving_License_Management_DataAccessLayer
         {
             DataTable dataTable = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT UserID, PersonID, UserName, Password, IsActive FROM Users";
+            string query = "SELECT * FROM Users";
             SqlCommand command = new SqlCommand(query, connection);
             try
             {
@@ -237,7 +237,7 @@ namespace Driving_License_Management_DataAccessLayer
             command.Parameters.AddWithValue("@UserName", UserName);
             try
             {
-                command.ExecuteReader();
+                connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
@@ -278,7 +278,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isUserExist;
         }
-        public static bool DoesPersonHaveUser44(int PersonID)
+        public static bool DoesPersonHaveUser(int PersonID)
         {
             bool isFound = false;
 

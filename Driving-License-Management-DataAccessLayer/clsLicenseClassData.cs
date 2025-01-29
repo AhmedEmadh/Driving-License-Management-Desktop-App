@@ -14,7 +14,7 @@ namespace Driving_License_Management_DataAccessLayer
         {
             bool isFound = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT * FROM LicenseClass WHERE LicenseClassID = @LicenseClassID";
+            string query = "SELECT * FROM LicenseClasses WHERE LicenseClassID = @LicenseClassID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
             try
@@ -46,7 +46,7 @@ namespace Driving_License_Management_DataAccessLayer
         {
             bool isFound = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT * FROM LicenseClass WHERE ClassName = @ClassName";
+            string query = "SELECT * FROM LicenseClasses WHERE ClassName = @ClassName";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@ClassName", ClassName);
             try
@@ -78,7 +78,7 @@ namespace Driving_License_Management_DataAccessLayer
         {
             DataTable dataTable = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT * FROM LicenseClass";
+            string query = "SELECT * FROM LicenseClasses";
             SqlCommand command = new SqlCommand(query, connection);
             try
             {
@@ -101,7 +101,7 @@ namespace Driving_License_Management_DataAccessLayer
         {
             int CreatedID = -1;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "INSERT INTO LicenseClass (ClassName, ClassDescription, MinimumAllowedAge, DefaultValidityLength, ClassFees) VALUES (@ClassName, @ClassDescription, @MinimumAllowedAge, @DefaultValidityLength, @ClassFees); SELECT SCOPE_IDENTITY();";
+            string query = "INSERT INTO LicenseClasses (ClassName, ClassDescription, MinimumAllowedAge, DefaultValidityLength, ClassFees) VALUES (@ClassName, @ClassDescription, @MinimumAllowedAge, @DefaultValidityLength, @ClassFees); SELECT SCOPE_IDENTITY();";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@ClassName", ClassName);
             command.Parameters.AddWithValue("@ClassDescription", ClassDescription);
@@ -128,7 +128,7 @@ namespace Driving_License_Management_DataAccessLayer
         {
             bool isSuccess = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "UPDATE LicenseClass SET ClassName = @ClassName, ClassDescription = @ClassDescription, MinimumAllowedAge = @MinimumAllowedAge, DefaultValidityLength = @DefaultValidityLength, ClassFees = @ClassFees WHERE LicenseClassID = @LicenseClassID";
+            string query = "UPDATE LicenseClasses SET ClassName = @ClassName, ClassDescription = @ClassDescription, MinimumAllowedAge = @MinimumAllowedAge, DefaultValidityLength = @DefaultValidityLength, ClassFees = @ClassFees WHERE LicenseClassID = @LicenseClassID";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
             command.Parameters.AddWithValue("@ClassName", ClassName);

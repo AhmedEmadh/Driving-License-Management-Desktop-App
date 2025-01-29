@@ -24,10 +24,11 @@ namespace Driving_License_Management_DataAccessLayer
                     TestTypeID = reader.GetInt32(1);
                     LocalDrivingLicenseApplicationID = reader.GetInt32(2);
                     AppointmentDate = reader.GetDateTime(3);
-                    PaidFees = reader.GetFloat(4);
+                    PaidFees = (float)reader.GetDecimal(4);
                     CreatedByUserID = reader.GetInt32(5);
                     IsLocked = reader.GetBoolean(6);
-                    RetakeTestApplicationID = reader.GetInt32(7);
+                    RetakeTestApplicationID = reader.IsDBNull(7) ? -1 : reader.GetInt32(7);
+
                     IsSuccess = true;
                 }
                 reader.Close();
@@ -46,7 +47,13 @@ namespace Driving_License_Management_DataAccessLayer
         {
             bool IsSuccess = false;
             SqlConnection conn = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT TOP 1 TestAppointmentID, AppointmentDate, PaidFees, CreatedByUserID, IsLocked, RetakeTestApplicationID FROM TestAppointments WHERE LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID AND TestTypeID = @TestTypeID ORDER BY AppointmentDate DESC";
+            string query = @"
+                                SELECT       top 1 *
+                                FROM            TestAppointments
+                                WHERE        (TestTypeID = @TestTypeID) 
+                                AND (LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID) 
+                                order by TestAppointmentID Desc
+";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
             cmd.Parameters.AddWithValue("@TestTypeID", TestTypeID);
@@ -56,12 +63,12 @@ namespace Driving_License_Management_DataAccessLayer
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    TestAppointmentID = reader.GetInt32(0);
-                    AppointmentDate = reader.GetDateTime(1);
-                    PaidFees = reader.GetFloat(2);
-                    CreatedByUserID = reader.GetInt32(3);
-                    IsLocked = reader.GetBoolean(4);
-                    RetakeTestApplicationID = reader.GetInt32(5);
+                    TestAppointmentID = reader["TestAppointmentID"] is DBNull ? -1 : (int)reader["TestAppointmentID"];
+                    AppointmentDate = reader["AppointmentDate"] is DBNull ? DateTime.MaxValue : (DateTime)reader["AppointmentDate"];
+                    PaidFees = reader["PaidFees"] is DBNull ? -1f : Convert.ToSingle(reader["PaidFees"]);
+                    CreatedByUserID = reader["CreatedByUserID"] is DBNull ? -1 : (int)reader["CreatedByUserID"];
+                    IsLocked = reader["IsLocked"] is DBNull ? false : (bool)reader["IsLocked"];
+                    RetakeTestApplicationID = reader["RetakeTestApplicationID"] is DBNull ? -1 : (int)reader["RetakeTestApplicationID"];
                     IsSuccess = true;
                 }
                 reader.Close();
@@ -104,7 +111,7 @@ namespace Driving_License_Management_DataAccessLayer
             DataTable dataTable = new DataTable();
             SqlConnection conn = new SqlConnection(clsDataAccessSettings.ConnectionString);
             string query = @"
-                                SELECT TestAppointments.TestAppointmentID, TestAppointments.AppointmentDate, TestAppointments.PaidFees, TestAppointments.IsLocked, TestAppointments.RetakeTestApplicationID, TestTypes.TestTypeName FROM TestAppointments INNER JOIN TestTypes ON TestAppointments.TestTypeID = TestTypes.TestTypeID WHERE TestAppointments.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID AND TestAppointments.TestTypeID = @Test
+                                SELECT * FROM TestAppointments INNER JOIN TestTypes ON TestAppointments.TestTypeID = TestTypes.TestTypeID /*WHERE TestAppointments.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID AND TestAppointments.TestTypeID = @Test*/
                                 ORDER BY TestAppointments.AppointmentDate DESC
 ";
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -196,7 +203,7 @@ namespace Driving_License_Management_DataAccessLayer
             cmd.Parameters.AddWithValue("@PaidFees", PaidFees);
             cmd.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
             cmd.Parameters.AddWithValue("@IsLocked", IsLocked);
-            cmd.Parameters.AddWithValue("@RetakeTestApplicationID", RetakeTestApplicationID);
+            cmd.Parameters.AddWithValue("@RetakeTestApplicationID", RetakeTestApplicationID != -1 ? RetakeTestApplicationID : (object)DBNull.Value);
             try
             {
                 conn.Open();
@@ -218,7 +225,7 @@ namespace Driving_License_Management_DataAccessLayer
         {
             int TestID = -1;
             SqlConnection conn = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            SqlCommand cmd = new SqlCommand("SELECT TestTypeID FROM TestAppointments WHERE TestAppointmentID = @TestAppointmentID", conn);
+            SqlCommand cmd = new SqlCommand("select TestID from Tests where TestAppointmentID=@TestAppointmentID", conn);
             cmd.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
             try
             {

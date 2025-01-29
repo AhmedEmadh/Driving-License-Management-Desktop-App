@@ -47,7 +47,21 @@ namespace Driving_License_Management_DataAccessLayer
         {
             bool isSuccess = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT TOP 1 * FROM Tests WHERE PersonID = @PersonID AND LicenseClassID = @LicenseClassID AND TestTypeID = @TestTypeID ORDER BY TestDate DESC";
+            string query = @"
+                                SELECT  top 1 Tests.TestID, 
+                                Tests.TestAppointmentID, Tests.TestResult, 
+			                    Tests.Notes, Tests.CreatedByUserID, Applications.ApplicantPersonID
+                                FROM            
+                                LocalDrivingLicenseApplications INNER JOIN
+                                Tests INNER JOIN
+                                TestAppointments ON Tests.TestAppointmentID = TestAppointments.TestAppointmentID ON LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = TestAppointments.LocalDrivingLicenseApplicationID INNER JOIN
+                                Applications ON LocalDrivingLicenseApplications.ApplicationID = Applications.ApplicationID
+                                WHERE
+                                (Applications.ApplicantPersonID = @PersonID) 
+                                AND (LocalDrivingLicenseApplications.LicenseClassID = @LicenseClassID)
+                                AND ( TestAppointments.TestTypeID=@TestTypeID)
+                                ORDER BY Tests.TestAppointmentID DESC
+";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@PersonID", PersonID);
             command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
@@ -161,7 +175,12 @@ namespace Driving_License_Management_DataAccessLayer
         {
             byte PassedTestCount = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT COUNT(*) FROM Tests WHERE TestResult = 1 AND LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID";
+            string query = @"
+                                SELECT PassedTestCount = count(TestTypeID)
+                                FROM Tests INNER JOIN
+                                TestAppointments ON Tests.TestAppointmentID = TestAppointments.TestAppointmentID
+						        where LocalDrivingLicenseApplicationID =@LocalDrivingLicenseApplicationID and TestResult=1
+";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
             try

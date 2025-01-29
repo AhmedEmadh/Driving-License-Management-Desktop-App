@@ -171,14 +171,14 @@ namespace Test
         {
             //clsUserData.GetAllUsers();
             DataTable dt = clsUserData.GetAllUsers();
-            if (dt.Rows.Count > 0)
+            for(int i = 0; i < dt.Rows.Count; i++)
             {
-                Console.WriteLine("User Info");
-                Console.WriteLine(dt.Rows[0]["UserID"]);
-                Console.WriteLine(dt.Rows[0]["PersonID"]);
-                Console.WriteLine(dt.Rows[0]["UserName"]);
-                Console.WriteLine(dt.Rows[0]["Password"]);
-                Console.WriteLine(dt.Rows[0]["IsActive"]);
+                Console.WriteLine(dt.Rows[i]["UserID"]);
+                Console.WriteLine(dt.Rows[i]["PersonID"]);
+                Console.WriteLine(dt.Rows[i]["UserName"]);
+                Console.WriteLine(dt.Rows[i]["Password"]);
+                Console.WriteLine(dt.Rows[i]["IsActive"]);
+                Console.WriteLine("=================================");
             }
 
         }
@@ -268,9 +268,9 @@ namespace Test
             }
 
         }
-        public static void Test_DoesPersonHaveUser44()
+        public static void Test_DoesPersonHaveUser()
         {
-            //clsUserData.DoesPersonHaveUser44(PersonID);
+            //clsUserData.DoesPersonHaveUser(PersonID);
             int PersonID = -1;
             Console.WriteLine("=================================");
             Console.WriteLine("Enter Person ID");
@@ -281,7 +281,7 @@ namespace Test
                 Console.WriteLine("Invalid ID");
                 return;
             }
-            if (clsUserData.DoesPersonHaveUser44(PersonID))
+            if (clsUserData.DoesPersonHaveUser(PersonID))
             {
                 Console.WriteLine($"User Exist With Person ID {PersonID}");
             }

@@ -70,7 +70,8 @@ namespace Test
             //clsTest_clsInternationalLicenseData.test_UpdateInternationalLicense();
             //clsTest_clsInternationalLicenseData.test_GetActiveInternationalLicenseIDByDriverID();
             //while (true)
-                clsTest_clsTestData.Test_GetAllTests();
+            clsTest_clsLicenseClassData.Test_UpdateLicenseClass();
+
                         
             //clsTest_clsLicenseData.Test_DeactivateLicense();
                 //clsTest_clsLicenseData.Test_GetLicenseInfoByID();

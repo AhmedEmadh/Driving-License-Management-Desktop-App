@@ -10,7 +10,7 @@ namespace Driving_License_Management_DataAccessLayer
 {
     public static class clsTestTypeData
     {
-        public static bool GetTestTypeInfoByID(int TestTypeID, ref string TestTypeTitle, ref string TestDescription, ref float TestFees)
+        public static bool GetTestTypeInfoByID(int TestTypeID, ref string TestTypeTitle, ref string TestTypeDescription, ref float TestTypeFees)
         {
             bool isSuccess = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
@@ -24,8 +24,8 @@ namespace Driving_License_Management_DataAccessLayer
                 if (reader.Read())
                 {
                     TestTypeTitle = reader["TestTypeTitle"].ToString();
-                    TestDescription = reader["TestDescription"].ToString();
-                    TestFees = float.Parse(reader["TestFees"].ToString());
+                    TestTypeDescription = reader["TestTypeDescription"].ToString();
+                    TestTypeFees = float.Parse(reader["TestTypeFees"].ToString());
                     isSuccess = true;
                 }
                 reader.Close();
@@ -67,7 +67,7 @@ namespace Driving_License_Management_DataAccessLayer
         {
             int CreatedID = -1;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "INSERT INTO TestTypes (TestTypeTitle, TestDescription, TestFees) OUTPUT INSERTED.TestTypeID VALUES (@Title, @Description, @Fees);";
+            string query = "INSERT INTO TestTypes (TestTypeTitle, TestTypeDescription, TestTypeFees) OUTPUT INSERTED.TestTypeID VALUES (@Title, @Description, @Fees);";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@Title", Title);
             command.Parameters.AddWithValue("@Description", Description);
@@ -93,7 +93,7 @@ namespace Driving_License_Management_DataAccessLayer
         {
             bool isSuccess = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "UPDATE TestTypes SET TestTypeTitle=@Title, TestDescription=@Description, TestFees=@Fees WHERE TestTypeID=@TestTypeID;";
+            string query = "UPDATE TestTypes SET TestTypeTitle=@Title, TestTypeDescription=@Description, TestTypeFees=@Fees WHERE TestTypeID=@TestTypeID;";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
             command.Parameters.AddWithValue("@Title", Title);

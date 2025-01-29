@@ -70,6 +70,15 @@ namespace Test
                 Console.WriteLine("Invalid ID");
                 return;
             }
+            Console.WriteLine("Enter Test Type ID:");
+            line = Console.ReadLine();
+            if (!int.TryParse(line, out TestTypeID))
+            {
+                //invalid id
+                Console.WriteLine("Invalid ID");
+                return;
+            }
+
             if(clsTestAppointmentData.GetLastTestAppointment(LocalDrivingLicenseApplicationID,TestTypeID,ref TestAppointmentID,ref AppointmentDate,ref PaindFees,ref CreatedByUserID, ref IsLocked, ref RetakeTestApplicationID))
             {
                 Console.WriteLine("Test Appointment Info:");
@@ -114,6 +123,25 @@ namespace Test
             //clsTestAppointmentData.GetApplicationTestAppointmentsPerTestType(LocalDrivingLicenseApplicationID,TestTypeID);
             int LocalDrivingLicenseApplicationID = -1;
             int TestTypeID = -1;
+
+            Console.WriteLine("=================================");
+            Console.WriteLine("Enter Local Driving License Application ID:");
+            string line = Console.ReadLine();
+            if (!int.TryParse(line, out LocalDrivingLicenseApplicationID))
+            {
+                //invalid id
+                Console.WriteLine("Invalid ID");
+                return;
+            }
+            Console.WriteLine("Enter Test Type ID:");
+            line = Console.ReadLine();
+            if (!int.TryParse(line, out TestTypeID))
+            {
+                //invalid id
+                Console.WriteLine("Invalid ID");
+                return;
+            }
+
             DataTable dt = clsTestAppointmentData.GetApplicationTestAppointmentsPerTestType(LocalDrivingLicenseApplicationID,TestTypeID);
             Console.WriteLine("=================================");
             Console.WriteLine("Test Appointments:");
@@ -158,14 +186,48 @@ namespace Test
                 Console.WriteLine("Invalid ID");
                 return;
             }
-            int TestAppointmentID = clsTestAppointmentData.AddNewTestAppointment(TestTypeID, LocalDrivingLicenseApplicationID, AppointmentDate, PaidFees, CreatedByUserID, RetakeTestApplicationID);
-            if(TestAppointmentID > 0)
+            //Console.WriteLine("Enter Appointment Date:");
+            //line = Console.ReadLine();
+            //if (!DateTime.TryParse(line, out AppointmentDate))
+            //{
+            //    //invalid id
+            //    Console.WriteLine("Invalid Date");
+            //    return;
+            //}
+            Console.WriteLine("Enter Paid Fees:");
+            line = Console.ReadLine();
+            if (!float.TryParse(line, out PaidFees))
             {
-                Console.WriteLine("Test Appointment ID: " + TestAppointmentID);
+                //invalid id
+                Console.WriteLine("Invalid Fees");
+                return;
+            }
+            Console.WriteLine("Enter Created By User ID:");
+            line = Console.ReadLine();
+            if (!int.TryParse(line, out CreatedByUserID))
+            {
+                //invalid id
+                Console.WriteLine("Invalid ID");
+                return;
+            }
+            Console.WriteLine("Enter Retake Test Application ID:");
+            line = Console.ReadLine();
+            if (!int.TryParse(line, out RetakeTestApplicationID))
+            {
+                //invalid id
+                Console.WriteLine("Invalid ID");
+                return;
+            }
+
+            int CreatedID = clsTestAppointmentData.AddNewTestAppointment(TestTypeID, LocalDrivingLicenseApplicationID, AppointmentDate, PaidFees, CreatedByUserID, RetakeTestApplicationID);
+            if (CreatedID > 0)
+            {
+                Console.WriteLine("Test Appointment ID:");
+                Console.WriteLine(CreatedID);
             }
             else
             {
-                Console.WriteLine("Invalid Test Type ID or Local Driving License Application ID");
+                Console.WriteLine("Invalid Test Appointment ID");
             }
 
         }
@@ -245,6 +307,15 @@ namespace Test
                 //invalid id
                 Console.WriteLine("Invalid ID");
                 return;
+            }
+            if(clsTestAppointmentData.UpdateTestAppointment(TestAppointmentID, TestTypeID, LocalDrivingLicenseApplicationID, AppointmentDate, PaidFees, CreatedByUserID, IsLocked, RetakeTestApplicationID))
+            {
+                Console.WriteLine("Test Appointment Updated");
+            }
+            else
+            {
+                Console.WriteLine("Failed to Update Test Appointment");
+
             }
 
         }

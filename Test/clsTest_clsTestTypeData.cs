@@ -11,11 +11,11 @@ namespace Test
     {
         public static void Test_GetTestTypeInfoByID()
         {
-            //clsTestTypeData.GetTestTypeInfoByID(TestTypeID, ref TestTypeTitle, ref TestDescription, ref TestFees);
+            //clsTestTypeData.GetTestTypeInfoByID(TestTypeID, ref TestTypeTitle, ref TestTypeDescription, ref TestTypeFees);
             int TestTypeID = -1;
             string TestTypeTitle = string.Empty;
-            string TestDescription = null;
-            float TestFees = 0;
+            string TestTypeDescription = null;
+            float TestTypeFees = 0;
             Console.WriteLine("=================================");
             Console.WriteLine("Enter Test Type ID");
             string line = Console.ReadLine();
@@ -25,13 +25,13 @@ namespace Test
                 Console.WriteLine("Invalid ID");
                 return;
             }
-            if (clsTestTypeData.GetTestTypeInfoByID(TestTypeID,ref TestTypeTitle, ref TestDescription, ref TestFees))
+            if (clsTestTypeData.GetTestTypeInfoByID(TestTypeID,ref TestTypeTitle, ref TestTypeDescription, ref TestTypeFees))
             {
                 Console.WriteLine("Test Type Info");
                 Console.WriteLine(TestTypeID);
                 Console.WriteLine(TestTypeTitle);
-                Console.WriteLine(TestDescription);
-                Console.WriteLine(TestFees);
+                Console.WriteLine(TestTypeDescription);
+                Console.WriteLine(TestTypeFees);
             }
             else
             {
@@ -45,7 +45,7 @@ namespace Test
             DataTable dt = clsTestTypeData.GetAllTestTypes();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                Console.WriteLine(dt.Rows[i]["TestTypeID"] + " " + dt.Rows[i]["TestDescription"] + " " + dt.Rows[i]["TestFees"]);
+                Console.WriteLine(dt.Rows[i]["TestTypeID"] + " " + dt.Rows[i]["TestTypeTitle"] + " " + dt.Rows[i]["TestTypeDescription"] + " " + dt.Rows[i]["TestTypeFees"]);
             }
 
         }
