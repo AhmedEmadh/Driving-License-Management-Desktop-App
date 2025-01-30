@@ -7,8 +7,26 @@ using System.Data.SqlClient;
 using System.Data;
 namespace Driving_License_Management_DataAccessLayer
 {
+    /// <summary>
+    /// Provides data access methods for licenses.
+    /// </summary>
     public static class clsLicenseData
     {
+        /// <summary>
+        /// Retrieves the license information by License ID.
+        /// </summary>
+        /// <param name="LicenseID">The ID of the license to retrieve information for.</param>
+        /// <param name="ApplicationID">The ID of the application associated with the license.</param>
+        /// <param name="DriverID">The ID of the driver associated with the license.</param>
+        /// <param name="LicenseClass">The class of the license.</param>
+        /// <param name="IssueDate">The date the license was issued.</param>
+        /// <param name="ExpirationDate">The date the license expires.</param>
+        /// <param name="Notes">Any additional notes associated with the license.</param>
+        /// <param name="PaidFees">The amount of fees paid for the license.</param>
+        /// <param name="IsActive">A flag indicating whether the license is active.</param>
+        /// <param name="IssueReason">The reason the license was issued.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the license record.</param>
+        /// <returns>True if the license information was successfully retrieved; otherwise, false.</returns>
         public static bool GetLicenseInfoByID(int LicenseID, ref int ApplicationID, ref int DriverID, ref int LicenseClass, ref DateTime IssueDate, ref DateTime ExpirationDate, ref string Notes, ref float PaidFees, ref bool IsActive, ref byte IssueReason, ref int CreatedByUserID)
         {
             bool isSuccess = false;
@@ -49,6 +67,10 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Retrieves all licenses from the database.
+        /// </summary>
+        /// <returns>A DataTable containing all licenses.</returns>
         public static DataTable GetAllLicenses()
         {
             DataTable Result = new DataTable();
@@ -67,6 +89,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return Result;
         }
+        /// <summary>
+        /// Retrieves a DataTable of licenses associated with a specific driver.
+        /// </summary>
+        /// <param name="DriverID">The ID of the driver to retrieve licenses for.</param>
+        /// <returns>A DataTable containing the licenses for the specified driver.</returns>
         public static DataTable GetDriverLicenses(int DriverID)
         {
             DataTable Result = new DataTable();
@@ -86,6 +113,20 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return Result;
         }
+        /// <summary>
+        /// Adds a new license to the database.
+        /// </summary>
+        /// <param name="ApplicationID">The ID of the application associated with the license.</param>
+        /// <param name="DriverID">The ID of the driver associated with the license.</param>
+        /// <param name="LicenseClass">The class of the license.</param>
+        /// <param name="IssueDate">The date the license was issued.</param>
+        /// <param name="ExpirationDate">The date the license expires.</param>
+        /// <param name="Notes">Any additional notes about the license.</param>
+        /// <param name="PaidFees">The fees paid for the license.</param>
+        /// <param name="IsActive">A flag indicating whether the license is active.</param>
+        /// <param name="IssueReason">The reason the license was issued.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the license record.</param>
+        /// <returns>The ID of the newly added license, or -1 if the operation fails.</returns>
         public static int AddNewLicense(int ApplicationID, int DriverID, int LicenseClass, DateTime IssueDate, DateTime ExpirationDate, string Notes, float PaidFees, bool IsActive, byte IssueReason, int CreatedByUserID)
         {
             int LicenseID = -1;
@@ -117,6 +158,21 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return LicenseID;
         }
+        /// <summary>
+        /// Updates an existing license in the database.
+        /// </summary>
+        /// <param name="LicenseID"></param>
+        /// <param name="ApplicationID"></param>
+        /// <param name="DriverID"></param>
+        /// <param name="LicenseClass"></param>
+        /// <param name="IssueDate"></param>
+        /// <param name="ExpirationDate"></param>
+        /// <param name="Notes"></param>
+        /// <param name="PaidFees"></param>
+        /// <param name="IsActive"></param>
+        /// <param name="IssueReason"></param>
+        /// <param name="CreatedByUserID"></param>
+        /// <returns>True if the license was successfully updated; otherwise, false.</returns>
         public static bool UpdateLicense(int LicenseID, int ApplicationID, int DriverID, int LicenseClass, DateTime IssueDate, DateTime ExpirationDate, string Notes, float PaidFees, bool IsActive, byte IssueReason, int CreatedByUserID)
         {
             bool isSuccess = false;
@@ -150,6 +206,12 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Retrieves the ID of an active license for a given person and license class.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person associated with the license.</param>
+        /// <param name="LicenseClassID">The ID of the license class.</param>
+        /// <returns>The ID of the active license, or -1 if not found.</returns>
         public static int GetActiveLicenseIDByPersonID(int PersonID, int LicenseClassID)
         {
             int LicenseID = -1;
@@ -180,6 +242,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return LicenseID;
         }
+        /// <summary>
+        /// Deactivates a license in the database.
+        /// </summary>
+        /// <param name="LicenseID"></param>
+        /// <returns>True if the license was successfully deactivated; otherwise, false.</returns>
         public static bool DeactivateLicense(int LicenseID)
         {
             bool isSuccess = false;

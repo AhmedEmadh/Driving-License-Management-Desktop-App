@@ -8,8 +8,18 @@ using System.Threading.Tasks;
 
 namespace Driving_License_Management_DataAccessLayer
 {
+    /// <summary>
+    /// This class provides data access methods for application types.
+    /// </summary>
     public class clsApplicationTypeData
     {
+        /// <summary>
+        /// Retrieves application type information by ApplicationTypeID.
+        /// </summary>
+        /// <param name="ApplicationTypeID">The ID of the application type to retrieve.</param>
+        /// <param name="ApplicationTypeTitle">The title of the application type.</param>
+        /// <param name="ApplicationFees">The fees associated with the application type.</param>
+        /// <returns>True if the application type information is retrieved successfully, false otherwise.</returns>
         public static bool GetApplicationTypeInfoByID(int ApplicationTypeID, ref string ApplicationTypeTitle, ref float ApplicationFees)
         {
             bool result = false;
@@ -42,6 +52,10 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return result;
         }
+        /// <summary>
+        /// Retrieves all application types from the database.
+        /// </summary>
+        /// <returns>A DataTable containing all application types.</returns>
         public static DataTable GetAllApplicationTypes()
         {
             DataTable Result = new DataTable();
@@ -64,6 +78,12 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return Result;
         }
+        /// <summary>
+        /// Adds a new application type to the database and returns the ID of the added application type.
+        /// </summary>
+        /// <param name="Title">The title of the application type.</param>
+        /// <param name="Fees">The fees associated with the application type.</param>
+        /// <returns>The ID of the added application type, or -1 if the operation fails.</returns>
         public static int AddNewApplicationType(string Title, float Fees)
         {
             int IDOfAddedApplicationType = -1;
@@ -87,6 +107,13 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return IDOfAddedApplicationType;
         }
+        /// <summary>
+        /// Updates an existing application type in the database.
+        /// </summary>
+        /// <param name="ApplicationTypeID">The ID of the application type to update.</param>
+        /// <param name="Title">The new title of the application type.</param>
+        /// <param name="Fees">The new fees of the application type.</param>
+        /// <returns>True if the application type is updated successfully, false otherwise.</returns>
         public static bool UpdateApplicationType(int ApplicationTypeID, string Title, float Fees)
         {
             bool result = false;
@@ -118,6 +145,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return result;
         }
+        /// <summary>
+        /// Deletes an application type from the database by ApplicationTypeID.
+        /// </summary>
+        /// <param name="ApplicationTypeID">The ID of the application type to delete.</param>
+        /// <returns>True if the application type is deleted successfully, false otherwise.</returns>
         public static bool DeleteApplicationType(int ApplicationTypeID)
         {
             bool result = false;

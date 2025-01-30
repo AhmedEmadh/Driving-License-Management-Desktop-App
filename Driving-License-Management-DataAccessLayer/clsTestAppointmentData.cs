@@ -7,8 +7,23 @@ using System.Data.SqlClient;
 using System.Data;
 namespace Driving_License_Management_DataAccessLayer
 {
+    /// <summary>
+    /// Provides data access methods for test appointments.
+    /// </summary>
     public static class clsTestAppointmentData
     {
+        /// <summary>
+        /// Retrieves the test appointment information by TestAppointmentID.
+        /// </summary>
+        /// <param name="TestAppointmentID">The ID of the test appointment.</param>
+        /// <param name="TestTypeID">The ID of the test type.</param>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <param name="AppointmentDate">The appointment date.</param>
+        /// <param name="PaidFees">The paid fees.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the test appointment.</param>
+        /// <param name="IsLocked">A flag indicating whether the test appointment is locked.</param>
+        /// <param name="RetakeTestApplicationID">The ID of the retake test application.</param>
+        /// <returns>True if the test appointment information is successfully retrieved; otherwise, false.</returns>
         public static bool GetTestAppointmentInfoByID(int TestAppointmentID, ref int TestTypeID, ref int LocalDrivingLicenseApplicationID, ref DateTime AppointmentDate, ref float PaidFees, ref int CreatedByUserID, ref bool IsLocked, ref int RetakeTestApplicationID)
         {
             bool IsSuccess = false;
@@ -43,6 +58,18 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return IsSuccess;
         }
+        /// <summary>
+        /// Retrieves the last test appointment information for a given local driving license application ID and test type ID.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <param name="TestTypeID">The ID of the test type.</param>
+        /// <param name="TestAppointmentID">The ID of the test appointment.</param>
+        /// <param name="AppointmentDate">The date of the appointment.</param>
+        /// <param name="PaidFees">The paid fees for the test appointment.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the test appointment.</param>
+        /// <param name="IsLocked">A flag indicating whether the test appointment is locked.</param>
+        /// <param name="RetakeTestApplicationID">The ID of the retake test application.</param>
+        /// <returns>True if the last test appointment information is successfully retrieved; otherwise, false.</returns>
         public static bool GetLastTestAppointment(int LocalDrivingLicenseApplicationID, int TestTypeID, ref int TestAppointmentID, ref DateTime AppointmentDate, ref float PaidFees, ref int CreatedByUserID, ref bool IsLocked, ref int RetakeTestApplicationID)
         {
             bool IsSuccess = false;
@@ -83,6 +110,10 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return IsSuccess;
         }
+        /// <summary>
+        /// Retrieves all test appointments from the database.
+        /// </summary>
+        /// <returns>A DataTable containing the test appointments.</returns>
         public static DataTable GetAllTestAppointments()
         {
             DataTable testAppointments = new DataTable();
@@ -106,6 +137,12 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return testAppointments;
         }
+        /// <summary>
+        /// Retrieves all test appointments for a given local driving license application ID and test type ID.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <param name="TestTypeID">The ID of the test type.</param>
+        /// <returns>A DataTable containing the test appointments.</returns>
         public static DataTable GetApplicationTestAppointmentsPerTestType(int LocalDrivingLicenseApplicationID, int TestTypeID)
         {
             DataTable dataTable = new DataTable();
@@ -134,6 +171,16 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return dataTable;
         }
+        /// <summary>
+        /// Adds a new test appointment to the database and returns the ID of the newly added appointment.
+        /// </summary>
+        /// <param name="TestTypeID">The ID of the test type.</param>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <param name="AppointmentDate">The date of the appointment.</param>
+        /// <param name="PaidFees">The paid fees for the appointment.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the appointment.</param>
+        /// <param name="RetakeTestApplicationID">The ID of the retake test application, or -1 if not applicable.</param>
+        /// <returns>The ID of the newly added test appointment, or -1 if the operation fails.</returns>
         public static int AddNewTestAppointment(int TestTypeID, int LocalDrivingLicenseApplicationID, DateTime AppointmentDate, float PaidFees, int CreatedByUserID, int RetakeTestApplicationID)
         {
             int TestAppointmentID = -1;
@@ -191,6 +238,18 @@ namespace Driving_License_Management_DataAccessLayer
             return TestAppointmentID;
 
         }
+        /// <summary>
+        /// Updates an existing test appointment in the database.
+        /// </summary>
+        /// <param name="TestAppointmentID">The ID of the test appointment to update.</param>
+        /// <param name="TestTypeID">The ID of the test type.</param>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <param name="AppointmentDate">The date of the appointment.</param>
+        /// <param name="PaidFees">The paid fees for the appointment.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the appointment.</param>
+        /// <param name="IsLocked">A flag indicating whether the test appointment is locked.</param>
+        /// <param name="RetakeTestApplicationID">The ID of the retake test application, or -1 if not applicable.</param>
+        /// <returns>True if the test appointment is successfully updated; otherwise, false.</returns>
         public static bool UpdateTestAppointment(int TestAppointmentID, int TestTypeID, int LocalDrivingLicenseApplicationID, DateTime AppointmentDate, float PaidFees, int CreatedByUserID, bool IsLocked, int RetakeTestApplicationID)
         {
             bool IsSuccess = false;
@@ -221,6 +280,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return IsSuccess;
         }
+        /// <summary>
+        /// Retrieves the TestID associated with a given TestAppointmentID.
+        /// </summary>
+        /// <param name="TestAppointmentID">The ID of the test appointment.</param>
+        /// <returns>The ID of the test, or -1 if no test is found.</returns>
         public static int GetTestID(int TestAppointmentID)
         {
             int TestID = -1;

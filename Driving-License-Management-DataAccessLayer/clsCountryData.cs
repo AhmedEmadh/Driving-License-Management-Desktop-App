@@ -8,8 +8,17 @@ using System.Threading.Tasks;
 
 namespace Driving_License_Management_DataAccessLayer
 {
+    /// <summary>
+    /// Provides data access methods for country-related operations.
+    /// </summary>
     public static class clsCountryData
     {
+        /// <summary>
+        /// Retrieves country information by ID.
+        /// </summary>
+        /// <param name="ID">The unique identifier of the country.</param>
+        /// <param name="CountryName">The name of the country.</param>
+        /// <returns>True if the country information is retrieved successfully, false otherwise.</returns>
         public static bool GetCountryInfoByID(int ID, ref string CountryName)
         {
             bool isSuccess = false;
@@ -38,6 +47,12 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Retrieves country information by name.
+        /// </summary>
+        /// <param name="CountryName">The name of the country.</param>
+        /// <param name="ID">The unique identifier of the country.</param>
+        /// <returns>True if the country information is retrieved successfully, false otherwise.</returns>
         public static bool GetCountryInfoByName(string CountryName, ref int ID)
         {
             bool isSuccess = false;
@@ -66,6 +81,10 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Retrieves all countries from the database.
+        /// </summary>
+        /// <returns>A DataTable containing all countries.</returns>
         public static DataTable GetAllCountries()
         {
             DataTable table = new DataTable();

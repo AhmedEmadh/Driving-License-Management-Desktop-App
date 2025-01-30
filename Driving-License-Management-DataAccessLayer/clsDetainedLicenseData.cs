@@ -14,22 +14,18 @@ namespace Driving_License_Management_DataAccessLayer
     public class clsDetainedLicenseData
     {
         /// <summary>
-        /// Retrieves detained license information by DetainID.
-        /// 
-        /// Parameters:
-        ///     DetainID (int): The ID of the detained license.
-        ///     LicenseID (int): The ID of the license.
-        ///     DetainDate (DateTime): The date the license was detained.
-        ///     FineFees (float): The fine fees associated with the detained license.
-        ///     CreatedByUserID (int): The ID of the user who created the detained license.
-        ///     IsReleased (bool): A flag indicating whether the license has been released.
-        ///     ReleaseDate (DateTime): The date the license was released.
-        ///     ReleasedByUserID (int): The ID of the user who released the license.
-        ///     ReleaseApplicationID (int): The ID of the application that released the license.
-        /// 
-        /// Returns:
-        ///     bool: True if the detained license information is successfully retrieved; otherwise, false.
+        /// Retrieves the detained license information by Detain ID.
         /// </summary>
+        /// <param name="DetainID">The ID of the detained license to retrieve information for.</param>
+        /// <param name="LicenseID">The ID of the license associated with the detained license.</param>
+        /// <param name="DetainDate">The date the license was detained.</param>
+        /// <param name="FineFees">The fine fees associated with the detained license.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the detained license record.</param>
+        /// <param name="IsReleased">A flag indicating whether the detained license has been released.</param>
+        /// <param name="ReleaseDate">The date the detained license was released.</param>
+        /// <param name="ReleasedByUserID">The ID of the user who released the detained license.</param>
+        /// <param name="ReleaseApplicationID">The ID of the application used to release the detained license.</param>
+        /// <returns>True if the detained license information was successfully retrieved; otherwise, false.</returns>
         public static bool GetDetainedLicenseInfoByID(int DetainID, ref int LicenseID, ref DateTime DetainDate, ref float FineFees, ref int CreatedByUserID, ref bool IsReleased, ref DateTime ReleaseDate, ref int ReleasedByUserID, ref int ReleaseApplicationID)
         {
             bool isSuccess = false;
@@ -115,10 +111,8 @@ namespace Driving_License_Management_DataAccessLayer
         }
         /// <summary>
         /// Retrieves all detained licenses from the database.
-        /// 
-        /// Returns:
-        ///     DataTable: A DataTable containing all detained licenses.
         /// </summary>
+        /// <returns>A DataTable containing the detained licenses.</returns>
         public static DataTable GetAllDetainedLicenses()
         {
             DataTable dataTable = new DataTable();
@@ -142,17 +136,13 @@ namespace Driving_License_Management_DataAccessLayer
             return dataTable;
         }
         /// <summary>
-        /// Adds a new detained license to the database.
-        /// 
-        /// Parameters:
-        ///     LicenseID (int): The ID of the license to be detained.
-        ///     DetainDate (DateTime): The date the license was detained.
-        ///     FineFees (float): The fine fees associated with the detained license.
-        ///     CreatedByUserID (int): The ID of the user who created the detained license.
-        /// 
-        /// Returns:
-        ///     int: The ID of the newly created detained license.
+        /// Adds a new detained license to the database and returns the ID of the created license.
         /// </summary>
+        /// <param name="LicenseID">The ID of the license to be detained.</param>
+        /// <param name="DetainDate">The date the license was detained.</param>
+        /// <param name="FineFees">The fine fees associated with the detained license.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the detained license record.</param>
+        /// <returns>The ID of the created detained license.</returns>
         public static int AddNewDetainedLicense(int LicenseID, DateTime DetainDate, float FineFees, int CreatedByUserID)
         {
             int IDOfCreatedLicense = -1;
@@ -204,17 +194,13 @@ namespace Driving_License_Management_DataAccessLayer
         }
         /// <summary>
         /// Updates an existing detained license in the database.
-        /// 
-        /// Parameters:
-        ///     DetainID (int): The ID of the detained license to update.
-        ///     LicenseID (int): The ID of the license associated with the detained license.
-        ///     DetainDate (DateTime): The date the license was detained.
-        ///     FineFees (float): The fine fees associated with the detained license.
-        ///     CreatedByUserID (int): The ID of the user who created the detained license.
-        /// 
-        /// Returns:
-        ///     bool: True if the update was successful; otherwise, false.
         /// </summary>
+        /// <param name="DetainID">The ID of the detained license to update.</param>
+        /// <param name="LicenseID">The ID of the license to be.detained.</param>
+        /// <param name="DetainDate">The date the license was.detained.</param>
+        /// <param name="FineFees">The fine fees associated with the.detained license.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the.detained license record.</param>
+        /// <returns>True if the.detained license is updated successfully; otherwise, false.</returns>
         public static bool UpdateDetainedLicense(int DetainID, int LicenseID, DateTime DetainDate, float FineFees, int CreatedByUserID)
         {
             bool isSuccess = false;
@@ -250,16 +236,12 @@ namespace Driving_License_Management_DataAccessLayer
             return isSuccess;
         }
         /// <summary>
-        /// Releases a detained license by updating the corresponding record in the database.
-        /// 
-        /// Parameters:
-        ///     DetainID (int): The ID of the detained license to release.
-        ///     ReleasedByUserID (int): The ID of the user who is releasing the license.
-        ///     ReleaseApplicationID (int): The ID of the application that is releasing the license.
-        /// 
-        /// Returns:
-        ///     bool: True if the release was successful; otherwise, false.
+        /// Releases a detained license from the database.
         /// </summary>
+        /// <param name="DetainID">The ID of the detained license to release.</param>
+        /// <param name="ReleasedByUserID">The ID of the user who released the detained license.</param>
+        /// <param name="ReleaseApplicationID">The ID of the release application associated with the release.</param>
+        /// <returns>True if the detained license is released successfully; otherwise, false.</returns>
         public static bool ReleaseDetainedLicense(int DetainID, int ReleasedByUserID, int ReleaseApplicationID)
         {
             bool isSuccess = false;
@@ -293,14 +275,10 @@ namespace Driving_License_Management_DataAccessLayer
             return isSuccess;
         }
         /// <summary>
-        /// Checks if a license is detained by querying the database.
-        /// 
-        /// Parameters:
-        ///     LicenseID (int): The ID of the license to check.
-        /// 
-        /// Returns:
-        ///     bool: True if the license is detained; otherwise, false.
+        /// Checks if a license is detained in the database.
         /// </summary>
+        /// <param name="LicenseID">The ID of the license to check.</param>
+        /// <returns>True if the license is detained; otherwise, false.</returns>
         public static bool IsLicenseDetained(int LicenseID)
         {
             bool isDetained = false;

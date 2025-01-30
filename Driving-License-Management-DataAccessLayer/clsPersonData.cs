@@ -7,8 +7,28 @@ using System.Data.SqlClient;
 using System.Data;
 namespace Driving_License_Management_DataAccessLayer
 {
+    /// <summary>
+    /// Provides data access functionality for person-related operations.
+    /// </summary>
     public static class clsPersonData
     {
+        /// <summary>
+        /// Retrieves a person's information by their PersonID.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person to retrieve information for.</param>
+        /// <param name="FirstName">The person's first name.</param>
+        /// <param name="SecondName">The person's second name.</param>
+        /// <param name="ThirdName">The person's third name.</param>
+        /// <param name="LastName">The person's last name.</param>
+        /// <param name="NationalNo">The person's national number.</param>
+        /// <param name="DateOfBirth">The person's date of birth.</param>
+        /// <param name="Gendor">The person's gender.</param>
+        /// <param name="Address">The person's address.</param>
+        /// <param name="Phone">The person's phone number.</param>
+        /// <param name="Email">The person's email address.</param>
+        /// <param name="NationalityCountryID">The ID of the person's nationality country.</param>
+        /// <param name="ImagePath">The path to the person's image.</param>
+        /// <returns>True if the person's information was successfully retrieved; otherwise, false.</returns>
         public static bool GetPersonInfoByID(int PersonID, ref string FirstName, ref string SecondName, ref string ThirdName, ref string LastName, ref string NationalNo, ref DateTime DateOfBirth, ref short Gendor, ref string Address, ref string Phone, ref string Email, ref int NationalityCountryID, ref string ImagePath)
         {
             bool isSuccess = false;
@@ -51,6 +71,23 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Retrieves a person's information by their national number.
+        /// </summary>
+        /// <param name="NationalNo">The national number of the person to retrieve information for.</param>
+        /// <param name="PersonID">The ID of the person.</param>
+        /// <param name="FirstName">The first name of the person.</param>
+        /// <param name="SecondName">The second name of the person.</param>
+        /// <param name="ThirdName">The third name of the person.</param>
+        /// <param name="LastName">The last name of the person.</param>
+        /// <param name="DateOfBirth">The date of birth of the person.</param>
+        /// <param name="Gendor">The gender of the person.</param>
+        /// <param name="Address">The address of the person.</param>
+        /// <param name="Phone">The phone number of the person.</param>
+        /// <param name="Email">The email address of the person.</param>
+        /// <param name="NationalityCountryID">The ID of the person's nationality country.</param>
+        /// <param name="ImagePath">The path to the person's image.</param>
+        /// <returns>True if the person's information is retrieved successfully, false otherwise.</returns>
         public static bool GetPersonInfoByNationalNo(string NationalNo, ref int PersonID, ref string FirstName, ref string SecondName,
                                                      ref string ThirdName, ref string LastName, ref DateTime DateOfBirth,
                                                      ref short Gendor, ref string Address, ref string Phone, ref string Email,
@@ -96,6 +133,22 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Adds a new person to the database and returns the ID of the added person.
+        /// </summary>
+        /// <param name="FirstName">The first name of the person.</param>
+        /// <param name="SecondName">The second name of the person.</param>
+        /// <param name="ThirdName">The third name of the person.</param>
+        /// <param name="LastName">The last name of the person.</param>
+        /// <param name="NationalNo">The national number of the person.</param>
+        /// <param name="DateOfBirth">The date of birth of the person.</param>
+        /// <param name="Gendor">The gender of the person.</param>
+        /// <param name="Address">The address of the person.</param>
+        /// <param name="Phone">The phone number of the person.</param>
+        /// <param name="Email">The email address of the person.</param>
+        /// <param name="NationalityCountryID">The ID of the person's nationality country.</param>
+        /// <param name="ImagePath">The path to the person's image.</param>
+        /// <returns>The ID of the added person, or -1 if the operation fails.</returns>
         public static int AddNewPerson(string FirstName, string SecondName, string ThirdName, string LastName, string NationalNo, DateTime DateOfBirth, short Gendor, string Address, string Phone, string Email, int NationalityCountryID, string ImagePath)
         {
             int PersonID = -1;
@@ -146,6 +199,23 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return PersonID;
         }
+        /// <summary>
+        /// Updates an existing person record in the database.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person to be updated.</param>
+        /// <param name="FirstName">The first name of the person.</param>
+        /// <param name="SecondName">The second name of the person.</param>
+        /// <param name="ThirdName">The third name of the person.</param>
+        /// <param name="LastName">The last name of the person.</param>
+        /// <param name="NationalNo">The national number of the person.</param>
+        /// <param name="DateOfBirth">The date of birth of the person.</param>
+        /// <param name="Gendor">The gender of the person.</param>
+        /// <param name="Address">The address of the person.</param>
+        /// <param name="Phone">The phone number of the person.</param>
+        /// <param name="Email">The email address of the person.</param>
+        /// <param name="NationalityCountryID">The ID of the nationality country of the person.</param>
+        /// <param name="ImagePath">The path to the image of the person.</param>
+        /// <returns>True if the person record is updated successfully, false otherwise.</returns>
         public static bool UpdatePerson(int PersonID, string FirstName, string SecondName, string ThirdName, string LastName, string NationalNo, DateTime DateOfBirth, short Gendor, string Address, string Phone, string Email, int NationalityCountryID, string ImagePath)
         {
             bool isSuccess = false;
@@ -197,6 +267,10 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Retrieves all people from the database.
+        /// </summary>
+        /// <returns>A DataTable containing all people.</returns>
         public static DataTable GetAllPeople()
         {
             DataTable Result = new DataTable();
@@ -215,6 +289,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return Result;
         }
+        /// <summary>
+        /// Deletes a person from the People table in the database based on the provided PersonID.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person to be deleted.</param>
+        /// <returns>True if the deletion is successful, false otherwise.</returns>
         public static bool DeletePerson(int PersonID)
         {
             bool isSuccess = false;
@@ -238,6 +317,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Checks if a person exists in the database by their PersonID.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person to check.</param>
+        /// <returns>True if the person exists, false otherwise.</returns>
         public static bool IsPersonExist(int PersonID)
         {
             bool isExist = false;
@@ -269,6 +353,11 @@ namespace Driving_License_Management_DataAccessLayer
             return isExist;
 
         }
+        /// <summary>
+        /// Checks if a person exists in the database by their NationalNo.
+        /// </summary>
+        /// <param name="NationalNo">The NationalNo of the person to check.</param>
+        /// <returns>True if the person exists, false otherwise.</returns>
         public static bool IsPersonExist(string NationalNo)
         {
             bool isExist = false;
@@ -301,4 +390,5 @@ namespace Driving_License_Management_DataAccessLayer
 
         }
     }
+
 }

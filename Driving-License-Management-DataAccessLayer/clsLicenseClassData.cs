@@ -8,8 +8,21 @@ using System.Threading.Tasks;
 using System.Net.Http.Headers;
 namespace Driving_License_Management_DataAccessLayer
 {
+    /// <summary>
+    /// This class is responsible for data access operations related to the LicenseClass table.
+    /// </summary>
     public static class clsLicenseClassData
     {
+        /// <summary>
+        /// Retrieves license class information by LicenseClassID.
+        /// </summary>
+        /// <param name="LicenseClassID">The ID of the license class.</param>
+        /// <param name="ClassName">The name of the license class.</param>
+        /// <param name="ClassDescription">The description of the license class.</param>
+        /// <param name="MinimumAllowedAge">The minimum allowed age for the license class.</param>
+        /// <param name="DefaultValidityLength">The default validity length of the license class.</param>
+        /// <param name="ClassFees">The fees associated with the license class.</param>
+        /// <returns>True if the license class information is retrieved successfully, false otherwise.</returns>
         public static bool GetLicenseClassInfoByID(int LicenseClassID, ref string ClassName, ref string ClassDescription, ref byte MinimumAllowedAge, ref byte DefaultValidityLength, ref float ClassFees)
         {
             bool isFound = false;
@@ -42,6 +55,16 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isFound;
         }
+        /// <summary>
+        /// Retrieves license class information by ClassName.
+        /// </summary>
+        /// <param name="ClassName">The name of the license class.</param>
+        /// <param name="LicenseClassID">The ID of the license class.</param>
+        /// <param name="ClassDescription">The description of the license class.</param>
+        /// <param name="MinimumAllowedAge">The minimum allowed age for the license class.</param>
+        /// <param name="DefaultValidityLength">The default validity length of the license class.</param>
+        /// <param name="ClassFees">The fees associated with the license class.</param>
+        /// <returns>True if the license class information is retrieved successfully, false otherwise.</returns>
         public static bool GetLicenseClassInfoByClassName(string ClassName, ref int LicenseClassID, ref string ClassDescription, ref byte MinimumAllowedAge, ref byte DefaultValidityLength, ref float ClassFees)
         {
             bool isFound = false;
@@ -74,6 +97,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isFound;
         }
+        /// <summary>
+        /// Retrieves all license class information from the database.
+        /// </summary>
+        /// <returns>A DataTable containing the license class information.</returns>
+        /// <exception cref="Exception"></exception>
         public static DataTable GetAllLicenseClasses()
         {
             DataTable dataTable = new DataTable();
@@ -97,6 +125,15 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return dataTable;
         }
+        /// <summary>
+        /// Adds a new license class to the database.
+        /// </summary>
+        /// <param name="ClassName">The name of the license class.</param>
+        /// <param name="ClassDescription">The description of the license class.</param>
+        /// <param name="MinimumAllowedAge">The minimum allowed age for the license class.</param>
+        /// <param name="DefaultValidityLength">The default validity length of the license class.</param>
+        /// <param name="ClassFees">The fees associated with the license class.</param>
+        /// <returns>The ID of the newly added license class.</returns>
         public static int AddNewLicenseClass(string ClassName, string ClassDescription, byte MinimumAllowedAge, byte DefaultValidityLength, float ClassFees)
         {
             int CreatedID = -1;
@@ -124,6 +161,16 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return CreatedID;
         }
+        /// <summary>
+        /// Updates an existing license class in the database.
+        /// </summary>
+        /// <param name="LicenseClassID">The ID of the license class to update.</param>
+        /// <param name="ClassName">The name of the license class.</param>
+        /// <param name="ClassDescription">The description of the license class.</param>
+        /// <param name="MinimumAllowedAge">The minimum allowed age for the license class.</param>
+        /// <param name="DefaultValidityLength">The default validity length of the license class.</param>
+        /// <param name="ClassFees">The fees associated with the license class.</param>
+        /// <returns>True if the update was successful, false otherwise.</returns>
         public static bool UpdateLicenseClass(int LicenseClassID, string ClassName, string ClassDescription, byte MinimumAllowedAge, byte DefaultValidityLength, float ClassFees)
         {
             bool isSuccess = false;

@@ -8,8 +8,20 @@ using System.Threading.Tasks;
 
 namespace Driving_License_Management_DataAccessLayer
 {
+    /// <summary>
+    /// Class containing methods for user data access.
+    /// </summary>
     public class clsUserData
     {
+        /// <summary>
+        /// Retrieves user information by UserID.
+        /// </summary>
+        /// <param name="UserID">The ID of the user to retrieve information for.</param>
+        /// <param name="PersonID">The ID of the person associated with the user.</param>
+        /// <param name="UserName">The username of the user.</param>
+        /// <param name="Password">The password of the user.</param>
+        /// <param name="IsActive">A flag indicating whether the user is active.</param>
+        /// <returns>True if the user information is retrieved successfully; otherwise, false.</returns>
         public static bool GetUserInfoByUserID(int UserID, ref int PersonID, ref string UserName, ref string Password, ref bool IsActive)
         {
             bool isSuccess = false;
@@ -41,6 +53,15 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Retrieves user information by PersonID.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person associated with the user.</param>
+        /// <param name="UserID">The ID of the user.</param>
+        /// <param name="UserName">The username of the user.</param>
+        /// <param name="Password">The password of the user.</param>
+        /// <param name="IsActive">A flag indicating whether the user is active.</param>
+        /// <returns>True if the user information is retrieved successfully, false otherwise.</returns>
         public static bool GetUserInfoByPersonID(int PersonID, ref int UserID, ref string UserName, ref string Password, ref bool IsActive)
         {
             bool isSuccess = false;
@@ -73,6 +94,15 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Retrieves user information by username and password.
+        /// </summary>
+        /// <param name="UserName">The username to search for.</param>
+        /// <param name="Password">The password to search for.</param>
+        /// <param name="UserID">The ID of the user.</param>
+        /// <param name="PersonID">The ID of the person associated with the user.</param>
+        /// <param name="IsActive">A flag indicating whether the user is active.</param>
+        /// <returns>True if the user information is retrieved successfully, false otherwise.</returns>
         public static bool GetUserInfoByUsernameAndPassword(string UserName, string Password, ref int UserID, ref int PersonID, ref bool IsActive)
         {
             bool isSuccess = false;
@@ -105,6 +135,14 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Adds a new user to the database.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person associated with the user.</param>
+        /// <param name="UserName">The username of the new user.</param>
+        /// <param name="Password">The password of the new user.</param>
+        /// <param name="IsActive">A flag indicating whether the new user is active.</param>
+        /// <returns>The ID of the newly created user.</returns>
         public static int AddNewUser(int PersonID, string UserName, string Password, bool IsActive)
         {
             int CreatedUserID = -1;
@@ -130,6 +168,15 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return CreatedUserID;
         }
+        /// <summary>
+        /// Updates an existing user in the database.
+        /// </summary>
+        /// <param name="UserID">The ID of the user to be updated.</param>
+        /// <param name="PersonID">The ID of the person associated with the user.</param>
+        /// <param name="UserName">The username of the user.</param>
+        /// <param name="Password">The password of the user.</param>
+        /// <param name="IsActive">A flag indicating whether the user is active.</param>
+        /// <returns>True if the user information is updated successfully, false otherwise.</returns>
         public static bool UpdateUser(int UserID, int PersonID, string UserName, string Password, bool IsActive)
         {
             bool isSuccess = false;
@@ -157,6 +204,10 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Retrieves all users from the database.
+        /// </summary>
+        /// <returns>A DataTable containing all users.</returns>
         public static DataTable GetAllUsers()
         {
             DataTable dataTable = new DataTable();
@@ -180,6 +231,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return dataTable;
         }
+        /// <summary>
+        /// Deletes a user from the database based on the provided UserID.
+        /// </summary>
+        /// <param name="UserID">The ID of the user to be deleted.</param>
+        /// <returns>True if the user is deleted successfully, false otherwise.</returns>
         public static bool DeleteUser(int UserID)
         {
             bool isSuccess = false;
@@ -204,6 +260,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Checks if a user exists in the database based on the provided UserID.
+        /// </summary>
+        /// <param name="UserID">The ID of the user to check for existence.</param>
+        /// <returns>True if the user exists, false otherwise.</returns>
         public static bool IsUserExist(int UserID)
         {
             bool isSuccess = false;
@@ -228,6 +289,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Checks if a user exists in the database by their username.
+        /// </summary>
+        /// <param name="UserName">The username to search for.</param>
+        /// <returns>True if the user exists, false otherwise.</returns>
         public static bool IsUserExist(string UserName)
         {
             bool isExist = false;
@@ -255,6 +321,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isExist;
         }
+        /// <summary>
+        /// Checks if a user exists in the database for the given PersonID.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person to check for user existence.</param>
+        /// <returns>True if a user exists for the given PersonID, false otherwise.</returns>
         public static bool IsUserExistForPersonID(int PersonID)
         {
             bool isUserExist = false;
@@ -278,6 +349,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isUserExist;
         }
+        /// <summary>
+        /// Checks if a person has a user in the database.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person.</param>
+        /// <returns>True if the person has a user, false otherwise.</returns>
         public static bool DoesPersonHaveUser(int PersonID)
         {
             bool isFound = false;
@@ -311,7 +387,12 @@ namespace Driving_License_Management_DataAccessLayer
 
             return isFound;
         }
-
+        /// <summary>
+        /// Changes the password of a user in the database.
+        /// </summary>
+        /// <param name="UserID">The ID of the user to change the password for.</param>
+        /// <param name="NewPassword">The new password to set for the user.</param>
+        /// <returns>True if the password is changed successfully, false otherwise.</returns>
         public static bool ChangePassword(int UserID, string NewPassword)
         {
             bool isSuccess = false;

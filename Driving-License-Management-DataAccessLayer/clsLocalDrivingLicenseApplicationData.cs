@@ -7,8 +7,18 @@ using System.Data.SqlClient;
 using System.Data;
 namespace Driving_License_Management_DataAccessLayer
 {
+    /// <summary>
+    /// Provides data access methods for local driving license applications.
+    /// </summary>
     public static class clsLocalDrivingLicenseApplicationData
     {
+        /// <summary>
+        /// Retrieves local driving license application information by ID.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application to retrieve.</param>
+        /// <param name="ApplicationID">The ID of the application associated with the local driving license application.</param>
+        /// <param name="LicenseClassID">The ID of the license class associated with the local driving license application.</param>
+        /// <returns>True if the local driving license application information is retrieved successfully, false otherwise.</returns>
         public static bool GetLocalDrivingLicenseApplicationInfoByID(int LocalDrivingLicenseApplicationID, ref int ApplicationID, ref int LicenseClassID)
         {
             bool isSuccess = false;
@@ -41,6 +51,13 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Retrieves local driving license application information by Application ID.
+        /// </summary>
+        /// <param name="ApplicationID">The ID of the application to retrieve local driving license application information for.</param>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application associated with the Application ID.</param>
+        /// <param name="LicenseClassID">The ID of the license class associated with the local driving license application.</param>
+        /// <returns>True if the local driving license application information is retrieved successfully, false otherwise.</returns>
         public static bool GetLocalDrivingLicenseApplicationInfoByApplicationID(int ApplicationID, ref int LocalDrivingLicenseApplicationID, ref int LicenseClassID)
         {
             bool isSuccess = false;
@@ -73,6 +90,10 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Retrieves all local driving license applications from the database.
+        /// </summary>
+        /// <returns>A DataTable containing the local driving license applications.</returns>
         public static DataTable GetAllLocalDrivingLicenseApplications()
         {
             DataTable Result = new DataTable();
@@ -91,6 +112,12 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return Result;
         }
+        /// <summary>
+        /// Adds a new local driving license application to the database.
+        /// </summary>
+        /// <param name="ApplicationID">The ID of the application.</param>
+        /// <param name="LicenseClassID">The ID of the license class.</param>
+        /// <returns>The ID of the newly added local driving license application, or -1 if the operation fails.</returns>
         public static int AddNewLocalDrivingLicenseApplication(int ApplicationID, int LicenseClassID)
         {
             int LocalDrivingLicenseApplicationID = -1;
@@ -114,6 +141,13 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return LocalDrivingLicenseApplicationID;
         }
+        /// <summary>
+        /// Updates an existing local driving license application in the database.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application to update.</param>
+        /// <param name="ApplicationID">The ID of the application associated with the local driving license application.</param>
+        /// <param name="LicenseClassID">The ID of the license class associated with the local driving license application.</param>
+        /// <returns>True if the local driving license application is updated successfully, false otherwise.</returns>
         public static bool UpdateLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID, int ApplicationID, int LicenseClassID)
         {
             bool isSuccess = false;
@@ -139,6 +173,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Deletes a local driving license application from the database based on the provided LocalDrivingLicenseApplicationID.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application to delete.</param>
+        /// <returns>True if the deletion is successful, false otherwise.</returns>
         public static bool DeleteLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID)
         {
             bool isSuccess = false;
@@ -162,6 +201,12 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Checks if a local driving license application has passed a specific test type.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <param name="TestTypeID">The ID of the test type to check.</param>
+        /// <returns></returns>
         public static bool DoesPassTestType(int LocalDrivingLicenseApplicationID, int TestTypeID)
         {
             bool result = false;
@@ -202,6 +247,12 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return result;
         }
+        /// <summary>
+        /// Checks if a local driving license application has attended a specific test type.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <param name="TestTypeID">The ID of the test type.</param>
+        /// <returns>True if the application has attended the test type, false otherwise.</returns>
         public static bool DoesAttendTestType(int LocalDrivingLicenseApplicationID, int TestTypeID)
         {
             bool result = false;
@@ -230,6 +281,12 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return result;
         }
+        /// <summary>
+        /// Retrieves the total number of trials for a specific test type associated with a local driving license application.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <param name="TestTypeID">The ID of the test type.</param>
+        /// <returns>The total number of trials as a byte value.</returns>
         public static byte TotalTrialsPerTest(int LocalDrivingLicenseApplicationID, int TestTypeID)
         {
             byte result = 0;
@@ -261,6 +318,12 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return result;
         }
+        /// <summary>
+        /// Checks if there is an active scheduled test for a local driving license application.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <param name="TestTypeID">The ID of the test type.</param>
+        /// <returns>True if there is an active scheduled test, false otherwise.</returns>
         public static bool IsThereAnActiveScheduledTest(int LocalDrivingLicenseApplicationID, int TestTypeID)
         {
 

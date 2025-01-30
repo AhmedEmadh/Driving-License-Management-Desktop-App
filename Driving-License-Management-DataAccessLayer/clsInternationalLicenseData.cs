@@ -7,8 +7,23 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 namespace Driving_License_Management_DataAccessLayer
 {
+    /// <summary>
+    /// Provides data access operations for international licenses.
+    /// </summary>
     public static class clsInternationalLicenseData
     {
+        /// <summary>
+        /// Retrieves international license information by ID.
+        /// </summary>
+        /// <param name="InternationalLicenseID">The ID of the international license to retrieve.</param>
+        /// <param name="ApplicationID">The ID of the application associated with the international license.</param>
+        /// <param name="DriverID">The ID of the driver associated with the international license.</param>
+        /// <param name="IssuedUsingLocalLicenseID">The ID of the local license used to issue the international license.</param>
+        /// <param name="IssueDate">The date the international license was issued.</param>
+        /// <param name="ExpirationDate">The date the international license expires.</param>
+        /// <param name="IsActive">A flag indicating whether the international license is active.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the international license record.</param>
+        /// <returns>True if the international license information is retrieved successfully, false otherwise.</returns>
         public static bool GetInternationalLicenseInfoByID(int InternationalLicenseID, ref int ApplicationID, ref int DriverID, ref int IssuedUsingLocalLicenseID, ref DateTime IssueDate, ref DateTime ExpirationDate, ref bool IsActive, ref int CreatedByUserID)
         {
             bool isSuccess = false;
@@ -46,6 +61,10 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Retrieves all international licenses from the database.
+        /// </summary>
+        /// <returns>A DataTable containing all international licenses.</returns>
         public static DataTable GetAllInternationalLicenses()
         {
             DataTable Result = new DataTable();
@@ -68,6 +87,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return Result;
         }
+        /// <summary>
+        /// Retrieves a DataTable of international licenses associated with a specific driver.
+        /// </summary>
+        /// <param name="DriverID">The ID of the driver to retrieve international licenses for.</param>
+        /// <returns>A DataTable containing the international licenses for the specified driver.</returns>
         public static DataTable GetDriverInternationalLicenses(int DriverID)
         {
             DataTable Result = new DataTable();
@@ -91,6 +115,17 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return Result;
         }
+        /// <summary>
+        /// Adds a new international license to the database.
+        /// </summary>
+        /// <param name="ApplicationID">The ID of the application associated with the international license.</param>
+        /// <param name="DriverID">The ID of the driver associated with the international license.</param>
+        /// <param name="IssuedUsingLocalLicenseID">The ID of the local license used to issue the international license.</param>
+        /// <param name="IssueDate">The date the international license was issued.</param>
+        /// <param name="ExpirationDate">The date the international license expires.</param>
+        /// <param name="IsActive">A flag indicating whether the international license is active.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the international license record.</param>
+        /// <returns>The ID of the newly added international license, or -1 if the operation fails.</returns>
         public static int AddNewInternationalLicense(int ApplicationID, int DriverID, int IssuedUsingLocalLicenseID, DateTime IssueDate, DateTime ExpirationDate, bool IsActive, int CreatedByUserID)
         {
             int ID = -1;
@@ -119,6 +154,18 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return ID;
         }
+        /// <summary>
+        /// Updates an existing international license in the database.
+        /// </summary>
+        /// <param name="InternationalLicenseID">The ID of the international license to update.</param>
+        /// <param name="ApplicationID">The ID of the application associated with the international license.</param>
+        /// <param name="DriverID">The ID of the driver associated with the international license.</param>
+        /// <param name="IssuedUsingLocalLicenseID">The ID of the local license used to issue the international license.</param>
+        /// <param name="IssueDate">The date the international license was issued.</param>
+        /// <param name="ExpirationDate">The date the international license expires.</param>
+        /// <param name="IsActive">A flag indicating whether the international license is active.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the international license record.</param>
+        /// <returns>True if the international license is updated successfully, false otherwise.</returns>
         public static bool UpdateInternationalLicense(int InternationalLicenseID, int ApplicationID, int DriverID, int IssuedUsingLocalLicenseID, DateTime IssueDate, DateTime ExpirationDate, bool IsActive, int CreatedByUserID)
         {
             bool isSuccess = false;
@@ -149,6 +196,11 @@ namespace Driving_License_Management_DataAccessLayer
             }
             return isSuccess;
         }
+        /// <summary>
+        /// Retrieves the ID of an active international license for a given driver.
+        /// </summary>
+        /// <param name="DriverID">The ID of the driver.</param>
+        /// <returns>The ID of the active international license, or -1 if not found.</returns>
         public static int GetActiveInternationalLicenseIDByDriverID(int DriverID)
         {
             int ID = -1;
