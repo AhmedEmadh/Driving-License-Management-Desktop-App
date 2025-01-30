@@ -16,5 +16,10 @@ namespace Driving_License_Management_Desktop_App
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

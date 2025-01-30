@@ -31,9 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.ctlDriverLicenseInfoWithFilter1 = new Driving_License_Management_Desktop_App.Licenses.Controls.ctlDriverLicenseInfoWithFilter();
             this.ctlApplicationNewLicenseInfo1 = new Driving_License_Management_Desktop_App.ctlApplicationNewLicenseInfo();
-            this.ctlDriverLicenseInfo1 = new Driving_License_Management_Desktop_App.ctlDriverLicenseInfo();
-            this.ctlFilterByLicenceID1 = new Driving_License_Management_Desktop_App.ctlFilterByLicenceID();
             this.SuspendLayout();
             // 
             // label1
@@ -64,37 +63,29 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // ctlDriverLicenseInfoWithFilter1
+            // 
+            this.ctlDriverLicenseInfoWithFilter1.Location = new System.Drawing.Point(17, 49);
+            this.ctlDriverLicenseInfoWithFilter1.Name = "ctlDriverLicenseInfoWithFilter1";
+            this.ctlDriverLicenseInfoWithFilter1.Size = new System.Drawing.Size(766, 328);
+            this.ctlDriverLicenseInfoWithFilter1.TabIndex = 7;
+            // 
             // ctlApplicationNewLicenseInfo1
             // 
             this.ctlApplicationNewLicenseInfo1.Location = new System.Drawing.Point(17, 400);
             this.ctlApplicationNewLicenseInfo1.Name = "ctlApplicationNewLicenseInfo1";
-            this.ctlApplicationNewLicenseInfo1.Size = new System.Drawing.Size(726, 278);
+            this.ctlApplicationNewLicenseInfo1.Size = new System.Drawing.Size(766, 278);
             this.ctlApplicationNewLicenseInfo1.TabIndex = 2;
-            // 
-            // ctlDriverLicenseInfo1
-            // 
-            this.ctlDriverLicenseInfo1.Location = new System.Drawing.Point(17, 149);
-            this.ctlDriverLicenseInfo1.Name = "ctlDriverLicenseInfo1";
-            this.ctlDriverLicenseInfo1.Size = new System.Drawing.Size(711, 244);
-            this.ctlDriverLicenseInfo1.TabIndex = 1;
-            // 
-            // ctlFilterByLicenceID1
-            // 
-            this.ctlFilterByLicenceID1.Location = new System.Drawing.Point(12, 72);
-            this.ctlFilterByLicenceID1.Name = "ctlFilterByLicenceID1";
-            this.ctlFilterByLicenceID1.Size = new System.Drawing.Size(500, 82);
-            this.ctlFilterByLicenceID1.TabIndex = 6;
             // 
             // frmRenewDrivingLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 732);
-            this.Controls.Add(this.ctlFilterByLicenceID1);
+            this.ClientSize = new System.Drawing.Size(1005, 732);
+            this.Controls.Add(this.ctlDriverLicenseInfoWithFilter1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.ctlApplicationNewLicenseInfo1);
-            this.Controls.Add(this.ctlDriverLicenseInfo1);
             this.Controls.Add(this.label1);
             this.Name = "frmRenewDrivingLicense";
             this.Text = "frmRenewDrivingLicense";
@@ -106,10 +97,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private ctlDriverLicenseInfo ctlDriverLicenseInfo1;
         private ctlApplicationNewLicenseInfo ctlApplicationNewLicenseInfo1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private ctlFilterByLicenceID ctlFilterByLicenceID1;
+        private Licenses.Controls.ctlDriverLicenseInfoWithFilter ctlDriverLicenseInfoWithFilter1;
     }
 }

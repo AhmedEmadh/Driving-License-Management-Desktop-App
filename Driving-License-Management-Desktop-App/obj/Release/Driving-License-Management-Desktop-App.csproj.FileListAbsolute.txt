@@ -49,3 +49,11 @@ D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desk
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Release\Driving-License-Management-Desktop-App.csproj.CoreCompileInputs.cache
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Release\Driving-License-Management-Desktop-App.exe
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Release\Driving-License-Management-Desktop-App.pdb
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\bin\Release\Driving-License-Management-BusinessLogic.dll
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\bin\Release\Driving-License-Management-BusinessLogic.pdb
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Release\Driving_License_Management_Desktop_App.Licenses.Controls.ctlDriverLicenses.resources
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Release\Driving-.351EFBDB.Up2Date
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Release\Driving_License_Management_Desktop_App.Licenses.Controls.ctlDriverLicenseInfoWithFilter.resources
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Release\Driving_License_Management_Desktop_App.Tests.Controls.ctlRetakeTestInfo.resources
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Release\Driving_License_Management_Desktop_App.Tests.Controls.ctlScheduleTest.resources
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Release\Driving_License_Management_Desktop_App.Tests.Controls.ctlScheduledTest.resources

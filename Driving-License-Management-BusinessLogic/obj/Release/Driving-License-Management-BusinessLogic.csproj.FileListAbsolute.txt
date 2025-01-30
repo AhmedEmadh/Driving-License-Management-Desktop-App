@@ -1,0 +1,9 @@
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-BusinessLogic\bin\Release\Driving-License-Management-BusinessLogic.dll
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-BusinessLogic\bin\Release\Driving-License-Management-BusinessLogic.pdb
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-BusinessLogic\bin\Release\Driving-License-Management-DataAccessLayer.dll
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-BusinessLogic\bin\Release\Driving-License-Management-DataAccessLayer.pdb
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-BusinessLogic\obj\Release\Driving-License-Management-BusinessLogic.csproj.AssemblyReference.cache
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-BusinessLogic\obj\Release\Driving-License-Management-BusinessLogic.csproj.CoreCompileInputs.cache
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-BusinessLogic\obj\Release\Driving-.CEB908A5.Up2Date
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-BusinessLogic\obj\Release\Driving-License-Management-BusinessLogic.dll
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-BusinessLogic\obj\Release\Driving-License-Management-BusinessLogic.pdb

@@ -21,6 +21,7 @@ namespace Driving_License_Management_Desktop_App
         {
             ctlManagePersons1.Value = "Drivers";
             ctlManagePersons1.ButtonValue = "Driver";
+            ctlManagePersons1.contextMenuStrip = contextMenuStrip1;
             
         }
 
@@ -32,6 +33,21 @@ namespace Driving_License_Management_Desktop_App
         private void ctlManagePersons1_OnClose(object obj)
         {
             this.Close();
+        }
+
+        private void showPersonInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmPersonDetails().ShowDialog();
+        }
+
+        private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmShowLicenseHistory().ShowDialog();
+        }
+
+        private void issueInternationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not yet implemented");
         }
     }
 }
