@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPersonalInfo = new System.Windows.Forms.TabPage();
+            this.ctlPersonInformationWithFilter1 = new Driving_License_Management_Desktop_App.ctlPersonInformationWithFilter();
             this.button5 = new System.Windows.Forms.Button();
             this.tapLoginInfo = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -44,7 +45,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.ctlPersonInformationWithFilter1 = new Driving_License_Management_Desktop_App.ctlPersonInformationWithFilter();
             this.tabControl1.SuspendLayout();
             this.tabPersonalInfo.SuspendLayout();
             this.tapLoginInfo.SuspendLayout();
@@ -82,6 +82,14 @@
             this.tabPersonalInfo.UseVisualStyleBackColor = true;
             this.tabPersonalInfo.Click += new System.EventHandler(this.tabPersonalInfo_Click);
             // 
+            // ctlPersonInformationWithFilter1
+            // 
+            this.ctlPersonInformationWithFilter1.Location = new System.Drawing.Point(18, 7);
+            this.ctlPersonInformationWithFilter1.Name = "ctlPersonInformationWithFilter1";
+            this.ctlPersonInformationWithFilter1.SelectedIndex = -1;
+            this.ctlPersonInformationWithFilter1.Size = new System.Drawing.Size(652, 285);
+            this.ctlPersonInformationWithFilter1.TabIndex = 3;
+            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(687, 256);
@@ -106,7 +114,7 @@
             this.tapLoginInfo.Location = new System.Drawing.Point(4, 25);
             this.tapLoginInfo.Name = "tapLoginInfo";
             this.tapLoginInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tapLoginInfo.Size = new System.Drawing.Size(650, 258);
+            this.tapLoginInfo.Size = new System.Drawing.Size(771, 294);
             this.tapLoginInfo.TabIndex = 1;
             this.tapLoginInfo.Text = "Login Info";
             this.tapLoginInfo.UseVisualStyleBackColor = true;
@@ -207,17 +215,11 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // ctlPersonInformationWithFilter1
-            // 
-            this.ctlPersonInformationWithFilter1.Location = new System.Drawing.Point(18, 7);
-            this.ctlPersonInformationWithFilter1.Name = "ctlPersonInformationWithFilter1";
-            this.ctlPersonInformationWithFilter1.Size = new System.Drawing.Size(652, 285);
-            this.ctlPersonInformationWithFilter1.TabIndex = 3;
-            // 
             // frmAddEditUserInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(803, 431);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);

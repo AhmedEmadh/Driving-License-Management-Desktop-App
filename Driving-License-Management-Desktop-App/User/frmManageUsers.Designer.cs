@@ -47,6 +47,7 @@
             // 
             this.userControl21.Location = new System.Drawing.Point(29, 12);
             this.userControl21.Name = "userControl21";
+            this.userControl21.SearchText = "";
             this.userControl21.Size = new System.Drawing.Size(759, 426);
             this.userControl21.TabIndex = 0;
             this.userControl21.Value = "People";
@@ -68,7 +69,7 @@
             this.sendEmailToolStripMenuItem,
             this.phoneCallToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 240);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 212);
             // 
             // showDetailsToolStripMenuItem
             // 
@@ -126,6 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.userControl21);
             this.Name = "frmManageUsers";

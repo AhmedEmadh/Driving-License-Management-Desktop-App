@@ -217,9 +217,11 @@
             // 
             // applicationsToolStripMenuItem
             // 
+            this.applicationsToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(75, 27);
             this.applicationsToolStripMenuItem.Text = "People";
+            this.applicationsToolStripMenuItem.Click += new System.EventHandler(this.applicationsToolStripMenuItem_Click);
             // 
             // driversToolStripMenuItem
             // 

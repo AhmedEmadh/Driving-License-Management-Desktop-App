@@ -105,6 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.ctlShowDataWithFilter1);
             this.Controls.Add(this.ctlFormTitle1);

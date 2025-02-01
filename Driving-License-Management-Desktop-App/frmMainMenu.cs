@@ -126,5 +126,10 @@ namespace Driving_License_Management_Desktop_App
         {
             new frmUserInfo().ShowDialog();
         }
+
+        private void applicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmAddEditPersonInfo().ShowDialog();
+        }
     }
 }
