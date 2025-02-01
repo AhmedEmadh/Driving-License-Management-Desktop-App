@@ -1,2 +1,4 @@
 Draft/
-.vsidx
+Driving-License-Management-Desktop-App/.vs/
+*.vsidx
+**/.vs/
