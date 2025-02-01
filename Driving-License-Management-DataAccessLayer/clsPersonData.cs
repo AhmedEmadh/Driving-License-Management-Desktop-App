@@ -44,16 +44,16 @@ namespace Driving_License_Management_DataAccessLayer
                 {
                     FirstName = reader["FirstName"].ToString();
                     SecondName = reader["SecondName"].ToString();
-                    ThirdName = reader["ThirdName"].ToString();
+                    ThirdName = reader["ThirdName"]!=DBNull.Value ? reader["ThirdName"].ToString() : "";
                     LastName = reader["LastName"].ToString();
                     NationalNo = reader["NationalNo"].ToString();
                     DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
                     Gendor = Convert.ToInt16(reader["Gendor"]);
                     Address = reader["Address"].ToString();
                     Phone = reader["Phone"].ToString();
-                    Email = reader["Email"].ToString();
+                    Email = reader["Email"]!=DBNull.Value ? reader["Email"].ToString() : "";
                     NationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]);
-                    ImagePath = reader["ImagePath"].ToString();
+                    ImagePath = reader["ImagePath"] != DBNull.Value ? reader["ImagePath"].ToString() : "";
                     isSuccess = true;
                 }
                 else
@@ -107,15 +107,15 @@ namespace Driving_License_Management_DataAccessLayer
                     PersonID = Convert.ToInt32(reader["PersonID"]);
                     FirstName = reader["FirstName"].ToString();
                     SecondName = reader["SecondName"].ToString();
-                    ThirdName = reader["ThirdName"].ToString();
+                    ThirdName = reader["ThirdName"] != DBNull.Value ? reader["ThirdName"].ToString() : "";
                     LastName = reader["LastName"].ToString();
                     DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
                     Gendor = Convert.ToInt16(reader["Gendor"]);
                     Address = reader["Address"].ToString();
                     Phone = reader["Phone"].ToString();
-                    Email = reader["Email"].ToString();
+                    Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : "";
                     NationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]);
-                    ImagePath = reader["ImagePath"].ToString();
+                    ImagePath = reader["ImagePath"] != DBNull.Value ? reader["ImagePath"].ToString() : "";
                     isSuccess = true;
                 }
                 else
@@ -175,15 +175,24 @@ namespace Driving_License_Management_DataAccessLayer
             command.Parameters.AddWithValue("@NationalNo", NationalNo);
             command.Parameters.AddWithValue("@FirstName", FirstName);
             command.Parameters.AddWithValue("@SecondName", SecondName);
-            command.Parameters.AddWithValue("@ThirdName", ThirdName);
+            if(ThirdName != string.Empty && ThirdName != null)
+                command.Parameters.AddWithValue("@ThirdName", ThirdName);
+            else
+                command.Parameters.AddWithValue("@ThirdName", DBNull.Value);
             command.Parameters.AddWithValue("@LastName", LastName);
             command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
             command.Parameters.AddWithValue("@Gendor", Gendor);
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@Phone", Phone);
-            command.Parameters.AddWithValue("@Email", Email);
+            if(Email != string.Empty && Email != null)
+                command.Parameters.AddWithValue("@Email", Email);
+            else
+                command.Parameters.AddWithValue("@Email", DBNull.Value);
             command.Parameters.AddWithValue("@NationalityCountryID", NationalityCountryID);
-            command.Parameters.AddWithValue("@ImagePath", ImagePath);
+            if(ImagePath != string.Empty && ImagePath != null)
+                command.Parameters.AddWithValue("@ImagePath", ImagePath);
+            else
+                command.Parameters.AddWithValue("@ImagePath", DBNull.Value);
             try
             {
                 connection.Open();
@@ -241,16 +250,25 @@ namespace Driving_License_Management_DataAccessLayer
             command.Parameters.AddWithValue("@PersonID", PersonID);
             command.Parameters.AddWithValue("@FirstName", FirstName);
             command.Parameters.AddWithValue("@SecondName", SecondName);
-            command.Parameters.AddWithValue("@ThirdName", ThirdName);
+            if (ThirdName != string.Empty && ThirdName != null)
+                command.Parameters.AddWithValue("@ThirdName", ThirdName);
+            else
+                command.Parameters.AddWithValue("@ThirdName", DBNull.Value);
             command.Parameters.AddWithValue("@LastName", LastName);
             command.Parameters.AddWithValue("@NationalNo", NationalNo);
             command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
             command.Parameters.AddWithValue("@Gendor", Gendor);
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@Phone", Phone);
-            command.Parameters.AddWithValue("@Email", Email);
+            if (Email != string.Empty && Email != null)
+                command.Parameters.AddWithValue("@Email", Email);
+            else
+                command.Parameters.AddWithValue("@Email", DBNull.Value);
             command.Parameters.AddWithValue("@NationalityCountryID", NationalityCountryID);
-            command.Parameters.AddWithValue("@ImagePath", ImagePath);
+            if (ImagePath != string.Empty && ImagePath != null)
+                command.Parameters.AddWithValue("@ImagePath", ImagePath);
+            else
+                command.Parameters.AddWithValue("@ImagePath", DBNull.Value);
             try
             {
                 connection.Open();
@@ -275,7 +293,14 @@ namespace Driving_License_Management_DataAccessLayer
         {
             DataTable Result = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT * FROM People";
+            string query = @"SELECT PersonID, NationalNo, FirstName, SecondName, ThirdName, LastName,DateOfBirth, 
+                                CASE
+								WHEN People.Gendor = '0' THEN 'Male'
+								ELSE 'Female'
+								END
+								AS GendorCaption, Address, Phone, Email, Countries.CountryName, ImagePath FROM People
+                                INNER JOIN Countries ON People.NationalityCountryID = Countries.CountryID
+            ";
             SqlCommand command = new SqlCommand(query, connection);
             try
             {
