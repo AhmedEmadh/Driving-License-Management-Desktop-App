@@ -76,6 +76,8 @@ namespace Driving_License_Management_BusinessLogic
             this.LastStatusDate = LastStatusDate;
             this.PaidFees = PaindFees;
             this.CreatedByUserID = CreatedByUserID;
+            ApplicationTypeInfo = clsApplicationType.Find(this.ApplicationTypeID);
+            CreatedByUserInfo = clsUser.FindByUserID(this.CreatedByUserID);
             Mode = enMode.Update;
         }
         private bool _AddNewApplication()
