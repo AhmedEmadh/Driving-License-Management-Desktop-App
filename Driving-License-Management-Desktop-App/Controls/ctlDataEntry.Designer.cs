@@ -36,9 +36,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.tbLast = new System.Windows.Forms.TextBox();
+            this.rbMale = new System.Windows.Forms.RadioButton();
+            this.rbFemale = new System.Windows.Forms.RadioButton();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -126,34 +126,34 @@
             this.textBox3.Size = new System.Drawing.Size(161, 22);
             this.textBox3.TabIndex = 3;
             // 
-            // textBox4
+            // tbLast
             // 
-            this.textBox4.Location = new System.Drawing.Point(510, 25);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 4;
+            this.tbLast.Location = new System.Drawing.Point(510, 25);
+            this.tbLast.Name = "tbLast";
+            this.tbLast.Size = new System.Drawing.Size(100, 22);
+            this.tbLast.TabIndex = 4;
             // 
-            // radioButton1
+            // rbMale
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(97, 80);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(58, 20);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Male";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbMale.AutoSize = true;
+            this.rbMale.Location = new System.Drawing.Point(97, 80);
+            this.rbMale.Name = "rbMale";
+            this.rbMale.Size = new System.Drawing.Size(58, 20);
+            this.rbMale.TabIndex = 7;
+            this.rbMale.TabStop = true;
+            this.rbMale.Text = "Male";
+            this.rbMale.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbFemale
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(161, 80);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(74, 20);
-            this.radioButton2.TabIndex = 8;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Female";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbFemale.AutoSize = true;
+            this.rbFemale.Location = new System.Drawing.Point(161, 80);
+            this.rbFemale.Name = "rbFemale";
+            this.rbFemale.Size = new System.Drawing.Size(74, 20);
+            this.rbFemale.TabIndex = 8;
+            this.rbFemale.TabStop = true;
+            this.rbFemale.Text = "Female";
+            this.rbFemale.UseVisualStyleBackColor = true;
             // 
             // textBox5
             // 
@@ -289,9 +289,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(542, 6);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(37, 16);
+            this.label12.Size = new System.Drawing.Size(32, 16);
             this.label12.TabIndex = 22;
-            this.label12.Text = "Forth";
+            this.label12.Text = "Last";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // dateTimePicker1
@@ -326,9 +326,9 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.rbFemale);
+            this.Controls.Add(this.rbMale);
+            this.Controls.Add(this.tbLast);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -356,9 +356,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.TextBox tbLast;
+        private System.Windows.Forms.RadioButton rbMale;
+        private System.Windows.Forms.RadioButton rbFemale;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;

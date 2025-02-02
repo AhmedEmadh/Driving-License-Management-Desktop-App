@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Driving_License_Management_Desktop_App.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -75,5 +76,6 @@ namespace Driving_License_Management_Desktop_App
         {
             OnClose_Handler(this);
         }
+
     }
 }

@@ -12,11 +12,13 @@ namespace Driving_License_Management_BusinessLogic
     {
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = enMode.AddNew;
+        public enum enGendor { Male = 0, Female = 1 };
         public int PersonID { get; set; }
         public string FirstName { get; set; }
         public string SecondName { get; set; }
         public string ThirdName { get; set; }
         public string LastName { get; set; }
+        public string FullName { get { return FirstName + " " + SecondName + " " + ThirdName + " " + LastName; } }
         public string NationalNo { get; set; }
         public DateTime DateOfBirth { get; set; }
         public short Gendor { get; set; }
@@ -37,7 +39,7 @@ namespace Driving_License_Management_BusinessLogic
             this.LastName = string.Empty;
             this.NationalNo = string.Empty;
             this.DateOfBirth = DateTime.Now;
-            this.Gendor = 0;
+            this.Gendor = (short)enGendor.Male;
             this.Address = string.Empty;
             this.PhoneNumber = string.Empty;
             this.Phone = string.Empty;
