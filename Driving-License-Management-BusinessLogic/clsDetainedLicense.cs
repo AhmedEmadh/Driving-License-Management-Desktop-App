@@ -14,11 +14,11 @@ namespace Driving_License_Management_BusinessLogic
         enum enMode { AddNew, Update };
         enMode Mode = enMode.AddNew;
 
-        int DetainID { get; set; }
-        int LicenseID { get; set; }
+        public int DetainID { get; set; }
+        public int LicenseID { get; set; }
         DateTime DetainDate { get; set; }
-        float FineFees { get; set; }
-        int CreatedByUserID { get; set; }
+        public float FineFees { get; set; }
+        public int CreatedByUserID { get; set; }
         clsUser CreatedByUserInfo { get; set; }
         bool IsReleased { get; set; }
         DateTime ReleaseDate { get; set; }

@@ -110,6 +110,26 @@ namespace Driving_License_Management_BusinessLogic
                 return null;
             }
         }
+        public bool Save()
+        {
+            switch (Mode)
+            {
+                case enMode.AddNew:
+                    if (_AddNewApplication())
+                    {
+                        Mode = enMode.Update;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case enMode.Update:
+                    return _UpdateApplication();
+                default:
+                    return false;
+            }
+        }
         public bool Cancel()
         {
             return clsApplicationData.UpdateStatus(ApplicationID, (short)enApplicationStatus.Cancelled);
