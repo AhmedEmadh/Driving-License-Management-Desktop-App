@@ -12,6 +12,14 @@ namespace Driving_License_Management_Desktop_App
 {
     public partial class ctlManagePersons : UserControl
     {
+
+        public DataTable Data
+        {
+            get { return (DataTable)dataGridView1.DataSource; }
+            set { dataGridView1.DataSource = value; }
+        }
+
+
         public event Action<Object> OnSearch;
         void OnSearch_handler()
         {
@@ -33,8 +41,8 @@ namespace Driving_License_Management_Desktop_App
 
         public string SearchText
         {
-            get { return textBox1.Text; }
-            set { textBox1.Text = value; }
+            get { return tbSearch.Text; }
+            set { tbSearch.Text = value; }
         }
         public event Action<Object> OnAdd;
         void OnAdd_handler()
@@ -64,10 +72,16 @@ namespace Driving_License_Management_Desktop_App
         public ContextMenuStrip contextMenuStrip
         {
             set { dataGridView1.ContextMenuStrip = value; }
+            get { return dataGridView1.ContextMenuStrip; }
         }
         public string ButtonValue
         {
-            set { button2.Text = "add " + value; }
+            set { btnAddPerson.Text = "add " + value; }
+        }
+        public Button CloseButton
+        {
+            get { return btnClose; }
+            set { btnClose = value; }
         }
         public ctlManagePersons()
         {
@@ -75,15 +89,19 @@ namespace Driving_License_Management_Desktop_App
         }
         public ctlManagePersons(string Value)
         {
+            dataGridView1.Columns[0].Width = 10;
+            dataGridView1.Columns[1].Width = 10;
+            dataGridView1.Columns[2].Width = 10;
+            dataGridView1.Columns[3].Width = 10;
             InitializeComponent();
             label5.Text = Value;
         }
-        
+
         private void UserControl2_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
         }
-        
+
         private void button2_Click(object sender, EventArgs e)
         {
             OnAdd_handler();
@@ -97,6 +115,33 @@ namespace Driving_License_Management_Desktop_App
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             OnSearchTextChange_handler();
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            int index = 0;
+            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            {
+                switch (index)
+                {
+                    case 0:
+                        col.Width = 60;
+                        break;
+                    case 1:
+                        col.Width = 70;
+                        break;
+                    case 2:
+                        col.Width = 70;
+                        break;
+                    case 3:
+                        col.Width = 70;
+                        break;
+                    default:
+                        col.Width = 80; // Set your desired default width
+                        break;
+                }
+                index++;
+            }
         }
     }
 }

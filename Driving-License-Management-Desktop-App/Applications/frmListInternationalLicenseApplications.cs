@@ -22,6 +22,7 @@ namespace Driving_License_Management_Desktop_App
             ctlManagePersons1.Value = "International License Applications";
             ctlManagePersons1.ButtonValue = "License";
             ctlManagePersons1.contextMenuStrip = contextMenuStrip1;
+            this.CancelButton = ctlManagePersons1.CloseButton;
         }
 
         private void ctlManagePersons1_OnClose(object obj)

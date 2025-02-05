@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Driving_License_Management_BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,8 +34,10 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmManagePeople_Load(object sender, EventArgs e)
         {
-            userControl21.Value = "People";
-            userControl21.ButtonValue = "Person";
+            ctlManagePersons1.Value = "People";
+            ctlManagePersons1.ButtonValue = "Person";
+            this.CancelButton = ctlManagePersons1.CloseButton;
+            ctlManagePersons1.Data = clsPerson.GetAllPeople();
         }
 
         private void userControl21_Load(object sender, EventArgs e)
@@ -42,15 +45,31 @@ namespace Driving_License_Management_Desktop_App
             
 
         }
-
+        void Databack(object sender, int ID)
+        {
+            ctlManagePersons1.SearchText = ID.ToString();
+        }
         private void userControl21_OnAdd(object obj)
         {
-            new frmAddEditPersonInfo().ShowDialog();
+
+            frmAddEditPersonInfo form = new frmAddEditPersonInfo();
+            form.DataBack += Databack;
+            form.ShowDialog();
         }
 
         private void userControl21_OnClose(object obj)
         {
             this.Close();
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void showDetailsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            new frmPersonDetails(1023).ShowDialog();
         }
     }
 }

@@ -21,5 +21,10 @@ namespace Driving_License_Management_Desktop_App
         {
             this.Close();
         }
+
+        private void frmDetainLicense_Load(object sender, EventArgs e)
+        {
+            this.CancelButton = btnClose;
+        }
     }
 }

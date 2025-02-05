@@ -16,5 +16,14 @@ namespace Driving_License_Management_Desktop_App
         {
             InitializeComponent();
         }
+        public frmPersonDetails(int ID)
+        {
+            InitializeComponent();
+            ctlPersonInformation1.PersonID = ID;
+        }
+        private void frmPersonDetails_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

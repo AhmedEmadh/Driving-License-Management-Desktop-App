@@ -37,7 +37,7 @@
             this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.ctlApplicationInfo1 = new Driving_License_Management_Desktop_App.ctlApplicationInfo();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -113,15 +113,15 @@
             this.label18.TabIndex = 6;
             this.label18.Text = "0";
             // 
-            // button1
+            // btnClose
             // 
-            this.button1.Location = new System.Drawing.Point(646, 643);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 48);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnClose.Location = new System.Drawing.Point(646, 643);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(120, 48);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -135,6 +135,7 @@
             // 
             // ctlApplicationInfo1
             // 
+            this.ctlApplicationInfo1.BackColor = System.Drawing.Color.White;
             this.ctlApplicationInfo1.Location = new System.Drawing.Point(-1, 117);
             this.ctlApplicationInfo1.Name = "ctlApplicationInfo1";
             this.ctlApplicationInfo1.Size = new System.Drawing.Size(789, 284);
@@ -146,10 +147,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(800, 703);
             this.Controls.Add(this.ctlApplicationInfo1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.dataGridView1);
@@ -171,7 +173,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;

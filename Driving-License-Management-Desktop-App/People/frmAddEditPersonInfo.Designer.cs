@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblAddNewPerson = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.lblPersonIDText = new System.Windows.Forms.Label();
             this.lblPersonIDValue = new System.Windows.Forms.Label();
             this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
@@ -39,7 +40,7 @@
             this.tbPhone = new System.Windows.Forms.TextBox();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.llblSetImage = new System.Windows.Forms.LinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbPersonImage = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblCountry = new System.Windows.Forms.Label();
@@ -70,7 +71,9 @@
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.llblRemove = new System.Windows.Forms.LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -81,16 +84,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblAddNewPerson
+            // lblTitle
             // 
-            this.lblAddNewPerson.AutoSize = true;
-            this.lblAddNewPerson.Location = new System.Drawing.Point(339, 26);
-            this.lblAddNewPerson.Name = "lblAddNewPerson";
-            this.lblAddNewPerson.Size = new System.Drawing.Size(108, 16);
-            this.lblAddNewPerson.TabIndex = 0;
-            this.lblAddNewPerson.Text = "Add New Person";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTitle.Location = new System.Drawing.Point(257, 18);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(320, 46);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Add New Person";
             // 
             // lblPersonIDText
             // 
@@ -162,18 +168,21 @@
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Size = new System.Drawing.Size(161, 22);
             this.tbPhone.TabIndex = 36;
+            this.tbPhone.Validating += new System.ComponentModel.CancelEventHandler(this._ValidatingWhiteSpace);
             // 
             // tbEmail
             // 
             this.tbEmail.Location = new System.Drawing.Point(134, 206);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(162, 22);
+            this.tbEmail.Size = new System.Drawing.Size(214, 22);
             this.tbEmail.TabIndex = 37;
+            this.tbEmail.TextChanged += new System.EventHandler(this.tbEmail_TextChanged);
+            this.tbEmail.Validating += new System.ComponentModel.CancelEventHandler(this._ValidateEmail);
             // 
             // llblSetImage
             // 
             this.llblSetImage.AutoSize = true;
-            this.llblSetImage.Location = new System.Drawing.Point(696, 286);
+            this.llblSetImage.Location = new System.Drawing.Point(700, 286);
             this.llblSetImage.Name = "llblSetImage";
             this.llblSetImage.Size = new System.Drawing.Size(68, 16);
             this.llblSetImage.TabIndex = 41;
@@ -181,15 +190,15 @@
             this.llblSetImage.Text = "Set Image";
             this.llblSetImage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblSetImage_LinkClicked);
             // 
-            // pictureBox1
+            // pbPersonImage
             // 
-            this.pictureBox1.Image = global::Driving_License_Management_Desktop_App.Properties.Resources.Male_512;
-            this.pictureBox1.Location = new System.Drawing.Point(679, 141);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(116, 126);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 46;
-            this.pictureBox1.TabStop = false;
+            this.pbPersonImage.Image = global::Driving_License_Management_Desktop_App.Properties.Resources.Male_512;
+            this.pbPersonImage.Location = new System.Drawing.Point(679, 141);
+            this.pbPersonImage.Name = "pbPersonImage";
+            this.pbPersonImage.Size = new System.Drawing.Size(116, 126);
+            this.pbPersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPersonImage.TabIndex = 46;
+            this.pbPersonImage.TabStop = false;
             // 
             // btnClose
             // 
@@ -210,6 +219,7 @@
             this.btnSave.TabIndex = 42;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblCountry
             // 
@@ -245,6 +255,7 @@
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(529, 82);
             this.tbAddress.TabIndex = 39;
+            this.tbAddress.Validating += new System.ComponentModel.CancelEventHandler(this._ValidatingWhiteSpace);
             // 
             // tbNationalNo
             // 
@@ -252,6 +263,7 @@
             this.tbNationalNo.Name = "tbNationalNo";
             this.tbNationalNo.Size = new System.Drawing.Size(162, 22);
             this.tbNationalNo.TabIndex = 32;
+            this.tbNationalNo.Validating += new System.ComponentModel.CancelEventHandler(this._ValidateNationalNumber);
             // 
             // rbFemale
             // 
@@ -283,6 +295,7 @@
             this.tbForth.Name = "tbForth";
             this.tbForth.Size = new System.Drawing.Size(152, 22);
             this.tbForth.TabIndex = 31;
+            this.tbForth.Validating += new System.ComponentModel.CancelEventHandler(this._ValidatingWhiteSpace);
             // 
             // tbThird
             // 
@@ -297,6 +310,7 @@
             this.tbSecound.Name = "tbSecound";
             this.tbSecound.Size = new System.Drawing.Size(167, 22);
             this.tbSecound.TabIndex = 27;
+            this.tbSecound.Validating += new System.ComponentModel.CancelEventHandler(this._ValidatingWhiteSpace);
             // 
             // tbFirst
             // 
@@ -304,6 +318,8 @@
             this.tbFirst.Name = "tbFirst";
             this.tbFirst.Size = new System.Drawing.Size(162, 22);
             this.tbFirst.TabIndex = 24;
+            this.tbFirst.TextChanged += new System.EventHandler(this.tbFirst_TextChanged);
+            this.tbFirst.Validating += new System.ComponentModel.CancelEventHandler(this.tbFirst_Validating);
             // 
             // lblAddress
             // 
@@ -470,6 +486,14 @@
             this.llblRemove.Text = "Remove";
             this.llblRemove.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblRemove_LinkClicked);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // frmAddEditPersonInfo
             // 
             this.AcceptButton = this.btnSave;
@@ -488,7 +512,7 @@
             this.Controls.Add(this.tbPhone);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.llblSetImage);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbPersonImage);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblCountry);
@@ -509,7 +533,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblPersonIDValue);
             this.Controls.Add(this.lblPersonIDText);
-            this.Controls.Add(this.lblAddNewPerson);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
@@ -523,7 +547,8 @@
             this.Name = "frmAddEditPersonInfo";
             this.Text = "frmAddEditPersonInfo";
             this.Load += new System.EventHandler(this.frmAddEditPersonInfo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Validating += new System.ComponentModel.CancelEventHandler(this._ValidateEmail);
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -534,6 +559,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -541,7 +567,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblAddNewPerson;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblPersonIDText;
         private System.Windows.Forms.Label lblPersonIDValue;
         private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
@@ -552,7 +578,7 @@
         private System.Windows.Forms.TextBox tbPhone;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.LinkLabel llblSetImage;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbPersonImage;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblCountry;
@@ -583,5 +609,7 @@
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.LinkLabel llblRemove;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

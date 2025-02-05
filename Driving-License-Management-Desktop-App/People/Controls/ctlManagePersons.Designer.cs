@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAddPerson = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // btnAddPerson
             // 
-            this.button2.Location = new System.Drawing.Point(649, 116);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 38);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "add Person";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnAddPerson.Location = new System.Drawing.Point(649, 116);
+            this.btnAddPerson.Name = "btnAddPerson";
+            this.btnAddPerson.Size = new System.Drawing.Size(94, 38);
+            this.btnAddPerson.TabIndex = 17;
+            this.btnAddPerson.Text = "add Person";
+            this.btnAddPerson.UseVisualStyleBackColor = true;
+            this.btnAddPerson.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBox1
             // 
@@ -110,15 +110,15 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "# Records:";
             // 
-            // button1
+            // btnClose
             // 
-            this.button1.Location = new System.Drawing.Point(649, 386);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 37);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnClose.Location = new System.Drawing.Point(649, 386);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(94, 37);
+            this.btnClose.TabIndex = 11;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -129,6 +129,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(728, 217);
             this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
             // label1
             // 
@@ -149,28 +150,28 @@
             this.label5.TabIndex = 18;
             this.label5.Text = "People";
             // 
-            // textBox1
+            // tbSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(204, 131);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 22);
-            this.textBox1.TabIndex = 19;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.tbSearch.Location = new System.Drawing.Point(204, 131);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(149, 22);
+            this.tbSearch.TabIndex = 19;
+            this.tbSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // ctlManagePersons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAddPerson);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "ctlManagePersons";
@@ -185,16 +186,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAddPerson;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbSearch;
     }
 }

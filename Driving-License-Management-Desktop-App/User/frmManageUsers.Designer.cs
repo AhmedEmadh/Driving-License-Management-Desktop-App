@@ -45,6 +45,8 @@
             // 
             // userControl21
             // 
+            this.userControl21.BackColor = System.Drawing.Color.White;
+            this.userControl21.contextMenuStrip = this.contextMenuStrip1;
             this.userControl21.Location = new System.Drawing.Point(29, 12);
             this.userControl21.Name = "userControl21";
             this.userControl21.SearchText = "";

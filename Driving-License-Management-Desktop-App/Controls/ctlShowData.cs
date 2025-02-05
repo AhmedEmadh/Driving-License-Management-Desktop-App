@@ -30,6 +30,11 @@ namespace Driving_License_Management_Desktop_App
             }
         }
 
+        public Button CloseButton
+        {
+            get { return button1; }
+            set { button1 = value; }
+        }
         public ctlShowData()
         {
             InitializeComponent();

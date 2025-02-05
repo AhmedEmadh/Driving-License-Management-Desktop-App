@@ -13,6 +13,18 @@ namespace Driving_License_Management_Desktop_App
 {
     public partial class ctlDataEntry : UserControl
     {
+        public Button CloseButton
+        {
+            get
+            {
+                return button2;
+            }
+            set
+            {
+                button2 = value;
+            }
+        }
+
         public event Action<object> OnSave;
         void OnSave_Handler(object obj)
         {

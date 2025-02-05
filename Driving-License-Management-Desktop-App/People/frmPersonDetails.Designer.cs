@@ -33,8 +33,10 @@
             // 
             // ctlPersonInformation1
             // 
+            this.ctlPersonInformation1.BackColor = System.Drawing.Color.White;
             this.ctlPersonInformation1.Location = new System.Drawing.Point(12, 12);
             this.ctlPersonInformation1.Name = "ctlPersonInformation1";
+            this.ctlPersonInformation1.PersonID = -1;
             this.ctlPersonInformation1.Size = new System.Drawing.Size(660, 215);
             this.ctlPersonInformation1.TabIndex = 0;
             // 
@@ -47,6 +49,7 @@
             this.Controls.Add(this.ctlPersonInformation1);
             this.Name = "frmPersonDetails";
             this.Text = "frmPersonDetails";
+            this.Load += new System.EventHandler(this.frmPersonDetails_Load);
             this.ResumeLayout(false);
 
         }

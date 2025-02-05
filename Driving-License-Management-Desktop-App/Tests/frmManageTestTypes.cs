@@ -20,6 +20,7 @@ namespace Driving_License_Management_Desktop_App
         private void frmManageTestTypes_Load(object sender, EventArgs e)
         {
             //ctlShowData1.Title = "Test Types";
+            this.CancelButton = ctlShowData1.CloseButton;
         }
 
         private void ctlShowData1_OnClose(object obj)

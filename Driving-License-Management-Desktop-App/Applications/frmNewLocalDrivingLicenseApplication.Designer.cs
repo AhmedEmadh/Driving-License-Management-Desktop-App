@@ -44,8 +44,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -85,6 +85,7 @@
             // 
             // ctlPersonInformationWithFilter1
             // 
+            this.ctlPersonInformationWithFilter1.BackColor = System.Drawing.Color.White;
             this.ctlPersonInformationWithFilter1.Location = new System.Drawing.Point(7, 7);
             this.ctlPersonInformationWithFilter1.Name = "ctlPersonInformationWithFilter1";
             this.ctlPersonInformationWithFilter1.SelectedIndex = -1;
@@ -210,33 +211,35 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "New Local Driving License Application";
             // 
-            // button2
+            // btnSave
             // 
-            this.button2.Location = new System.Drawing.Point(572, 501);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(572, 501);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnClose
             // 
-            this.button3.Location = new System.Drawing.Point(671, 501);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Close";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.Location = new System.Drawing.Point(671, 501);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 3;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.button3_Click);
             // 
             // frmNewLocalDrivingLicenseApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(800, 560);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmNewLocalDrivingLicenseApplication";
@@ -269,7 +272,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnClose;
     }
 }

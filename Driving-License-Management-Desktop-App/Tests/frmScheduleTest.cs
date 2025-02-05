@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Driving_License_Management_Desktop_App
 {
-    public partial class frmScheduleTest : Form
+    public partial class btnSave : Form
     {
-        public frmScheduleTest()
+        public btnSave()
         {
             InitializeComponent();
         }
@@ -20,6 +20,11 @@ namespace Driving_License_Management_Desktop_App
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

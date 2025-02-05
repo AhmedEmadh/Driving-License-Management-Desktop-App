@@ -36,20 +36,22 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ctlPersonInformation1
             // 
+            this.ctlPersonInformation1.BackColor = System.Drawing.Color.White;
             this.ctlPersonInformation1.Location = new System.Drawing.Point(12, 12);
             this.ctlPersonInformation1.Name = "ctlPersonInformation1";
-            this.ctlPersonInformation1.Size = new System.Drawing.Size(656, 215);
+            this.ctlPersonInformation1.Size = new System.Drawing.Size(640, 215);
             this.ctlPersonInformation1.TabIndex = 0;
             // 
             // ctlloginInfo1
             // 
-            this.ctlloginInfo1.Location = new System.Drawing.Point(28, 223);
+            this.ctlloginInfo1.BackColor = System.Drawing.Color.White;
+            this.ctlloginInfo1.Location = new System.Drawing.Point(12, 223);
             this.ctlloginInfo1.Name = "ctlloginInfo1";
             this.ctlloginInfo1.Size = new System.Drawing.Size(640, 93);
             this.ctlloginInfo1.TabIndex = 1;
@@ -102,33 +104,35 @@
             this.textBox3.Size = new System.Drawing.Size(194, 22);
             this.textBox3.TabIndex = 6;
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Location = new System.Drawing.Point(421, 389);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 40);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(405, 389);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(114, 40);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnClose
             // 
-            this.button2.Location = new System.Drawing.Point(554, 389);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 40);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Close";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnClose.Location = new System.Drawing.Point(538, 389);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(114, 40);
+            this.btnClose.TabIndex = 9;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmChangePassword
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(680, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.CancelButton = this.btnClose;
+            this.ClientSize = new System.Drawing.Size(669, 450);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label2);
@@ -139,6 +143,7 @@
             this.Controls.Add(this.ctlPersonInformation1);
             this.Name = "frmChangePassword";
             this.Text = "frmChangePassword";
+            this.Load += new System.EventHandler(this.frmChangePassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,7 +159,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnClose;
     }
 }

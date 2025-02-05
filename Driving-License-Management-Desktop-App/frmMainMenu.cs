@@ -27,8 +27,8 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //if(_CallerForm != null)
-            _CallerForm.Close();
+            if(_CallerForm != null)
+                _CallerForm.Close();
         }
 
         private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -129,7 +129,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void applicationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmAddEditPersonInfo().ShowDialog();
+            new frmManagePeople().ShowDialog();
         }
     }
 }

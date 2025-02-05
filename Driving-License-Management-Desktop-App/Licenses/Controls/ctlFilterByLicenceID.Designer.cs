@@ -46,6 +46,7 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button1
             // 
@@ -80,6 +81,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ctlFilterByLicenceID";
             this.Size = new System.Drawing.Size(415, 82);
+            this.Load += new System.EventHandler(this.ctlFilterByLicenceID_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

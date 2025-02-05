@@ -20,6 +20,7 @@ namespace Driving_License_Management_Desktop_App
         private void frmManageDetainedLicences_Load(object sender, EventArgs e)
         {
             ctlShowDataWithFilter1.contextMenuStrip = contextMenuStrip1;
+            this.CancelButton = ctlShowDataWithFilter1.CloseButton;
         }
 
         private void ctlShowDataWithFilter1_Load(object sender, EventArgs e)

@@ -48,8 +48,8 @@
             this.label29 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnIssue = new System.Windows.Forms.Button();
             this.ctlDriverLicenseInfo1 = new Driving_License_Management_Desktop_App.ctlDriverLicenseInfo();
             this.ctlFilterByLicenceID1 = new Driving_License_Management_Desktop_App.ctlFilterByLicenceID();
             this.groupBox3.SuspendLayout();
@@ -255,27 +255,28 @@
             this.linkLabel2.Text = "Show Licenses Info";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // button2
+            // btnClose
             // 
-            this.button2.Location = new System.Drawing.Point(404, 546);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Close";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnClose.Location = new System.Drawing.Point(404, 546);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnIssue
             // 
-            this.button3.Location = new System.Drawing.Point(316, 546);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Issue";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnIssue.Location = new System.Drawing.Point(316, 546);
+            this.btnIssue.Name = "btnIssue";
+            this.btnIssue.Size = new System.Drawing.Size(75, 23);
+            this.btnIssue.TabIndex = 8;
+            this.btnIssue.Text = "Issue";
+            this.btnIssue.UseVisualStyleBackColor = true;
             // 
             // ctlDriverLicenseInfo1
             // 
+            this.ctlDriverLicenseInfo1.BackColor = System.Drawing.Color.White;
             this.ctlDriverLicenseInfo1.Location = new System.Drawing.Point(9, 144);
             this.ctlDriverLicenseInfo1.Name = "ctlDriverLicenseInfo1";
             this.ctlDriverLicenseInfo1.Size = new System.Drawing.Size(496, 244);
@@ -283,6 +284,7 @@
             // 
             // ctlFilterByLicenceID1
             // 
+            this.ctlFilterByLicenceID1.BackColor = System.Drawing.Color.White;
             this.ctlFilterByLicenceID1.Location = new System.Drawing.Point(12, 56);
             this.ctlFilterByLicenceID1.Name = "ctlFilterByLicenceID1";
             this.ctlFilterByLicenceID1.Size = new System.Drawing.Size(500, 82);
@@ -293,11 +295,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(517, 661);
             this.Controls.Add(this.ctlFilterByLicenceID1);
             this.Controls.Add(this.ctlDriverLicenseInfo1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnIssue);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.groupBox3);
@@ -325,8 +328,8 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnIssue;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;

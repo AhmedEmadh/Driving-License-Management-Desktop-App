@@ -33,8 +33,8 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.ctlScheduledTest1 = new Driving_License_Management_Desktop_App.Tests.Controls.ctlScheduledTest();
             this.SuspendLayout();
             // 
@@ -86,27 +86,28 @@
             this.textBox1.Size = new System.Drawing.Size(266, 109);
             this.textBox1.TabIndex = 14;
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Location = new System.Drawing.Point(133, 553);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 31);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(133, 553);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(89, 31);
+            this.btnSave.TabIndex = 15;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnClose
             // 
-            this.button2.Location = new System.Drawing.Point(239, 553);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 31);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Close";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnClose.Location = new System.Drawing.Point(239, 553);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(89, 31);
+            this.btnClose.TabIndex = 16;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.button2_Click);
             // 
             // ctlScheduledTest1
             // 
+            this.ctlScheduledTest1.BackColor = System.Drawing.Color.White;
             this.ctlScheduledTest1.Location = new System.Drawing.Point(12, 13);
             this.ctlScheduledTest1.Name = "ctlScheduledTest1";
             this.ctlScheduledTest1.Size = new System.Drawing.Size(332, 369);
@@ -114,13 +115,15 @@
             // 
             // frmTakeTest
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(346, 603);
             this.Controls.Add(this.ctlScheduledTest1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -139,8 +142,8 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnClose;
         private Tests.Controls.ctlScheduledTest ctlScheduledTest1;
     }
 }

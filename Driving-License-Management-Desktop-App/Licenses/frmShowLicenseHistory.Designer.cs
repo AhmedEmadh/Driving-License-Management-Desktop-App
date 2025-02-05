@@ -46,9 +46,10 @@
             // 
             // ctlPersonInformation1
             // 
+            this.ctlPersonInformation1.BackColor = System.Drawing.Color.White;
             this.ctlPersonInformation1.Location = new System.Drawing.Point(43, 117);
             this.ctlPersonInformation1.Name = "ctlPersonInformation1";
-            this.ctlPersonInformation1.Size = new System.Drawing.Size(660, 215);
+            this.ctlPersonInformation1.Size = new System.Drawing.Size(647, 215);
             this.ctlPersonInformation1.TabIndex = 0;
             // 
             // groupBox1
@@ -133,6 +134,7 @@
             // 
             // ctlDriverLicenses1
             // 
+            this.ctlDriverLicenses1.BackColor = System.Drawing.Color.White;
             this.ctlDriverLicenses1.Location = new System.Drawing.Point(43, 349);
             this.ctlDriverLicenses1.Name = "ctlDriverLicenses1";
             this.ctlDriverLicenses1.Size = new System.Drawing.Size(638, 321);

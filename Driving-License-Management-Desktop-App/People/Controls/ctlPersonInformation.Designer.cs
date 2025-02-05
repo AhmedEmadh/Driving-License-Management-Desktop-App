@@ -236,6 +236,7 @@
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Person Information";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // llEditPersonInfo
             // 
@@ -249,9 +250,11 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::Driving_License_Management_Desktop_App.Properties.Resources.Male_512;
             this.pictureBox1.Location = new System.Drawing.Point(463, 49);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(146, 127);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 

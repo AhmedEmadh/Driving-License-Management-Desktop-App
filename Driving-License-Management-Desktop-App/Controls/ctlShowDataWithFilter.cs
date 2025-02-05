@@ -13,6 +13,18 @@ namespace Driving_License_Management_Desktop_App
     public partial class ctlShowDataWithFilter : UserControl
     {
 
+        public Button CloseButton
+        {
+            get
+            {
+                return ctlShowData1.CloseButton;
+            }
+            set
+            {
+                ctlShowData1.CloseButton = value;
+            }
+        }
+
         public event Action<Object> OnClose;
         void OnClose_Handler()
         {

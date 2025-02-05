@@ -21,5 +21,10 @@ namespace Driving_License_Management_Desktop_App.User
         {
             this.Close();
         }
+
+        private void frmChangePassword_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

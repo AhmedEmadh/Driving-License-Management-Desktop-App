@@ -35,6 +35,7 @@ namespace Driving_License_Management_Desktop_App
         private void frmLocalDrivingLicenseApplications_Load(object sender, EventArgs e)
         {
             ctlManagePersons1.ContextMenuStrip = contextMenuStrip1;
+            this.CancelButton = ctlManagePersons1.CloseButton;
         }
     }
 }

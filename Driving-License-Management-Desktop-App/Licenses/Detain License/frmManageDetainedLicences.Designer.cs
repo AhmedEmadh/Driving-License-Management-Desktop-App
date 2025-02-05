@@ -43,6 +43,7 @@
             // ctlFormTitle1
             // 
             this.ctlFormTitle1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ctlFormTitle1.BackColor = System.Drawing.Color.White;
             this.ctlFormTitle1.Location = new System.Drawing.Point(28, 12);
             this.ctlFormTitle1.Name = "ctlFormTitle1";
             this.ctlFormTitle1.picture = null;
@@ -52,6 +53,7 @@
             // 
             // ctlShowDataWithFilter1
             // 
+            this.ctlShowDataWithFilter1.BackColor = System.Drawing.Color.White;
             this.ctlShowDataWithFilter1.contextMenuStrip = null;
             this.ctlShowDataWithFilter1.Location = new System.Drawing.Point(28, 138);
             this.ctlShowDataWithFilter1.Name = "ctlShowDataWithFilter1";

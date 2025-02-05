@@ -22,6 +22,7 @@ namespace Driving_License_Management_Desktop_App
         {
             userControl21.Value = "Users";
             userControl21.ButtonValue = "User";
+            this.CancelButton = userControl21.CloseButton;
         }
 
         private void userControl21_Load(object sender, EventArgs e)

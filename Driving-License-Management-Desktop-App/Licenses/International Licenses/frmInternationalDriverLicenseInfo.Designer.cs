@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ctlInternationalDrivingLicenseInfo1 = new Driving_License_Management_Desktop_App.ctlInternationalDrivingLicenseInfo();
             this.SuspendLayout();
             // 
-            // button1
+            // btnClose
             // 
-            this.button1.Location = new System.Drawing.Point(535, 316);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 51);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.Location = new System.Drawing.Point(535, 316);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(118, 51);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -55,6 +56,7 @@
             // 
             // ctlInternationalDrivingLicenseInfo1
             // 
+            this.ctlInternationalDrivingLicenseInfo1.BackColor = System.Drawing.Color.White;
             this.ctlInternationalDrivingLicenseInfo1.Location = new System.Drawing.Point(12, 88);
             this.ctlInternationalDrivingLicenseInfo1.Name = "ctlInternationalDrivingLicenseInfo1";
             this.ctlInternationalDrivingLicenseInfo1.Size = new System.Drawing.Size(673, 207);
@@ -65,10 +67,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(676, 384);
             this.Controls.Add(this.ctlInternationalDrivingLicenseInfo1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnClose);
             this.Name = "frmInternationalDriverLicenseInfo";
             this.Text = "frmInternationalDriverLicenseInfo";
             this.ResumeLayout(false);
@@ -77,7 +80,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private ctlInternationalDrivingLicenseInfo ctlInternationalDrivingLicenseInfo1;
     }

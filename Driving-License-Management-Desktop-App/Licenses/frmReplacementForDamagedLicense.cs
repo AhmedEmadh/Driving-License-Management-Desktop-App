@@ -32,5 +32,10 @@ namespace Driving_License_Management_Desktop_App
             //show new license Info
 
         }
+
+        private void frmReplacementForDamagedLicense_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

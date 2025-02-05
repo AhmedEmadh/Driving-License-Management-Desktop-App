@@ -37,6 +37,7 @@
             // 
             // ctlShowData1
             // 
+            this.ctlShowData1.BackColor = System.Drawing.Color.White;
             this.ctlShowData1.ContextMenuStrip = this.contextMenuStrip1;
             this.ctlShowData1.Location = new System.Drawing.Point(21, 12);
             this.ctlShowData1.Name = "ctlShowData1";
