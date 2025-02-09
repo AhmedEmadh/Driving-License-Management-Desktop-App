@@ -21,6 +21,11 @@ namespace Driving_License_Management_Desktop_App
             InitializeComponent();
             ctlPersonInformation1.PersonID = ID;
         }
+        public frmPersonDetails(string NationalNo)
+        {
+            InitializeComponent();
+            ctlPersonInformation1.PersonNationalNo = NationalNo;
+        }
         private void frmPersonDetails_Load(object sender, EventArgs e)
         {
 

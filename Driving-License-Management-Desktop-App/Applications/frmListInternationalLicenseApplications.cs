@@ -19,7 +19,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmListInternationalLicenseApplications_Load(object sender, EventArgs e)
         {
-            ctlManagePersons1.Value = "International License Applications";
+            ctlManagePersons1.Title = "International License Applications";
             ctlManagePersons1.ButtonValue = "License";
             ctlManagePersons1.contextMenuStrip = contextMenuStrip1;
             this.CancelButton = ctlManagePersons1.CloseButton;

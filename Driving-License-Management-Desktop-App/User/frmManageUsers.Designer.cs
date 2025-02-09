@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.userControl21 = new Driving_License_Management_Desktop_App.ctlManagePersons();
+            this.userControl21 = new Driving_License_Management_Desktop_App.ctlManagePeople();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -52,7 +52,7 @@
             this.userControl21.SearchText = "";
             this.userControl21.Size = new System.Drawing.Size(759, 426);
             this.userControl21.TabIndex = 0;
-            this.userControl21.Value = "People";
+            this.userControl21.Title = "People";
             this.userControl21.OnAdd += new System.Action<object>(this.userControl21_OnAdd);
             this.userControl21.OnClose += new System.Action<object>(this.userControl21_OnClose);
             this.userControl21.Load += new System.EventHandler(this.userControl21_Load);
@@ -142,7 +142,7 @@
 
         #endregion
 
-        private ctlManagePersons userControl21;
+        private ctlManagePeople userControl21;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem showDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;

@@ -33,7 +33,7 @@
             this.showPersonDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showLicenseDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showPersonLicenseHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ctlManagePersons1 = new Driving_License_Management_Desktop_App.ctlManagePersons();
+            this.ctlManagePersons1 = new Driving_License_Management_Desktop_App.ctlManagePeople();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,12 +67,15 @@
             // 
             // ctlManagePersons1
             // 
+            this.ctlManagePersons1.BackColor = System.Drawing.Color.White;
+            this.ctlManagePersons1.contextMenuStrip = null;
+            this.ctlManagePersons1.Data = null;
             this.ctlManagePersons1.Location = new System.Drawing.Point(12, 2);
             this.ctlManagePersons1.Name = "ctlManagePersons1";
             this.ctlManagePersons1.SearchText = "";
             this.ctlManagePersons1.Size = new System.Drawing.Size(759, 436);
             this.ctlManagePersons1.TabIndex = 0;
-            this.ctlManagePersons1.Value = "People";
+            this.ctlManagePersons1.Title = "Manage International Licenses";
             this.ctlManagePersons1.OnClose += new System.Action<object>(this.ctlManagePersons1_OnClose);
             // 
             // frmListInternationalLicenseApplications
@@ -92,7 +95,7 @@
 
         #endregion
 
-        private ctlManagePersons ctlManagePersons1;
+        private ctlManagePeople ctlManagePersons1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem showPersonDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showLicenseDetailsToolStripMenuItem;

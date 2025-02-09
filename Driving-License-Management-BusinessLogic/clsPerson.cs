@@ -12,7 +12,10 @@ namespace Driving_License_Management_BusinessLogic
     {
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = enMode.AddNew;
-        public enum enGendor { Male = 0, Female = 1 };
+        public enum enGendor
+        {
+            Male = 0, Female = 1
+        }
         public int PersonID { get; set; }
         public string FirstName { get; set; }
         public string SecondName { get; set; }
@@ -119,7 +122,7 @@ namespace Driving_License_Management_BusinessLogic
             {
                 case enMode.AddNew:
                     {
-                        if(_AddNewPerson())
+                        if (_AddNewPerson())
                         {
                             this.Mode = enMode.Update;
                             return true;
@@ -153,6 +156,16 @@ namespace Driving_License_Management_BusinessLogic
         {
             return clsPersonData.IsPersonExist(NationalNo);
         }
-
+        public static string GendorToString(short Gendor)
+        {
+            if (Gendor == (short)enGendor.Male)
+            {
+                return "Male";
+            }
+            else
+            {
+                return "Female";
+            }
+        }
     }
 }

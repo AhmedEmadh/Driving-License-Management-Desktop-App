@@ -20,7 +20,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmManageUsers_Load(object sender, EventArgs e)
         {
-            userControl21.Value = "Users";
+            userControl21.Title = "Users";
             userControl21.ButtonValue = "User";
             this.CancelButton = userControl21.CloseButton;
         }

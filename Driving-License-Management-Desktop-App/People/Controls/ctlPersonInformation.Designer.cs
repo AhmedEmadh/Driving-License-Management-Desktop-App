@@ -40,18 +40,18 @@
             this.lblvPersonID = new System.Windows.Forms.Label();
             this.lblvName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblvGender = new System.Windows.Forms.Label();
+            this.lblvEmail = new System.Windows.Forms.Label();
+            this.lblvAddress = new System.Windows.Forms.Label();
+            this.lblvDateOfBirth = new System.Windows.Forms.Label();
+            this.lblvPhone = new System.Windows.Forms.Label();
+            this.lblvCountry = new System.Windows.Forms.Label();
+            this.lblvNationalNo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.llEditPersonInfo = new System.Windows.Forms.LinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbPersonPicture = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCPersonID
@@ -163,76 +163,76 @@
             this.label1.Text = " ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label2
+            // lblvGender
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(132, 124);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 16);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "???";
+            this.lblvGender.AutoSize = true;
+            this.lblvGender.Location = new System.Drawing.Point(132, 124);
+            this.lblvGender.Name = "lblvGender";
+            this.lblvGender.Size = new System.Drawing.Size(28, 16);
+            this.lblvGender.TabIndex = 12;
+            this.lblvGender.Text = "???";
             // 
-            // label3
+            // lblvEmail
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(132, 149);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 16);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "???";
+            this.lblvEmail.AutoSize = true;
+            this.lblvEmail.Location = new System.Drawing.Point(132, 149);
+            this.lblvEmail.Name = "lblvEmail";
+            this.lblvEmail.Size = new System.Drawing.Size(28, 16);
+            this.lblvEmail.TabIndex = 13;
+            this.lblvEmail.Text = "???";
             // 
-            // label4
+            // lblvAddress
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(132, 175);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 16);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "???";
+            this.lblvAddress.AutoSize = true;
+            this.lblvAddress.Location = new System.Drawing.Point(132, 175);
+            this.lblvAddress.Name = "lblvAddress";
+            this.lblvAddress.Size = new System.Drawing.Size(28, 16);
+            this.lblvAddress.TabIndex = 14;
+            this.lblvAddress.Text = "???";
             // 
-            // label5
+            // lblvDateOfBirth
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(358, 99);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 16);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "???";
+            this.lblvDateOfBirth.AutoSize = true;
+            this.lblvDateOfBirth.Location = new System.Drawing.Point(358, 99);
+            this.lblvDateOfBirth.Name = "lblvDateOfBirth";
+            this.lblvDateOfBirth.Size = new System.Drawing.Size(28, 16);
+            this.lblvDateOfBirth.TabIndex = 15;
+            this.lblvDateOfBirth.Text = "???";
             // 
-            // label6
+            // lblvPhone
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(358, 124);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 16);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "???";
+            this.lblvPhone.AutoSize = true;
+            this.lblvPhone.Location = new System.Drawing.Point(358, 124);
+            this.lblvPhone.Name = "lblvPhone";
+            this.lblvPhone.Size = new System.Drawing.Size(28, 16);
+            this.lblvPhone.TabIndex = 16;
+            this.lblvPhone.Text = "???";
             // 
-            // label7
+            // lblvCountry
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(358, 149);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(28, 16);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "???";
+            this.lblvCountry.AutoSize = true;
+            this.lblvCountry.Location = new System.Drawing.Point(358, 149);
+            this.lblvCountry.Name = "lblvCountry";
+            this.lblvCountry.Size = new System.Drawing.Size(28, 16);
+            this.lblvCountry.TabIndex = 17;
+            this.lblvCountry.Text = "???";
             // 
-            // label8
+            // lblvNationalNo
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(132, 99);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(28, 16);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "???";
+            this.lblvNationalNo.AutoSize = true;
+            this.lblvNationalNo.Location = new System.Drawing.Point(132, 99);
+            this.lblvNationalNo.Name = "lblvNationalNo";
+            this.lblvNationalNo.Size = new System.Drawing.Size(28, 16);
+            this.lblvNationalNo.TabIndex = 18;
+            this.lblvNationalNo.Text = "???";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.llEditPersonInfo);
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.pbPersonPicture);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(626, 186);
+            this.groupBox1.Size = new System.Drawing.Size(626, 197);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Person Information";
@@ -247,29 +247,30 @@
             this.llEditPersonInfo.TabIndex = 1;
             this.llEditPersonInfo.TabStop = true;
             this.llEditPersonInfo.Text = "Edit Person Info";
+            this.llEditPersonInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llEditPersonInfo_LinkClicked);
             // 
-            // pictureBox1
+            // pbPersonPicture
             // 
-            this.pictureBox1.Image = global::Driving_License_Management_Desktop_App.Properties.Resources.Male_512;
-            this.pictureBox1.Location = new System.Drawing.Point(463, 49);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(146, 127);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbPersonPicture.Image = global::Driving_License_Management_Desktop_App.Properties.Resources.Male_512;
+            this.pbPersonPicture.Location = new System.Drawing.Point(463, 49);
+            this.pbPersonPicture.Name = "pbPersonPicture";
+            this.pbPersonPicture.Size = new System.Drawing.Size(146, 127);
+            this.pbPersonPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPersonPicture.TabIndex = 0;
+            this.pbPersonPicture.TabStop = false;
             // 
             // ctlPersonInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblvNationalNo);
+            this.Controls.Add(this.lblvCountry);
+            this.Controls.Add(this.lblvPhone);
+            this.Controls.Add(this.lblvDateOfBirth);
+            this.Controls.Add(this.lblvAddress);
+            this.Controls.Add(this.lblvEmail);
+            this.Controls.Add(this.lblvGender);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblvName);
             this.Controls.Add(this.lblvPersonID);
@@ -284,11 +285,11 @@
             this.Controls.Add(this.lblCPersonID);
             this.Controls.Add(this.groupBox1);
             this.Name = "ctlPersonInformation";
-            this.Size = new System.Drawing.Size(636, 195);
+            this.Size = new System.Drawing.Size(636, 203);
             this.Load += new System.EventHandler(this.ctlPersonInformation_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,15 +309,15 @@
         private System.Windows.Forms.Label lblvPersonID;
         private System.Windows.Forms.Label lblvName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblvGender;
+        private System.Windows.Forms.Label lblvEmail;
+        private System.Windows.Forms.Label lblvAddress;
+        private System.Windows.Forms.Label lblvDateOfBirth;
+        private System.Windows.Forms.Label lblvPhone;
+        private System.Windows.Forms.Label lblvCountry;
+        private System.Windows.Forms.Label lblvNationalNo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbPersonPicture;
         private System.Windows.Forms.LinkLabel llEditPersonInfo;
     }
 }

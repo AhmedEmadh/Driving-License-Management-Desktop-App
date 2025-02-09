@@ -19,7 +19,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmManageDrivers_Load(object sender, EventArgs e)
         {
-            ctlManagePersons1.Value = "Drivers";
+            ctlManagePersons1.Title = "Drivers";
             ctlManagePersons1.ButtonValue = "Driver";
             ctlManagePersons1.contextMenuStrip = contextMenuStrip1;
             this.CancelButton = ctlManagePersons1.CloseButton;

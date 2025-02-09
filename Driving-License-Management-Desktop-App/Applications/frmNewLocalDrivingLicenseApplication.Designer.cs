@@ -86,11 +86,14 @@
             // ctlPersonInformationWithFilter1
             // 
             this.ctlPersonInformationWithFilter1.BackColor = System.Drawing.Color.White;
+            this.ctlPersonInformationWithFilter1.FilterEnabled = true;
             this.ctlPersonInformationWithFilter1.Location = new System.Drawing.Point(7, 7);
             this.ctlPersonInformationWithFilter1.Name = "ctlPersonInformationWithFilter1";
             this.ctlPersonInformationWithFilter1.SelectedIndex = -1;
+            this.ctlPersonInformationWithFilter1.ShowAddPersonButton = true;
             this.ctlPersonInformationWithFilter1.Size = new System.Drawing.Size(665, 293);
             this.ctlPersonInformationWithFilter1.TabIndex = 0;
+            this.ctlPersonInformationWithFilter1.OnPersonSelected += new System.Action<object>(this.ctlPersonInformationWithFilter1_OnPersonSelected);
             // 
             // tabPage2
             // 

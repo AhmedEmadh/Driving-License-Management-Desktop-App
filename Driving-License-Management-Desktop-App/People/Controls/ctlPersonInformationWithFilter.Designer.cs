@@ -28,72 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctlPersonInformation1 = new Driving_License_Management_Desktop_App.ctlPersonInformation();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.tbSearchBar = new System.Windows.Forms.TextBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.ctlPersonInformation1 = new Driving_License_Management_Desktop_App.ctlPersonInformation();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ctlPersonInformation1
-            // 
-            this.ctlPersonInformation1.Location = new System.Drawing.Point(3, 77);
-            this.ctlPersonInformation1.Name = "ctlPersonInformation1";
-            this.ctlPersonInformation1.Size = new System.Drawing.Size(651, 211);
-            this.ctlPersonInformation1.TabIndex = 0;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.btnAdd);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.tbSearchBar);
+            this.groupBox1.Controls.Add(this.cbCategory);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(17, 13);
+            this.groupBox1.Location = new System.Drawing.Point(3, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(628, 58);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter";
             // 
-            // button2
+            // btnAdd
             // 
-            this.button2.Location = new System.Drawing.Point(552, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(52, 24);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(552, 19);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(52, 24);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button1
+            // btnSearch
             // 
-            this.button1.Location = new System.Drawing.Point(475, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 24);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(475, 19);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 24);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // textBox1
+            // tbSearchBar
             // 
-            this.textBox1.Location = new System.Drawing.Point(265, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(204, 22);
-            this.textBox1.TabIndex = 2;
+            this.tbSearchBar.Location = new System.Drawing.Point(265, 19);
+            this.tbSearchBar.Name = "tbSearchBar";
+            this.tbSearchBar.Size = new System.Drawing.Size(204, 22);
+            this.tbSearchBar.TabIndex = 2;
+            this.tbSearchBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSearchBar_KeyDown);
             // 
-            // comboBox1
+            // cbCategory
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "National No."});
-            this.comboBox1.Location = new System.Drawing.Point(77, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 24);
-            this.comboBox1.TabIndex = 1;
+            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Items.AddRange(new object[] {
+            "Person ID",
+            "National No"});
+            this.cbCategory.Location = new System.Drawing.Point(77, 19);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(182, 24);
+            this.cbCategory.TabIndex = 1;
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -104,6 +102,16 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Find By:";
             // 
+            // ctlPersonInformation1
+            // 
+            this.ctlPersonInformation1.BackColor = System.Drawing.Color.White;
+            this.ctlPersonInformation1.Location = new System.Drawing.Point(3, 77);
+            this.ctlPersonInformation1.Name = "ctlPersonInformation1";
+            this.ctlPersonInformation1.PersonID = -1;
+            this.ctlPersonInformation1.Size = new System.Drawing.Size(646, 199);
+            this.ctlPersonInformation1.TabIndex = 0;
+            this.ctlPersonInformation1.OnPersonSelected += new System.Action<object>(this.ctlPersonInformation1_OnPersonSelected);
+            // 
             // ctlPersonInformationWithFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -112,7 +120,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ctlPersonInformation1);
             this.Name = "ctlPersonInformationWithFilter";
-            this.Size = new System.Drawing.Size(665, 293);
+            this.Size = new System.Drawing.Size(652, 279);
             this.Load += new System.EventHandler(this.ctlPersonInformationWithFilter_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -124,10 +132,10 @@
 
         private ctlPersonInformation ctlPersonInformation1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox tbSearchBar;
+        private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Label label2;
     }
 }

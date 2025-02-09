@@ -79,7 +79,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void internationalLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmNewInternationalLicenseApplication().ShowDialog();
+            new frmListInternationalLicenseApplications().ShowDialog();
         }
 
         private void internationalLicesnseToolStripMenuItem_Click(object sender, EventArgs e)

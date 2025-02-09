@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ctlManagePersons1 = new Driving_License_Management_Desktop_App.ctlManagePersons();
+            this.ctlManagePersons1 = new Driving_License_Management_Desktop_App.ctlManagePeople();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showPersonInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -41,12 +41,16 @@
             // 
             // ctlManagePersons1
             // 
+            this.ctlManagePersons1.AddButtonText = "add Person";
+            this.ctlManagePersons1.BackColor = System.Drawing.Color.White;
+            this.ctlManagePersons1.contextMenuStrip = null;
+            this.ctlManagePersons1.Data = null;
             this.ctlManagePersons1.Location = new System.Drawing.Point(12, 12);
             this.ctlManagePersons1.Name = "ctlManagePersons1";
             this.ctlManagePersons1.SearchText = "";
             this.ctlManagePersons1.Size = new System.Drawing.Size(759, 442);
             this.ctlManagePersons1.TabIndex = 0;
-            this.ctlManagePersons1.Value = "People";
+            this.ctlManagePersons1.Title = "Manage People";
             this.ctlManagePersons1.OnClose += new System.Action<object>(this.ctlManagePersons1_OnClose);
             this.ctlManagePersons1.Load += new System.EventHandler(this.ctlManagePersons1_Load);
             // 
@@ -110,7 +114,7 @@
 
         #endregion
 
-        private ctlManagePersons ctlManagePersons1;
+        private ctlManagePeople ctlManagePersons1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem showPersonInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;

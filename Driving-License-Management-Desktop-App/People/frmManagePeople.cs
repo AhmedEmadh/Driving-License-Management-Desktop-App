@@ -13,6 +13,9 @@ namespace Driving_License_Management_Desktop_App
 {
     public partial class frmManagePeople : Form
     {
+
+        private static DataTable _dtAllPeople = clsPerson.GetAllPeople();
+        private DataTable _dtPeople = _dtAllPeople.DefaultView.ToTable();
         public frmManagePeople()
         {
             InitializeComponent();
@@ -34,7 +37,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmManagePeople_Load(object sender, EventArgs e)
         {
-            ctlManagePersons1.Value = "People";
+            ctlManagePersons1.Title = "People";
             ctlManagePersons1.ButtonValue = "Person";
             this.CancelButton = ctlManagePersons1.CloseButton;
             ctlManagePersons1.Data = clsPerson.GetAllPeople();
@@ -70,6 +73,15 @@ namespace Driving_License_Management_Desktop_App
         private void showDetailsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             new frmPersonDetails(1023).ShowDialog();
+        }
+        void _RefreshData()
+        {
+
+        }
+        private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmAddEditPersonInfo().ShowDialog();
+            _RefreshData();
         }
     }
 }

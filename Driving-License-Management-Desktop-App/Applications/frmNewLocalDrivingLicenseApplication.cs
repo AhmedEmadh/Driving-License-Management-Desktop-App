@@ -31,5 +31,10 @@ namespace Driving_License_Management_Desktop_App
         {
             this.Close();
         }
+
+        private void ctlPersonInformationWithFilter1_OnPersonSelected(object obj)
+        {
+
+        }
     }
 }
