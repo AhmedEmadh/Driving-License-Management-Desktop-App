@@ -30,5 +30,10 @@ namespace Driving_License_Management_Desktop_App
         {
 
         }
+
+        private void btnHiddenClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

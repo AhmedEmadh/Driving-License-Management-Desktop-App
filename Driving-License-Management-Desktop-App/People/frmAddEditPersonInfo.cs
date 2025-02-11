@@ -41,7 +41,7 @@ namespace Driving_License_Management_Desktop_App
         }
         private void userControl11_OnClose(object obj)
         {
-            this.Close();
+            //this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

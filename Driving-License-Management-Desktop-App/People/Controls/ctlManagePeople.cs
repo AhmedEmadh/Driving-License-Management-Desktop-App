@@ -113,6 +113,7 @@ namespace Driving_License_Management_Desktop_App
         private void UserControl2_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
+            tbSearch.Visible = false;
         }
         public string AddButtonText
         {
@@ -159,6 +160,22 @@ namespace Driving_License_Management_Desktop_App
                 }
                 index++;
             }
+        }
+        void _ChangeSearchBarVisibility()
+        {
+            if (comboBox1.SelectedItem.ToString() == "None")
+            {
+                tbSearch.Visible = false;
+            }
+            else
+            {
+                tbSearch.Visible = true;
+            }
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _ChangeSearchBarVisibility();
+
         }
     }
 }
