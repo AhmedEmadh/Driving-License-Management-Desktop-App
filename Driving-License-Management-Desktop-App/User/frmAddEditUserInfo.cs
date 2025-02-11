@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Driving_License_Management_BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Driving_License_Management_Desktop_App
 {
     public partial class frmAddEditUserInfo : Form
     {
+        int _LoginID = -1;
         public frmAddEditUserInfo()
         {
             InitializeComponent();
@@ -36,10 +38,61 @@ namespace Driving_License_Management_Desktop_App
         {
             
         }
+        void _EnableLoginInfo()
+        {
+            lblConfirmPassTxt.Enabled = true;
+            lblPasswordTxt.Enabled = true;
+            lblTitle.Enabled = true;
+            lblUserIDTxt.Enabled = true;
+            lblUserIDValue.Enabled = true;
+            lblUserNameTxt.Enabled = true;
 
+            tbConfirmPassword.Enabled = true;
+            tbPassword.Enabled = true;
+            tbUserName.Enabled = true;
+
+            cbIsActive.Enabled = true;
+        }
+        void _DisableLoginInfo()
+        {
+            lblConfirmPassTxt.Enabled = false;
+            lblPasswordTxt.Enabled = false;
+            lblTitle.Enabled = false;
+            lblUserIDTxt.Enabled = false;
+            lblUserIDValue.Enabled = false;
+            lblUserNameTxt.Enabled = false;
+
+            tbConfirmPassword.Enabled = false;
+            tbPassword.Enabled = false;
+            tbUserName.Enabled = false;
+
+            cbIsActive.Enabled = false;
+        }
         private void button5_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 1;
+            //check that person is valid
+            if(clsPerson.IsPersonExist(ctlPersonInformationWithFilter1.PersonID))
+            {
+                //check that person is not a user
+                if (clsUser.FindByPersonID(ctlPersonInformationWithFilter1.PersonID) == null)
+                {
+                    _EnableLoginInfo();
+                    _LoginID = ctlPersonInformationWithFilter1.PersonID;
+                    tabControl1.SelectedIndex = 1;
+                }
+                else
+                {
+                    MessageBox.Show("Person is already a User", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _DisableLoginInfo();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Person is not Exist, Please Register Person First", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _DisableLoginInfo();
+            }
+
+            
         }
 
         private void button4_Click(object sender, EventArgs e)

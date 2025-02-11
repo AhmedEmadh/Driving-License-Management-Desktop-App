@@ -100,6 +100,7 @@ namespace Driving_License_Management_Desktop_App
                 }
                 else
                 {
+                    _ID = -1;
                     _SetDefaultValues();
                 }
             }
@@ -156,6 +157,7 @@ namespace Driving_License_Management_Desktop_App
                 }
                 else
                 {
+                    _ID = -1;   
                     _SetDefaultValues();
                 }
             }
