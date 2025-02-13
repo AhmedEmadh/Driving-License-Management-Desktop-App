@@ -16,6 +16,8 @@ namespace Driving_License_Management_Desktop_App
         enum Mode { AddNew, Update };
         Mode _Mode = Mode.AddNew;
         int _LoginID = -1;
+        clsUser _User;
+        int _UserID;
         public frmAddEditUserInfo()
         {
             InitializeComponent();
@@ -30,20 +32,15 @@ namespace Driving_License_Management_Desktop_App
             cbIsActive.Checked = User.IsActive;
             lblUserIDValue.Text = User.UserID.ToString();
         }
-        public frmAddEditUserInfo(int LoginID)
+        public frmAddEditUserInfo(int UserID)
         {
-            lblTitle.Text = "Update User";
-            clsUser objUser = clsUser.FindByPersonID(LoginID);
-            if (objUser != null)
+            InitializeComponent();
+            _UserID = UserID;
+            _User = clsUser.FindByUserID(UserID);
+            if (_User != null)
             {
-                InitializeComponent();
                 _Mode = Mode.Update;
-                ctlPersonInformationWithFilter1.SearchText = LoginID.ToString();
-                ctlPersonInformationWithFilter1.PersonID = LoginID;
-                _LoginID = LoginID;
-                ctlPersonInformationWithFilter1.FilterEnabled = false;
-                _EnableLoginInfo();
-                _FillLoginInfo(objUser);
+
             }
             else
             {
@@ -65,6 +62,20 @@ namespace Driving_License_Management_Desktop_App
         private void frmAddEditUserInfo_Load(object sender, EventArgs e)
         {
             ctlPersonInformationWithFilter1.SelectedIndex = 0;
+            if (_Mode == Mode.Update)
+            {
+                lblTitle.Text = "Update User";
+                if (_User != null)
+                {
+                    ctlPersonInformationWithFilter1.SearchText = _User.PersonID.ToString();
+                    ctlPersonInformationWithFilter1.PersonID = _User.PersonID;
+                    _LoginID = _UserID;
+                    ctlPersonInformationWithFilter1.FilterEnabled = false;
+                    _EnableLoginInfo();
+                    _FillLoginInfo(_User);
+                }
+            }
+
         }
 
         private void tabPersonalInfo_Click(object sender, EventArgs e)
@@ -112,7 +123,7 @@ namespace Driving_License_Management_Desktop_App
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            if(_Mode == Mode.AddNew)
+            if (_Mode == Mode.AddNew)
             {
                 //check that person is valid
                 if (clsPerson.IsPersonExist(ctlPersonInformationWithFilter1.PersonID))
@@ -145,28 +156,47 @@ namespace Driving_License_Management_Desktop_App
 
         private void button4_Click(object sender, EventArgs e)
         {
-            clsUser objUser = new clsUser();
-            objUser.PersonID = ctlPersonInformationWithFilter1.PersonID;
-            objUser.UserName = tbUserName.Text;
-            objUser.Password = tbPassword.Text;
-
-            objUser.IsActive = cbIsActive.Checked;
-            if (tbPassword.Text == tbConfirmPassword.Text)
+            if (_Mode == Mode.AddNew)
             {
-                if (objUser.Save())
+                clsUser objUser = new clsUser();
+                objUser.PersonID = ctlPersonInformationWithFilter1.PersonID;
+                objUser.UserName = tbUserName.Text;
+                objUser.Password = tbPassword.Text;
+
+                objUser.IsActive = cbIsActive.Checked;
+                if (tbPassword.Text == tbConfirmPassword.Text)
                 {
-                    MessageBox.Show("User Information Saved Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    lblUserIDValue.Text = objUser.UserID.ToString();
+                    if (objUser.Save())
+                    {
+                        MessageBox.Show("User Information Saved Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        lblUserIDValue.Text = objUser.UserID.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error in Saving User Information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error in Saving User Information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Password and Confirm Password does not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
             }
             else
             {
-                MessageBox.Show("Password and Confirm Password does not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(tbPassword.Text == tbConfirmPassword.Text)
+                {
+                    _User.Password = tbPassword.Text;
+                    _User.Save();
+                    MessageBox.Show("User Information Saved Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Password and Confirm Password does not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -181,11 +211,14 @@ namespace Driving_License_Management_Desktop_App
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (((TabControl)sender).SelectedTab.Text == "Login Info")
+            if (_Mode == Mode.AddNew)
             {
-                if (_LoginID != ctlPersonInformationWithFilter1.PersonID)
+                if (((TabControl)sender).SelectedTab.Text == "Login Info")
                 {
-                    _DisableLoginInfo();
+                    if (_LoginID != ctlPersonInformationWithFilter1.PersonID)
+                    {
+                        _DisableLoginInfo();
+                    }
                 }
             }
         }

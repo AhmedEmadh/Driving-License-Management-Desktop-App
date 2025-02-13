@@ -119,12 +119,12 @@ namespace Driving_License_Management_Desktop_App
 
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmChangePassword().ShowDialog();
+            new frmChangePassword(1).ShowDialog();
         }
 
         private void currentUserInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmUserInfo().ShowDialog();
+            new frmUserInfo(1).ShowDialog();
         }
 
         private void applicationsToolStripMenuItem_Click(object sender, EventArgs e)

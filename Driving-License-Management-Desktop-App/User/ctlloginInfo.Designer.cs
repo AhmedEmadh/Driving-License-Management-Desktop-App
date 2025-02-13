@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblIsActive = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.lblUserID = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,9 +40,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.lblIsActive);
+            this.groupBox1.Controls.Add(this.lblUserName);
+            this.groupBox1.Controls.Add(this.lblUserID);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -52,33 +52,34 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login Information";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label6
+            // lblIsActive
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(589, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 16);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "???";
+            this.lblIsActive.AutoSize = true;
+            this.lblIsActive.Location = new System.Drawing.Point(589, 40);
+            this.lblIsActive.Name = "lblIsActive";
+            this.lblIsActive.Size = new System.Drawing.Size(28, 16);
+            this.lblIsActive.TabIndex = 5;
+            this.lblIsActive.Text = "???";
             // 
-            // label5
+            // lblUserName
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(363, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 16);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "???";
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Location = new System.Drawing.Point(363, 40);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(28, 16);
+            this.lblUserName.TabIndex = 4;
+            this.lblUserName.Text = "???";
             // 
-            // label4
+            // lblUserID
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(97, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "???";
+            this.lblUserID.AutoSize = true;
+            this.lblUserID.Location = new System.Drawing.Point(97, 40);
+            this.lblUserID.Name = "lblUserID";
+            this.lblUserID.Size = new System.Drawing.Size(28, 16);
+            this.lblUserID.TabIndex = 3;
+            this.lblUserID.Text = "???";
             // 
             // label3
             // 
@@ -115,6 +116,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ctlloginInfo";
             this.Size = new System.Drawing.Size(642, 87);
+            this.Load += new System.EventHandler(this.ctlloginInfo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -124,9 +126,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblIsActive;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label lblUserID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Driving_License_Management_BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace Driving_License_Management_Desktop_App.User
 {
     public partial class frmUserInfo : Form
     {
-        public frmUserInfo()
+        clsUser _user;
+        public frmUserInfo(int UserID)
         {
             InitializeComponent();
+            _user = clsUser.FindByUserID(UserID);
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,6 +34,15 @@ namespace Driving_License_Management_Desktop_App.User
         private void frmUserInfo_Load(object sender, EventArgs e)
         {
             this.CancelButton = btnClose;
+            if(_user != null)
+            {
+                ctlUserCard1.UserID = _user.UserID;
+            }
+            else
+            {
+                MessageBox.Show("User not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
         }
     }
 }

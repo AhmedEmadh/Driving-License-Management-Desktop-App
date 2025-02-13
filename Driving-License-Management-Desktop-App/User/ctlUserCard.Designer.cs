@@ -34,6 +34,7 @@
             // 
             // ctlloginInfo1
             // 
+            this.ctlloginInfo1.BackColor = System.Drawing.Color.White;
             this.ctlloginInfo1.Location = new System.Drawing.Point(3, 213);
             this.ctlloginInfo1.Name = "ctlloginInfo1";
             this.ctlloginInfo1.Size = new System.Drawing.Size(632, 93);
@@ -41,8 +42,11 @@
             // 
             // ctlPersonInformation1
             // 
+            this.ctlPersonInformation1.BackColor = System.Drawing.Color.White;
             this.ctlPersonInformation1.Location = new System.Drawing.Point(3, 0);
             this.ctlPersonInformation1.Name = "ctlPersonInformation1";
+            this.ctlPersonInformation1.PersonID = -1;
+            this.ctlPersonInformation1.PersonNationalNo = "";
             this.ctlPersonInformation1.Size = new System.Drawing.Size(632, 215);
             this.ctlPersonInformation1.TabIndex = 1;
             // 
@@ -55,6 +59,7 @@
             this.Controls.Add(this.ctlloginInfo1);
             this.Name = "ctlUserCard";
             this.Size = new System.Drawing.Size(643, 309);
+            this.Load += new System.EventHandler(this.ctlUserCard_Load);
             this.ResumeLayout(false);
 
         }
