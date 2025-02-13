@@ -212,7 +212,13 @@ namespace Driving_License_Management_DataAccessLayer
         {
             DataTable dataTable = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT * FROM Users";
+            string query = @"
+                                SELECT  Users.UserID, Users.PersonID,
+                                FullName = People.FirstName + ' ' + People.SecondName + ' ' + ISNULL( People.ThirdName,'') +' ' + People.LastName,
+                                Users.UserName, Users.IsActive
+                                FROM  Users INNER JOIN
+                                People ON Users.PersonID = People.PersonID
+                            ";
             SqlCommand command = new SqlCommand(query, connection);
             try
             {
