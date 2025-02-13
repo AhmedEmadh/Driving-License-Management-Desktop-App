@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPersonalInfo = new System.Windows.Forms.TabPage();
+            this.ctlPersonInformationWithFilter1 = new Driving_License_Management_Desktop_App.ctlPersonInformationWithFilter();
             this.button5 = new System.Windows.Forms.Button();
             this.tapLoginInfo = new System.Windows.Forms.TabPage();
             this.cbIsActive = new System.Windows.Forms.CheckBox();
@@ -44,7 +45,6 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.ctlPersonInformationWithFilter1 = new Driving_License_Management_Desktop_App.ctlPersonInformationWithFilter();
             this.tabControl1.SuspendLayout();
             this.tabPersonalInfo.SuspendLayout();
             this.tapLoginInfo.SuspendLayout();
@@ -59,6 +59,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(779, 323);
             this.tabControl1.TabIndex = 8;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPersonalInfo
             // 
@@ -72,6 +73,19 @@
             this.tabPersonalInfo.Text = "Personal Info";
             this.tabPersonalInfo.UseVisualStyleBackColor = true;
             this.tabPersonalInfo.Click += new System.EventHandler(this.tabPersonalInfo_Click);
+            // 
+            // ctlPersonInformationWithFilter1
+            // 
+            this.ctlPersonInformationWithFilter1.BackColor = System.Drawing.Color.White;
+            this.ctlPersonInformationWithFilter1.FilterEnabled = true;
+            this.ctlPersonInformationWithFilter1.Location = new System.Drawing.Point(18, 7);
+            this.ctlPersonInformationWithFilter1.Name = "ctlPersonInformationWithFilter1";
+            this.ctlPersonInformationWithFilter1.PersonID = -1;
+            this.ctlPersonInformationWithFilter1.SearchText = "";
+            this.ctlPersonInformationWithFilter1.SelectedIndex = -1;
+            this.ctlPersonInformationWithFilter1.ShowAddPersonButton = false;
+            this.ctlPersonInformationWithFilter1.Size = new System.Drawing.Size(651, 285);
+            this.ctlPersonInformationWithFilter1.TabIndex = 3;
             // 
             // button5
             // 
@@ -118,6 +132,7 @@
             this.tbConfirmPassword.Enabled = false;
             this.tbConfirmPassword.Location = new System.Drawing.Point(128, 104);
             this.tbConfirmPassword.Name = "tbConfirmPassword";
+            this.tbConfirmPassword.PasswordChar = '*';
             this.tbConfirmPassword.Size = new System.Drawing.Size(100, 22);
             this.tbConfirmPassword.TabIndex = 7;
             // 
@@ -126,6 +141,7 @@
             this.tbPassword.Enabled = false;
             this.tbPassword.Location = new System.Drawing.Point(128, 76);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(100, 22);
             this.tbPassword.TabIndex = 6;
             // 
@@ -218,18 +234,6 @@
             this.lblTitle.Size = new System.Drawing.Size(277, 46);
             this.lblTitle.TabIndex = 11;
             this.lblTitle.Text = "Add New User";
-            // 
-            // ctlPersonInformationWithFilter1
-            // 
-            this.ctlPersonInformationWithFilter1.BackColor = System.Drawing.Color.White;
-            this.ctlPersonInformationWithFilter1.FilterEnabled = true;
-            this.ctlPersonInformationWithFilter1.Location = new System.Drawing.Point(18, 7);
-            this.ctlPersonInformationWithFilter1.Name = "ctlPersonInformationWithFilter1";
-            this.ctlPersonInformationWithFilter1.PersonID = -1;
-            this.ctlPersonInformationWithFilter1.SelectedIndex = -1;
-            this.ctlPersonInformationWithFilter1.ShowAddPersonButton = false;
-            this.ctlPersonInformationWithFilter1.Size = new System.Drawing.Size(651, 285);
-            this.ctlPersonInformationWithFilter1.TabIndex = 3;
             // 
             // frmAddEditUserInfo
             // 

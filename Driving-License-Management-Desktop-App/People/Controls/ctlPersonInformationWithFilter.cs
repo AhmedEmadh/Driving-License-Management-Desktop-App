@@ -12,6 +12,30 @@ namespace Driving_License_Management_Desktop_App
 {
     public partial class ctlPersonInformationWithFilter : UserControl
     {
+        public string SearchText
+        {
+            get
+            {
+                return tbSearchBar.Text;
+            }
+            set
+            {
+                tbSearchBar.Text = value;
+            }
+        }
+
+        public bool FilterEnabled
+        {
+            get
+            {
+                return groupBox1.Enabled;
+            }
+            set
+            {
+                groupBox1.Enabled = value;
+            }
+        }
+
         public event Action<object> OnAdd;
         public void OnAdd_handler()
         {
@@ -39,17 +63,6 @@ namespace Driving_License_Management_Desktop_App
             set
             {
                 btnAdd.Visible = value;
-            }
-        }
-        public bool FilterEnabled
-        {
-            get
-            {
-                return groupBox1.Enabled;
-            }
-            set
-            {
-                groupBox1.Enabled = value;
             }
         }
         public int PersonID

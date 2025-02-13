@@ -45,14 +45,16 @@
             // 
             // userControl21
             // 
+            this.userControl21.AddButtonText = "add Person";
             this.userControl21.BackColor = System.Drawing.Color.White;
             this.userControl21.contextMenuStrip = this.contextMenuStrip1;
+            this.userControl21.Data = null;
             this.userControl21.Location = new System.Drawing.Point(29, 12);
             this.userControl21.Name = "userControl21";
             this.userControl21.SearchText = "";
             this.userControl21.Size = new System.Drawing.Size(759, 426);
             this.userControl21.TabIndex = 0;
-            this.userControl21.Title = "People";
+            this.userControl21.Title = "Manage Users";
             this.userControl21.OnAdd += new System.Action<object>(this.userControl21_OnAdd);
             this.userControl21.OnClose += new System.Action<object>(this.userControl21_OnClose);
             this.userControl21.Load += new System.EventHandler(this.userControl21_Load);
