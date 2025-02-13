@@ -274,5 +274,18 @@ namespace Driving_License_Management_Desktop_App
             new frmAddEditPersonInfo().ShowDialog();
             _RefreshData();
         }
+
+        private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cbFilterBy.SelectedItem.ToString() == "Person ID")
+            {
+                // Allow digits (0-9), Backspace, and Delete
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true; // Ignore the key press
+                }
+            }
+
+        }
     }
 }

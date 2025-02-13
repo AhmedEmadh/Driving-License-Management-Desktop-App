@@ -210,6 +210,18 @@ namespace Driving_License_Management_Desktop_App
             if (_dtAllUsers != null)
                 lblRecordsCount.Text = _dtAllUsers.DefaultView.Count.ToString();
         }
+
+        private void tbFilter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cbFilterBy.SelectedItem.ToString() == "User ID" || cbFilterBy.SelectedItem.ToString() == "PersonID")
+            {
+                // Allow digits (0-9), Backspace, and Delete
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true; // Ignore the key press
+                }
+            }
+        }
     }
 }
 

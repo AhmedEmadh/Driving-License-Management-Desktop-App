@@ -156,6 +156,7 @@
             this.tbFilter.Size = new System.Drawing.Size(172, 22);
             this.tbFilter.TabIndex = 39;
             this.tbFilter.TextChanged += new System.EventHandler(this.tbFilter_TextChanged);
+            this.tbFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFilter_KeyPress);
             // 
             // cbFilterBy
             // 
