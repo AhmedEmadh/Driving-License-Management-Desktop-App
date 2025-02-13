@@ -15,6 +15,7 @@ namespace Driving_License_Management_Desktop_App
 {
     public partial class frmManageUsers : Form
     {
+        DataTable _dtAllUsers;
         public frmManageUsers()
         {
             InitializeComponent();
@@ -22,12 +23,30 @@ namespace Driving_License_Management_Desktop_App
         void _SetDefaultFilter()
         {
             cbFilterBy.SelectedIndex = 0;
+            cbFilter.SelectedIndex = 0;
             tbFilter.Text = "";
             tbFilter.Visible = false;
         }
         void _LoadUsers()
         {
-            dgvUsers.DataSource = clsUser.GetAllUsers();
+            _dtAllUsers = clsUser.GetAllUsers();
+            dgvUsers.DataSource = _dtAllUsers;
+            dgvUsers.Columns[0].HeaderText = "User ID";
+            dgvUsers.Columns[0].Width = 110;
+
+            dgvUsers.Columns[1].HeaderText = "Person ID";
+            dgvUsers.Columns[1].Width = 120;
+
+            dgvUsers.Columns[2].HeaderText = "Full Name";
+            dgvUsers.Columns[2].Width = 350;
+
+            dgvUsers.Columns[3].HeaderText = "User Name";
+            dgvUsers.Columns[3].Width = 120;
+
+            dgvUsers.Columns[4].HeaderText = "Is Active";
+            dgvUsers.Columns[4].Width = 120;
+
+            lblRecordsCount.Text = _dtAllUsers.Rows.Count.ToString();
         }
         private void frmManageUsers_Load(object sender, EventArgs e)
         {
@@ -62,14 +81,28 @@ namespace Driving_License_Management_Desktop_App
 
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cbFilter.SelectedIndex = 0;
+            lblRecordsCount.Text = dgvUsers.Rows.Count.ToString();
             if (((ComboBox)sender).SelectedItem.ToString() == "None")
             {
                 tbFilter.Visible = false;
+                cbFilter.Visible = false;
             }
             else
             {
-                tbFilter.Visible = true;
+                if (((ComboBox)sender).SelectedItem.ToString() == "Is Active")
+                {
+                    cbFilter.Visible = true;
+                    tbFilter.Visible = false;
+                }
+                else
+                {
+                    cbFilter.Visible = false;
+                    tbFilter.Visible = true;
+                }
             }
+            if (_dtAllUsers != null)
+                lblRecordsCount.Text = _dtAllUsers.DefaultView.Count.ToString();
         }
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,7 +130,7 @@ namespace Driving_License_Management_Desktop_App
             clsUser user = clsUser.FindByUserID(UserID);
             if (user != null)
             {
-                if (MessageBox.Show("Are you sure you want to delete this user?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to delete this user?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
                     clsUser.DeleteUser(UserID);
                     _LoadUsers();
@@ -108,11 +141,75 @@ namespace Driving_License_Management_Desktop_App
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int UserID = (int)dgvUsers.CurrentRow.Cells["UserID"].Value;
-            if(clsUser.IsUserExist(UserID))
+            if (clsUser.IsUserExist(UserID))
             {
                 new frmChangePassword(UserID).ShowDialog();
                 _LoadUsers();
             }
         }
+
+        private void tbFilter_TextChanged(object sender, EventArgs e)
+        {
+            string FilterColumn = "";
+            switch (cbFilterBy.Text)
+            {
+                case "None":
+                    FilterColumn = "None";
+                    break;
+                case "User ID":
+                    FilterColumn = "UserID";
+                    break;
+                case "PersonID":
+                    FilterColumn = "PersonID";
+                    break;
+                case "Full Name":
+                    FilterColumn = "FullName";
+                    break;
+                case "UserName":
+                    FilterColumn = "UserName";
+                    break;
+                case "Is Active":
+                    FilterColumn = "IsActive";
+                    break;
+            }
+            //Reset the filters in case nothing selected or filter value conains nothing.
+            if (tbFilter.Text.Trim() == "" || FilterColumn == "None")
+            {
+                _dtAllUsers.DefaultView.RowFilter = "";
+                lblRecordsCount.Text = dgvUsers.Rows.Count.ToString();
+                return;
+            }
+
+            if (FilterColumn != "FullName" && FilterColumn != "UserName")
+                //in this case we deal with numbers not string.
+                _dtAllUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, tbFilter.Text.Trim());
+            else
+                _dtAllUsers.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, tbFilter.Text.Trim());
+
+            if (_dtAllUsers != null)
+                lblRecordsCount.Text = _dtAllUsers.DefaultView.Count.ToString();
+        }
+
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (_dtAllUsers != null)
+            {
+                switch (((ComboBox)sender).SelectedItem.ToString())
+                {
+                    case "Yes":
+                        _dtAllUsers.DefaultView.RowFilter = "[IsActive] = 1";
+                        break;
+                    case "No":
+                        _dtAllUsers.DefaultView.RowFilter = "[IsActive] = 0";
+                        break;
+                    default:
+                        _dtAllUsers.DefaultView.RowFilter = "";
+                        break;
+                }
+            }
+            if (_dtAllUsers != null)
+                lblRecordsCount.Text = _dtAllUsers.DefaultView.Count.ToString();
+        }
     }
 }
+

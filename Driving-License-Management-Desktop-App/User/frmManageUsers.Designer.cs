@@ -49,6 +49,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
@@ -130,7 +131,7 @@
             // button1
             // 
             this.button1.Image = global::Driving_License_Management_Desktop_App.Properties.Resources.Add_New_User_72;
-            this.button1.Location = new System.Drawing.Point(1388, 92);
+            this.button1.Location = new System.Drawing.Point(1106, 92);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 98);
             this.button1.TabIndex = 41;
@@ -152,8 +153,9 @@
             // 
             this.tbFilter.Location = new System.Drawing.Point(201, 168);
             this.tbFilter.Name = "tbFilter";
-            this.tbFilter.Size = new System.Drawing.Size(149, 22);
+            this.tbFilter.Size = new System.Drawing.Size(172, 22);
             this.tbFilter.TabIndex = 39;
+            this.tbFilter.TextChanged += new System.EventHandler(this.tbFilter_TextChanged);
             // 
             // cbFilterBy
             // 
@@ -213,7 +215,7 @@
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(1388, 676);
+            this.btnClose.Location = new System.Drawing.Point(1195, 676);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(94, 37);
             this.btnClose.TabIndex = 33;
@@ -235,8 +237,22 @@
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 24;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsers.Size = new System.Drawing.Size(1470, 474);
+            this.dgvUsers.Size = new System.Drawing.Size(1188, 474);
             this.dgvUsers.TabIndex = 32;
+            // 
+            // cbFilter
+            // 
+            this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Items.AddRange(new object[] {
+            "All",
+            "Yes",
+            "No"});
+            this.cbFilter.Location = new System.Drawing.Point(201, 167);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(149, 24);
+            this.cbFilter.TabIndex = 42;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
             // 
             // frmManageUsers
             // 
@@ -244,7 +260,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(1520, 740);
+            this.ClientSize = new System.Drawing.Size(1217, 740);
+            this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.tbFilter);
@@ -287,5 +304,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridView dgvUsers;
+        private System.Windows.Forms.ComboBox cbFilter;
     }
 }

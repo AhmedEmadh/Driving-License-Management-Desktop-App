@@ -1,4 +1,5 @@
-﻿using Driving_License_Management_Desktop_App.User;
+﻿using Driving_License_Management_Desktop_App.Global_Classes;
+using Driving_License_Management_Desktop_App.User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(_CallerForm != null)
+            if (_CallerForm != null)
                 _CallerForm.Close();
         }
 
@@ -48,8 +49,10 @@ namespace Driving_License_Management_Desktop_App
 
         private void signOutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            clsGlobal.RememberUsernameAndPassword("", "");
+            if (_CallerForm != null)
                 _CallerForm.Show();
-                this.Hide();
+            this.Hide();
         }
 
         private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -119,12 +122,12 @@ namespace Driving_License_Management_Desktop_App
 
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmChangePassword(1).ShowDialog();
+            new frmChangePassword(clsGlobal.CurrentUser.UserID).ShowDialog();
         }
 
         private void currentUserInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmUserInfo(1).ShowDialog();
+            new frmUserInfo(clsGlobal.CurrentUser.UserID).ShowDialog();
         }
 
         private void applicationsToolStripMenuItem_Click(object sender, EventArgs e)
