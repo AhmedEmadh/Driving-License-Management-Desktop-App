@@ -20,6 +20,7 @@ namespace Driving_License_Management_BusinessLogic
         public enum enApplicationStatus { New = 1, Cancelled = 2, Completed = 3 };
         public int ApplicationID { get; set; }
         public int ApplicantPersonID { get; set; }
+        public clsPerson ApplicantPersonInfo;
         public string ApplicantfullName
         {
             get
@@ -78,6 +79,7 @@ namespace Driving_License_Management_BusinessLogic
             this.CreatedByUserID = CreatedByUserID;
             ApplicationTypeInfo = clsApplicationType.Find(this.ApplicationTypeID);
             CreatedByUserInfo = clsUser.FindByUserID(this.CreatedByUserID);
+            ApplicantPersonInfo = clsPerson.Find(this.ApplicantPersonID);
             Mode = enMode.Update;
         }
         private bool _AddNewApplication()
