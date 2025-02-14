@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Driving_License_Management_BusinessLogic;
+using Driving_License_Management_Desktop_App.Applications;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace Driving_License_Management_Desktop_App
 {
     public partial class frmManageApplicationTypes : Form
     {
+        DataTable _dt;
         public frmManageApplicationTypes()
         {
             InitializeComponent();
@@ -29,8 +32,47 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmManageApplicationTypes_Load(object sender, EventArgs e)
         {
-            //ctlShowData1.Title = "Application Types";
-            this.CancelButton = ctlShowData1.CloseButton;
+            _UpdateData();
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvPeople_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        public void _UpdateData()
+        {
+            _dt = clsApplicationType.GetAllApplicationTypes();
+            _dt.Columns[0].ColumnName = "ID";
+            _dt.Columns[1].ColumnName = "Title";
+            _dt.Columns[2].ColumnName = "Fees";
+            dgvApplicationTypes.DataSource = _dt;
+            //set width of columns
+            dgvApplicationTypes.Columns[0].Width = 50;
+            dgvApplicationTypes.Columns[1].Width = 226;
+            dgvApplicationTypes.Columns[2].Width = 100;
+            lblRecordsCount.Text = _dt.Rows.Count.ToString();
+        }
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void editApplicationTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int ApplicationTypeID = Convert.ToInt32(dgvApplicationTypes.CurrentRow.Cells["ID"].Value);
+            new frmUpdateApplicationType(ApplicationTypeID).ShowDialog();
+            _UpdateData();
         }
     }
 }

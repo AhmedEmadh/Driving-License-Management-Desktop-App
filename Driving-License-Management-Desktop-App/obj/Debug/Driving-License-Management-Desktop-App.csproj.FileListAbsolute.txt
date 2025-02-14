@@ -76,3 +76,4 @@ D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desk
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.btnSave.resources
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.ctlManagePeople.resources
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.People.frmFindPerson.resources
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.Applications.frmUpdateApplicationType.resources
