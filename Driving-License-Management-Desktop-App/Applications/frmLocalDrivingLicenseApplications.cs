@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Driving_License_Management_BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,9 +35,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmLocalDrivingLicenseApplications_Load(object sender, EventArgs e)
         {
-            ctlManagePersons1.ContextMenuStrip = contextMenuStrip1;
-            this.CancelButton = ctlManagePersons1.CloseButton;
-            ctlManagePersons1.AddButtonText = "Add Application";
+            dgvLocalDrivingLicenseApplications.DataSource = clsLocalDrivingLicenseApplication.GetAllLocalDrivingLicenseApplications();
         }
 
         private void ctlManagePersons1_OnAdd(object obj)
