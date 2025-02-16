@@ -98,7 +98,7 @@ namespace Driving_License_Management_DataAccessLayer
         {
             DataTable Result = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT * FROM LocalDrivingLicenseApplications";
+            string query = "SELECT * FROM LocalDrivingLicenseApplications_View";
             SqlCommand command = new SqlCommand(query, connection);
             try
             {
