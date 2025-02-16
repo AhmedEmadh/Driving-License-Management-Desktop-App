@@ -33,11 +33,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.ctlPersonInformationWithFilter1 = new Driving_License_Management_Desktop_App.ctlPersonInformationWithFilter();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.cbLicenseClass = new System.Windows.Forms.ComboBox();
+            this.lblCreatedBy = new System.Windows.Forms.Label();
+            this.lblApplicationFees = new System.Windows.Forms.Label();
+            this.lblApplicationDate = new System.Windows.Forms.Label();
+            this.lblApplicationID = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -89,19 +89,21 @@
             this.ctlPersonInformationWithFilter1.FilterEnabled = true;
             this.ctlPersonInformationWithFilter1.Location = new System.Drawing.Point(7, 7);
             this.ctlPersonInformationWithFilter1.Name = "ctlPersonInformationWithFilter1";
+            this.ctlPersonInformationWithFilter1.PersonID = -1;
+            this.ctlPersonInformationWithFilter1.SearchText = "";
             this.ctlPersonInformationWithFilter1.SelectedIndex = -1;
-            this.ctlPersonInformationWithFilter1.ShowAddPersonButton = true;
+            this.ctlPersonInformationWithFilter1.ShowAddPersonButton = false;
             this.ctlPersonInformationWithFilter1.Size = new System.Drawing.Size(665, 293);
             this.ctlPersonInformationWithFilter1.TabIndex = 0;
             this.ctlPersonInformationWithFilter1.OnPersonSelected += new System.Action<object>(this.ctlPersonInformationWithFilter1_OnPersonSelected);
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.comboBox1);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.cbLicenseClass);
+            this.tabPage2.Controls.Add(this.lblCreatedBy);
+            this.tabPage2.Controls.Add(this.lblApplicationFees);
+            this.tabPage2.Controls.Add(this.lblApplicationDate);
+            this.tabPage2.Controls.Add(this.lblApplicationID);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label4);
@@ -115,50 +117,51 @@
             this.tabPage2.Text = "Application Info";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cbLicenseClass
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(133, 82);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 9;
+            this.cbLicenseClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLicenseClass.FormattingEnabled = true;
+            this.cbLicenseClass.Location = new System.Drawing.Point(133, 82);
+            this.cbLicenseClass.Name = "cbLicenseClass";
+            this.cbLicenseClass.Size = new System.Drawing.Size(212, 24);
+            this.cbLicenseClass.TabIndex = 9;
+            this.cbLicenseClass.SelectedIndexChanged += new System.EventHandler(this.cbLicenseClass_SelectedIndexChanged);
             // 
-            // label10
+            // lblCreatedBy
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(130, 141);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(28, 16);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "???";
+            this.lblCreatedBy.AutoSize = true;
+            this.lblCreatedBy.Location = new System.Drawing.Point(130, 141);
+            this.lblCreatedBy.Name = "lblCreatedBy";
+            this.lblCreatedBy.Size = new System.Drawing.Size(28, 16);
+            this.lblCreatedBy.TabIndex = 8;
+            this.lblCreatedBy.Text = "???";
             // 
-            // label9
+            // lblApplicationFees
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(130, 112);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 16);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "???";
+            this.lblApplicationFees.AutoSize = true;
+            this.lblApplicationFees.Location = new System.Drawing.Point(130, 112);
+            this.lblApplicationFees.Name = "lblApplicationFees";
+            this.lblApplicationFees.Size = new System.Drawing.Size(28, 16);
+            this.lblApplicationFees.TabIndex = 7;
+            this.lblApplicationFees.Text = "???";
             // 
-            // label8
+            // lblApplicationDate
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(130, 55);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(28, 16);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "???";
+            this.lblApplicationDate.AutoSize = true;
+            this.lblApplicationDate.Location = new System.Drawing.Point(130, 55);
+            this.lblApplicationDate.Name = "lblApplicationDate";
+            this.lblApplicationDate.Size = new System.Drawing.Size(28, 16);
+            this.lblApplicationDate.TabIndex = 6;
+            this.lblApplicationDate.Text = "???";
             // 
-            // label7
+            // lblApplicationID
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(130, 25);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(28, 16);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "???";
+            this.lblApplicationID.AutoSize = true;
+            this.lblApplicationID.Location = new System.Drawing.Point(130, 25);
+            this.lblApplicationID.Name = "lblApplicationID";
+            this.lblApplicationID.Size = new System.Drawing.Size(28, 16);
+            this.lblApplicationID.TabIndex = 5;
+            this.lblApplicationID.Text = "???";
             // 
             // label6
             // 
@@ -222,6 +225,7 @@
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -270,11 +274,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblCreatedBy;
+        private System.Windows.Forms.Label lblApplicationFees;
+        private System.Windows.Forms.Label lblApplicationDate;
+        private System.Windows.Forms.Label lblApplicationID;
+        private System.Windows.Forms.ComboBox cbLicenseClass;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
     }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,8 @@ namespace Driving_License_Management_BusinessLogic
     {
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = enMode.AddNew;
-
+        public enum enType {NewLocalDrivingLicenseService=1, RenewDrivingLicenseService=2, ReplacementForALostDrivingLicense=3,
+                            ReplacementForADamagedDrivingLicense=4, ReleaseDetainedDrivingLicsense=5, NewInternationalLicense=6, RetakeTest=7};
         public int ID { set; get; }
         public string Title { set; get; }
         public float Fees { set; get; }
