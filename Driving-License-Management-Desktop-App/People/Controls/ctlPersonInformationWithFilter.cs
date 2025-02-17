@@ -108,7 +108,7 @@ namespace Driving_License_Management_Desktop_App
         }
         private void ctlPersonInformationWithFilter_Load(object sender, EventArgs e)
         {
-
+            cbCategory.SelectedIndex = 0;
         }
         private void SearchByPersonID()
         {

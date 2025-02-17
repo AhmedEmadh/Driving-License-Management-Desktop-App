@@ -26,25 +26,18 @@ namespace Driving_License_Management_BusinessLogic
         {
             this.LocalDrivingLicenseApplicationID = -1;
             this.LicenseClassID = -1;
-
+            LicenseClassInfo = null;
             Mode = enMode.AddNew;
         }
         private clsLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID, int ApplicationID, int ApplicantPersonID,
             DateTime ApplicationDate, int ApplicationTypeID,
             enApplicationStatus ApplicationStatus, DateTime LastStatusDate,
-            float PaidFees, int CreatedByUsereID, int LicenseClassID)
+            float PaidFees, int CreatedByUsereID, int LicenseClassID) : base(ApplicationID, ApplicantPersonID, ApplicationDate, ApplicationTypeID, ApplicationStatus, LastStatusDate, PaidFees, CreatedByUsereID)
         {
             this.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
-            this.ApplicationID = ApplicationID;
-            this.ApplicantPersonID = ApplicantPersonID;
-            this.ApplicationDate = ApplicationDate;
-            this.ApplicationTypeID = ApplicationTypeID;
-            this.ApplicationStatus = ApplicationStatus;
-            this.LastStatusDate = LastStatusDate;
-            this.PaidFees = PaidFees;
-            this.CreatedByUserID = CreatedByUsereID;
             this.LicenseClassID = LicenseClassID;
-            Mode = enMode.Update;
+            this.LicenseClassInfo = clsLicenseClass.Find(this.LicenseClassID);
+            this.Mode = enMode.Update;
         }
 
         private bool _AddNewLocalDrivingLicenseApplication()
@@ -140,7 +133,7 @@ namespace Driving_License_Management_BusinessLogic
             bool IsLocalDrivingApplicationDeleted = false;
             bool IsBaseApplicationDeleted = false;
             IsLocalDrivingApplicationDeleted = clsLocalDrivingLicenseApplicationData.DeleteLocalDrivingLicenseApplication(this.LocalDrivingLicenseApplicationID);
-            if(!IsLocalDrivingApplicationDeleted)
+            if (!IsLocalDrivingApplicationDeleted)
             {
                 return false;
             }

@@ -67,7 +67,7 @@ namespace Driving_License_Management_BusinessLogic
 
             Mode = enMode.AddNew;
         }
-        private clsApplication(int ApplicationID, int ApplicantPersonID, DateTime ApplicationDate, int AppllicationTypeID, enApplicationStatus ApplicationStatus, DateTime LastStatusDate, float PaindFees, int CreatedByUserID)
+        protected clsApplication(int ApplicationID, int ApplicantPersonID, DateTime ApplicationDate, int AppllicationTypeID, enApplicationStatus ApplicationStatus, DateTime LastStatusDate, float PaidFees, int CreatedByUserID)
         {
             this.ApplicationID = ApplicationID;
             this.ApplicantPersonID = ApplicantPersonID;
@@ -75,7 +75,7 @@ namespace Driving_License_Management_BusinessLogic
             this.ApplicationTypeID = AppllicationTypeID;
             this.ApplicationStatus = ApplicationStatus;
             this.LastStatusDate = LastStatusDate;
-            this.PaidFees = PaindFees;
+            this.PaidFees = PaidFees;
             this.CreatedByUserID = CreatedByUserID;
             ApplicationTypeInfo = clsApplicationType.Find(this.ApplicationTypeID);
             CreatedByUserInfo = clsUser.FindByUserID(this.CreatedByUserID);

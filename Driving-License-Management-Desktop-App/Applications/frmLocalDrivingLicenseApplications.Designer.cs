@@ -88,6 +88,7 @@
             this.showApplicationDetailsToolStripMenuItem.Name = "showApplicationDetailsToolStripMenuItem";
             this.showApplicationDetailsToolStripMenuItem.Size = new System.Drawing.Size(334, 28);
             this.showApplicationDetailsToolStripMenuItem.Text = "Show Application Details";
+            this.showApplicationDetailsToolStripMenuItem.Click += new System.EventHandler(this.showApplicationDetailsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -99,6 +100,7 @@
             this.editApplicationToolStripMenuItem.Name = "editApplicationToolStripMenuItem";
             this.editApplicationToolStripMenuItem.Size = new System.Drawing.Size(334, 28);
             this.editApplicationToolStripMenuItem.Text = "Edit Application";
+            this.editApplicationToolStripMenuItem.Click += new System.EventHandler(this.editApplicationToolStripMenuItem_Click);
             // 
             // deleteApplicationToolStripMenuItem
             // 
@@ -187,29 +189,32 @@
             // button1
             // 
             this.button1.Image = global::Driving_License_Management_Desktop_App.Properties.Resources.New_Application_64;
-            this.button1.Location = new System.Drawing.Point(1388, 108);
+            this.button1.Location = new System.Drawing.Point(1366, 109);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 84);
             this.button1.TabIndex = 41;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTitle.Location = new System.Drawing.Point(356, 141);
+            this.lblTitle.Location = new System.Drawing.Point(542, 156);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(782, 46);
+            this.lblTitle.Size = new System.Drawing.Size(587, 36);
             this.lblTitle.TabIndex = 40;
             this.lblTitle.Text = "Manage Local Driving License Applications";
             // 
             // tbFilter
             // 
-            this.tbFilter.Location = new System.Drawing.Point(201, 170);
+            this.tbFilter.Location = new System.Drawing.Point(353, 170);
             this.tbFilter.Name = "tbFilter";
-            this.tbFilter.Size = new System.Drawing.Size(149, 22);
+            this.tbFilter.Size = new System.Drawing.Size(173, 22);
             this.tbFilter.TabIndex = 39;
+            this.tbFilter.TextChanged += new System.EventHandler(this.tbFilter_TextChanged);
+            this.tbFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFilter_KeyPress);
             // 
             // cbFilterBy
             // 
@@ -218,20 +223,15 @@
             this.cbFilterBy.FormattingEnabled = true;
             this.cbFilterBy.Items.AddRange(new object[] {
             "None",
-            "Person ID",
-            "National No.",
-            "First Name",
-            "Second Name",
-            "Third Name",
-            "Last Name",
-            "Nationality",
-            "Gender",
-            "Phone",
-            "Email"});
+            "LocalDrivingLicenseApplicationID",
+            "NationalNo",
+            "FullName",
+            "Status"});
             this.cbFilterBy.Location = new System.Drawing.Point(73, 169);
             this.cbFilterBy.Name = "cbFilterBy";
-            this.cbFilterBy.Size = new System.Drawing.Size(121, 24);
+            this.cbFilterBy.Size = new System.Drawing.Size(274, 24);
             this.cbFilterBy.TabIndex = 38;
+            this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -245,7 +245,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Driving_License_Management_Desktop_App.Properties.Resources.Local_Driving_License_512;
-            this.pictureBox1.Location = new System.Drawing.Point(652, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(731, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(190, 131);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -273,7 +273,7 @@
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(1388, 678);
+            this.btnClose.Location = new System.Drawing.Point(1366, 678);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(94, 37);
             this.btnClose.TabIndex = 33;
@@ -294,7 +294,7 @@
             this.dgvLocalDrivingLicenseApplications.RowHeadersWidth = 51;
             this.dgvLocalDrivingLicenseApplications.RowTemplate.Height = 24;
             this.dgvLocalDrivingLicenseApplications.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLocalDrivingLicenseApplications.Size = new System.Drawing.Size(1470, 474);
+            this.dgvLocalDrivingLicenseApplications.Size = new System.Drawing.Size(1448, 474);
             this.dgvLocalDrivingLicenseApplications.TabIndex = 32;
             // 
             // frmLocalDrivingLicenseApplications
@@ -303,7 +303,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(1493, 722);
+            this.ClientSize = new System.Drawing.Size(1472, 722);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.tbFilter);

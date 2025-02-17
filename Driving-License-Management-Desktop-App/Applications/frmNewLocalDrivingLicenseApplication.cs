@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,12 +15,24 @@ namespace Driving_License_Management_Desktop_App
 {
     public partial class frmNewLocalDrivingLicenseApplication : Form
     {
+        int _LocalDrivingLicenseApplicationID;
+        clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication;
         enum enMode { AddNew = 0, Update = 1 };
         enMode _Mode = enMode.AddNew;
         public frmNewLocalDrivingLicenseApplication()
         {
             InitializeComponent();
+            _SetModeToAddNewMode();
+            _LocalDrivingLicenseApplication = new clsLocalDrivingLicenseApplication();
         }
+        public frmNewLocalDrivingLicenseApplication(int ID)
+        {
+            InitializeComponent();
+            _SetModeToUpdateMode();
+            _LocalDrivingLicenseApplicationID = ID;
+            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(ID);
+        }
+
         void _ReloadLables()
         {
             lblApplicationDate.Text = DateTime.Now.ToString("yyyy/MM/dd");
@@ -27,11 +40,8 @@ namespace Driving_License_Management_Desktop_App
             lblApplicationFees.Text = lc.ClassFees.ToString();
             lblCreatedBy.Text = clsGlobal.CurrentUser.UserName;
         }
-        private void frmNewLocalDrivingLicenseApplication_Load(object sender, EventArgs e)
+        void _LoadLicenseClassItems()
         {
-            _SetModeToAddNewMode();
-            ctlPersonInformationWithFilter1.SelectedIndex = 0;
-            //add items to the combobox from the database DataTable to list all the available driving license types names
             DataTable dt = clsLicenseClass.GetAllLicenseClasses();
             foreach (DataRow dr in dt.Rows)
             {
@@ -39,7 +49,41 @@ namespace Driving_License_Management_Desktop_App
                 cbLicenseClass.Items.Add(dr["ClassName"].ToString());
             }
             cbLicenseClass.SelectedIndex = 0;
-            _ReloadLables();
+
+        }
+        void _UpdateLicenseClass()
+        {
+            clsLicenseClass lc = clsLicenseClass.Find(_LocalDrivingLicenseApplication.LicenseClassID);
+            cbLicenseClass.SelectedItem = lc.ClassName;
+        }
+        void _LoadApplicationData()
+        {
+            ctlPersonInformationWithFilter1.PersonID = _LocalDrivingLicenseApplication.ApplicantPersonID;
+            lblApplicationDate.Text = _LocalDrivingLicenseApplication.ApplicationDate.ToString("yyyy/MM/dd");
+            lblApplicationFees.Text = _LocalDrivingLicenseApplication.PaidFees.ToString();
+            lblApplicationID.Text = _LocalDrivingLicenseApplication.ApplicationID.ToString();
+            lblCreatedBy.Text = _LocalDrivingLicenseApplication.CreatedByUserInfo.UserName;
+            if(_Mode == enMode.Update)
+            {
+                //set filter textbox to Passed ID
+                ctlPersonInformationWithFilter1.SearchText = _LocalDrivingLicenseApplication.ApplicantPersonID.ToString();
+            }
+            _UpdateLicenseClass();
+        }
+        private void frmNewLocalDrivingLicenseApplication_Load(object sender, EventArgs e)
+        {
+            _LoadLicenseClassItems();
+            if (_Mode == enMode.AddNew)
+            {
+                ctlPersonInformationWithFilter1.SelectedIndex = 0;
+                //add items to the combobox from the database DataTable to list all the available driving license types names
+                _ReloadLables();
+            }
+            else
+            {
+                _ReloadLables();
+                _LoadApplicationData();
+            }
 
         }
 
@@ -74,27 +118,26 @@ namespace Driving_License_Management_Desktop_App
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            clsLocalDrivingLicenseApplication localDrivingLicenseApplication;
             if (_Mode == enMode.AddNew)
             {
-                localDrivingLicenseApplication = new clsLocalDrivingLicenseApplication();
+                _LocalDrivingLicenseApplication = new clsLocalDrivingLicenseApplication();
             }
             else
             {
-                localDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByApplicationID(int.Parse(lblApplicationID.Text));
+                _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByApplicationID(int.Parse(lblApplicationID.Text));
             }
-            localDrivingLicenseApplication.ApplicantPersonID = ctlPersonInformationWithFilter1.PersonID;
-            localDrivingLicenseApplication.ApplicationTypeID = localDrivingLicenseApplication.ApplicationTypeID = (int)clsApplicationType.enType.NewLocalDrivingLicenseService;
-            localDrivingLicenseApplication.ApplicationDate = DateTime.Now;
-            localDrivingLicenseApplication.CreatedByUserID = clsGlobal.CurrentUser.UserID;
-            localDrivingLicenseApplication.ApplicationStatus = clsApplication.enApplicationStatus.New;
-            localDrivingLicenseApplication.LastStatusDate = DateTime.Now;
-            localDrivingLicenseApplication.PaidFees = float.Parse(lblApplicationFees.Text);
-            localDrivingLicenseApplication.LicenseClassID = clsLicenseClass.Find(cbLicenseClass.SelectedItem.ToString()).LicenseClassID;
-            if (localDrivingLicenseApplication.Save())
+            _LocalDrivingLicenseApplication.ApplicantPersonID = ctlPersonInformationWithFilter1.PersonID;
+            _LocalDrivingLicenseApplication.ApplicationTypeID = _LocalDrivingLicenseApplication.ApplicationTypeID = (int)clsApplicationType.enType.NewLocalDrivingLicenseService;
+            _LocalDrivingLicenseApplication.ApplicationDate = DateTime.Now;
+            _LocalDrivingLicenseApplication.CreatedByUserID = clsGlobal.CurrentUser.UserID;
+            _LocalDrivingLicenseApplication.ApplicationStatus = clsApplication.enApplicationStatus.New;
+            _LocalDrivingLicenseApplication.LastStatusDate = DateTime.Now;
+            _LocalDrivingLicenseApplication.PaidFees = float.Parse(lblApplicationFees.Text);
+            _LocalDrivingLicenseApplication.LicenseClassID = clsLicenseClass.Find(cbLicenseClass.SelectedItem.ToString()).LicenseClassID;
+            if (_LocalDrivingLicenseApplication.Save())
             {
                 MessageBox.Show("Application Saved Successfully");
-                lblApplicationID.Text = localDrivingLicenseApplication.ApplicationID.ToString();
+                lblApplicationID.Text = _LocalDrivingLicenseApplication.ApplicationID.ToString();
                 _SetModeToUpdateMode();
             }
             else
