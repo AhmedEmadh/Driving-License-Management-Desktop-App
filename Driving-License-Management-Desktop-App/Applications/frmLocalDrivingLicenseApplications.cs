@@ -1,4 +1,5 @@
 ﻿using Driving_License_Management_BusinessLogic;
+using Driving_License_Management_Desktop_App.Applications;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,6 +61,8 @@ Status
         {
             int CurrentRow = dgvLocalDrivingLicenseApplications.CurrentRow.Index;
             int ApplicationID = Convert.ToInt32(dgvLocalDrivingLicenseApplications.Rows[CurrentRow].Cells[0].Value);
+            new frmLocalDrivingLicenseApplicationInfo(ApplicationID).ShowDialog();
+
         }
         void _UpdateData()
         {

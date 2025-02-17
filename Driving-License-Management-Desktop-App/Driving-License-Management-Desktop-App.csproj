@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Applications\ctlApplicationBasicInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Applications\ctlApplicationBasicInfo.Designer.cs">
+      <DependentUpon>ctlApplicationBasicInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\ctlApplicationInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,6 +78,18 @@
     </Compile>
     <Compile Include="Applications\ctlApplicationNewLicenseInfo.Designer.cs">
       <DependentUpon>ctlApplicationNewLicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\ctlDrivingLicenseApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Applications\ctlDrivingLicenseApplicationInfo.Designer.cs">
+      <DependentUpon>ctlDrivingLicenseApplicationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\frmLocalDrivingLicenseApplicationInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\frmLocalDrivingLicenseApplicationInfo.Designer.cs">
+      <DependentUpon>frmLocalDrivingLicenseApplicationInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Applications\frmUpdateApplicationType.cs">
       <SubType>Form</SubType>
@@ -361,11 +379,20 @@
     <Compile Include="User\frmUserInfo.Designer.cs">
       <DependentUpon>frmUserInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Applications\ctlApplicationBasicInfo.resx">
+      <DependentUpon>ctlApplicationBasicInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Applications\ctlApplicationInfo.resx">
       <DependentUpon>ctlApplicationInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\ctlApplicationNewLicenseInfo.resx">
       <DependentUpon>ctlApplicationNewLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\ctlDrivingLicenseApplicationInfo.resx">
+      <DependentUpon>ctlDrivingLicenseApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\frmLocalDrivingLicenseApplicationInfo.resx">
+      <DependentUpon>frmLocalDrivingLicenseApplicationInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\frmUpdateApplicationType.resx">
       <DependentUpon>frmUpdateApplicationType.cs</DependentUpon>
