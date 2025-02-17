@@ -43,9 +43,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -208,15 +208,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "D.L.Application ID:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(263, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "New Local Driving License Application";
-            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(572, 501);
@@ -238,6 +229,17 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.button3_Click);
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTitle.Location = new System.Drawing.Point(152, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(525, 36);
+            this.lblTitle.TabIndex = 41;
+            this.lblTitle.Text = "New Local Driving License Application";
+            // 
             // frmNewLocalDrivingLicenseApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -245,9 +247,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(800, 560);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmNewLocalDrivingLicenseApplication";
             this.Text = "frmNewLocalDrivingLicenseApplication";
@@ -268,7 +270,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button1;
         private ctlPersonInformationWithFilter ctlPersonInformationWithFilter1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -281,5 +282,6 @@
         private System.Windows.Forms.ComboBox cbLicenseClass;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

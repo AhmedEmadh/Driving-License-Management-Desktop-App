@@ -27,7 +27,16 @@ namespace Driving_License_Management_Desktop_App
 
         public event DataBackEventHandler DataBack;
 
-
+        void _SetModeToAddNewMode()
+        {
+            _Mode = enMode.AddNew;
+            lblTitle.Text = "Add New Person";
+        }
+        void _SetModeToUpdateMode()
+        {
+            _Mode = enMode.Update;
+            lblTitle.Text = "Update Person";
+        }
 
         public frmAddEditPersonInfo()
         {
@@ -36,7 +45,7 @@ namespace Driving_License_Management_Desktop_App
         public frmAddEditPersonInfo(int PersonID)
         {
             InitializeComponent();
-            _Mode = enMode.Update;
+            _SetModeToUpdateMode();
             _PersonID = PersonID;
         }
         private void userControl11_OnClose(object obj)
@@ -248,7 +257,7 @@ namespace Driving_License_Management_Desktop_App
                 lblPersonIDValue.Text = _Person.PersonID.ToString();
                 _PersonID = _Person.PersonID;
                 //Change form mode to update
-                _Mode = enMode.Update;
+                _SetModeToUpdateMode();
                 lblTitle.Text = "Update Person";
                 MessageBox.Show("Person information saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //Trigger the event to send data back to the caller form
@@ -305,9 +314,12 @@ namespace Driving_License_Management_Desktop_App
             }
             if (clsPerson.IsPersonExist(textbox.Text))
             {
-                e.Cancel = true;
-                textbox.Focus();
-                errorProvider1.SetError(textbox, "This national number is already exist");
+                if (clsPerson.Find(textbox.Text).PersonID != int.Parse(lblPersonIDValue.Text))
+                {
+                    e.Cancel = true;
+                    textbox.Focus();
+                    errorProvider1.SetError(textbox, "This national number is already exist");
+                }
             }
             else
             {

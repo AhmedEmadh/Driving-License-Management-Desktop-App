@@ -14,6 +14,8 @@ namespace Driving_License_Management_Desktop_App
 {
     public partial class frmNewLocalDrivingLicenseApplication : Form
     {
+        enum enMode { AddNew = 0, Update = 1 };
+        enMode _Mode = enMode.AddNew;
         public frmNewLocalDrivingLicenseApplication()
         {
             InitializeComponent();
@@ -27,6 +29,7 @@ namespace Driving_License_Management_Desktop_App
         }
         private void frmNewLocalDrivingLicenseApplication_Load(object sender, EventArgs e)
         {
+            _SetModeToAddNewMode();
             ctlPersonInformationWithFilter1.SelectedIndex = 0;
             //add items to the combobox from the database DataTable to list all the available driving license types names
             DataTable dt = clsLicenseClass.GetAllLicenseClasses();
@@ -37,7 +40,7 @@ namespace Driving_License_Management_Desktop_App
             }
             cbLicenseClass.SelectedIndex = 0;
             _ReloadLables();
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,10 +62,27 @@ namespace Driving_License_Management_Desktop_App
         {
             _ReloadLables();
         }
-
+        void _SetModeToUpdateMode()
+        {
+            _Mode = enMode.Update;
+            lblTitle.Text = "Update Local Driving License Application";
+        }
+        void _SetModeToAddNewMode()
+        {
+            _Mode = enMode.AddNew;
+            lblTitle.Text = "New Local Driving License Application";
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            clsLocalDrivingLicenseApplication localDrivingLicenseApplication = new clsLocalDrivingLicenseApplication();
+            clsLocalDrivingLicenseApplication localDrivingLicenseApplication;
+            if (_Mode == enMode.AddNew)
+            {
+                localDrivingLicenseApplication = new clsLocalDrivingLicenseApplication();
+            }
+            else
+            {
+                localDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByApplicationID(int.Parse(lblApplicationID.Text));
+            }
             localDrivingLicenseApplication.ApplicantPersonID = ctlPersonInformationWithFilter1.PersonID;
             localDrivingLicenseApplication.ApplicationTypeID = localDrivingLicenseApplication.ApplicationTypeID = (int)clsApplicationType.enType.NewLocalDrivingLicenseService;
             localDrivingLicenseApplication.ApplicationDate = DateTime.Now;
@@ -75,6 +95,7 @@ namespace Driving_License_Management_Desktop_App
             {
                 MessageBox.Show("Application Saved Successfully");
                 lblApplicationID.Text = localDrivingLicenseApplication.ApplicationID.ToString();
+                _SetModeToUpdateMode();
             }
             else
             {
