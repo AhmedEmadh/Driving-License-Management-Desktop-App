@@ -59,9 +59,8 @@ Status
 
         private void showApplicationDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int CurrentRow = dgvLocalDrivingLicenseApplications.CurrentRow.Index;
-            int ApplicationID = Convert.ToInt32(dgvLocalDrivingLicenseApplications.Rows[CurrentRow].Cells[0].Value);
-            new frmLocalDrivingLicenseApplicationInfo(ApplicationID).ShowDialog();
+            int LocalDrivingLicenseApplicationID = _GetCurrentDataRowLocalDrivingLicenseApplicationID();
+            new frmLocalDrivingLicenseApplicationInfo(LocalDrivingLicenseApplicationID).ShowDialog();
 
         }
         void _UpdateData()
@@ -70,8 +69,7 @@ Status
         }
         private void editApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int CurrentRow = dgvLocalDrivingLicenseApplications.CurrentRow.Index;
-            int ApplicationID = Convert.ToInt32(dgvLocalDrivingLicenseApplications.Rows[CurrentRow].Cells[0].Value);
+            int ApplicationID = _GetCurrentDataRowLocalDrivingLicenseApplicationID();
             new frmNewLocalDrivingLicenseApplication(ApplicationID).ShowDialog();
             _UpdateData();
         }
@@ -161,10 +159,52 @@ Status
                 }
             }
         }
-
+        int _GetCurrentDataRowLocalDrivingLicenseApplicationID()
+        {
+            int CurrentRow = dgvLocalDrivingLicenseApplications.CurrentRow.Index;
+            int LocalDrivingLicenseApplicationID = int.Parse(dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value.ToString());
+            return LocalDrivingLicenseApplicationID;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             new frmNewLocalDrivingLicenseApplication().ShowDialog();
+            _UpdateData();
+        }
+
+        private void deleteApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LocalDrivingLicenseApplicationID = _GetCurrentDataRowLocalDrivingLicenseApplicationID();
+            if (clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LocalDrivingLicenseApplicationID).Delete())
+            {
+                MessageBox.Show("Local Application Deleted Successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Failed to delete Message", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            _UpdateData();
+        }
+
+        private void cancelApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LocalDrivingLicenseApplicationID = _GetCurrentDataRowLocalDrivingLicenseApplicationID();
+            clsLocalDrivingLicenseApplication localDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LocalDrivingLicenseApplicationID);
+            if (localDrivingLicenseApplication.ApplicationStatus == clsApplication.enApplicationStatus.New)
+            {
+                localDrivingLicenseApplication.ApplicationStatus = clsApplication.enApplicationStatus.Cancelled;
+                if (localDrivingLicenseApplication.Save())
+                {
+                    MessageBox.Show("Application Cancelled Successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed To Cancel Application", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Cannot Cancel Application Because it is already Cancelled or completed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             _UpdateData();
         }
     }
