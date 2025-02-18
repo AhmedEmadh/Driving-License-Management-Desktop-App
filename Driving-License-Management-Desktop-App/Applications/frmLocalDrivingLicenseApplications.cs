@@ -191,14 +191,17 @@ Status
             clsLocalDrivingLicenseApplication localDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LocalDrivingLicenseApplicationID);
             if (localDrivingLicenseApplication.ApplicationStatus == clsApplication.enApplicationStatus.New)
             {
-                localDrivingLicenseApplication.ApplicationStatus = clsApplication.enApplicationStatus.Cancelled;
-                if (localDrivingLicenseApplication.Save())
+                if (MessageBox.Show("Are you sure that you want to cancel Application?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Application Cancelled Successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Failed To Cancel Application", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    localDrivingLicenseApplication.ApplicationStatus = clsApplication.enApplicationStatus.Cancelled;
+                    if (localDrivingLicenseApplication.Save())
+                    {
+                        MessageBox.Show("Application Cancelled Successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed To Cancel Application", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             else
