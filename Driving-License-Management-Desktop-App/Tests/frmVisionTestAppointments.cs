@@ -20,7 +20,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new btnSave().ShowDialog();
+            new frmScheduleTest(1).ShowDialog();
         }
 
         private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)

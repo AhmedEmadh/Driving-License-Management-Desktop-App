@@ -115,6 +115,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Location = new System.Drawing.Point(646, 643);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(120, 48);
@@ -136,6 +137,7 @@
             // ctlApplicationInfo1
             // 
             this.ctlApplicationInfo1.BackColor = System.Drawing.Color.White;
+            this.ctlApplicationInfo1.LocalDrivingLicenseApplicationID = -1;
             this.ctlApplicationInfo1.Location = new System.Drawing.Point(-1, 117);
             this.ctlApplicationInfo1.Name = "ctlApplicationInfo1";
             this.ctlApplicationInfo1.Size = new System.Drawing.Size(789, 284);

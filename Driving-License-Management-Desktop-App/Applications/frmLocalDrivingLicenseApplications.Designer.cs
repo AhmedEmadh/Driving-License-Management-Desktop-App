@@ -38,7 +38,7 @@
             this.cancelApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.scheduleTestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ScheduleVisionTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scheduleWrittenTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scheduleStreetTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
@@ -81,7 +81,8 @@
             this.toolStripMenuItem6,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(335, 292);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(335, 264);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // showApplicationDetailsToolStripMenuItem
             // 
@@ -129,19 +130,20 @@
             // scheduleTestsToolStripMenuItem
             // 
             this.scheduleTestsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aToolStripMenuItem,
+            this.ScheduleVisionTestToolStripMenuItem,
             this.scheduleWrittenTestToolStripMenuItem,
             this.scheduleStreetTestToolStripMenuItem});
             this.scheduleTestsToolStripMenuItem.Name = "scheduleTestsToolStripMenuItem";
             this.scheduleTestsToolStripMenuItem.Size = new System.Drawing.Size(334, 28);
             this.scheduleTestsToolStripMenuItem.Text = "Schedule Tests";
+            this.scheduleTestsToolStripMenuItem.DropDownOpening += new System.EventHandler(this.scheduleTestsToolStripMenuItem_DropDownOpening);
             // 
-            // aToolStripMenuItem
+            // ScheduleVisionTestToolStripMenuItem
             // 
-            this.aToolStripMenuItem.Name = "aToolStripMenuItem";
-            this.aToolStripMenuItem.Size = new System.Drawing.Size(259, 28);
-            this.aToolStripMenuItem.Text = "Schedule Vision Test";
-            this.aToolStripMenuItem.Click += new System.EventHandler(this.aToolStripMenuItem_Click);
+            this.ScheduleVisionTestToolStripMenuItem.Name = "ScheduleVisionTestToolStripMenuItem";
+            this.ScheduleVisionTestToolStripMenuItem.Size = new System.Drawing.Size(259, 28);
+            this.ScheduleVisionTestToolStripMenuItem.Text = "Schedule Vision Test";
+            this.ScheduleVisionTestToolStripMenuItem.Click += new System.EventHandler(this.aToolStripMenuItem_Click);
             // 
             // scheduleWrittenTestToolStripMenuItem
             // 
@@ -176,6 +178,7 @@
             this.showLicenseToolStripMenuItem.Name = "showLicenseToolStripMenuItem";
             this.showLicenseToolStripMenuItem.Size = new System.Drawing.Size(334, 28);
             this.showLicenseToolStripMenuItem.Text = "Show License";
+            this.showLicenseToolStripMenuItem.DropDownOpening += new System.EventHandler(this.showLicenseToolStripMenuItem_DropDownOpening);
             // 
             // toolStripMenuItem6
             // 
@@ -343,7 +346,7 @@
         private System.Windows.Forms.ToolStripMenuItem showLicenseToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem showPersonLicenseHistoryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ScheduleVisionTestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem scheduleWrittenTestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem scheduleStreetTestToolStripMenuItem;
         private System.Windows.Forms.Button button1;

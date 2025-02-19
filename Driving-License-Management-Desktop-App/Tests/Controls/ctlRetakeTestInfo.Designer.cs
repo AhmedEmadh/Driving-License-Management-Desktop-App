@@ -58,32 +58,32 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(109, 49);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(30, 16);
+            this.label12.Size = new System.Drawing.Size(28, 16);
             this.label12.TabIndex = 5;
-            this.label12.Text = "N/A";
+            this.label12.Text = "???";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(302, 22);
+            this.label11.Location = new System.Drawing.Point(266, 22);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(14, 16);
+            this.label11.Size = new System.Drawing.Size(28, 16);
             this.label11.TabIndex = 4;
-            this.label11.Text = "0";
+            this.label11.Text = "???";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(109, 22);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(14, 16);
+            this.label10.Size = new System.Drawing.Size(28, 16);
             this.label10.TabIndex = 3;
-            this.label10.Text = "0";
+            this.label10.Text = "???";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(221, 22);
+            this.label9.Location = new System.Drawing.Point(185, 22);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 16);
             this.label9.TabIndex = 2;

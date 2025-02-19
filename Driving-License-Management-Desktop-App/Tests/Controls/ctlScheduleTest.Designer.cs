@@ -29,95 +29,121 @@
         private void InitializeComponent()
         {
             this.ctlRetakeTestInfo1 = new Driving_License_Management_Desktop_App.Tests.Controls.ctlRetakeTestInfo();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.gbTestType = new System.Windows.Forms.GroupBox();
+            this.lblFees = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.lblTrial = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblClassID = new System.Windows.Forms.Label();
+            this.lblDLAPPID = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pbTestPicture = new System.Windows.Forms.PictureBox();
+            this.gbTestType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTestPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // ctlRetakeTestInfo1
             // 
-            this.ctlRetakeTestInfo1.Location = new System.Drawing.Point(4, 340);
+            this.ctlRetakeTestInfo1.BackColor = System.Drawing.Color.White;
+            this.ctlRetakeTestInfo1.Location = new System.Drawing.Point(3, 340);
             this.ctlRetakeTestInfo1.Name = "ctlRetakeTestInfo1";
             this.ctlRetakeTestInfo1.Size = new System.Drawing.Size(337, 109);
             this.ctlRetakeTestInfo1.TabIndex = 9;
             // 
-            // groupBox1
+            // gbTestType
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Location = new System.Drawing.Point(11, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(330, 331);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Vision Test";
+            this.gbTestType.Controls.Add(this.lblFees);
+            this.gbTestType.Controls.Add(this.lblTitle);
+            this.gbTestType.Controls.Add(this.dtpDate);
+            this.gbTestType.Controls.Add(this.lblTrial);
+            this.gbTestType.Controls.Add(this.lblName);
+            this.gbTestType.Controls.Add(this.lblClassID);
+            this.gbTestType.Controls.Add(this.lblDLAPPID);
+            this.gbTestType.Controls.Add(this.label6);
+            this.gbTestType.Controls.Add(this.label5);
+            this.gbTestType.Controls.Add(this.label4);
+            this.gbTestType.Controls.Add(this.label3);
+            this.gbTestType.Controls.Add(this.label2);
+            this.gbTestType.Controls.Add(this.label1);
+            this.gbTestType.Controls.Add(this.pbTestPicture);
+            this.gbTestType.Location = new System.Drawing.Point(3, 3);
+            this.gbTestType.Name = "gbTestType";
+            this.gbTestType.Size = new System.Drawing.Size(330, 331);
+            this.gbTestType.TabIndex = 11;
+            this.gbTestType.TabStop = false;
+            this.gbTestType.Text = "Test Type";
             // 
-            // dateTimePicker1
+            // lblFees
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(101, 270);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 12;
+            this.lblFees.AutoSize = true;
+            this.lblFees.Location = new System.Drawing.Point(98, 296);
+            this.lblFees.Name = "lblFees";
+            this.lblFees.Size = new System.Drawing.Size(28, 16);
+            this.lblFees.TabIndex = 48;
+            this.lblFees.Text = "???";
             // 
-            // label16
+            // lblTitle
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(98, 244);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(14, 16);
-            this.label16.TabIndex = 11;
-            this.label16.Text = "0";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTitle.Location = new System.Drawing.Point(35, 119);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(169, 29);
+            this.lblTitle.TabIndex = 47;
+            this.lblTitle.Text = "Schedule Test";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label15
+            // dtpDate
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(98, 215);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(44, 16);
-            this.label15.TabIndex = 10;
-            this.label15.Text = "Name";
+            this.dtpDate.CustomFormat = "dd/MM/yyyy";
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDate.Location = new System.Drawing.Point(101, 270);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpDate.TabIndex = 12;
             // 
-            // label14
+            // lblTrial
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(101, 183);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(51, 16);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "Class 1";
+            this.lblTrial.AutoSize = true;
+            this.lblTrial.Location = new System.Drawing.Point(98, 244);
+            this.lblTrial.Name = "lblTrial";
+            this.lblTrial.Size = new System.Drawing.Size(28, 16);
+            this.lblTrial.TabIndex = 11;
+            this.lblTrial.Text = "???";
             // 
-            // label13
+            // lblName
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(101, 158);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(14, 16);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "0";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(98, 215);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(28, 16);
+            this.lblName.TabIndex = 10;
+            this.lblName.Text = "???";
+            // 
+            // lblClassID
+            // 
+            this.lblClassID.AutoSize = true;
+            this.lblClassID.Location = new System.Drawing.Point(101, 183);
+            this.lblClassID.Name = "lblClassID";
+            this.lblClassID.Size = new System.Drawing.Size(28, 16);
+            this.lblClassID.TabIndex = 9;
+            this.lblClassID.Text = "???";
+            // 
+            // lblDLAPPID
+            // 
+            this.lblDLAPPID.AutoSize = true;
+            this.lblDLAPPID.Location = new System.Drawing.Point(101, 158);
+            this.lblDLAPPID.Name = "lblDLAPPID";
+            this.lblDLAPPID.Size = new System.Drawing.Size(28, 16);
+            this.lblDLAPPID.TabIndex = 8;
+            this.lblDLAPPID.Text = "???";
             // 
             // label6
             // 
@@ -173,44 +199,49 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "D.L.App.ID:";
             // 
-            // pictureBox1
+            // pbTestPicture
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(10, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(142, 105);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbTestPicture.Image = global::Driving_License_Management_Desktop_App.Properties.Resources.driving_test_512;
+            this.pbTestPicture.Location = new System.Drawing.Point(104, 21);
+            this.pbTestPicture.Name = "pbTestPicture";
+            this.pbTestPicture.Size = new System.Drawing.Size(122, 95);
+            this.pbTestPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbTestPicture.TabIndex = 0;
+            this.pbTestPicture.TabStop = false;
             // 
             // ctlScheduleTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbTestType);
             this.Controls.Add(this.ctlRetakeTestInfo1);
             this.Name = "ctlScheduleTest";
-            this.Size = new System.Drawing.Size(348, 453);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Size = new System.Drawing.Size(343, 453);
+            this.Load += new System.EventHandler(this.ctlScheduleTest_Load);
+            this.gbTestType.ResumeLayout(false);
+            this.gbTestType.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTestPicture)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private ctlRetakeTestInfo ctlRetakeTestInfo1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.GroupBox gbTestType;
+        private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblClassID;
+        private System.Windows.Forms.Label lblDLAPPID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbTestPicture;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblFees;
+        private System.Windows.Forms.Label lblTrial;
     }
 }

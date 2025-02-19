@@ -32,7 +32,8 @@ Status
 
         private void aToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmVisionTestAppointments().ShowDialog();
+            int LocalDrivingLicenseApplicationID = _GetCurrentDataRowLocalDrivingLicenseApplicationID();
+            new frmScheduleTest(LocalDrivingLicenseApplicationID).ShowDialog();
         }
 
         private void ctlManagePersons1_Load(object sender, EventArgs e)
@@ -209,6 +210,70 @@ Status
                 MessageBox.Show("Cannot Cancel Application Because it is already Cancelled or completed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             _UpdateData();
+        }
+
+        private void scheduleTestsToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+        }
+
+        private void showLicenseToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+            int LocalDrivingLicenseApplicationID = _GetCurrentDataRowLocalDrivingLicenseApplicationID();
+            clsLocalDrivingLicenseApplication localDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LocalDrivingLicenseApplicationID);
+            bool isLicenseIssued = localDrivingLicenseApplication.IsLicenseIssued();
+            int TotalPassedTests = localDrivingLicenseApplication.GetPassedTestCount();
+            issueDriveingLicenseFirstTimeToolStripMenuItem.Enabled = (TotalPassedTests == 3) && !isLicenseIssued;
+            showLicenseToolStripMenuItem.Enabled = isLicenseIssued;
+            showPersonLicenseHistoryToolStripMenuItem.Enabled = isLicenseIssued;
+            //Handling Tests
+            switch (TotalPassedTests)
+            {
+                case 0:
+                    ScheduleVisionTestToolStripMenuItem.Enabled = true;
+                    scheduleWrittenTestToolStripMenuItem.Enabled = false;
+                    scheduleStreetTestToolStripMenuItem.Enabled = false;
+                    break;
+                case 1:
+                    ScheduleVisionTestToolStripMenuItem.Enabled = false;
+                    scheduleWrittenTestToolStripMenuItem.Enabled = true;
+                    scheduleStreetTestToolStripMenuItem.Enabled = false;
+                    break;
+                case 2:
+                    ScheduleVisionTestToolStripMenuItem.Enabled = false;
+                    scheduleWrittenTestToolStripMenuItem.Enabled = false;
+                    scheduleStreetTestToolStripMenuItem.Enabled = true;
+                    break;
+                default:
+                    ScheduleVisionTestToolStripMenuItem.Enabled = false;
+                    scheduleWrittenTestToolStripMenuItem.Enabled = false;
+                    scheduleStreetTestToolStripMenuItem.Enabled = false;
+                    break;
+            }
+            //If Application is completed or canceled
+            if ((localDrivingLicenseApplication.ApplicationStatus == clsApplication.enApplicationStatus.Cancelled) || (localDrivingLicenseApplication.ApplicationStatus == clsApplication.enApplicationStatus.Completed))
+            {
+                editApplicationToolStripMenuItem.Enabled = false;
+                deleteApplicationToolStripMenuItem.Enabled = false;
+                cancelApplicationToolStripMenuItem.Enabled = false;
+                scheduleTestsToolStripMenuItem.Enabled = false;
+                issueDriveingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+            }
+            else
+            {
+                editApplicationToolStripMenuItem.Enabled = true;
+                deleteApplicationToolStripMenuItem.Enabled = true;
+                cancelApplicationToolStripMenuItem.Enabled = true;
+                scheduleTestsToolStripMenuItem.Enabled = true;
+                if (TotalPassedTests == 3)
+                    issueDriveingLicenseFirstTimeToolStripMenuItem.Enabled = true;
+            }
+
+
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Driving_License_Management_BusinessLogic;
+using Driving_License_Management_Desktop_App.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,84 @@ namespace Driving_License_Management_Desktop_App.Tests.Controls
 {
     public partial class ctlScheduleTest : UserControl
     {
+        clsTestType.enTestType _TestType;
+        public clsTestType.enTestType TestType
+        {
+            get
+            {
+                return _TestType;
+            }
+            set
+            {
+                _TestType = value;
+                switch (_TestType)
+                {
+                    case clsTestType.enTestType.VisionTest:
+                        pbTestPicture.Image = Resources.Vision_512;
+                        gbTestType.Text = "Vision Test";
+                        lblTitle.Text = "Schedule Vision Test";
+                        break;
+                    case clsTestType.enTestType.WrittenTest:
+                        pbTestPicture.Image = Resources.Written_Test_512;
+                        gbTestType.Text = "Written Test";
+                        lblTitle.Text = "Schedule Written Test";
+                        break;
+                    case clsTestType.enTestType.StreetTest:
+                        pbTestPicture.Image = Resources.Street_Test_32;
+                        gbTestType.Text = "Street Test";
+                        lblTitle.Text = "Schedule Street Test";
+                        break;
+                }
+            }
+        }
+        int _LocalDrivingLicenseApplicationID = -1;
+        public int DrivingLicenseApplicationID
+        {
+            get
+            {
+                return _LocalDrivingLicenseApplicationID;
+            }
+            set
+            {
+                clsLocalDrivingLicenseApplication localDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(value);
+                if (localDrivingLicenseApplication != null)
+                {
+                    _LocalDrivingLicenseApplicationID = localDrivingLicenseApplication.LocalDrivingLicenseApplicationID;
+                    _SetValues(value);
+                    
+                }
+                else
+                {
+                    _LocalDrivingLicenseApplicationID = -1;
+                    _ResetValues();
+                }
+            }
+        }
+        void _SetValues(int LocalDrivingLicenseApplicationID)
+        {
+            clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_LocalDrivingLicenseApplicationID);
+            lblClassID.Text = _LocalDrivingLicenseApplication.LicenseClassID.ToString();
+            lblDLAPPID.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();
+            lblFees.Text = _LocalDrivingLicenseApplication.PaidFees.ToString();
+            lblName.Text = _LocalDrivingLicenseApplication.ApplicantfullName.ToString();
+            lblTrial.Text = _LocalDrivingLicenseApplication.TotalTrialsPerTest(TestType).ToString();
+        }
+        void _ResetValues()
+        {
+            lblClassID.Text = "???";
+            lblDLAPPID.Text = "???";
+            lblFees.Text = "???";
+            lblName.Text = "???";
+            lblTrial.Text = "???";
+        }
         public ctlScheduleTest()
         {
             InitializeComponent();
+        }
+
+        private void ctlScheduleTest_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
