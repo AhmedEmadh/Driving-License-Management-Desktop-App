@@ -58,9 +58,9 @@
             this.lblPassedTests.AutoSize = true;
             this.lblPassedTests.Location = new System.Drawing.Point(378, 55);
             this.lblPassedTests.Name = "lblPassedTests";
-            this.lblPassedTests.Size = new System.Drawing.Size(14, 16);
+            this.lblPassedTests.Size = new System.Drawing.Size(28, 16);
             this.lblPassedTests.TabIndex = 5;
-            this.lblPassedTests.Text = "?";
+            this.lblPassedTests.Text = "???";
             // 
             // lblAppliedForLicense
             // 

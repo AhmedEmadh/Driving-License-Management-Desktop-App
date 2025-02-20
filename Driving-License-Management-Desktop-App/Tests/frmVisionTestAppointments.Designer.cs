@@ -36,7 +36,7 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblCount = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.ctlApplicationInfo1 = new Driving_License_Management_Desktop_App.ctlApplicationInfo();
@@ -64,6 +64,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Location = new System.Drawing.Point(16, 447);
@@ -104,14 +107,14 @@
             this.label17.TabIndex = 5;
             this.label17.Text = "# Records:";
             // 
-            // label18
+            // lblCount
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(94, 614);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(14, 16);
-            this.label18.TabIndex = 6;
-            this.label18.Text = "0";
+            this.lblCount.AutoSize = true;
+            this.lblCount.Location = new System.Drawing.Point(94, 614);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(14, 16);
+            this.lblCount.TabIndex = 6;
+            this.lblCount.Text = "0";
             // 
             // btnClose
             // 
@@ -154,13 +157,14 @@
             this.Controls.Add(this.ctlApplicationInfo1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.label18);
+            this.Controls.Add(this.lblCount);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label1);
             this.Name = "frmVisionTestAppointments";
             this.Text = "frmVisionTestAppointments";
+            this.Load += new System.EventHandler(this.frmVisionTestAppointments_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -174,7 +178,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;

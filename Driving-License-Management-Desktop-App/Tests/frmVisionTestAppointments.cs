@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Driving_License_Management_BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,13 @@ namespace Driving_License_Management_Desktop_App
 {
     public partial class frmVisionTestAppointments : Form
     {
-        public frmVisionTestAppointments()
+        int _LocalDrivingLicenseApplicationID;
+        clsTestType.enTestType TestType;
+        public frmVisionTestAppointments(int LocalDrivingLicenseApplicationID, clsTestType.enTestType testType)
         {
             InitializeComponent();
+            _LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
+            TestType = testType;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -36,6 +41,17 @@ namespace Driving_License_Management_Desktop_App
         private void ctlApplicationInfo1_OnLinkClicked(object obj)
         {
             new frmPersonDetails().ShowDialog();
+        }
+        void _ReloadData()
+        {
+            dataGridView1.DataSource = clsTestAppointment.GetApplicationTestAppointmentsPerTestType(_LocalDrivingLicenseApplicationID, TestType);
+            lblCount.Text = dataGridView1.Rows.Count.ToString();
+        }
+        private void frmVisionTestAppointments_Load(object sender, EventArgs e)
+        {
+            ctlApplicationInfo1.LocalDrivingLicenseApplicationID = _LocalDrivingLicenseApplicationID;
+            _ReloadData();
+
         }
     }
 }

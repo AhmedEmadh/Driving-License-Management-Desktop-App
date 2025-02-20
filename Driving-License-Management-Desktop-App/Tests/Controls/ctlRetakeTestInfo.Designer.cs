@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblTestAppID = new System.Windows.Forms.Label();
+            this.lblTotalFees = new System.Windows.Forms.Label();
+            this.lblAppFees = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -40,9 +40,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.lblTestAppID);
+            this.groupBox2.Controls.Add(this.lblTotalFees);
+            this.groupBox2.Controls.Add(this.lblAppFees);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
@@ -53,32 +53,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Retake Test Info";
             // 
-            // label12
+            // lblTestAppID
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(109, 49);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(28, 16);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "???";
+            this.lblTestAppID.AutoSize = true;
+            this.lblTestAppID.Location = new System.Drawing.Point(109, 49);
+            this.lblTestAppID.Name = "lblTestAppID";
+            this.lblTestAppID.Size = new System.Drawing.Size(28, 16);
+            this.lblTestAppID.TabIndex = 5;
+            this.lblTestAppID.Text = "???";
             // 
-            // label11
+            // lblTotalFees
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(266, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(28, 16);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "???";
+            this.lblTotalFees.AutoSize = true;
+            this.lblTotalFees.Location = new System.Drawing.Point(266, 22);
+            this.lblTotalFees.Name = "lblTotalFees";
+            this.lblTotalFees.Size = new System.Drawing.Size(28, 16);
+            this.lblTotalFees.TabIndex = 4;
+            this.lblTotalFees.Text = "???";
             // 
-            // label10
+            // lblAppFees
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(109, 22);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(28, 16);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "???";
+            this.lblAppFees.AutoSize = true;
+            this.lblAppFees.Location = new System.Drawing.Point(109, 22);
+            this.lblAppFees.Name = "lblAppFees";
+            this.lblAppFees.Size = new System.Drawing.Size(28, 16);
+            this.lblAppFees.TabIndex = 3;
+            this.lblAppFees.Text = "???";
             // 
             // label9
             // 
@@ -115,6 +115,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "ctlRetakeTestInfo";
             this.Size = new System.Drawing.Size(337, 109);
+            this.Load += new System.EventHandler(this.ctlRetakeTestInfo_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -124,9 +125,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblTestAppID;
+        private System.Windows.Forms.Label lblTotalFees;
+        private System.Windows.Forms.Label lblAppFees;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

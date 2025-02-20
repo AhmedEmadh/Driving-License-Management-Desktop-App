@@ -148,9 +148,8 @@ namespace Driving_License_Management_DataAccessLayer
             DataTable dataTable = new DataTable();
             SqlConnection conn = new SqlConnection(clsDataAccessSettings.ConnectionString);
             string query = @"
-                                SELECT * FROM TestAppointments INNER JOIN TestTypes ON TestAppointments.TestTypeID = TestTypes.TestTypeID /*WHERE TestAppointments.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID AND TestAppointments.TestTypeID = @Test*/
-                                ORDER BY TestAppointments.AppointmentDate DESC
-";
+                                SELECT TestAppointmentID,AppointmentDate,PaidFees,IsLocked FROM TestAppointments INNER JOIN TestTypes ON TestAppointments.TestTypeID = TestTypes.TestTypeID WHERE TestAppointments.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID AND TestAppointments.TestTypeID = @Test
+                                ORDER BY TestAppointments.AppointmentDate DESC";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
             cmd.Parameters.AddWithValue("@Test", TestTypeID);

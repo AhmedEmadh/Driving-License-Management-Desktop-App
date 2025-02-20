@@ -33,7 +33,7 @@ Status
         private void aToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int LocalDrivingLicenseApplicationID = _GetCurrentDataRowLocalDrivingLicenseApplicationID();
-            new frmScheduleTest(LocalDrivingLicenseApplicationID).ShowDialog();
+            new frmVisionTestAppointments(LocalDrivingLicenseApplicationID,clsTestType.enTestType.VisionTest).ShowDialog();
         }
 
         private void ctlManagePersons1_Load(object sender, EventArgs e)
@@ -67,6 +67,7 @@ Status
         void _UpdateData()
         {
             dgvLocalDrivingLicenseApplications.DataSource = clsLocalDrivingLicenseApplication.GetAllLocalDrivingLicenseApplications();
+            lblRecordsCount.Text = dgvLocalDrivingLicenseApplications.Rows.Count.ToString();
         }
         private void editApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {

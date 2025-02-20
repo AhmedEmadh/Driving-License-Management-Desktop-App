@@ -44,6 +44,10 @@ namespace Driving_License_Management_Desktop_App.Tests.Controls
                 }
             }
         }
+        public enum enMode { AddNew, Update };
+        public enum enCreationMode { FirstTimeSchedule = 0, RetakeTestSchedule = 1 };
+        enMode _enMode = enMode.AddNew;
+        enCreationMode _enCreationMode = enCreationMode.FirstTimeSchedule;
         int _LocalDrivingLicenseApplicationID = -1;
         public int DrivingLicenseApplicationID
         {
@@ -56,9 +60,30 @@ namespace Driving_License_Management_Desktop_App.Tests.Controls
                 clsLocalDrivingLicenseApplication localDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(value);
                 if (localDrivingLicenseApplication != null)
                 {
+                    //Application Found
                     _LocalDrivingLicenseApplicationID = localDrivingLicenseApplication.LocalDrivingLicenseApplicationID;
+                    if (!localDrivingLicenseApplication.DoesAttendTestType(TestType))
+                    {
+                        //First Time Schedule
+                        _enCreationMode = enCreationMode.FirstTimeSchedule;
+                    }
+                    else
+                    {
+                        //Not First Time
+                        if (!localDrivingLicenseApplication.DoesPassTestType(TestType))
+                        {
+                            //Retake Test
+                            _enCreationMode = enCreationMode.RetakeTestSchedule;
+                            ctlRetakeTestInfo1.TestType = TestType;
+                        }
+                        else
+                        {
+                            //Passed Test Before
+                            _enMode = enMode.Update;
+                            _enCreationMode = enCreationMode.FirstTimeSchedule;
+                        }
+                    }
                     _SetValues(value);
-                    
                 }
                 else
                 {
@@ -75,6 +100,15 @@ namespace Driving_License_Management_Desktop_App.Tests.Controls
             lblFees.Text = _LocalDrivingLicenseApplication.PaidFees.ToString();
             lblName.Text = _LocalDrivingLicenseApplication.ApplicantfullName.ToString();
             lblTrial.Text = _LocalDrivingLicenseApplication.TotalTrialsPerTest(TestType).ToString();
+            if (!_LocalDrivingLicenseApplication.DoesPassTestType(TestType) && _LocalDrivingLicenseApplication.DoesAttendTestType(TestType))
+            {
+                _enCreationMode = enCreationMode.RetakeTestSchedule;
+                ctlRetakeTestInfo1.TestType = TestType;
+            }
+            else
+            {
+                _enCreationMode = enCreationMode.FirstTimeSchedule;
+            }
         }
         void _ResetValues()
         {

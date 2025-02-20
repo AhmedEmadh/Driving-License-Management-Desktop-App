@@ -230,7 +230,8 @@ namespace Driving_License_Management_DataAccessLayer
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    result = true;
+                    bool testResult = (bool)reader["TestResult"];
+                    result = testResult;
                 }
                 else
                 {
