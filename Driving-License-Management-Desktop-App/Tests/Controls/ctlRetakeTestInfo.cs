@@ -13,23 +13,50 @@ namespace Driving_License_Management_Desktop_App.Tests.Controls
 {
     public partial class ctlRetakeTestInfo : UserControl
     {
-        clsTestType.enTestType _TestType;
-        public clsTestType.enTestType TestType
+        int _TestAppointmentID = -1;
+        public int TestAppointmentID
         {
             get
             {
-                return _TestType;
+                return _TestAppointmentID;
             }
             set
             {
-                _TestType = value;
-                _SetValues(value);
+                _TestAppointmentID = value;
+                clsTestAppointment testAppointment = clsTestAppointment.Find(_TestAppointmentID);
+                if (testAppointment != null)
+                {
+                    if (testAppointment.RetakeTestAppInfo != null)
+                    {
+                        _SetValues(testAppointment);
+                    }
+                    else
+                    {
+                        _ResetValues();
+                    }
+                }
+                else
+                {
+                    _ResetValues();
+                }
             }
         }
-        void _SetValues(clsTestType.enTestType lTestType)
+        void _ResetValues()
         {
-            lblAppFees.Text = clsTestType.Find((int)lTestType).Fees.ToString();
+            lblAppFees.Text = "???";
+            lblTotalFees.Text = "???";
+            lblTestAppID.Text = "???";
+        }
+        clsTestType.enTestType _TestType;
+        void _SetValues(clsTestAppointment testAppointment)
+        {
+            clsTestType.enTestType TestTypeID = testAppointment.TestTypeID;
+            lblAppFees.Text = clsTestType.Find((int)TestTypeID).Fees.ToString();
             lblTotalFees.Text = (int.Parse(lblAppFees.Text) + 5).ToString();
+            if (testAppointment.RetakeTestAppInfo != null)
+            {
+                lblTestAppID.Text = testAppointment.RetakeTestAppInfo.ApplicationID.ToString();
+            }
         }
 
         public ctlRetakeTestInfo()

@@ -16,16 +16,29 @@ namespace Driving_License_Management_Desktop_App
     {
         int _LocalDrivingLicenseApplicationID;
         clsTestType.enTestType TestType;
+        clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication;
         public frmVisionTestAppointments(int LocalDrivingLicenseApplicationID, clsTestType.enTestType testType)
         {
             InitializeComponent();
             _LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
+            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_LocalDrivingLicenseApplicationID);
+            ctlApplicationInfo1.LocalDrivingLicenseApplicationID = _LocalDrivingLicenseApplicationID;
             TestType = testType;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnScheduleTest_Click(object sender, EventArgs e)
         {
-            new frmScheduleTest(1).ShowDialog();
+            
+            if (!_LocalDrivingLicenseApplication.IsThereAnActiveScheduledTest(TestType))
+            {
+                new frmScheduleTest(_LocalDrivingLicenseApplicationID, TestType).ShowDialog();
+                _ReloadData();
+
+            }
+            else
+            {
+                MessageBox.Show("You have an active test scheduled", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
@@ -33,7 +46,7 @@ namespace Driving_License_Management_Desktop_App
             new frmTakeTest().ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -52,6 +65,17 @@ namespace Driving_License_Management_Desktop_App
             ctlApplicationInfo1.LocalDrivingLicenseApplicationID = _LocalDrivingLicenseApplicationID;
             _ReloadData();
 
+        }
+        int _GetCurrentDataRowLocalDrivingLicenseApplicationID()
+        {
+            int CurrentRow = dataGridView1.CurrentRow.Index;
+            int LocalDrivingLicenseApplicationID = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            return LocalDrivingLicenseApplicationID;
+        }
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmScheduleTest(_GetCurrentDataRowLocalDrivingLicenseApplicationID()).ShowDialog();
+            _ReloadData();
         }
     }
 }

@@ -38,7 +38,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnScheduleTest = new System.Windows.Forms.Button();
             this.ctlApplicationInfo1 = new Driving_License_Management_Desktop_App.ctlApplicationInfo();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -90,6 +90,7 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(147, 28);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // takeTestToolStripMenuItem
             // 
@@ -125,17 +126,17 @@
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.button1_Click);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // button2
+            // btnScheduleTest
             // 
-            this.button2.Location = new System.Drawing.Point(641, 404);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 37);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Schedule Test";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnScheduleTest.Location = new System.Drawing.Point(641, 404);
+            this.btnScheduleTest.Name = "btnScheduleTest";
+            this.btnScheduleTest.Size = new System.Drawing.Size(125, 37);
+            this.btnScheduleTest.TabIndex = 8;
+            this.btnScheduleTest.Text = "Schedule Test";
+            this.btnScheduleTest.UseVisualStyleBackColor = true;
+            this.btnScheduleTest.Click += new System.EventHandler(this.btnScheduleTest_Click);
             // 
             // ctlApplicationInfo1
             // 
@@ -155,7 +156,7 @@
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(800, 703);
             this.Controls.Add(this.ctlApplicationInfo1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnScheduleTest);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.label17);
@@ -180,7 +181,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnScheduleTest;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem takeTestToolStripMenuItem;

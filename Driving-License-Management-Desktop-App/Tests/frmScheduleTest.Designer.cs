@@ -41,7 +41,7 @@
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.button1_Click);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -52,12 +52,11 @@
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.button2_Click);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // ctlScheduleTest1
             // 
             this.ctlScheduleTest1.BackColor = System.Drawing.Color.White;
-            this.ctlScheduleTest1.DrivingLicenseApplicationID = -1;
             this.ctlScheduleTest1.Location = new System.Drawing.Point(13, 13);
             this.ctlScheduleTest1.Name = "ctlScheduleTest1";
             this.ctlScheduleTest1.Size = new System.Drawing.Size(348, 449);

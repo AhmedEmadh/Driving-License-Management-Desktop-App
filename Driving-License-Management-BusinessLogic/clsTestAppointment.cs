@@ -15,6 +15,7 @@ namespace Driving_License_Management_BusinessLogic
 
         public int TestAppointmentID { set; get; }
         public clsTestType.enTestType TestTypeID { set; get; }
+        public clsTestType TestTypeInfo { set; get; }
         public int LocalDrivingLicenseApplicationID { set; get; }
         public DateTime AppointmentDate { set; get; }
         public float PaidFees { set; get; }
@@ -40,6 +41,8 @@ namespace Driving_License_Management_BusinessLogic
             this.RetakeTestApplicationID = -1;
             Mode = enMode.AddNew;
 
+            TestTypeInfo = clsTestType.Find((int)this.TestTypeID);
+
         }
 
         public clsTestAppointment(int TestAppointmentID, clsTestType.enTestType TestTypeID,
@@ -56,6 +59,8 @@ namespace Driving_License_Management_BusinessLogic
             this.IsLocked = IsLocked;
             this.RetakeTestApplicationID = RetakeTestApplicationID;
             this.RetakeTestAppInfo = clsApplication.FindBaseApplication(RetakeTestApplicationID);
+
+            TestTypeInfo = clsTestType.Find((int)this.TestTypeID);
             Mode = enMode.Update;
         }
 
