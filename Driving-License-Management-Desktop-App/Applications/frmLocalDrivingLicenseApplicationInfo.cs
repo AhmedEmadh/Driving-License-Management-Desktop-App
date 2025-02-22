@@ -33,12 +33,5 @@ namespace Driving_License_Management_Desktop_App.Applications
             int PersonID = localApplication.ApplicantPersonInfo.PersonID;
             new frmPersonDetails(PersonID).ShowDialog();
         }
-
-        private void ctlApplicationInfo1_OnLinkClick(object obj)
-        {
-            clsLocalDrivingLicenseApplication localApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_ApplicationID);
-            int PersonID = localApplication.ApplicantPersonInfo.PersonID;
-            new frmPersonDetails(PersonID).ShowDialog();
-        }
     }
 }

@@ -33,7 +33,8 @@ Status
         private void ScheduleVisionTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int LocalDrivingLicenseApplicationID = _GetCurrentDataRowLocalDrivingLicenseApplicationID();
-            new frmVisionTestAppointments(LocalDrivingLicenseApplicationID,clsTestType.enTestType.VisionTest).ShowDialog();
+            new frmTestAppointments(LocalDrivingLicenseApplicationID,clsTestType.enTestType.VisionTest).ShowDialog();
+            _UpdateData();
         }
 
         private void ctlManagePersons1_Load(object sender, EventArgs e)
@@ -275,6 +276,20 @@ Status
             }
 
 
+        }
+
+        private void scheduleWrittenTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LocalDrivingLicenseApplicationID = _GetCurrentDataRowLocalDrivingLicenseApplicationID();
+            new frmTestAppointments(LocalDrivingLicenseApplicationID, clsTestType.enTestType.WrittenTest).ShowDialog();
+            _UpdateData();
+        }
+
+        private void scheduleStreetTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LocalDrivingLicenseApplicationID = _GetCurrentDataRowLocalDrivingLicenseApplicationID();
+            new frmTestAppointments(LocalDrivingLicenseApplicationID, clsTestType.enTestType.StreetTest).ShowDialog();
+            _UpdateData();
         }
     }
 }

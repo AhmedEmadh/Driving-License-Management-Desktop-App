@@ -66,6 +66,7 @@ namespace Driving_License_Management_Desktop_App
                     if (clsTest.Save())
                     {
                         MessageBox.Show("Test Taken Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         clsTestAppointment testAppointment = clsTestAppointment.Find(_TestAppointmentID);
                         if (testAppointment != null)
                         {

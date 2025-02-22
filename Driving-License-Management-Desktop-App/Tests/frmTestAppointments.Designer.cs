@@ -1,6 +1,6 @@
 ﻿namespace Driving_License_Management_Desktop_App
 {
-    partial class frmVisionTestAppointments
+    partial class frmTestAppointments
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -40,18 +39,10 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnScheduleTest = new System.Windows.Forms.Button();
             this.ctlApplicationInfo1 = new Driving_License_Management_Desktop_App.ctlApplicationInfo();
+            this.lblTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(324, 85);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Vision Test Appointments";
             // 
             // label16
             // 
@@ -150,13 +141,25 @@
             this.ctlApplicationInfo1.TabIndex = 10;
             this.ctlApplicationInfo1.OnLinkClicked += new System.Action<object>(this.ctlApplicationInfo1_OnLinkClicked);
             // 
-            // frmVisionTestAppointments
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTitle.Location = new System.Drawing.Point(196, 66);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(300, 39);
+            this.lblTitle.TabIndex = 47;
+            this.lblTitle.Text = "Test Appointments";
+            // 
+            // frmTestAppointments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(800, 703);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.ctlApplicationInfo1);
             this.Controls.Add(this.btnScheduleTest);
             this.Controls.Add(this.btnClose);
@@ -164,8 +167,7 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.label1);
-            this.Name = "frmVisionTestAppointments";
+            this.Name = "frmTestAppointments";
             this.Text = "frmVisionTestAppointments";
             this.Load += new System.EventHandler(this.frmVisionTestAppointments_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -176,8 +178,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label17;
@@ -188,5 +188,6 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem takeTestToolStripMenuItem;
         private ctlApplicationInfo ctlApplicationInfo1;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

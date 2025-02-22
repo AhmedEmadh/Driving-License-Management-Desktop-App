@@ -142,6 +142,7 @@ namespace Driving_License_Management_Desktop_App
                 _TestAppointment.LocalDrivingLicenseApplicationID = _LocalDrivingLicenseApplicationID;
                 _TestAppointment.AppointmentDate = ctlScheduleTest1.Date;
                 _TestAppointment.CreatedByUserID = clsGlobal.CurrentUser.UserID;
+                _TestAppointment.TestTypeID = _enTestType;
                 _TestAppointment.IsLocked = false;
                 clsTestType _TestType = clsTestType.Find((int)_enTestType);
                 _TestAppointment.PaidFees = _TestType.Fees;
@@ -150,7 +151,10 @@ namespace Driving_License_Management_Desktop_App
                     MessageBox.Show("Test Scheduled Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnSave.Enabled = false;
                     _SetRetakeTestInfo();
-                    lblRetakeTestAppID.Text = _TestAppointment.RetakeTestApplicationID.ToString();
+                    if (_TestAppointment.RetakeTestApplicationID > 0)
+                        lblRetakeTestAppID.Text = _TestAppointment.RetakeTestApplicationID.ToString();
+                    else
+                        lblRetakeTestAppID.Text = "???";
 
                 }
                 else

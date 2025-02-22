@@ -34,12 +34,13 @@
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.cbRememberMe = new System.Windows.Forms.CheckBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(109, 74);
+            this.label1.Location = new System.Drawing.Point(12, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 16);
             this.label1.TabIndex = 0;
@@ -48,7 +49,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(109, 113);
+            this.label2.Location = new System.Drawing.Point(12, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 16);
             this.label2.TabIndex = 1;
@@ -56,14 +57,14 @@
             // 
             // tbUserName
             // 
-            this.tbUserName.Location = new System.Drawing.Point(204, 71);
+            this.tbUserName.Location = new System.Drawing.Point(98, 65);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(160, 22);
             this.tbUserName.TabIndex = 2;
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(204, 110);
+            this.tbPassword.Location = new System.Drawing.Point(98, 104);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(160, 22);
@@ -72,7 +73,7 @@
             // cbRememberMe
             // 
             this.cbRememberMe.AutoSize = true;
-            this.cbRememberMe.Location = new System.Drawing.Point(204, 139);
+            this.cbRememberMe.Location = new System.Drawing.Point(98, 133);
             this.cbRememberMe.Name = "cbRememberMe";
             this.cbRememberMe.Size = new System.Drawing.Size(122, 20);
             this.cbRememberMe.TabIndex = 4;
@@ -81,7 +82,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(251, 175);
+            this.btnLogin.Location = new System.Drawing.Point(119, 159);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 29);
             this.btnLogin.TabIndex = 5;
@@ -89,13 +90,25 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTitle.Location = new System.Drawing.Point(113, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(90, 36);
+            this.lblTitle.TabIndex = 42;
+            this.lblTitle.Text = "Login";
+            // 
             // frmLoginScreen
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(299, 210);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.cbRememberMe);
             this.Controls.Add(this.tbPassword);
@@ -118,5 +131,6 @@
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.CheckBox cbRememberMe;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

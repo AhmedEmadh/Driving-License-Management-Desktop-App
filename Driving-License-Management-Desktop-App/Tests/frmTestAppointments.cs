@@ -12,12 +12,12 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Driving_License_Management_Desktop_App
 {
-    public partial class frmVisionTestAppointments : Form
+    public partial class frmTestAppointments : Form
     {
         int _LocalDrivingLicenseApplicationID;
         clsTestType.enTestType _TestType;
         clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication;
-        public frmVisionTestAppointments(int LocalDrivingLicenseApplicationID, clsTestType.enTestType testType)
+        public frmTestAppointments(int LocalDrivingLicenseApplicationID, clsTestType.enTestType testType)
         {
             InitializeComponent();
             _LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
@@ -67,6 +67,7 @@ namespace Driving_License_Management_Desktop_App
         private void frmVisionTestAppointments_Load(object sender, EventArgs e)
         {
             ctlApplicationInfo1.LocalDrivingLicenseApplicationID = _LocalDrivingLicenseApplicationID;
+            lblTitle.Text = clsTestType.TestTypeToString(_TestType) + " Appointments";
             _ReloadData();
 
         }
