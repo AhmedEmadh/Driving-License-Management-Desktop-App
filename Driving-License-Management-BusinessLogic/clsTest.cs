@@ -82,6 +82,19 @@ namespace Driving_License_Management_BusinessLogic
                 return null;
 
         }
+        public static clsTest FindByTestAppointmentID(int TestAppointmentID)
+        {
+            int TestID = -1;
+            bool TestResult = false; string Notes = ""; int CreatedByUserID = -1;
+            if(clsTestData.GetTestInfoByAppointmentID(TestAppointmentID,
+            ref TestID, ref TestResult,
+            ref Notes, ref CreatedByUserID))
+                return new clsTest(TestID,
+                            TestAppointmentID, TestResult,
+                            Notes, CreatedByUserID);
+            else
+                return null;
+        }
 
         public static clsTest FindLastTestPerPersonAndLicenseClass
             (int PersonID, int LicenseClassID, clsTestType.enTestType TestTypeID)
@@ -144,5 +157,6 @@ namespace Driving_License_Management_BusinessLogic
             //if total passed test less than 3 it will return false otherwise will return true
             return GetPassedTestCount(LocalDrivingLicenseApplicationID) == 3;
         }
+
     }
 }

@@ -13,7 +13,7 @@ namespace Driving_License_Management_BusinessLogic
     {
         public enum enMode { AddNew, Update };
         public enMode Mode = enMode.AddNew;
-        public enum enTestType { VisionTest = 1, WrittenTest = 2, StreetTest=3};
+        public enum enTestType { VisionTest = 1, WrittenTest = 2, StreetTest = 3 };
         public int ID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
@@ -26,7 +26,7 @@ namespace Driving_License_Management_BusinessLogic
             this.Fees = 0;
             Mode = enMode.AddNew;
         }
-        private clsTestType(int ID,string TestTypeTitle,string Description,float TestTypeFees)
+        private clsTestType(int ID, string TestTypeTitle, string Description, float TestTypeFees)
         {
             this.ID = (int)ID;
             this.Title = TestTypeTitle;
@@ -48,7 +48,8 @@ namespace Driving_License_Management_BusinessLogic
             string TestTypeTitle = string.Empty, TestTypeDescription = string.Empty;
             float TestTypeFees = 0;
             bool isFound = clsTestTypeData.GetTestTypeInfoByID(TestTypeID, ref TestTypeTitle, ref TestTypeDescription, ref TestTypeFees);
-            if (isFound) {
+            if (isFound)
+            {
                 return new clsTestType(TestTypeID, TestTypeTitle, TestTypeDescription, TestTypeFees);
             }
             else
@@ -63,10 +64,10 @@ namespace Driving_License_Management_BusinessLogic
         }
         public bool Save()
         {
-            switch(Mode)
+            switch (Mode)
             {
                 case enMode.AddNew:
-                    if(_AddNewTestType())
+                    if (_AddNewTestType())
                     {
                         Mode = enMode.Update;
                         return true;
@@ -79,6 +80,20 @@ namespace Driving_License_Management_BusinessLogic
                     return _UpdateTestType();
             }
             return false;
+        }
+        static public string TestTypeToString(enTestType TestType)
+        {
+            switch (TestType)
+            {
+                case enTestType.VisionTest:
+                    return "Vision Test";
+                case enTestType.WrittenTest:
+                    return "Written Test";
+                case enTestType.StreetTest:
+                    return "Street Test";
+                default:
+                    return string.Empty;
+            }
         }
     }
 }

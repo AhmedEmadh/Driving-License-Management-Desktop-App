@@ -180,12 +180,6 @@
     <Compile Include="People\frmFindPerson.Designer.cs">
       <DependentUpon>frmFindPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Controls\ctlRetakeTestInfo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Tests\Controls\ctlRetakeTestInfo.Designer.cs">
-      <DependentUpon>ctlRetakeTestInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Tests\Controls\ctlScheduledTest.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -436,9 +430,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="People\frmFindPerson.resx">
       <DependentUpon>frmFindPerson.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tests\Controls\ctlRetakeTestInfo.resx">
-      <DependentUpon>ctlRetakeTestInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\Controls\ctlScheduledTest.resx">
       <DependentUpon>ctlScheduledTest.cs</DependentUpon>

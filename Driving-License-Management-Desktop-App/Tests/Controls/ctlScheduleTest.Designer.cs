@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctlRetakeTestInfo1 = new Driving_License_Management_Desktop_App.Tests.Controls.ctlRetakeTestInfo();
             this.gbTestType = new System.Windows.Forms.GroupBox();
             this.lblFees = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -47,14 +46,6 @@
             this.gbTestType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTestPicture)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ctlRetakeTestInfo1
-            // 
-            this.ctlRetakeTestInfo1.BackColor = System.Drawing.Color.White;
-            this.ctlRetakeTestInfo1.Location = new System.Drawing.Point(3, 340);
-            this.ctlRetakeTestInfo1.Name = "ctlRetakeTestInfo1";
-            this.ctlRetakeTestInfo1.Size = new System.Drawing.Size(337, 109);
-            this.ctlRetakeTestInfo1.TabIndex = 9;
             // 
             // gbTestType
             // 
@@ -215,7 +206,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.gbTestType);
-            this.Controls.Add(this.ctlRetakeTestInfo1);
             this.Name = "ctlScheduleTest";
             this.Size = new System.Drawing.Size(343, 453);
             this.Load += new System.EventHandler(this.ctlScheduleTest_Load);
@@ -227,7 +217,6 @@
         }
 
         #endregion
-        private ctlRetakeTestInfo ctlRetakeTestInfo1;
         private System.Windows.Forms.GroupBox gbTestType;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Label lblName;

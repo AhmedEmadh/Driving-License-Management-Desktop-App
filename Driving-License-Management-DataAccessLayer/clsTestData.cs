@@ -56,6 +56,49 @@ namespace Driving_License_Management_DataAccessLayer
             return result;
         }
         /// <summary>
+        /// Retrieves the test information by TestAppointmentID.
+        /// </summary>
+        /// <param name="TestAppointmentID">The ID of the test appointment.</param>
+        /// <param name="TestID">The ID of the test, passed by reference.</param>
+        /// <param name="TestResult">The result of the test, passed by reference.</param>
+        /// <param name="Notes">The notes of the test, passed by reference.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the test, passed by reference.</param>
+        /// <returns>True if the test information is successfully retrieved; otherwise, false.</returns>
+        public static bool GetTestInfoByAppointmentID(int TestAppointmentID, ref int TestID, ref bool TestResult, ref string Notes, ref int CreatedByUserID)
+        {
+            bool result = false;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = "SELECT * FROM Tests WHERE TestAppointmentID = @TestAppointmentID";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    TestAppointmentID = reader.GetInt32(reader.GetOrdinal("TestAppointmentID"));
+                    TestResult = reader.GetBoolean(reader.GetOrdinal("TestResult"));
+                    Notes = reader.IsDBNull(reader.GetOrdinal("Notes")) ? null : reader.GetString(reader.GetOrdinal("Notes"));
+                    CreatedByUserID = reader.GetInt32(reader.GetOrdinal("CreatedByUserID"));
+                    TestID = reader.GetInt32(reader.GetOrdinal("TestID"));
+                    result = true;
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine(ex.Message);
+                result = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return result;
+        }
+        /// <summary>
         /// Retrieves the last test by person, test type, and license class.
         /// </summary>
         /// <param name="PersonID">The ID of the person.</param>

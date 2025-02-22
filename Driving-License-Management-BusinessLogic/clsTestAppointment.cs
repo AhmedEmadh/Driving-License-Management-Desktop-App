@@ -16,7 +16,20 @@ namespace Driving_License_Management_BusinessLogic
         public int TestAppointmentID { set; get; }
         public clsTestType.enTestType TestTypeID { set; get; }
         public clsTestType TestTypeInfo { set; get; }
-        public int LocalDrivingLicenseApplicationID { set; get; }
+        int _LocalDrivingLicenseApplicationID;
+        public int LocalDrivingLicenseApplicationID
+        {
+            set
+            {
+                LocalDrivingLicenseApplicationInfo = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(value);
+                if (LocalDrivingLicenseApplicationInfo != null)
+                    _LocalDrivingLicenseApplicationID = value;
+                else
+                    _LocalDrivingLicenseApplicationID = -1;
+            }
+            get { return _LocalDrivingLicenseApplicationID; }
+        }
+        public clsLocalDrivingLicenseApplication LocalDrivingLicenseApplicationInfo = null;
         public DateTime AppointmentDate { set; get; }
         public float PaidFees { set; get; }
         public int CreatedByUserID { set; get; }
@@ -42,7 +55,7 @@ namespace Driving_License_Management_BusinessLogic
             Mode = enMode.AddNew;
 
             TestTypeInfo = clsTestType.Find((int)this.TestTypeID);
-
+            LocalDrivingLicenseApplicationInfo = null;
         }
 
         public clsTestAppointment(int TestAppointmentID, clsTestType.enTestType TestTypeID,
@@ -61,6 +74,7 @@ namespace Driving_License_Management_BusinessLogic
             this.RetakeTestAppInfo = clsApplication.FindBaseApplication(RetakeTestApplicationID);
 
             TestTypeInfo = clsTestType.Find((int)this.TestTypeID);
+            LocalDrivingLicenseApplicationInfo = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(this.LocalDrivingLicenseApplicationID);
             Mode = enMode.Update;
         }
 

@@ -69,7 +69,6 @@ D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desk
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\bin\Debug\Driving-License-Management-DataAccessLayer.pdb
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.Licenses.Controls.ctlDriverLicenseInfoWithFilter.resources
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.Licenses.Controls.ctlDriverLicenses.resources
-D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.Tests.Controls.ctlRetakeTestInfo.resources
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.Tests.Controls.ctlScheduledTest.resources
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.Tests.Controls.ctlScheduleTest.resources
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving-.351EFBDB.Up2Date

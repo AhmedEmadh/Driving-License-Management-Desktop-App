@@ -15,7 +15,7 @@ namespace Driving_License_Management_Desktop_App
     public partial class frmVisionTestAppointments : Form
     {
         int _LocalDrivingLicenseApplicationID;
-        clsTestType.enTestType TestType;
+        clsTestType.enTestType _TestType;
         clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication;
         public frmVisionTestAppointments(int LocalDrivingLicenseApplicationID, clsTestType.enTestType testType)
         {
@@ -23,27 +23,31 @@ namespace Driving_License_Management_Desktop_App
             _LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
             _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_LocalDrivingLicenseApplicationID);
             ctlApplicationInfo1.LocalDrivingLicenseApplicationID = _LocalDrivingLicenseApplicationID;
-            TestType = testType;
+            _TestType = testType;
         }
 
         private void btnScheduleTest_Click(object sender, EventArgs e)
         {
-            
-            if (!_LocalDrivingLicenseApplication.IsThereAnActiveScheduledTest(TestType))
+            // if there is no active scheduled test and passed tests
+            if (!_LocalDrivingLicenseApplication.IsThereAnActiveScheduledTest(_TestType) && !_LocalDrivingLicenseApplication.DoesPassTestType(_TestType))
             {
-                new frmScheduleTest(_LocalDrivingLicenseApplicationID, TestType).ShowDialog();
+                new frmScheduleTest(_LocalDrivingLicenseApplicationID, _TestType).ShowDialog();
                 _ReloadData();
 
             }
             else
             {
-                MessageBox.Show("You have an active test scheduled", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (!_LocalDrivingLicenseApplication.DoesPassTestType(_TestType))
+                    MessageBox.Show("You have an active test scheduled", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show("You have already passed this test", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmTakeTest().ShowDialog();
+            new frmTakeTest(_GetCurrentDataRowTestAppointmentID()).ShowDialog();
+            _ReloadData();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -57,7 +61,7 @@ namespace Driving_License_Management_Desktop_App
         }
         void _ReloadData()
         {
-            dataGridView1.DataSource = clsTestAppointment.GetApplicationTestAppointmentsPerTestType(_LocalDrivingLicenseApplicationID, TestType);
+            dataGridView1.DataSource = clsTestAppointment.GetApplicationTestAppointmentsPerTestType(_LocalDrivingLicenseApplicationID, _TestType);
             lblCount.Text = dataGridView1.Rows.Count.ToString();
         }
         private void frmVisionTestAppointments_Load(object sender, EventArgs e)
@@ -66,15 +70,15 @@ namespace Driving_License_Management_Desktop_App
             _ReloadData();
 
         }
-        int _GetCurrentDataRowLocalDrivingLicenseApplicationID()
+        int _GetCurrentDataRowTestAppointmentID()
         {
             int CurrentRow = dataGridView1.CurrentRow.Index;
-            int LocalDrivingLicenseApplicationID = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            return LocalDrivingLicenseApplicationID;
+            int TestAppointmentID = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            return TestAppointmentID;
         }
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmScheduleTest(_GetCurrentDataRowLocalDrivingLicenseApplicationID()).ShowDialog();
+            new frmScheduleTest(_GetCurrentDataRowTestAppointmentID()).ShowDialog();
             _ReloadData();
         }
     }

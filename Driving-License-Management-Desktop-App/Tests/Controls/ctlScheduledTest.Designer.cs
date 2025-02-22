@@ -29,8 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTestID = new System.Windows.Forms.Label();
+            this.lblFees = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblTrial = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblDClass = new System.Windows.Forms.Label();
+            this.lblDLAppID = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pbTest = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -39,13 +46,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTest)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblTestID);
+            this.groupBox1.Controls.Add(this.lblFees);
+            this.groupBox1.Controls.Add(this.lblDate);
+            this.groupBox1.Controls.Add(this.lblTrial);
+            this.groupBox1.Controls.Add(this.lblName);
+            this.groupBox1.Controls.Add(this.lblDClass);
+            this.groupBox1.Controls.Add(this.lblDLAppID);
+            this.groupBox1.Controls.Add(this.lblTitle);
+            this.groupBox1.Controls.Add(this.pbTest);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label7);
@@ -60,22 +74,89 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vision Test";
             // 
-            // pictureBox1
+            // lblTestID
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(56, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 80);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.lblTestID.AutoSize = true;
+            this.lblTestID.Location = new System.Drawing.Point(145, 329);
+            this.lblTestID.Name = "lblTestID";
+            this.lblTestID.Size = new System.Drawing.Size(28, 16);
+            this.lblTestID.TabIndex = 55;
+            this.lblTestID.Text = "???";
             // 
-            // label1
+            // lblFees
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(65, 113);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Scheduled Test";
+            this.lblFees.AutoSize = true;
+            this.lblFees.Location = new System.Drawing.Point(145, 301);
+            this.lblFees.Name = "lblFees";
+            this.lblFees.Size = new System.Drawing.Size(28, 16);
+            this.lblFees.TabIndex = 54;
+            this.lblFees.Text = "???";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(145, 272);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(28, 16);
+            this.lblDate.TabIndex = 53;
+            this.lblDate.Text = "???";
+            // 
+            // lblTrial
+            // 
+            this.lblTrial.AutoSize = true;
+            this.lblTrial.Location = new System.Drawing.Point(145, 245);
+            this.lblTrial.Name = "lblTrial";
+            this.lblTrial.Size = new System.Drawing.Size(28, 16);
+            this.lblTrial.TabIndex = 52;
+            this.lblTrial.Text = "???";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(145, 217);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(28, 16);
+            this.lblName.TabIndex = 51;
+            this.lblName.Text = "???";
+            // 
+            // lblDClass
+            // 
+            this.lblDClass.AutoSize = true;
+            this.lblDClass.Location = new System.Drawing.Point(145, 191);
+            this.lblDClass.Name = "lblDClass";
+            this.lblDClass.Size = new System.Drawing.Size(28, 16);
+            this.lblDClass.TabIndex = 50;
+            this.lblDClass.Text = "???";
+            // 
+            // lblDLAppID
+            // 
+            this.lblDLAppID.AutoSize = true;
+            this.lblDLAppID.Location = new System.Drawing.Point(145, 162);
+            this.lblDLAppID.Name = "lblDLAppID";
+            this.lblDLAppID.Size = new System.Drawing.Size(28, 16);
+            this.lblDLAppID.TabIndex = 49;
+            this.lblDLAppID.Text = "???";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTitle.Location = new System.Drawing.Point(51, 112);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(183, 29);
+            this.lblTitle.TabIndex = 48;
+            this.lblTitle.Text = "Scheduled Test";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbTest
+            // 
+            this.pbTest.Location = new System.Drawing.Point(87, 21);
+            this.pbTest.Name = "pbTest";
+            this.pbTest.Size = new System.Drawing.Size(121, 80);
+            this.pbTest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbTest.TabIndex = 8;
+            this.pbTest.TabStop = false;
             // 
             // label8
             // 
@@ -148,9 +229,10 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ctlScheduledTest";
             this.Size = new System.Drawing.Size(327, 362);
+            this.Load += new System.EventHandler(this.ctlScheduledTest_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTest)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -158,8 +240,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pbTest;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
@@ -167,5 +248,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblTestID;
+        private System.Windows.Forms.Label lblFees;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblTrial;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblDClass;
+        private System.Windows.Forms.Label lblDLAppID;
     }
 }

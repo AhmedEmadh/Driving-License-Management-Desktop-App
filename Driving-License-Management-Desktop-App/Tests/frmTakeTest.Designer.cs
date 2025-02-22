@@ -30,9 +30,9 @@
         {
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.rbPass = new System.Windows.Forms.RadioButton();
+            this.rbFail = new System.Windows.Forms.RadioButton();
+            this.tbNotes = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.ctlScheduledTest1 = new Driving_License_Management_Desktop_App.Tests.Controls.ctlScheduledTest();
@@ -56,35 +56,35 @@
             this.label10.TabIndex = 11;
             this.label10.Text = "Notes:";
             // 
-            // radioButton1
+            // rbPass
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(68, 388);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(59, 20);
-            this.radioButton1.TabIndex = 12;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Pass";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbPass.AutoSize = true;
+            this.rbPass.Checked = true;
+            this.rbPass.Location = new System.Drawing.Point(68, 388);
+            this.rbPass.Name = "rbPass";
+            this.rbPass.Size = new System.Drawing.Size(59, 20);
+            this.rbPass.TabIndex = 12;
+            this.rbPass.TabStop = true;
+            this.rbPass.Text = "Pass";
+            this.rbPass.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbFail
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(133, 388);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(50, 20);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Fail";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbFail.AutoSize = true;
+            this.rbFail.Location = new System.Drawing.Point(133, 388);
+            this.rbFail.Name = "rbFail";
+            this.rbFail.Size = new System.Drawing.Size(50, 20);
+            this.rbFail.TabIndex = 13;
+            this.rbFail.Text = "Fail";
+            this.rbFail.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tbNotes
             // 
-            this.textBox1.Location = new System.Drawing.Point(62, 413);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(266, 109);
-            this.textBox1.TabIndex = 14;
+            this.tbNotes.Location = new System.Drawing.Point(62, 413);
+            this.tbNotes.Multiline = true;
+            this.tbNotes.Name = "tbNotes";
+            this.tbNotes.Size = new System.Drawing.Size(266, 109);
+            this.tbNotes.TabIndex = 14;
             // 
             // btnSave
             // 
@@ -94,9 +94,11 @@
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Location = new System.Drawing.Point(239, 553);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 31);
@@ -112,6 +114,7 @@
             this.ctlScheduledTest1.Name = "ctlScheduledTest1";
             this.ctlScheduledTest1.Size = new System.Drawing.Size(332, 369);
             this.ctlScheduledTest1.TabIndex = 17;
+            this.ctlScheduledTest1.TestAppointmentID = -1;
             // 
             // frmTakeTest
             // 
@@ -124,13 +127,14 @@
             this.Controls.Add(this.ctlScheduledTest1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.tbNotes);
+            this.Controls.Add(this.rbFail);
+            this.Controls.Add(this.rbPass);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Name = "frmTakeTest";
             this.Text = "frmTakeTest";
+            this.Load += new System.EventHandler(this.frmTakeTest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,9 +143,9 @@
         #endregion
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton rbPass;
+        private System.Windows.Forms.RadioButton rbFail;
+        private System.Windows.Forms.TextBox tbNotes;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
         private Tests.Controls.ctlScheduledTest ctlScheduledTest1;

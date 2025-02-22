@@ -30,7 +30,7 @@ Status
             InitializeComponent();
         }
 
-        private void aToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ScheduleVisionTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int LocalDrivingLicenseApplicationID = _GetCurrentDataRowLocalDrivingLicenseApplicationID();
             new frmVisionTestAppointments(LocalDrivingLicenseApplicationID,clsTestType.enTestType.VisionTest).ShowDialog();

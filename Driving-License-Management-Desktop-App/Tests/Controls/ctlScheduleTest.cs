@@ -15,31 +15,6 @@ namespace Driving_License_Management_Desktop_App.Tests.Controls
     public partial class ctlScheduleTest : UserControl
     {
         clsTestType.enTestType _TestType;
-        int _TestAppointmentID = -1;
-        public int TestAppointmentID
-        {
-            get
-            {
-                return _TestAppointmentID;
-            }
-            set
-            {
-                clsTestAppointment TestAppointment = clsTestAppointment.Find(value);
-                if (TestAppointment != null)
-                {
-                    _TestAppointmentID = value;
-                    _SetValues(TestAppointment);
-
-
-                }
-                else
-                {
-                    _TestAppointmentID = -1;
-                    //MessageBox.Show("Invalid Test Appointment ID");
-                }
-            }
-        }
-
         public clsTestType.enTestType TestType
         {
             get
@@ -73,8 +48,34 @@ namespace Driving_License_Management_Desktop_App.Tests.Controls
         public enum enCreationMode { FirstTimeSchedule = 0, RetakeTestSchedule = 1 };
         enMode _enMode = enMode.AddNew;
         enCreationMode _enCreationMode = enCreationMode.FirstTimeSchedule;
+        int _TestAppointmentID = -1;
+        clsTestAppointment _TestAppointment = null;
+        public int TestAppointmentID
+        {
+            get
+            {
+                return _TestAppointmentID;
+            }
+            set
+            {
+                _TestAppointment = clsTestAppointment.Find(value);
+                if (_TestAppointment != null)
+                {
+                    _TestAppointmentID = value;
+                    /* This is wrong */
+                    //_SetValues(TestAppointment.LocalDrivingLicenseApplicationID);
+
+
+                }
+                else
+                {
+                    _TestAppointmentID = -1;
+                    //MessageBox.Show("Invalid Test Appointment ID");
+                }
+            }
+        }
         int _LocalDrivingLicenseApplicationID = -1;
-        int DrivingLicenseApplicationID
+        public int LocalDrivingLicenseApplicationID
         {
             get
             {
@@ -108,7 +109,7 @@ namespace Driving_License_Management_Desktop_App.Tests.Controls
                             _enCreationMode = enCreationMode.FirstTimeSchedule;
                         }
                     }
-                    //_SetValues(value);
+                    _SetValues(localDrivingLicenseApplication);
                 }
                 else
                 {
@@ -141,9 +142,10 @@ namespace Driving_License_Management_Desktop_App.Tests.Controls
             }
 
         }
-        void _SetValues(clsTestAppointment testAppointment)
+        void _SetValues(clsLocalDrivingLicenseApplication localDrivingLicenseApplication)
         {
-            int LocalDrivingLicenseApplicationID = testAppointment.LocalDrivingLicenseApplicationID;
+            
+            int LocalDrivingLicenseApplicationID = localDrivingLicenseApplication.LocalDrivingLicenseApplicationID;
             clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LocalDrivingLicenseApplicationID);
             if (_LocalDrivingLicenseApplication != null)
             {
@@ -155,11 +157,12 @@ namespace Driving_License_Management_Desktop_App.Tests.Controls
                 if (!_LocalDrivingLicenseApplication.DoesPassTestType(TestType) && _LocalDrivingLicenseApplication.DoesAttendTestType(TestType))
                 {
                     _enCreationMode = enCreationMode.RetakeTestSchedule;
-                    ctlRetakeTestInfo1.TestAppointmentID = testAppointment.TestAppointmentID;
+
                 }
                 else
                 {
                     _enCreationMode = enCreationMode.FirstTimeSchedule;
+
                 }
 
             }
