@@ -29,20 +29,19 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblIsDetained = new System.Windows.Forms.Label();
+            this.lblExpirationDate = new System.Windows.Forms.Label();
+            this.lblDriverID = new System.Windows.Forms.Label();
+            this.lblDateOfBirth = new System.Windows.Forms.Label();
+            this.lblIsActive = new System.Windows.Forms.Label();
+            this.lblNotes = new System.Windows.Forms.Label();
+            this.lblIssueReason = new System.Windows.Forms.Label();
+            this.lblIssueDate = new System.Windows.Forms.Label();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.lblNationalNo = new System.Windows.Forms.Label();
+            this.lblLicenseID = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblClass = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -56,26 +55,27 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pbPicture = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Controls.Add(this.label28);
-            this.groupBox2.Controls.Add(this.label27);
-            this.groupBox2.Controls.Add(this.label26);
-            this.groupBox2.Controls.Add(this.label25);
-            this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Controls.Add(this.label21);
-            this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.pbPicture);
+            this.groupBox2.Controls.Add(this.lblIsDetained);
+            this.groupBox2.Controls.Add(this.lblExpirationDate);
+            this.groupBox2.Controls.Add(this.lblDriverID);
+            this.groupBox2.Controls.Add(this.lblDateOfBirth);
+            this.groupBox2.Controls.Add(this.lblIsActive);
+            this.groupBox2.Controls.Add(this.lblNotes);
+            this.groupBox2.Controls.Add(this.lblIssueReason);
+            this.groupBox2.Controls.Add(this.lblIssueDate);
+            this.groupBox2.Controls.Add(this.lblGender);
+            this.groupBox2.Controls.Add(this.lblNationalNo);
+            this.groupBox2.Controls.Add(this.lblLicenseID);
+            this.groupBox2.Controls.Add(this.lblName);
+            this.groupBox2.Controls.Add(this.lblClass);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
@@ -96,130 +96,122 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Driver License Info";
             // 
-            // pictureBox1
+            // lblIsDetained
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(563, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(167, 172);
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
+            this.lblIsDetained.AutoSize = true;
+            this.lblIsDetained.Location = new System.Drawing.Point(379, 183);
+            this.lblIsDetained.Name = "lblIsDetained";
+            this.lblIsDetained.Size = new System.Drawing.Size(28, 16);
+            this.lblIsDetained.TabIndex = 25;
+            this.lblIsDetained.Text = "???";
             // 
-            // label28
+            // lblExpirationDate
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(379, 183);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(28, 16);
-            this.label28.TabIndex = 25;
-            this.label28.Text = "???";
+            this.lblExpirationDate.AutoSize = true;
+            this.lblExpirationDate.Location = new System.Drawing.Point(379, 158);
+            this.lblExpirationDate.Name = "lblExpirationDate";
+            this.lblExpirationDate.Size = new System.Drawing.Size(28, 16);
+            this.lblExpirationDate.TabIndex = 24;
+            this.lblExpirationDate.Text = "???";
             // 
-            // label27
+            // lblDriverID
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(379, 158);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(28, 16);
-            this.label27.TabIndex = 24;
-            this.label27.Text = "???";
+            this.lblDriverID.AutoSize = true;
+            this.lblDriverID.Location = new System.Drawing.Point(379, 130);
+            this.lblDriverID.Name = "lblDriverID";
+            this.lblDriverID.Size = new System.Drawing.Size(28, 16);
+            this.lblDriverID.TabIndex = 23;
+            this.lblDriverID.Text = "???";
             // 
-            // label26
+            // lblDateOfBirth
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(379, 130);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(28, 16);
-            this.label26.TabIndex = 23;
-            this.label26.Text = "???";
+            this.lblDateOfBirth.AutoSize = true;
+            this.lblDateOfBirth.Location = new System.Drawing.Point(379, 102);
+            this.lblDateOfBirth.Name = "lblDateOfBirth";
+            this.lblDateOfBirth.Size = new System.Drawing.Size(28, 16);
+            this.lblDateOfBirth.TabIndex = 22;
+            this.lblDateOfBirth.Text = "???";
             // 
-            // label25
+            // lblIsActive
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(379, 102);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(28, 16);
-            this.label25.TabIndex = 22;
-            this.label25.Text = "???";
+            this.lblIsActive.AutoSize = true;
+            this.lblIsActive.Location = new System.Drawing.Point(379, 74);
+            this.lblIsActive.Name = "lblIsActive";
+            this.lblIsActive.Size = new System.Drawing.Size(28, 16);
+            this.lblIsActive.TabIndex = 21;
+            this.lblIsActive.Text = "???";
             // 
-            // label24
+            // lblNotes
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(379, 74);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(28, 16);
-            this.label24.TabIndex = 21;
-            this.label24.Text = "???";
+            this.lblNotes.AutoSize = true;
+            this.lblNotes.Location = new System.Drawing.Point(108, 208);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(28, 16);
+            this.lblNotes.TabIndex = 20;
+            this.lblNotes.Text = "???";
             // 
-            // label23
+            // lblIssueReason
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(108, 208);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(28, 16);
-            this.label23.TabIndex = 20;
-            this.label23.Text = "???";
+            this.lblIssueReason.AutoSize = true;
+            this.lblIssueReason.Location = new System.Drawing.Point(108, 183);
+            this.lblIssueReason.Name = "lblIssueReason";
+            this.lblIssueReason.Size = new System.Drawing.Size(28, 16);
+            this.lblIssueReason.TabIndex = 19;
+            this.lblIssueReason.Text = "???";
             // 
-            // label22
+            // lblIssueDate
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(108, 183);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(28, 16);
-            this.label22.TabIndex = 19;
-            this.label22.Text = "???";
+            this.lblIssueDate.AutoSize = true;
+            this.lblIssueDate.Location = new System.Drawing.Point(108, 158);
+            this.lblIssueDate.Name = "lblIssueDate";
+            this.lblIssueDate.Size = new System.Drawing.Size(28, 16);
+            this.lblIssueDate.TabIndex = 18;
+            this.lblIssueDate.Text = "???";
             // 
-            // label21
+            // lblGender
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(108, 158);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(28, 16);
-            this.label21.TabIndex = 18;
-            this.label21.Text = "???";
+            this.lblGender.AutoSize = true;
+            this.lblGender.Location = new System.Drawing.Point(108, 130);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(28, 16);
+            this.lblGender.TabIndex = 17;
+            this.lblGender.Text = "???";
             // 
-            // label20
+            // lblNationalNo
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(108, 130);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(28, 16);
-            this.label20.TabIndex = 17;
-            this.label20.Text = "???";
+            this.lblNationalNo.AutoSize = true;
+            this.lblNationalNo.Location = new System.Drawing.Point(108, 102);
+            this.lblNationalNo.Name = "lblNationalNo";
+            this.lblNationalNo.Size = new System.Drawing.Size(28, 16);
+            this.lblNationalNo.TabIndex = 16;
+            this.lblNationalNo.Text = "???";
             // 
-            // label19
+            // lblLicenseID
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(108, 102);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(28, 16);
-            this.label19.TabIndex = 16;
-            this.label19.Text = "???";
+            this.lblLicenseID.AutoSize = true;
+            this.lblLicenseID.Location = new System.Drawing.Point(108, 74);
+            this.lblLicenseID.Name = "lblLicenseID";
+            this.lblLicenseID.Size = new System.Drawing.Size(28, 16);
+            this.lblLicenseID.TabIndex = 15;
+            this.lblLicenseID.Text = "???";
             // 
-            // label18
+            // lblName
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(108, 74);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(28, 16);
-            this.label18.TabIndex = 15;
-            this.label18.Text = "???";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(108, 48);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(28, 16);
+            this.lblName.TabIndex = 14;
+            this.lblName.Text = "???";
             // 
-            // label17
+            // lblClass
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(108, 48);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(28, 16);
-            this.label17.TabIndex = 14;
-            this.label17.Text = "???";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(108, 22);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(28, 16);
-            this.label16.TabIndex = 13;
-            this.label16.Text = "???";
+            this.lblClass.AutoSize = true;
+            this.lblClass.Location = new System.Drawing.Point(108, 22);
+            this.lblClass.Name = "lblClass";
+            this.lblClass.Size = new System.Drawing.Size(28, 16);
+            this.lblClass.TabIndex = 13;
+            this.lblClass.Text = "???";
             // 
             // label15
             // 
@@ -338,6 +330,15 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Class:";
             // 
+            // pbPicture
+            // 
+            this.pbPicture.Location = new System.Drawing.Point(563, 27);
+            this.pbPicture.Name = "pbPicture";
+            this.pbPicture.Size = new System.Drawing.Size(167, 172);
+            this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPicture.TabIndex = 26;
+            this.pbPicture.TabStop = false;
+            // 
             // ctlDriverLicenseInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -348,7 +349,7 @@
             this.Size = new System.Drawing.Size(773, 244);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -356,19 +357,19 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblIsDetained;
+        private System.Windows.Forms.Label lblExpirationDate;
+        private System.Windows.Forms.Label lblDriverID;
+        private System.Windows.Forms.Label lblDateOfBirth;
+        private System.Windows.Forms.Label lblIsActive;
+        private System.Windows.Forms.Label lblNotes;
+        private System.Windows.Forms.Label lblIssueReason;
+        private System.Windows.Forms.Label lblIssueDate;
+        private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.Label lblNationalNo;
+        private System.Windows.Forms.Label lblLicenseID;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblClass;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
@@ -382,6 +383,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbPicture;
     }
 }

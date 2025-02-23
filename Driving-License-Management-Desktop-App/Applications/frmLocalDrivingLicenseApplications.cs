@@ -1,5 +1,6 @@
 ﻿using Driving_License_Management_BusinessLogic;
 using Driving_License_Management_Desktop_App.Applications;
+using Driving_License_Management_Desktop_App.Licenses;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -290,6 +291,13 @@ Status
             int LocalDrivingLicenseApplicationID = _GetCurrentDataRowLocalDrivingLicenseApplicationID();
             new frmTestAppointments(LocalDrivingLicenseApplicationID, clsTestType.enTestType.StreetTest).ShowDialog();
             _UpdateData();
+        }
+
+        private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LocalDrivingLicenseApplicationID = _GetCurrentDataRowLocalDrivingLicenseApplicationID();
+            int LicenseID = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LocalDrivingLicenseApplicationID).GetActiveLicenseID();
+            new frmShowLicenseInfo(LicenseID).ShowDialog();
         }
     }
 }

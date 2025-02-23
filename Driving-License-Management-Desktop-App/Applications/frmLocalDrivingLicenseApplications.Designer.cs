@@ -181,6 +181,7 @@
             this.showLicenseToolStripMenuItem.Size = new System.Drawing.Size(334, 28);
             this.showLicenseToolStripMenuItem.Text = "Show License";
             this.showLicenseToolStripMenuItem.DropDownOpening += new System.EventHandler(this.showLicenseToolStripMenuItem_DropDownOpening);
+            this.showLicenseToolStripMenuItem.Click += new System.EventHandler(this.showLicenseToolStripMenuItem_Click);
             // 
             // toolStripMenuItem6
             // 

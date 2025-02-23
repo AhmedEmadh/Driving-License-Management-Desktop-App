@@ -138,6 +138,12 @@
     <Compile Include="Controls\ctlFormTitle.Designer.cs">
       <DependentUpon>ctlFormTitle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Licenses\frmShowLicenseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses\frmShowLicenseInfo.Designer.cs">
+      <DependentUpon>frmShowLicenseInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licenses\International Licenses\Controls\ctlInternationalDrivingLicenseInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -409,6 +415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ctlFormTitle.resx">
       <DependentUpon>ctlFormTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\frmShowLicenseInfo.resx">
+      <DependentUpon>frmShowLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses\International Licenses\Controls\ctlInternationalDrivingLicenseInfo.resx">
       <DependentUpon>ctlInternationalDrivingLicenseInfo.cs</DependentUpon>

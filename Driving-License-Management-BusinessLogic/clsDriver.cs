@@ -14,7 +14,7 @@ namespace Driving_License_Management_BusinessLogic
         enMode Mode = enMode.AddNew;
         public int DriverID { get; set; }
         public int PersonID { get; set; }
-        clsPerson PersonInfo { get; set; }
+        public clsPerson PersonInfo { get; set; }
         public int CreatedByUserID { get; set; }
         DateTime CreatedDate { get; set; }
 

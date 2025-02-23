@@ -79,3 +79,4 @@ D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desk
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.Applications.ctlDrivingLicenseApplicationInfo.resources
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.frmScheduleTest.resources
 D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.frmTestAppointments.resources
+D:\GitHub\Driving-License-Management-Desktop-App\Driving-License-Management-Desktop-App\obj\Debug\Driving_License_Management_Desktop_App.Licenses.frmShowLicenseInfo.resources
