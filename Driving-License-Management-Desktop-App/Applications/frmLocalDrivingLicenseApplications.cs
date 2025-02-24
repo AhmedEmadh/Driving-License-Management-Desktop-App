@@ -230,7 +230,7 @@ Status
             clsLocalDrivingLicenseApplication localDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LocalDrivingLicenseApplicationID);
             bool isLicenseIssued = localDrivingLicenseApplication.IsLicenseIssued();
             int TotalPassedTests = localDrivingLicenseApplication.GetPassedTestCount();
-            issueDriveingLicenseFirstTimeToolStripMenuItem.Enabled = (TotalPassedTests == 3) && !isLicenseIssued;
+            issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = (TotalPassedTests == 3) && !isLicenseIssued;
             showLicenseToolStripMenuItem.Enabled = isLicenseIssued;
             showPersonLicenseHistoryToolStripMenuItem.Enabled = isLicenseIssued;
             //Handling Tests
@@ -264,7 +264,7 @@ Status
                 deleteApplicationToolStripMenuItem.Enabled = false;
                 cancelApplicationToolStripMenuItem.Enabled = false;
                 scheduleTestsToolStripMenuItem.Enabled = false;
-                issueDriveingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
             }
             else
             {
@@ -273,7 +273,7 @@ Status
                 cancelApplicationToolStripMenuItem.Enabled = true;
                 scheduleTestsToolStripMenuItem.Enabled = true;
                 if (TotalPassedTests == 3)
-                    issueDriveingLicenseFirstTimeToolStripMenuItem.Enabled = true;
+                    issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = true;
             }
 
 
@@ -298,6 +298,12 @@ Status
             int LocalDrivingLicenseApplicationID = _GetCurrentDataRowLocalDrivingLicenseApplicationID();
             int LicenseID = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LocalDrivingLicenseApplicationID).GetActiveLicenseID();
             new frmShowLicenseInfo(LicenseID).ShowDialog();
+        }
+
+        private void issueDriveingLicenseFirstTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmIssueDrivingLicense(_GetCurrentDataRowLocalDrivingLicenseApplicationID()).ShowDialog();
+            _UpdateData();
         }
     }
 }

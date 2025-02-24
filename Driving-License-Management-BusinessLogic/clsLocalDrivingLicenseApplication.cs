@@ -248,7 +248,7 @@ namespace Driving_License_Management_BusinessLogic
             return clsTest.PassedAllTests(LocalDrivingLicenseApplicationID);
         }
 
-        public int IssueLicenseForTheFirtTime(string Notes, int CreatedByUserID)
+        public int IssueLicenseForTheFirstTime(string Notes, int CreatedByUserID)
         {
             int DriverID = -1;
 

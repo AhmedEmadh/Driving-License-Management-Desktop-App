@@ -85,7 +85,7 @@ namespace Driving_License_Management_BusinessLogic
 
         private bool _AddNewLicense()
         {
-            int LicenseID = clsLicenseData.AddNewLicense(this.LicenseID,this.DriverID,this.LicenseClass,this.IssueDate,this.ExpirationDate,this.Notes,this.PaidFees,this.IsActive,(byte)this.IssueReason,this.CreatedByUserID);
+            int LicenseID = clsLicenseData.AddNewLicense(this.ApplicationID,this.DriverID,this.LicenseClass,this.IssueDate,this.ExpirationDate,this.Notes,this.PaidFees,this.IsActive,(byte)this.IssueReason,this.CreatedByUserID);
             if (LicenseID > 0)
             {
                 this.LicenseID = LicenseID;
