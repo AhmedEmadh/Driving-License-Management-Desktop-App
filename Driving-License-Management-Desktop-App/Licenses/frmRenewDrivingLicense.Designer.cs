@@ -46,12 +46,14 @@
             // 
             // btnRenew
             // 
+            this.btnRenew.Enabled = false;
             this.btnRenew.Location = new System.Drawing.Point(517, 684);
             this.btnRenew.Name = "btnRenew";
             this.btnRenew.Size = new System.Drawing.Size(92, 42);
             this.btnRenew.TabIndex = 4;
             this.btnRenew.Text = "Renew";
             this.btnRenew.UseVisualStyleBackColor = true;
+            this.btnRenew.Click += new System.EventHandler(this.btnRenew_Click);
             // 
             // btnClose
             // 
@@ -67,22 +69,29 @@
             // ctlDriverLicenseInfoWithFilter1
             // 
             this.ctlDriverLicenseInfoWithFilter1.BackColor = System.Drawing.Color.White;
+            this.ctlDriverLicenseInfoWithFilter1.FilterEnabled = true;
+            this.ctlDriverLicenseInfoWithFilter1.License = null;
+            this.ctlDriverLicenseInfoWithFilter1.LicenseID = -1;
             this.ctlDriverLicenseInfoWithFilter1.Location = new System.Drawing.Point(17, 49);
             this.ctlDriverLicenseInfoWithFilter1.Name = "ctlDriverLicenseInfoWithFilter1";
             this.ctlDriverLicenseInfoWithFilter1.Size = new System.Drawing.Size(766, 328);
             this.ctlDriverLicenseInfoWithFilter1.TabIndex = 7;
+            this.ctlDriverLicenseInfoWithFilter1.OnLicenseSelected += new System.Action<object>(this.ctlDriverLicenseInfoWithFilter1_OnLicenseSelected);
+            this.ctlDriverLicenseInfoWithFilter1.OnWrongSelection += new System.Action<object>(this.ctlDriverLicenseInfoWithFilter1_OnWrongSelection);
             // 
             // ctlApplicationNewLicenseInfo1
             // 
+            this.ctlApplicationNewLicenseInfo1.ApplicationID = -1;
             this.ctlApplicationNewLicenseInfo1.BackColor = System.Drawing.Color.White;
+            this.ctlApplicationNewLicenseInfo1.LicenseID = -1;
             this.ctlApplicationNewLicenseInfo1.Location = new System.Drawing.Point(17, 400);
             this.ctlApplicationNewLicenseInfo1.Name = "ctlApplicationNewLicenseInfo1";
+            this.ctlApplicationNewLicenseInfo1.RenewedLicenseID = -1;
             this.ctlApplicationNewLicenseInfo1.Size = new System.Drawing.Size(766, 278);
             this.ctlApplicationNewLicenseInfo1.TabIndex = 2;
             // 
             // frmRenewDrivingLicense
             // 
-            this.AcceptButton = this.btnRenew;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -95,6 +104,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmRenewDrivingLicense";
             this.Text = "frmRenewDrivingLicense";
+            this.Load += new System.EventHandler(this.frmRenewDrivingLicense_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

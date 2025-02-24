@@ -37,6 +37,13 @@ namespace Driving_License_Management_Desktop_App
                     _SetValues();
             }
         }
+        public clsLicense License
+        {
+            get
+            {
+                return _License;
+            }
+        }
         private void _LoadPersonImage()
         {
             if (_License.DriverInfo.PersonInfo.Gendor == 0)

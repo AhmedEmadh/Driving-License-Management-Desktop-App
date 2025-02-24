@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblApplicationDate = new System.Windows.Forms.GroupBox();
+            this.gbAppNewLicenseInfo = new System.Windows.Forms.GroupBox();
             this.lblTotalFees = new System.Windows.Forms.Label();
             this.lblCreatedBy = new System.Windows.Forms.Label();
             this.lblExpirationDate = new System.Windows.Forms.Label();
@@ -49,42 +49,42 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblApplicationDate = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblApplicationDate.SuspendLayout();
+            this.gbAppNewLicenseInfo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblApplicationDate
+            // gbAppNewLicenseInfo
             // 
-            this.lblApplicationDate.Controls.Add(this.lblTotalFees);
-            this.lblApplicationDate.Controls.Add(this.lblCreatedBy);
-            this.lblApplicationDate.Controls.Add(this.lblExpirationDate);
-            this.lblApplicationDate.Controls.Add(this.lblOldLicenseID);
-            this.lblApplicationDate.Controls.Add(this.lblRenewedLicenseID);
-            this.lblApplicationDate.Controls.Add(this.lblLicenseFees);
-            this.lblApplicationDate.Controls.Add(this.lblApplicationFees);
-            this.lblApplicationDate.Controls.Add(this.lblIssueDate);
-            this.lblApplicationDate.Controls.Add(this.label13);
-            this.lblApplicationDate.Controls.Add(this.lblApplicationID);
-            this.lblApplicationDate.Controls.Add(this.tbNotes);
-            this.lblApplicationDate.Controls.Add(this.label11);
-            this.lblApplicationDate.Controls.Add(this.label10);
-            this.lblApplicationDate.Controls.Add(this.label9);
-            this.lblApplicationDate.Controls.Add(this.label8);
-            this.lblApplicationDate.Controls.Add(this.label7);
-            this.lblApplicationDate.Controls.Add(this.label6);
-            this.lblApplicationDate.Controls.Add(this.label5);
-            this.lblApplicationDate.Controls.Add(this.label4);
-            this.lblApplicationDate.Controls.Add(this.label3);
-            this.lblApplicationDate.Controls.Add(this.label2);
-            this.lblApplicationDate.Controls.Add(this.label1);
-            this.lblApplicationDate.Location = new System.Drawing.Point(3, 3);
-            this.lblApplicationDate.Name = "lblApplicationDate";
-            this.lblApplicationDate.Size = new System.Drawing.Size(760, 259);
-            this.lblApplicationDate.TabIndex = 0;
-            this.lblApplicationDate.TabStop = false;
-            this.lblApplicationDate.Text = "Application New License Info";
-            this.lblApplicationDate.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.gbAppNewLicenseInfo.Controls.Add(this.lblTotalFees);
+            this.gbAppNewLicenseInfo.Controls.Add(this.lblCreatedBy);
+            this.gbAppNewLicenseInfo.Controls.Add(this.lblExpirationDate);
+            this.gbAppNewLicenseInfo.Controls.Add(this.lblOldLicenseID);
+            this.gbAppNewLicenseInfo.Controls.Add(this.lblRenewedLicenseID);
+            this.gbAppNewLicenseInfo.Controls.Add(this.lblLicenseFees);
+            this.gbAppNewLicenseInfo.Controls.Add(this.lblApplicationFees);
+            this.gbAppNewLicenseInfo.Controls.Add(this.lblIssueDate);
+            this.gbAppNewLicenseInfo.Controls.Add(this.label13);
+            this.gbAppNewLicenseInfo.Controls.Add(this.lblApplicationID);
+            this.gbAppNewLicenseInfo.Controls.Add(this.tbNotes);
+            this.gbAppNewLicenseInfo.Controls.Add(this.label11);
+            this.gbAppNewLicenseInfo.Controls.Add(this.label10);
+            this.gbAppNewLicenseInfo.Controls.Add(this.label9);
+            this.gbAppNewLicenseInfo.Controls.Add(this.label8);
+            this.gbAppNewLicenseInfo.Controls.Add(this.label7);
+            this.gbAppNewLicenseInfo.Controls.Add(this.label6);
+            this.gbAppNewLicenseInfo.Controls.Add(this.label5);
+            this.gbAppNewLicenseInfo.Controls.Add(this.label4);
+            this.gbAppNewLicenseInfo.Controls.Add(this.label3);
+            this.gbAppNewLicenseInfo.Controls.Add(this.lblApplicationDate);
+            this.gbAppNewLicenseInfo.Controls.Add(this.label1);
+            this.gbAppNewLicenseInfo.Location = new System.Drawing.Point(3, 3);
+            this.gbAppNewLicenseInfo.Name = "gbAppNewLicenseInfo";
+            this.gbAppNewLicenseInfo.Size = new System.Drawing.Size(760, 259);
+            this.gbAppNewLicenseInfo.TabIndex = 0;
+            this.gbAppNewLicenseInfo.TabStop = false;
+            this.gbAppNewLicenseInfo.Text = "Application New License Info";
+            this.gbAppNewLicenseInfo.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lblTotalFees
             // 
@@ -265,14 +265,14 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Issue Date:";
             // 
-            // label2
+            // lblApplicationDate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Application Date:";
+            this.lblApplicationDate.AutoSize = true;
+            this.lblApplicationDate.Location = new System.Drawing.Point(6, 57);
+            this.lblApplicationDate.Name = "lblApplicationDate";
+            this.lblApplicationDate.Size = new System.Drawing.Size(109, 16);
+            this.lblApplicationDate.TabIndex = 1;
+            this.lblApplicationDate.Text = "Application Date:";
             // 
             // label1
             // 
@@ -288,23 +288,23 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.lblApplicationDate);
+            this.Controls.Add(this.gbAppNewLicenseInfo);
             this.Name = "ctlApplicationNewLicenseInfo";
             this.Size = new System.Drawing.Size(774, 271);
-            this.lblApplicationDate.ResumeLayout(false);
-            this.lblApplicationDate.PerformLayout();
+            this.gbAppNewLicenseInfo.ResumeLayout(false);
+            this.gbAppNewLicenseInfo.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox lblApplicationDate;
+        private System.Windows.Forms.GroupBox gbAppNewLicenseInfo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblApplicationDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

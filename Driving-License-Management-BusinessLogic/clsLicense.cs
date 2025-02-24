@@ -17,6 +17,7 @@ namespace Driving_License_Management_BusinessLogic
         public clsDriver DriverInfo;
         public int LicenseID { set; get; }
         public int ApplicationID { set; get; }
+        public clsApplication ApplicationInfo;
         public int DriverID { set; get; }
         public int LicenseClass { set; get; }
         public clsLicenseClass licenseClassInfo;
@@ -76,6 +77,7 @@ namespace Driving_License_Management_BusinessLogic
             this.IssueReason = IssueReason;
             this.CreatedByUserID = CreatedByUserID;
 
+            this.ApplicationInfo = clsApplication.FindBaseApplication(this.ApplicationID);
             this.DriverInfo = clsDriver.FindByDriverID(this.DriverID);
             this.licenseClassInfo = clsLicenseClass.Find(this.LicenseClass);
             this.DetainedInfo = clsDetainedLicense.FindByLicenseID(this.LicenseID);
