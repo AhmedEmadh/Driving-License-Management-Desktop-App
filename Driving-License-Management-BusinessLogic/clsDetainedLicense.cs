@@ -20,7 +20,7 @@ namespace Driving_License_Management_BusinessLogic
         public float FineFees { get; set; }
         public int CreatedByUserID { get; set; }
         clsUser CreatedByUserInfo { get; set; }
-        bool IsReleased { get; set; }
+        public bool IsReleased { get; set; }
         DateTime ReleaseDate { get; set; }
         int ReleasedByUserID { get; set; }
         clsUser ReleasedByUserInfo { get; set; }
@@ -72,8 +72,10 @@ namespace Driving_License_Management_BusinessLogic
             DateTime DetainDate = DateTime.MaxValue, ReleaseDate = DateTime.MaxValue;
             float FineFees = 0;
             bool IsReleased = false;
-            clsDetainedLicenseData.GetDetainedLicenseInfoByID(DetainID, ref LicenseID, ref DetainDate, ref FineFees, ref CreatedByUserID, ref IsReleased, ref ReleaseDate, ref ReleasedByUserID, ref ReleaseApplicationID);
+            if(clsDetainedLicenseData.GetDetainedLicenseInfoByID(DetainID, ref LicenseID, ref DetainDate, ref FineFees, ref CreatedByUserID, ref IsReleased, ref ReleaseDate, ref ReleasedByUserID, ref ReleaseApplicationID))
             return new clsDetainedLicense(DetainID, LicenseID, DetainDate, FineFees, CreatedByUserID, IsReleased, ReleaseDate, ReleasedByUserID, ReleaseApplicationID);
+            else
+                return null;
         }
         public static DataTable GetAllDetainedLicenses()
         {
@@ -85,8 +87,10 @@ namespace Driving_License_Management_BusinessLogic
             DateTime DetainDate = DateTime.MaxValue, ReleaseDate = DateTime.MaxValue;
             float FineFees = 0;
             bool IsReleased = false;
-            clsDetainedLicenseData.GetDetainedLicenseInfoByLicenseID(LicenseID, ref DetainID, ref DetainDate, ref FineFees, ref CreatedByUserID, ref IsReleased, ref ReleaseDate, ref ReleasedByUserID, ref ReleaseApplicationID);
+            if(clsDetainedLicenseData.GetDetainedLicenseInfoByLicenseID(LicenseID, ref DetainID, ref DetainDate, ref FineFees, ref CreatedByUserID, ref IsReleased, ref ReleaseDate, ref ReleasedByUserID, ref ReleaseApplicationID))
             return new clsDetainedLicense(DetainID, LicenseID, DetainDate, FineFees, CreatedByUserID, IsReleased, ReleaseDate, ReleasedByUserID, ReleaseApplicationID);
+            else
+                return null;
         }
         public bool Save()
         {

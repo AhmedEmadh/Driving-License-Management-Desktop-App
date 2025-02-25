@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblCreatedBy = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblLicenseID = new System.Windows.Forms.Label();
+            this.lblFineFees = new System.Windows.Forms.Label();
+            this.lblDetainDate = new System.Windows.Forms.Label();
+            this.lblDetainID = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,12 +44,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.lblCreatedBy);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.lblLicenseID);
+            this.groupBox1.Controls.Add(this.lblFineFees);
+            this.groupBox1.Controls.Add(this.lblDetainDate);
+            this.groupBox1.Controls.Add(this.lblDetainID);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -61,14 +61,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detain Info";
             // 
-            // label4
+            // lblCreatedBy
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(423, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 16);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "???";
+            this.lblCreatedBy.AutoSize = true;
+            this.lblCreatedBy.Location = new System.Drawing.Point(423, 47);
+            this.lblCreatedBy.Name = "lblCreatedBy";
+            this.lblCreatedBy.Size = new System.Drawing.Size(28, 16);
+            this.lblCreatedBy.TabIndex = 23;
+            this.lblCreatedBy.Text = "???";
             // 
             // label5
             // 
@@ -79,41 +79,41 @@
             this.label5.TabIndex = 22;
             this.label5.Text = "Created By:";
             // 
-            // label22
+            // lblLicenseID
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(423, 22);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(28, 16);
-            this.label22.TabIndex = 21;
-            this.label22.Text = "???";
+            this.lblLicenseID.AutoSize = true;
+            this.lblLicenseID.Location = new System.Drawing.Point(423, 22);
+            this.lblLicenseID.Name = "lblLicenseID";
+            this.lblLicenseID.Size = new System.Drawing.Size(28, 16);
+            this.lblLicenseID.TabIndex = 21;
+            this.lblLicenseID.Text = "???";
             // 
-            // label17
+            // lblFineFees
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(113, 73);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(28, 16);
-            this.label17.TabIndex = 15;
-            this.label17.Text = "???";
+            this.lblFineFees.AutoSize = true;
+            this.lblFineFees.Location = new System.Drawing.Point(113, 73);
+            this.lblFineFees.Name = "lblFineFees";
+            this.lblFineFees.Size = new System.Drawing.Size(28, 16);
+            this.lblFineFees.TabIndex = 15;
+            this.lblFineFees.Text = "???";
             // 
-            // label15
+            // lblDetainDate
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(113, 47);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(28, 16);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "???";
+            this.lblDetainDate.AutoSize = true;
+            this.lblDetainDate.Location = new System.Drawing.Point(113, 47);
+            this.lblDetainDate.Name = "lblDetainDate";
+            this.lblDetainDate.Size = new System.Drawing.Size(28, 16);
+            this.lblDetainDate.TabIndex = 14;
+            this.lblDetainDate.Text = "???";
             // 
-            // label14
+            // lblDetainID
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(113, 22);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(28, 16);
-            this.label14.TabIndex = 13;
-            this.label14.Text = "???";
+            this.lblDetainID.AutoSize = true;
+            this.lblDetainID.Location = new System.Drawing.Point(113, 22);
+            this.lblDetainID.Name = "lblDetainID";
+            this.lblDetainID.Size = new System.Drawing.Size(28, 16);
+            this.lblDetainID.TabIndex = 13;
+            this.lblDetainID.Text = "???";
             // 
             // label9
             // 
@@ -172,11 +172,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblLicenseID;
+        private System.Windows.Forms.Label lblFineFees;
+        private System.Windows.Forms.Label lblDetainDate;
+        private System.Windows.Forms.Label lblDetainID;
+        private System.Windows.Forms.Label lblCreatedBy;
         private System.Windows.Forms.Label label5;
     }
 }

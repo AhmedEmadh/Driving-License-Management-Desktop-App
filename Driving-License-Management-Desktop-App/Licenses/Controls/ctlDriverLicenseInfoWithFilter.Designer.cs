@@ -50,7 +50,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(315, 28);
+            this.btnSearch.Location = new System.Drawing.Point(315, 25);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 3;
@@ -60,7 +60,7 @@
             // 
             // tbFilter
             // 
-            this.tbFilter.Location = new System.Drawing.Point(86, 29);
+            this.tbFilter.Location = new System.Drawing.Point(86, 26);
             this.tbFilter.Name = "tbFilter";
             this.tbFilter.Size = new System.Drawing.Size(223, 22);
             this.tbFilter.TabIndex = 2;

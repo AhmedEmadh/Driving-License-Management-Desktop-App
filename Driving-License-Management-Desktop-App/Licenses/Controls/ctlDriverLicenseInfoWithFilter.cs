@@ -43,6 +43,11 @@ namespace Driving_License_Management_Desktop_App.Licenses.Controls
                 gbFilter.Enabled = value;
             }
         }
+        new public void Focus()
+        {
+            tbFilter.Focus();
+        }
+
         public int LicenseID
         {
             get
