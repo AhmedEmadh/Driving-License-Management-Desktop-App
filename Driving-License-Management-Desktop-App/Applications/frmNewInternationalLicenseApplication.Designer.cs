@@ -257,6 +257,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Location = new System.Drawing.Point(404, 546);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
@@ -277,6 +278,7 @@
             // ctlDriverLicenseInfo1
             // 
             this.ctlDriverLicenseInfo1.BackColor = System.Drawing.Color.White;
+            this.ctlDriverLicenseInfo1.LicenseID = -1;
             this.ctlDriverLicenseInfo1.Location = new System.Drawing.Point(9, 144);
             this.ctlDriverLicenseInfo1.Name = "ctlDriverLicenseInfo1";
             this.ctlDriverLicenseInfo1.Size = new System.Drawing.Size(496, 244);
@@ -306,7 +308,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label1);
             this.Name = "frmNewInternationalLicenseApplication";
-            this.Text = "frmNewInternationalLicenseApplication";
+            this.Text = "_";
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);

@@ -58,15 +58,23 @@ namespace Driving_License_Management_Desktop_App
         {
             this.Close();
         }
-
+        int _GetCurrentDataRowDriverID()
+        {
+            int CurrentRow = dgvDrivers.CurrentRow.Index;
+            int LocalDrivingLicenseApplicationID = int.Parse(dgvDrivers.CurrentRow.Cells[0].Value.ToString());
+            return LocalDrivingLicenseApplicationID;
+        }
         private void showPersonInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmPersonDetails().ShowDialog();
+            int DriverID = _GetCurrentDataRowDriverID();
+            new frmPersonDetails(clsDriver.FindByDriverID(DriverID).PersonInfo.PersonID).ShowDialog();
         }
 
         private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmShowLicenseHistory().ShowDialog();
+            int DriverID = _GetCurrentDataRowDriverID();
+
+            new frmShowLicenseHistory(clsDriver.FindByDriverID(DriverID).PersonInfo.PersonID).ShowDialog();
         }
 
         private void issueInternationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)

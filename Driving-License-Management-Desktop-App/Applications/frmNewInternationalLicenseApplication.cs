@@ -29,7 +29,8 @@ namespace Driving_License_Management_Desktop_App
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            new frmShowLicenseHistory().ShowDialog();
+
+            new frmShowLicenseHistory(ctlDriverLicenseInfo1.License.DriverInfo.PersonInfo.PersonID).ShowDialog();
         }
     }
 }

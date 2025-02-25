@@ -29,7 +29,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            new frmShowLicenseHistory().ShowDialog();
+            new frmShowLicenseHistory(_License.DriverInfo.PersonInfo.PersonID).ShowDialog();
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
