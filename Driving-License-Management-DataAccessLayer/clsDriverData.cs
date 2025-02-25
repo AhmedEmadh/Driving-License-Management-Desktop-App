@@ -102,7 +102,7 @@ namespace Driving_License_Management_DataAccessLayer
         {
             DataTable Result = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT * FROM Drivers";
+            string query = "SELECT * FROM Drivers_View";
             SqlCommand command = new SqlCommand(query, connection);
             try
             {
