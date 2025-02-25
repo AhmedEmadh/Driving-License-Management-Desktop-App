@@ -29,85 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ctlPersonInformation1 = new Driving_License_Management_Desktop_App.ctlPersonInformation();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showLicenseInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button3 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.ctlPersonInformationWithFilter1 = new Driving_License_Management_Desktop_App.ctlPersonInformationWithFilter();
             this.ctlDriverLicenses1 = new Driving_License_Management_Desktop_App.Licenses.Controls.ctlDriverLicenses();
-            this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ctlPersonInformation1
-            // 
-            this.ctlPersonInformation1.BackColor = System.Drawing.Color.White;
-            this.ctlPersonInformation1.Location = new System.Drawing.Point(43, 117);
-            this.ctlPersonInformation1.Name = "ctlPersonInformation1";
-            this.ctlPersonInformation1.Size = new System.Drawing.Size(647, 215);
-            this.ctlPersonInformation1.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(43, 22);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(618, 89);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filter By";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(500, 18);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(419, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(204, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 22);
-            this.textBox1.TabIndex = 2;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(68, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Find By:";
             // 
             // contextMenuStrip1
             // 
@@ -125,17 +54,42 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(607, 645);
+            this.button3.Location = new System.Drawing.Point(576, 634);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 3;
             this.button3.Text = "Close";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // btnClose
+            // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.Location = new System.Drawing.Point(543, 663);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(89, 40);
+            this.btnClose.TabIndex = 6;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // ctlPersonInformationWithFilter1
+            // 
+            this.ctlPersonInformationWithFilter1.BackColor = System.Drawing.Color.White;
+            this.ctlPersonInformationWithFilter1.FilterEnabled = true;
+            this.ctlPersonInformationWithFilter1.Location = new System.Drawing.Point(12, 12);
+            this.ctlPersonInformationWithFilter1.Name = "ctlPersonInformationWithFilter1";
+            this.ctlPersonInformationWithFilter1.PersonID = -1;
+            this.ctlPersonInformationWithFilter1.SearchText = "";
+            this.ctlPersonInformationWithFilter1.SelectedIndex = 0;
+            this.ctlPersonInformationWithFilter1.ShowAddPersonButton = true;
+            this.ctlPersonInformationWithFilter1.Size = new System.Drawing.Size(652, 279);
+            this.ctlPersonInformationWithFilter1.TabIndex = 5;
+            // 
             // ctlDriverLicenses1
             // 
             this.ctlDriverLicenses1.BackColor = System.Drawing.Color.White;
-            this.ctlDriverLicenses1.Location = new System.Drawing.Point(43, 349);
+            this.ctlDriverLicenses1.DriverID = 0;
+            this.ctlDriverLicenses1.Location = new System.Drawing.Point(12, 339);
             this.ctlDriverLicenses1.Name = "ctlDriverLicenses1";
             this.ctlDriverLicenses1.Size = new System.Drawing.Size(638, 321);
             this.ctlDriverLicenses1.TabIndex = 4;
@@ -145,33 +99,29 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(697, 680);
+            this.CancelButton = this.btnClose;
+            this.ClientSize = new System.Drawing.Size(654, 719);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.ctlPersonInformationWithFilter1);
             this.Controls.Add(this.ctlDriverLicenses1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.ctlPersonInformation1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmShowLicenseHistory";
             this.Text = "frmShowLicenseHistory";
             this.Load += new System.EventHandler(this.frmShowLicenseHistory_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private ctlPersonInformation ctlPersonInformation1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem showLicenseInfoToolStripMenuItem;
         private Licenses.Controls.ctlDriverLicenses ctlDriverLicenses1;
+        private ctlPersonInformationWithFilter ctlPersonInformationWithFilter1;
+        private System.Windows.Forms.Button btnClose;
     }
 }

@@ -23,7 +23,10 @@ namespace Driving_License_Management_Desktop_App
                 tbSearchBar.Text = value;
             }
         }
-
+        public void FilterFocus()
+        {
+            tbSearchBar.Focus();
+        }
         public bool FilterEnabled
         {
             get

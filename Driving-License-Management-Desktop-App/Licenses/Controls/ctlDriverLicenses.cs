@@ -60,7 +60,7 @@ namespace Driving_License_Management_Desktop_App.Licenses.Controls
             if (_dtInternationalLicensesHistory.Rows.Count > 0)
             {
                 _dtInternationalLicensesHistorySorted = _dtInternationalLicensesHistory.AsEnumerable()
-                                   .OrderByDescending(row => row.Field<int>("LicenseID"))
+                                   .OrderByDescending(row => row.Field<int>("InternationalLicenseID"))
                                    .CopyToDataTable();
             }
             else

@@ -305,6 +305,12 @@ Status
             new frmIssueDrivingLicense(_GetCurrentDataRowLocalDrivingLicenseApplicationID()).ShowDialog();
             _UpdateData();
         }
+
+        private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LocalDrivingLicenseApplicationID = _GetCurrentDataRowLocalDrivingLicenseApplicationID();
+            new frmShowLicenseHistory(clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LocalDrivingLicenseApplicationID).ApplicantPersonInfo.PersonID).ShowDialog();
+        }
     }
 }
 
