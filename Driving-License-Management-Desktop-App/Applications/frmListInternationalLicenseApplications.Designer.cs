@@ -67,6 +67,7 @@
             // 
             // ctlManagePersons1
             // 
+            this.ctlManagePersons1.AddButtonText = "add Person";
             this.ctlManagePersons1.BackColor = System.Drawing.Color.White;
             this.ctlManagePersons1.contextMenuStrip = null;
             this.ctlManagePersons1.Data = null;
@@ -94,11 +95,10 @@
         }
 
         #endregion
-
-        private ctlManagePeople ctlManagePersons1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem showPersonDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showLicenseDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showPersonLicenseHistoryToolStripMenuItem;
+        private ctlManagePeople ctlManagePersons1;
     }
 }

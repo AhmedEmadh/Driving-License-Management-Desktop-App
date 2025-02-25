@@ -16,9 +16,15 @@ namespace Driving_License_Management_Desktop_App
 {
     public partial class frmReleaseDetainedLicense : Form
     {
+        int _LicenseID = -1;
         public frmReleaseDetainedLicense()
         {
             InitializeComponent();
+        }
+        public frmReleaseDetainedLicense(int LicenseID)
+        {
+            InitializeComponent();
+            _LicenseID = LicenseID;
         }
         void _DetainInfoFillBasicInfo(int DetainID = -1)
         {
@@ -144,7 +150,14 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmReleaseDetainedLicense_Load(object sender, EventArgs e)
         {
-            ctlDriverLicenseInfoWithFilter1.Focus();
+            if (_LicenseID == -1)
+                ctlDriverLicenseInfoWithFilter1.Focus();
+            else
+            {
+                ctlDriverLicenseInfoWithFilter1.FilterText = _LicenseID.ToString();
+                ctlDriverLicenseInfoWithFilter1.FilterEnabled = false;
+                ctlDriverLicenseInfoWithFilter1.SearchForLicense();
+            }
         }
 
         private void llblShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

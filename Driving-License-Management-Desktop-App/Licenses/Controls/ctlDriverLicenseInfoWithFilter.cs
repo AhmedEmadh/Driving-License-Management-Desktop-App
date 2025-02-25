@@ -14,6 +14,17 @@ namespace Driving_License_Management_Desktop_App.Licenses.Controls
 
     public partial class ctlDriverLicenseInfoWithFilter : UserControl
     {
+        public string FilterText
+        {
+            get
+            {
+                return tbFilter.Text;
+            }
+            set
+            {
+                tbFilter.Text = value;
+            }
+        }
         public event Action<object> OnLicenseSelected;
         void OnLicenseSelected_handler()
         {
@@ -91,7 +102,7 @@ namespace Driving_License_Management_Desktop_App.Licenses.Controls
         {
 
         }
-        void _SearchForLicense()
+        public void SearchForLicense()
         {
             try
             {
@@ -123,7 +134,7 @@ namespace Driving_License_Management_Desktop_App.Licenses.Controls
             if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true; // Prevents the "ding" sound
-                //_SearchForLicense();
+                //SearchForLicense();
             }
 
         }
@@ -132,13 +143,13 @@ namespace Driving_License_Management_Desktop_App.Licenses.Controls
         {
             if (e.KeyCode == Keys.Enter)
             {
-                _SearchForLicense();
+                SearchForLicense();
             }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            _SearchForLicense();
+            SearchForLicense();
         }
     }
 }

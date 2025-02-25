@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
+            this.gbApplicationInfo = new System.Windows.Forms.GroupBox();
+            this.lblCreatedBy = new System.Windows.Forms.Label();
+            this.lblExpirationDate = new System.Windows.Forms.Label();
+            this.lblLocalLicenseID = new System.Windows.Forms.Label();
+            this.lblILLicenseID = new System.Windows.Forms.Label();
+            this.lblFees = new System.Windows.Forms.Label();
+            this.lblIssueDate = new System.Windows.Forms.Label();
+            this.lblApplicationDate = new System.Windows.Forms.Label();
+            this.lblILApplicationID = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -46,120 +45,111 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.llblShowLicensesHistory = new System.Windows.Forms.LinkLabel();
+            this.llblShowLicensesInfo = new System.Windows.Forms.LinkLabel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnIssue = new System.Windows.Forms.Button();
-            this.ctlDriverLicenseInfo1 = new Driving_License_Management_Desktop_App.ctlDriverLicenseInfo();
-            this.ctlFilterByLicenceID1 = new Driving_License_Management_Desktop_App.ctlFilterByLicenceID();
-            this.groupBox3.SuspendLayout();
+            this.ctlDriverLicenseInfoWithFilter1 = new Driving_License_Management_Desktop_App.Licenses.Controls.ctlDriverLicenseInfoWithFilter();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.gbApplicationInfo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // gbApplicationInfo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(143, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "International License Application";
+            this.gbApplicationInfo.Controls.Add(this.lblCreatedBy);
+            this.gbApplicationInfo.Controls.Add(this.lblExpirationDate);
+            this.gbApplicationInfo.Controls.Add(this.lblLocalLicenseID);
+            this.gbApplicationInfo.Controls.Add(this.lblILLicenseID);
+            this.gbApplicationInfo.Controls.Add(this.lblFees);
+            this.gbApplicationInfo.Controls.Add(this.lblIssueDate);
+            this.gbApplicationInfo.Controls.Add(this.lblApplicationDate);
+            this.gbApplicationInfo.Controls.Add(this.lblILApplicationID);
+            this.gbApplicationInfo.Controls.Add(this.label36);
+            this.gbApplicationInfo.Controls.Add(this.label35);
+            this.gbApplicationInfo.Controls.Add(this.label34);
+            this.gbApplicationInfo.Controls.Add(this.label33);
+            this.gbApplicationInfo.Controls.Add(this.label32);
+            this.gbApplicationInfo.Controls.Add(this.label31);
+            this.gbApplicationInfo.Controls.Add(this.label30);
+            this.gbApplicationInfo.Controls.Add(this.label29);
+            this.gbApplicationInfo.Location = new System.Drawing.Point(12, 386);
+            this.gbApplicationInfo.Name = "gbApplicationInfo";
+            this.gbApplicationInfo.Size = new System.Drawing.Size(763, 143);
+            this.gbApplicationInfo.TabIndex = 4;
+            this.gbApplicationInfo.TabStop = false;
+            this.gbApplicationInfo.Text = "Application Info";
             // 
-            // groupBox3
+            // lblCreatedBy
             // 
-            this.groupBox3.Controls.Add(this.label44);
-            this.groupBox3.Controls.Add(this.label43);
-            this.groupBox3.Controls.Add(this.label42);
-            this.groupBox3.Controls.Add(this.label41);
-            this.groupBox3.Controls.Add(this.label40);
-            this.groupBox3.Controls.Add(this.label39);
-            this.groupBox3.Controls.Add(this.label38);
-            this.groupBox3.Controls.Add(this.label37);
-            this.groupBox3.Controls.Add(this.label36);
-            this.groupBox3.Controls.Add(this.label35);
-            this.groupBox3.Controls.Add(this.label34);
-            this.groupBox3.Controls.Add(this.label33);
-            this.groupBox3.Controls.Add(this.label32);
-            this.groupBox3.Controls.Add(this.label31);
-            this.groupBox3.Controls.Add(this.label30);
-            this.groupBox3.Controls.Add(this.label29);
-            this.groupBox3.Location = new System.Drawing.Point(12, 386);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(489, 143);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Application Info";
+            this.lblCreatedBy.AutoSize = true;
+            this.lblCreatedBy.Location = new System.Drawing.Point(389, 110);
+            this.lblCreatedBy.Name = "lblCreatedBy";
+            this.lblCreatedBy.Size = new System.Drawing.Size(28, 16);
+            this.lblCreatedBy.TabIndex = 15;
+            this.lblCreatedBy.Text = "???";
             // 
-            // label44
+            // lblExpirationDate
             // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(389, 110);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(36, 16);
-            this.label44.TabIndex = 15;
-            this.label44.Text = "User";
+            this.lblExpirationDate.AutoSize = true;
+            this.lblExpirationDate.Location = new System.Drawing.Point(389, 82);
+            this.lblExpirationDate.Name = "lblExpirationDate";
+            this.lblExpirationDate.Size = new System.Drawing.Size(28, 16);
+            this.lblExpirationDate.TabIndex = 14;
+            this.lblExpirationDate.Text = "???";
             // 
-            // label43
+            // lblLocalLicenseID
             // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(389, 82);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(36, 16);
-            this.label43.TabIndex = 14;
-            this.label43.Text = "Date";
+            this.lblLocalLicenseID.AutoSize = true;
+            this.lblLocalLicenseID.Location = new System.Drawing.Point(389, 56);
+            this.lblLocalLicenseID.Name = "lblLocalLicenseID";
+            this.lblLocalLicenseID.Size = new System.Drawing.Size(28, 16);
+            this.lblLocalLicenseID.TabIndex = 13;
+            this.lblLocalLicenseID.Text = "???";
             // 
-            // label42
+            // lblILLicenseID
             // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(389, 56);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(20, 16);
-            this.label42.TabIndex = 13;
-            this.label42.Text = "ID";
+            this.lblILLicenseID.AutoSize = true;
+            this.lblILLicenseID.Location = new System.Drawing.Point(389, 31);
+            this.lblILLicenseID.Name = "lblILLicenseID";
+            this.lblILLicenseID.Size = new System.Drawing.Size(28, 16);
+            this.lblILLicenseID.TabIndex = 12;
+            this.lblILLicenseID.Text = "???";
             // 
-            // label41
+            // lblFees
             // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(389, 31);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(20, 16);
-            this.label41.TabIndex = 12;
-            this.label41.Text = "ID";
+            this.lblFees.AutoSize = true;
+            this.lblFees.Location = new System.Drawing.Point(124, 110);
+            this.lblFees.Name = "lblFees";
+            this.lblFees.Size = new System.Drawing.Size(28, 16);
+            this.lblFees.TabIndex = 11;
+            this.lblFees.Text = "???";
             // 
-            // label40
+            // lblIssueDate
             // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(124, 110);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(14, 16);
-            this.label40.TabIndex = 11;
-            this.label40.Text = "0";
+            this.lblIssueDate.AutoSize = true;
+            this.lblIssueDate.Location = new System.Drawing.Point(124, 82);
+            this.lblIssueDate.Name = "lblIssueDate";
+            this.lblIssueDate.Size = new System.Drawing.Size(28, 16);
+            this.lblIssueDate.TabIndex = 10;
+            this.lblIssueDate.Text = "???";
             // 
-            // label39
+            // lblApplicationDate
             // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(124, 82);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(36, 16);
-            this.label39.TabIndex = 10;
-            this.label39.Text = "Date";
+            this.lblApplicationDate.AutoSize = true;
+            this.lblApplicationDate.Location = new System.Drawing.Point(124, 56);
+            this.lblApplicationDate.Name = "lblApplicationDate";
+            this.lblApplicationDate.Size = new System.Drawing.Size(28, 16);
+            this.lblApplicationDate.TabIndex = 9;
+            this.lblApplicationDate.Text = "???";
             // 
-            // label38
+            // lblILApplicationID
             // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(124, 56);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(36, 16);
-            this.label38.TabIndex = 9;
-            this.label38.Text = "Date";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(124, 31);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(20, 16);
-            this.label37.TabIndex = 8;
-            this.label37.Text = "ID";
+            this.lblILApplicationID.AutoSize = true;
+            this.lblILApplicationID.Location = new System.Drawing.Point(124, 31);
+            this.lblILApplicationID.Name = "lblILApplicationID";
+            this.lblILApplicationID.Size = new System.Drawing.Size(28, 16);
+            this.lblILApplicationID.TabIndex = 8;
+            this.lblILApplicationID.Text = "???";
             // 
             // label36
             // 
@@ -233,34 +223,36 @@
             this.label29.TabIndex = 0;
             this.label29.Text = "I.L.Application ID:";
             // 
-            // linkLabel1
+            // llblShowLicensesHistory
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(21, 549);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(142, 16);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Show Licenses History";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.llblShowLicensesHistory.AutoSize = true;
+            this.llblShowLicensesHistory.Enabled = false;
+            this.llblShowLicensesHistory.Location = new System.Drawing.Point(12, 546);
+            this.llblShowLicensesHistory.Name = "llblShowLicensesHistory";
+            this.llblShowLicensesHistory.Size = new System.Drawing.Size(142, 16);
+            this.llblShowLicensesHistory.TabIndex = 5;
+            this.llblShowLicensesHistory.TabStop = true;
+            this.llblShowLicensesHistory.Text = "Show Licenses History";
+            this.llblShowLicensesHistory.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblShowLicensesHistory_LinkClicked);
             // 
-            // linkLabel2
+            // llblShowLicensesInfo
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(178, 549);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(121, 16);
-            this.linkLabel2.TabIndex = 6;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Show Licenses Info";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.llblShowLicensesInfo.AutoSize = true;
+            this.llblShowLicensesInfo.Enabled = false;
+            this.llblShowLicensesInfo.Location = new System.Drawing.Point(169, 546);
+            this.llblShowLicensesInfo.Name = "llblShowLicensesInfo";
+            this.llblShowLicensesInfo.Size = new System.Drawing.Size(121, 16);
+            this.llblShowLicensesInfo.TabIndex = 6;
+            this.llblShowLicensesInfo.TabStop = true;
+            this.llblShowLicensesInfo.Text = "Show Licenses Info";
+            this.llblShowLicensesInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblShowLicensesInfo_LinkClicked);
             // 
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(404, 546);
+            this.btnClose.Location = new System.Drawing.Point(619, 539);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(75, 30);
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -268,29 +260,39 @@
             // 
             // btnIssue
             // 
-            this.btnIssue.Location = new System.Drawing.Point(316, 546);
+            this.btnIssue.Location = new System.Drawing.Point(700, 539);
             this.btnIssue.Name = "btnIssue";
-            this.btnIssue.Size = new System.Drawing.Size(75, 23);
+            this.btnIssue.Size = new System.Drawing.Size(75, 30);
             this.btnIssue.TabIndex = 8;
             this.btnIssue.Text = "Issue";
             this.btnIssue.UseVisualStyleBackColor = true;
+            this.btnIssue.Click += new System.EventHandler(this.btnIssue_Click);
             // 
-            // ctlDriverLicenseInfo1
+            // ctlDriverLicenseInfoWithFilter1
             // 
-            this.ctlDriverLicenseInfo1.BackColor = System.Drawing.Color.White;
-            this.ctlDriverLicenseInfo1.LicenseID = -1;
-            this.ctlDriverLicenseInfo1.Location = new System.Drawing.Point(9, 144);
-            this.ctlDriverLicenseInfo1.Name = "ctlDriverLicenseInfo1";
-            this.ctlDriverLicenseInfo1.Size = new System.Drawing.Size(496, 244);
-            this.ctlDriverLicenseInfo1.TabIndex = 9;
+            this.ctlDriverLicenseInfoWithFilter1.BackColor = System.Drawing.Color.White;
+            this.ctlDriverLicenseInfoWithFilter1.FilterEnabled = true;
+            this.ctlDriverLicenseInfoWithFilter1.FilterText = "";
+            this.ctlDriverLicenseInfoWithFilter1.License = null;
+            this.ctlDriverLicenseInfoWithFilter1.LicenseID = -1;
+            this.ctlDriverLicenseInfoWithFilter1.Location = new System.Drawing.Point(12, 50);
+            this.ctlDriverLicenseInfoWithFilter1.Name = "ctlDriverLicenseInfoWithFilter1";
+            this.ctlDriverLicenseInfoWithFilter1.Size = new System.Drawing.Size(775, 330);
+            this.ctlDriverLicenseInfoWithFilter1.TabIndex = 11;
+            this.ctlDriverLicenseInfoWithFilter1.OnLicenseSelected += new System.Action<object>(this.ctlDriverLicenseInfoWithFilter1_OnLicenseSelected);
+            this.ctlDriverLicenseInfoWithFilter1.OnWrongSelection += new System.Action<object>(this.ctlDriverLicenseInfoWithFilter1_OnWrongSelection);
+            this.ctlDriverLicenseInfoWithFilter1.Load += new System.EventHandler(this.ctlDriverLicenseInfoWithFilter1_Load);
             // 
-            // ctlFilterByLicenceID1
+            // lblTitle
             // 
-            this.ctlFilterByLicenceID1.BackColor = System.Drawing.Color.White;
-            this.ctlFilterByLicenceID1.Location = new System.Drawing.Point(12, 56);
-            this.ctlFilterByLicenceID1.Name = "ctlFilterByLicenceID1";
-            this.ctlFilterByLicenceID1.Size = new System.Drawing.Size(500, 82);
-            this.ctlFilterByLicenceID1.TabIndex = 10;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTitle.Location = new System.Drawing.Point(221, 11);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(358, 36);
+            this.lblTitle.TabIndex = 42;
+            this.lblTitle.Text = "New International License";
             // 
             // frmNewInternationalLicenseApplication
             // 
@@ -298,28 +300,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(517, 661);
-            this.Controls.Add(this.ctlFilterByLicenceID1);
-            this.Controls.Add(this.ctlDriverLicenseInfo1);
+            this.ClientSize = new System.Drawing.Size(794, 588);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.ctlDriverLicenseInfoWithFilter1);
             this.Controls.Add(this.btnIssue);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.llblShowLicensesInfo);
+            this.Controls.Add(this.llblShowLicensesHistory);
+            this.Controls.Add(this.gbApplicationInfo);
             this.Name = "frmNewInternationalLicenseApplication";
             this.Text = "_";
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gbApplicationInfo.ResumeLayout(false);
+            this.gbApplicationInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gbApplicationInfo;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
@@ -328,19 +327,19 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel llblShowLicensesHistory;
+        private System.Windows.Forms.LinkLabel llblShowLicensesInfo;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnIssue;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label37;
-        private ctlDriverLicenseInfo ctlDriverLicenseInfo1;
-        private ctlFilterByLicenceID ctlFilterByLicenceID1;
+        private System.Windows.Forms.Label lblCreatedBy;
+        private System.Windows.Forms.Label lblExpirationDate;
+        private System.Windows.Forms.Label lblLocalLicenseID;
+        private System.Windows.Forms.Label lblILLicenseID;
+        private System.Windows.Forms.Label lblFees;
+        private System.Windows.Forms.Label lblIssueDate;
+        private System.Windows.Forms.Label lblApplicationDate;
+        private System.Windows.Forms.Label lblILApplicationID;
+        private Licenses.Controls.ctlDriverLicenseInfoWithFilter ctlDriverLicenseInfoWithFilter1;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

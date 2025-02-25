@@ -87,7 +87,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void internationalLicesnseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmListInternationalLicenseApplications().ShowDialog();
+            new frmNewInternationalLicenseApplication().ShowDialog();
         }
 
         private void renewDrivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
