@@ -118,7 +118,7 @@ namespace Driving_License_Management_Desktop_App.Licenses.Controls
             if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true; // Prevents the "ding" sound
-                _SearchForLicense();
+                //_SearchForLicense();
             }
 
         }
@@ -127,8 +127,13 @@ namespace Driving_License_Management_Desktop_App.Licenses.Controls
         {
             if (e.KeyCode == Keys.Enter)
             {
-                //_SearchForLicense();
+                _SearchForLicense();
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            _SearchForLicense();
         }
     }
 }

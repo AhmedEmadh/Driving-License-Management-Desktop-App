@@ -28,90 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctlFilterByLicenceID1 = new Driving_License_Management_Desktop_App.ctlFilterByLicenceID();
-            this.ctlDriverLicenseInfo1 = new Driving_License_Management_Desktop_App.ctlDriverLicenseInfo();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.gbReplacementFor = new System.Windows.Forms.GroupBox();
+            this.rbLostLicense = new System.Windows.Forms.RadioButton();
+            this.rbDamagedLicense = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblCreatedBy = new System.Windows.Forms.Label();
+            this.lblOldLicenseID = new System.Windows.Forms.Label();
+            this.lblReplacedLicenseID = new System.Windows.Forms.Label();
+            this.lblApplicationFees = new System.Windows.Forms.Label();
+            this.lblApplicationDate = new System.Windows.Forms.Label();
+            this.lblLRApplicationID = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.llblShowLicenseHistory = new System.Windows.Forms.LinkLabel();
+            this.llblShowNewLicensesInfo = new System.Windows.Forms.LinkLabel();
             this.btnIssueReplacement = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.ctlDriverLicenseInfoWithFilter1 = new Driving_License_Management_Desktop_App.Licenses.Controls.ctlDriverLicenseInfoWithFilter();
+            this.gbReplacementFor.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ctlFilterByLicenceID1
+            // gbReplacementFor
             // 
-            this.ctlFilterByLicenceID1.BackColor = System.Drawing.Color.White;
-            this.ctlFilterByLicenceID1.Location = new System.Drawing.Point(13, 13);
-            this.ctlFilterByLicenceID1.Name = "ctlFilterByLicenceID1";
-            this.ctlFilterByLicenceID1.Size = new System.Drawing.Size(413, 82);
-            this.ctlFilterByLicenceID1.TabIndex = 0;
+            this.gbReplacementFor.Controls.Add(this.rbLostLicense);
+            this.gbReplacementFor.Controls.Add(this.rbDamagedLicense);
+            this.gbReplacementFor.Location = new System.Drawing.Point(432, 23);
+            this.gbReplacementFor.Name = "gbReplacementFor";
+            this.gbReplacementFor.Size = new System.Drawing.Size(343, 67);
+            this.gbReplacementFor.TabIndex = 2;
+            this.gbReplacementFor.TabStop = false;
+            this.gbReplacementFor.Text = "Replacement For:";
             // 
-            // ctlDriverLicenseInfo1
+            // rbLostLicense
             // 
-            this.ctlDriverLicenseInfo1.BackColor = System.Drawing.Color.White;
-            this.ctlDriverLicenseInfo1.Location = new System.Drawing.Point(12, 101);
-            this.ctlDriverLicenseInfo1.Name = "ctlDriverLicenseInfo1";
-            this.ctlDriverLicenseInfo1.Size = new System.Drawing.Size(775, 244);
-            this.ctlDriverLicenseInfo1.TabIndex = 1;
+            this.rbLostLicense.AutoSize = true;
+            this.rbLostLicense.Location = new System.Drawing.Point(225, 28);
+            this.rbLostLicense.Name = "rbLostLicense";
+            this.rbLostLicense.Size = new System.Drawing.Size(103, 20);
+            this.rbLostLicense.TabIndex = 1;
+            this.rbLostLicense.TabStop = true;
+            this.rbLostLicense.Text = "Lost License";
+            this.rbLostLicense.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // rbDamagedLicense
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(432, 23);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(343, 61);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Replacement For:";
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(220, 22);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(103, 20);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Lost License";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 22);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(139, 20);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Damaged License";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbDamagedLicense.AutoSize = true;
+            this.rbDamagedLicense.Checked = true;
+            this.rbDamagedLicense.Location = new System.Drawing.Point(12, 28);
+            this.rbDamagedLicense.Name = "rbDamagedLicense";
+            this.rbDamagedLicense.Size = new System.Drawing.Size(139, 20);
+            this.rbDamagedLicense.TabIndex = 0;
+            this.rbDamagedLicense.TabStop = true;
+            this.rbDamagedLicense.Text = "Damaged License";
+            this.rbDamagedLicense.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.lblCreatedBy);
+            this.groupBox2.Controls.Add(this.lblOldLicenseID);
+            this.groupBox2.Controls.Add(this.lblReplacedLicenseID);
+            this.groupBox2.Controls.Add(this.lblApplicationFees);
+            this.groupBox2.Controls.Add(this.lblApplicationDate);
+            this.groupBox2.Controls.Add(this.lblLRApplicationID);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
@@ -125,59 +108,59 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Application Info for License Replacement";
             // 
-            // label12
+            // lblCreatedBy
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(360, 72);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(28, 16);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "???";
+            this.lblCreatedBy.AutoSize = true;
+            this.lblCreatedBy.Location = new System.Drawing.Point(421, 72);
+            this.lblCreatedBy.Name = "lblCreatedBy";
+            this.lblCreatedBy.Size = new System.Drawing.Size(28, 16);
+            this.lblCreatedBy.TabIndex = 11;
+            this.lblCreatedBy.Text = "???";
             // 
-            // label11
+            // lblOldLicenseID
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(380, 47);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(28, 16);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "???";
+            this.lblOldLicenseID.AutoSize = true;
+            this.lblOldLicenseID.Location = new System.Drawing.Point(421, 47);
+            this.lblOldLicenseID.Name = "lblOldLicenseID";
+            this.lblOldLicenseID.Size = new System.Drawing.Size(28, 16);
+            this.lblOldLicenseID.TabIndex = 10;
+            this.lblOldLicenseID.Text = "???";
             // 
-            // label10
+            // lblReplacedLicenseID
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(419, 22);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(28, 16);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "???";
+            this.lblReplacedLicenseID.AutoSize = true;
+            this.lblReplacedLicenseID.Location = new System.Drawing.Point(420, 22);
+            this.lblReplacedLicenseID.Name = "lblReplacedLicenseID";
+            this.lblReplacedLicenseID.Size = new System.Drawing.Size(28, 16);
+            this.lblReplacedLicenseID.TabIndex = 9;
+            this.lblReplacedLicenseID.Text = "???";
             // 
-            // label9
+            // lblApplicationFees
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(129, 72);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 16);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "???";
+            this.lblApplicationFees.AutoSize = true;
+            this.lblApplicationFees.Location = new System.Drawing.Point(129, 72);
+            this.lblApplicationFees.Name = "lblApplicationFees";
+            this.lblApplicationFees.Size = new System.Drawing.Size(28, 16);
+            this.lblApplicationFees.TabIndex = 8;
+            this.lblApplicationFees.Text = "???";
             // 
-            // label8
+            // lblApplicationDate
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(129, 47);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(28, 16);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "???";
+            this.lblApplicationDate.AutoSize = true;
+            this.lblApplicationDate.Location = new System.Drawing.Point(129, 47);
+            this.lblApplicationDate.Name = "lblApplicationDate";
+            this.lblApplicationDate.Size = new System.Drawing.Size(28, 16);
+            this.lblApplicationDate.TabIndex = 7;
+            this.lblApplicationDate.Text = "???";
             // 
-            // label7
+            // lblLRApplicationID
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(129, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(28, 16);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "???";
+            this.lblLRApplicationID.AutoSize = true;
+            this.lblLRApplicationID.Location = new System.Drawing.Point(129, 22);
+            this.lblLRApplicationID.Name = "lblLRApplicationID";
+            this.lblLRApplicationID.Size = new System.Drawing.Size(28, 16);
+            this.lblLRApplicationID.TabIndex = 6;
+            this.lblLRApplicationID.Text = "???";
             // 
             // label6
             // 
@@ -233,40 +216,42 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "L.R.Application ID:";
             // 
-            // linkLabel1
+            // llblShowLicenseHistory
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(23, 459);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(135, 16);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Show License History";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.llblShowLicenseHistory.AutoSize = true;
+            this.llblShowLicenseHistory.Location = new System.Drawing.Point(23, 459);
+            this.llblShowLicenseHistory.Name = "llblShowLicenseHistory";
+            this.llblShowLicenseHistory.Size = new System.Drawing.Size(135, 16);
+            this.llblShowLicenseHistory.TabIndex = 4;
+            this.llblShowLicenseHistory.TabStop = true;
+            this.llblShowLicenseHistory.Text = "Show License History";
+            this.llblShowLicenseHistory.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // linkLabel2
+            // llblShowNewLicensesInfo
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(174, 459);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(151, 16);
-            this.linkLabel2.TabIndex = 5;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Show New Licenses Info";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.llblShowNewLicensesInfo.AutoSize = true;
+            this.llblShowNewLicensesInfo.Enabled = false;
+            this.llblShowNewLicensesInfo.Location = new System.Drawing.Point(174, 459);
+            this.llblShowNewLicensesInfo.Name = "llblShowNewLicensesInfo";
+            this.llblShowNewLicensesInfo.Size = new System.Drawing.Size(151, 16);
+            this.llblShowNewLicensesInfo.TabIndex = 5;
+            this.llblShowNewLicensesInfo.TabStop = true;
+            this.llblShowNewLicensesInfo.Text = "Show New Licenses Info";
+            this.llblShowNewLicensesInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // btnIssueReplacement
             // 
-            this.btnIssueReplacement.Location = new System.Drawing.Point(452, 459);
+            this.btnIssueReplacement.Location = new System.Drawing.Point(524, 459);
             this.btnIssueReplacement.Name = "btnIssueReplacement";
             this.btnIssueReplacement.Size = new System.Drawing.Size(143, 34);
             this.btnIssueReplacement.TabIndex = 7;
             this.btnIssueReplacement.Text = "Issue Replacement";
             this.btnIssueReplacement.UseVisualStyleBackColor = true;
+            this.btnIssueReplacement.Click += new System.EventHandler(this.btnIssueReplacement_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(611, 460);
+            this.btnClose.Location = new System.Drawing.Point(683, 460);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(92, 33);
             this.btnClose.TabIndex = 8;
@@ -274,26 +259,38 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.button1_Click);
             // 
+            // ctlDriverLicenseInfoWithFilter1
+            // 
+            this.ctlDriverLicenseInfoWithFilter1.BackColor = System.Drawing.Color.White;
+            this.ctlDriverLicenseInfoWithFilter1.FilterEnabled = true;
+            this.ctlDriverLicenseInfoWithFilter1.License = null;
+            this.ctlDriverLicenseInfoWithFilter1.LicenseID = -1;
+            this.ctlDriverLicenseInfoWithFilter1.Location = new System.Drawing.Point(12, 14);
+            this.ctlDriverLicenseInfoWithFilter1.Name = "ctlDriverLicenseInfoWithFilter1";
+            this.ctlDriverLicenseInfoWithFilter1.Size = new System.Drawing.Size(772, 332);
+            this.ctlDriverLicenseInfoWithFilter1.TabIndex = 9;
+            this.ctlDriverLicenseInfoWithFilter1.OnLicenseSelected += new System.Action<object>(this.ctlDriverLicenseInfoWithFilter1_OnLicenseSelected);
+            this.ctlDriverLicenseInfoWithFilter1.OnWrongSelection += new System.Action<object>(this.ctlDriverLicenseInfoWithFilter1_OnWrongSelection);
+            // 
             // frmReplacementForDamagedLicense
             // 
-            this.AcceptButton = this.btnIssueReplacement;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(796, 505);
+            this.Controls.Add(this.gbReplacementFor);
+            this.Controls.Add(this.ctlDriverLicenseInfoWithFilter1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnIssueReplacement);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.llblShowNewLicensesInfo);
+            this.Controls.Add(this.llblShowLicenseHistory);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.ctlDriverLicenseInfo1);
-            this.Controls.Add(this.ctlFilterByLicenceID1);
             this.Name = "frmReplacementForDamagedLicense";
             this.Text = "frmReplacementForDamagedLicense";
             this.Load += new System.EventHandler(this.frmReplacementForDamagedLicense_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbReplacementFor.ResumeLayout(false);
+            this.gbReplacementFor.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -302,12 +299,9 @@
         }
 
         #endregion
-
-        private ctlFilterByLicenceID ctlFilterByLicenceID1;
-        private ctlDriverLicenseInfo ctlDriverLicenseInfo1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.GroupBox gbReplacementFor;
+        private System.Windows.Forms.RadioButton rbDamagedLicense;
+        private System.Windows.Forms.RadioButton rbLostLicense;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -315,15 +309,16 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.Label lblLRApplicationID;
+        private System.Windows.Forms.Label lblCreatedBy;
+        private System.Windows.Forms.Label lblOldLicenseID;
+        private System.Windows.Forms.Label lblReplacedLicenseID;
+        private System.Windows.Forms.Label lblApplicationFees;
+        private System.Windows.Forms.Label lblApplicationDate;
+        private System.Windows.Forms.LinkLabel llblShowLicenseHistory;
+        private System.Windows.Forms.LinkLabel llblShowNewLicensesInfo;
         private System.Windows.Forms.Button btnIssueReplacement;
         private System.Windows.Forms.Button btnClose;
+        private Licenses.Controls.ctlDriverLicenseInfoWithFilter ctlDriverLicenseInfoWithFilter1;
     }
 }
