@@ -46,11 +46,22 @@ The **Driving License Management Desktop App** is a **C#-based desktop applicati
 - Developed using **WinForms** or **WPF** for an interactive desktop experience.
 - Provides an intuitive interface for both **applicants** and **administrators**.
 
+---
+
 ## **Project Structure**
 
-The project is organized into multiple layers for maintainability and scalability.
+The project is organized into multiple layers with Database for maintainability and scalability.
 
-### **1. Business Logic Layer (`Driving-License-Management-BusinessLogic`)**
+### **1. Database Design**
+
+![Database Design](https://github.com/AhmedEmadh/Driving-License-Management-Desktop-App/blob/main/Database-Design/DrivingLicenseManagementDatabase.drawio.png)
+
+### **2. Data Access Layer**
+
+- Implements structured **SQL database tables**.
+- Ensures **data security** and **efficient retrieval**.
+
+### **3. Business Logic Layer (`Driving-License-Management-BusinessLogic`)**
 
 Contains classes for managing core functionalities:
 
@@ -69,12 +80,7 @@ Contains classes for managing core functionalities:
 - `clsTestType.cs` – Differentiates test categories.
 - `clsUser.cs` – Manages authentication and user roles.
 
-### **2. Database Layer**
-
-- Implements structured **SQL database tables**.
-- Ensures **data security** and **efficient retrieval**.
-
-### **3. User Interface Layer**
+### **4. User Interface Layer**
 
 - Provides **separate UI components** for applicants and administrators.
 - Includes interactive forms for **applications, approvals, and test scheduling**.
@@ -100,3 +106,5 @@ Contains classes for managing core functionalities:
 - Add **online test result tracking**.
 - Introduce **automated email/SMS notifications**.
 - Expand to a **web-based platform**.
+
+
