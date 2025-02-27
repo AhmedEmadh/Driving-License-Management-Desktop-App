@@ -32,11 +32,11 @@
             this.lblCreatedBy = new System.Windows.Forms.Label();
             this.lblExpirationDate = new System.Windows.Forms.Label();
             this.lblLocalLicenseID = new System.Windows.Forms.Label();
-            this.lblILLicenseID = new System.Windows.Forms.Label();
+            this.lblInternationalLicenseID = new System.Windows.Forms.Label();
             this.lblFees = new System.Windows.Forms.Label();
             this.lblIssueDate = new System.Windows.Forms.Label();
             this.lblApplicationDate = new System.Windows.Forms.Label();
-            this.lblILApplicationID = new System.Windows.Forms.Label();
+            this.lblApplicationID = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -59,11 +59,11 @@
             this.gbApplicationInfo.Controls.Add(this.lblCreatedBy);
             this.gbApplicationInfo.Controls.Add(this.lblExpirationDate);
             this.gbApplicationInfo.Controls.Add(this.lblLocalLicenseID);
-            this.gbApplicationInfo.Controls.Add(this.lblILLicenseID);
+            this.gbApplicationInfo.Controls.Add(this.lblInternationalLicenseID);
             this.gbApplicationInfo.Controls.Add(this.lblFees);
             this.gbApplicationInfo.Controls.Add(this.lblIssueDate);
             this.gbApplicationInfo.Controls.Add(this.lblApplicationDate);
-            this.gbApplicationInfo.Controls.Add(this.lblILApplicationID);
+            this.gbApplicationInfo.Controls.Add(this.lblApplicationID);
             this.gbApplicationInfo.Controls.Add(this.label36);
             this.gbApplicationInfo.Controls.Add(this.label35);
             this.gbApplicationInfo.Controls.Add(this.label34);
@@ -106,14 +106,14 @@
             this.lblLocalLicenseID.TabIndex = 13;
             this.lblLocalLicenseID.Text = "???";
             // 
-            // lblILLicenseID
+            // lblInternationalLicenseID
             // 
-            this.lblILLicenseID.AutoSize = true;
-            this.lblILLicenseID.Location = new System.Drawing.Point(389, 31);
-            this.lblILLicenseID.Name = "lblILLicenseID";
-            this.lblILLicenseID.Size = new System.Drawing.Size(28, 16);
-            this.lblILLicenseID.TabIndex = 12;
-            this.lblILLicenseID.Text = "???";
+            this.lblInternationalLicenseID.AutoSize = true;
+            this.lblInternationalLicenseID.Location = new System.Drawing.Point(389, 31);
+            this.lblInternationalLicenseID.Name = "lblInternationalLicenseID";
+            this.lblInternationalLicenseID.Size = new System.Drawing.Size(28, 16);
+            this.lblInternationalLicenseID.TabIndex = 12;
+            this.lblInternationalLicenseID.Text = "???";
             // 
             // lblFees
             // 
@@ -142,14 +142,14 @@
             this.lblApplicationDate.TabIndex = 9;
             this.lblApplicationDate.Text = "???";
             // 
-            // lblILApplicationID
+            // lblApplicationID
             // 
-            this.lblILApplicationID.AutoSize = true;
-            this.lblILApplicationID.Location = new System.Drawing.Point(124, 31);
-            this.lblILApplicationID.Name = "lblILApplicationID";
-            this.lblILApplicationID.Size = new System.Drawing.Size(28, 16);
-            this.lblILApplicationID.TabIndex = 8;
-            this.lblILApplicationID.Text = "???";
+            this.lblApplicationID.AutoSize = true;
+            this.lblApplicationID.Location = new System.Drawing.Point(124, 31);
+            this.lblApplicationID.Name = "lblApplicationID";
+            this.lblApplicationID.Size = new System.Drawing.Size(28, 16);
+            this.lblApplicationID.TabIndex = 8;
+            this.lblApplicationID.Text = "???";
             // 
             // label36
             // 
@@ -334,11 +334,11 @@
         private System.Windows.Forms.Label lblCreatedBy;
         private System.Windows.Forms.Label lblExpirationDate;
         private System.Windows.Forms.Label lblLocalLicenseID;
-        private System.Windows.Forms.Label lblILLicenseID;
+        private System.Windows.Forms.Label lblInternationalLicenseID;
         private System.Windows.Forms.Label lblFees;
         private System.Windows.Forms.Label lblIssueDate;
         private System.Windows.Forms.Label lblApplicationDate;
-        private System.Windows.Forms.Label lblILApplicationID;
+        private System.Windows.Forms.Label lblApplicationID;
         private Licenses.Controls.ctlDriverLicenseInfoWithFilter ctlDriverLicenseInfoWithFilter1;
         private System.Windows.Forms.Label lblTitle;
     }

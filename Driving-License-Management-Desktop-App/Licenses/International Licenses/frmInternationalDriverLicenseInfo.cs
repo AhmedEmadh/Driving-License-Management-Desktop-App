@@ -12,9 +12,11 @@ namespace Driving_License_Management_Desktop_App
 {
     public partial class frmInternationalDriverLicenseInfo : Form
     {
-        public frmInternationalDriverLicenseInfo()
+        int _InternationalDriverLicenseID;
+        public frmInternationalDriverLicenseInfo(int InternationalDriverLicenseID)
         {
             InitializeComponent();
+            _InternationalDriverLicenseID = InternationalDriverLicenseID;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,6 +27,11 @@ namespace Driving_License_Management_Desktop_App
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmInternationalDriverLicenseInfo_Load(object sender, EventArgs e)
+        {
+            ctlInternationalDrivingLicenseInfo1.InternationalID = _InternationalDriverLicenseID;
         }
     }
 }
