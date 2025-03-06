@@ -43,7 +43,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error getting test type info: {ex.Message}");
+                clsLogger.Log(ex);
             }
             finally
             {
@@ -70,7 +70,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error getting all test types: {ex.Message}");
+                clsLogger.Log(ex);
             }
             finally
             {
@@ -98,12 +98,11 @@ namespace Driving_License_Management_DataAccessLayer
             {
                 connection.Open();
                 CreatedID = (int)command.ExecuteScalar();
-                Console.WriteLine($"New test type created with ID: {CreatedID}");
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error adding new test type: {ex.Message}");
+                clsLogger.Log(ex);
             }
             finally
             {
@@ -141,7 +140,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error updating test type: {ex.Message}");
+                clsLogger.Log(ex);
             }
             finally
             {

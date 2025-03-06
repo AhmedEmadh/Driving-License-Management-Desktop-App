@@ -39,7 +39,7 @@ namespace Driving_License_Management_DataAccessLayer
             catch (Exception ex)
             {
                 isSuccess = false;
-                throw new Exception("Error in clsCountryData.GetCountryInfoByID(int ID, ref string CountryName) Method: " + ex.Message);
+                clsLogger.Log(ex);
             }
             finally
             {
@@ -73,7 +73,7 @@ namespace Driving_License_Management_DataAccessLayer
             catch (Exception ex)
             {
                 isSuccess = false;
-                throw new Exception("Error in clsCountryData.GetCountryInfoByName(string CountryName, ref int ID) Method: " + ex.Message);
+                clsLogger.Log(ex);
             }
             finally
             {
@@ -99,7 +99,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
-                throw new Exception("Error in clsCountryData.GetAllCountries() Method: " + ex.Message);
+                clsLogger.Log(ex);
             }
             finally
             {

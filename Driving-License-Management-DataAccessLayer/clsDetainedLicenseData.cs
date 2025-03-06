@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,7 +54,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                clsLogger.Log(ex);
             }
             finally
             {
@@ -101,7 +102,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                clsLogger.Log(ex);
             }
             finally
             {
@@ -127,7 +128,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                clsLogger.Log(ex);
             }
             finally
             {
@@ -184,7 +185,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                clsLogger.Log(ex);
             }
             finally
             {
@@ -227,7 +228,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                clsLogger.Log(ex);
             }
             finally
             {
@@ -266,7 +267,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                clsLogger.Log(ex);
             }
             finally
             {
@@ -297,7 +298,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                clsLogger.Log(ex);
             }
             finally
             {

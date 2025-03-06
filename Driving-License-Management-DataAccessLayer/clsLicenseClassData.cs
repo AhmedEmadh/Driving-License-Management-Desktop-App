@@ -47,7 +47,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error retrieving license class information: " + ex.Message);
+                clsLogger.Log(ex);
             }
             finally
             {
@@ -89,7 +89,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error retrieving license class information: " + ex.Message);
+                clsLogger.Log(ex);
             }
             finally
             {
@@ -117,7 +117,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error retrieving license class information: " + ex.Message);
+                clsLogger.Log(ex);
             }
             finally
             {
@@ -153,7 +153,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error adding new license class: " + ex.Message);
+                clsLogger.Log(ex);
             }
             finally
             {
@@ -191,7 +191,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error updating license class information: " + ex.Message);
+                clsLogger.Log(ex);
             }
             finally
             {

@@ -44,6 +44,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 result = false;
             }
             finally
@@ -70,6 +71,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 Result = null;
             }
             finally
@@ -99,6 +101,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 IDOfAddedApplicationType = -1;
             }
             finally
@@ -137,6 +140,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 result = false;
             }
             finally
@@ -171,6 +175,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 result = false;
             }
             finally

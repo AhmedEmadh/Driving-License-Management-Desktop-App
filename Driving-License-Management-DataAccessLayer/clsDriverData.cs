@@ -45,6 +45,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 isSuccess = false;
             }
             finally
@@ -86,6 +87,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 isSuccess = false;
             }
             finally
@@ -112,6 +114,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 Result = null;
             }
             finally
@@ -142,6 +145,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 DriverID = -1;
             }
             finally
@@ -174,6 +178,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 isSuccess = false;
             }
             finally

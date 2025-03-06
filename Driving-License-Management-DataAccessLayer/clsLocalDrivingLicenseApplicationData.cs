@@ -43,6 +43,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 isSuccess = false;
             }
             finally
@@ -82,6 +83,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 isSuccess = false;
             }
             finally
@@ -108,6 +110,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 Result = null;
             }
             return Result;
@@ -133,6 +136,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 LocalDrivingLicenseApplicationID = -1;
             }
             finally
@@ -165,6 +169,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 isSuccess = false;
             }
             finally
@@ -193,6 +198,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 isSuccess = false;
             }
             finally
@@ -240,6 +246,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 result = false;
             }
             finally
@@ -274,6 +281,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 result = false;
             }
             finally
@@ -311,6 +319,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 result = 0;
             }
             finally
@@ -363,7 +372,7 @@ namespace Driving_License_Management_DataAccessLayer
 
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                clsLogger.Log(ex);
 
             }
 

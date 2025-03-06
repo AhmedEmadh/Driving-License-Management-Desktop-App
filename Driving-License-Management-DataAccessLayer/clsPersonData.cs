@@ -63,6 +63,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 isSuccess = false;
             }
             finally
@@ -125,6 +126,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 isSuccess = false;
             }
             finally
@@ -200,6 +202,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 PersonID = -1;
             }
             finally
@@ -277,6 +280,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 isSuccess = false;
             }
             finally
@@ -310,6 +314,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 Result = null;
             }
             return Result;
@@ -334,6 +339,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 isSuccess = false;
             }
             finally
@@ -369,6 +375,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 isExist = false;
             }
             finally
@@ -405,6 +412,7 @@ namespace Driving_License_Management_DataAccessLayer
             }
             catch (Exception ex)
             {
+                clsLogger.Log(ex);
                 isExist = false;
             }
             finally
