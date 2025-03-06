@@ -65,11 +65,11 @@ namespace Driving_License_Management_DataAccessLayer
             string message =
 
                  $"--- Exception Log ---\n" +
-                 $"Timestamp: {DateTime.Now}\n" +
-                 $"Message: {ex.Message}\n" +
-                 $"Inner Exception: {(ex.InnerException != null ? ex.InnerException.Message : "N/A")}\n" +
-                 $"Stack Trace: {ex.StackTrace}\n" +
-                 $"Source: {ex.Source}\n" +
+                 $"Timestamp: {DateTime.Now}\n\n" +
+                 $"Message:\n {ex.Message}\n\n" +
+                 $"Inner Exception: \n{(ex.InnerException != null ? ex.InnerException.Message : "N/A")}\n\n" +
+                 $"Stack Trace: \n{ex.StackTrace}\n\n" +
+                 $"Source: \n{ex.Source}\n\n" +
                  $"-----------------------";
 
             return message;
