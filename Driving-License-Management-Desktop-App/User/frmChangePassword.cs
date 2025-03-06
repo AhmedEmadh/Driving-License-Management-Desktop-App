@@ -1,4 +1,5 @@
 ﻿using Driving_License_Management_BusinessLogic;
+using Driving_License_Management_Desktop_App.Global_Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,11 +50,11 @@ namespace Driving_License_Management_Desktop_App.User
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (tbCurrentPassword.Text == _User.Password)
+            if (clsGlobal.ComputeHash(tbCurrentPassword.Text) == _User.Password)
             {
                 if (tbNewPassword.Text == tbConfirmPassword.Text)
                 {
-                    _User.Password = tbNewPassword.Text;
+                    _User.Password = clsGlobal.ComputeHash(tbNewPassword.Text);
                     _User.Save();
                     MessageBox.Show("Password changed successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();

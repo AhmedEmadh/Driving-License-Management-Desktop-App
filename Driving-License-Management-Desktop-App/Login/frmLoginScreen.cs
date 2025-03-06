@@ -46,7 +46,7 @@ namespace Driving_License_Management_Desktop_App
         private void button1_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("Invalid Username/Password.","Wrong Credintials",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            clsUser user = clsUser.FindByUserNameAndPassword(tbUserName.Text, tbPassword.Text);
+            clsUser user = clsUser.FindByUserNameAndPassword(tbUserName.Text, clsGlobal.ComputeHash(tbPassword.Text));
             if (user != null)
             {
                 if (user.IsActive)
