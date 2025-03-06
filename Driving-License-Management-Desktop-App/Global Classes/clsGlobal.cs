@@ -6,14 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Driving_License_Management_BusinessLogic;
+using Microsoft.Win32;
 namespace Driving_License_Management_Desktop_App.Global_Classes
 {
     internal static class clsGlobal
     {
         public static clsUser CurrentUser;
-        public static bool RememberUsernameAndPassword(string Username, string Password)
+        static bool _RememberUsernameAndPasswordUsingFile(string Username, string Password)
         {
-
             try
             {
                 //this will get the current project directory folder.
@@ -48,10 +48,8 @@ namespace Driving_License_Management_Desktop_App.Global_Classes
                 MessageBox.Show($"An error occurred: {ex.Message}");
                 return false;
             }
-
         }
-
-        public static bool GetStoredCredential(ref string Username, ref string Password)
+        static bool _GetStoredCredentialUsingFile(ref string Username, ref string Password)
         {
             //this will get the stored username and password and will return true if found and false if not found.
             try
@@ -91,6 +89,60 @@ namespace Driving_License_Management_Desktop_App.Global_Classes
                 MessageBox.Show($"An error occurred: {ex.Message}");
                 return false;
             }
+        }
+        static bool _RememberUsernameAndPasswordUsingRegistery(string Username, string Password)
+        {
+            string KeyPath = @"HKEY_CURRENT_USER\SOFTWARE\LocalDrivingLicenseManagementDesktopApp";
+            string UserName_ValueName = "UserName";
+            string Password_ValueName = "Password";
+            string UserName_ValueData = Username;
+            string Password_ValueData = Password;
+
+            try
+            {
+                Registry.SetValue(KeyPath, UserName_ValueName, UserName_ValueData, RegistryValueKind.String);
+                Registry.SetValue(KeyPath, Password_ValueName, Password_ValueData, RegistryValueKind.String);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        static bool _GetStoredCredentialUsingRegistery(ref string Username, ref string Password)
+        {
+            string KeyPath = @"HKEY_CURRENT_USER\SOFTWARE\LocalDrivingLicenseManagementDesktopApp";
+            string UserName_ValueName = "UserName";
+            string Password_ValueName = "Password";
+            try
+            {
+                String UserName_ValueData = Registry.GetValue(KeyPath, UserName_ValueName, null) as string;
+                String Password_ValueData = Registry.GetValue(KeyPath, Password_ValueName, null) as string;
+                if (UserName_ValueData != null && Password_ValueData != null)
+                {
+                    Username = UserName_ValueData;
+                    Password = Password_ValueData;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public static bool RememberUsernameAndPassword(string Username, string Password)
+        {
+            return _RememberUsernameAndPasswordUsingRegistery(Username, Password);
+        }
+
+        public static bool GetStoredCredential(ref string Username, ref string Password)
+        {
+            return _GetStoredCredentialUsingRegistery(ref Username, ref Password);
 
         }
 
