@@ -42,7 +42,9 @@ namespace Driving_License_Management_BusinessLogic
             get { return _GetTestID(); }
 
         }
-
+        /// <summary>
+        /// Initializes a new instance of the clsTestAppointment class with default values.
+        /// </summary>
         public clsTestAppointment()
 
         {
@@ -57,7 +59,17 @@ namespace Driving_License_Management_BusinessLogic
             TestTypeInfo = clsTestType.Find((int)this.TestTypeID);
             LocalDrivingLicenseApplicationInfo = null;
         }
-
+        /// <summary>
+        /// Initializes a new instance of the clsTestAppointment class.
+        /// </summary>
+        /// <param name="TestAppointmentID">The ID of the test appointment.</param>
+        /// <param name="TestTypeID">The type of test.</param>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <param name="AppointmentDate">The date of the appointment.</param>
+        /// <param name="PaidFees">The paid fees for the appointment.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the appointment.</param>
+        /// <param name="IsLocked">A flag indicating whether the appointment is locked.</param>
+        /// <param name="RetakeTestApplicationID">The ID of the retake test application.</param>
         public clsTestAppointment(int TestAppointmentID, clsTestType.enTestType TestTypeID,
            int LocalDrivingLicenseApplicationID, DateTime AppointmentDate, float PaidFees,
            int CreatedByUserID, bool IsLocked, int RetakeTestApplicationID)
@@ -77,7 +89,10 @@ namespace Driving_License_Management_BusinessLogic
             LocalDrivingLicenseApplicationInfo = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(this.LocalDrivingLicenseApplicationID);
             Mode = enMode.Update;
         }
-
+        /// <summary>
+        /// Adds a new test appointment to the data storage.
+        /// </summary>
+        /// <returns>True if the test appointment was added successfully, false otherwise.</returns>
         private bool _AddNewTestAppointment()
         {
             //call DataAccess Layer 
@@ -87,7 +102,10 @@ namespace Driving_License_Management_BusinessLogic
 
             return (this.TestAppointmentID != -1);
         }
-
+        /// <summary>
+        /// Updates an existing test appointment in the database.
+        /// </summary>
+        /// <returns>True if the test appointment was updated successfully, false otherwise.</returns>
         private bool _UpdateTestAppointment()
         {
             //call DataAccess Layer 
@@ -95,7 +113,11 @@ namespace Driving_License_Management_BusinessLogic
             return clsTestAppointmentData.UpdateTestAppointment(this.TestAppointmentID, (int)this.TestTypeID, this.LocalDrivingLicenseApplicationID,
                 this.AppointmentDate, this.PaidFees, this.CreatedByUserID, this.IsLocked, this.RetakeTestApplicationID);
         }
-
+        /// <summary>
+        /// Finds a test appointment by its ID.
+        /// </summary>
+        /// <param name="TestAppointmentID">The ID of the test appointment to find.</param>
+        /// <returns>A clsTestAppointment object if found, otherwise null.</returns>
         public static clsTestAppointment Find(int TestAppointmentID)
         {
             int TestTypeID = 1; int LocalDrivingLicenseApplicationID = -1;
@@ -111,7 +133,12 @@ namespace Driving_License_Management_BusinessLogic
                 return null;
 
         }
-
+        /// <summary>
+        /// Retrieves the last test appointment for a specific local driving license application and test type.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <param name="TestTypeID">The type of test for which to retrieve the last appointment.</param>
+        /// <returns>The last test appointment if found, otherwise null.</returns>
         public static clsTestAppointment GetLastTestAppointment(int LocalDrivingLicenseApplicationID, clsTestType.enTestType TestTypeID)
         {
             int TestAppointmentID = -1;
@@ -127,25 +154,39 @@ namespace Driving_License_Management_BusinessLogic
                 return null;
 
         }
-
+        /// <summary>
+        /// Retrieves all test appointments from the database.
+        /// </summary>
+        /// <returns>A DataTable containing the test appointments.</returns>
         public static DataTable GetAllTestAppointments()
         {
             return clsTestAppointmentData.GetAllTestAppointments();
 
         }
-
+        /// <summary>
+        /// Retrieves all test appointments for a specific local driving license application.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <returns>A DataTable containing the test appointments.</returns>
         public DataTable GetApplicationTestAppointmentsPerTestType(clsTestType.enTestType TestTypeID)
         {
             return clsTestAppointmentData.GetApplicationTestAppointmentsPerTestType(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
 
         }
-
+        /// <summary>
+        /// Retrieves all test appointments for a specific local driving license application.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <returns>A DataTable containing the test appointments.</returns>
         public static DataTable GetApplicationTestAppointmentsPerTestType(int LocalDrivingLicenseApplicationID, clsTestType.enTestType TestTypeID)
         {
             return clsTestAppointmentData.GetApplicationTestAppointmentsPerTestType(LocalDrivingLicenseApplicationID, (int)TestTypeID);
 
         }
-
+        /// <summary>
+        /// Saves the test appointment to the database.
+        /// </summary>
+        /// <returns>True if the test appointment was saved successfully, false otherwise.</returns>
         public bool Save()
         {
             switch (Mode)
@@ -170,7 +211,10 @@ namespace Driving_License_Management_BusinessLogic
 
             return false;
         }
-
+        /// <summary>
+        /// Retrieves the ID of the test associated with the test appointment.
+        /// </summary>
+        /// <returns>The ID of the test.</returns>
         private int _GetTestID()
         {
             return clsTestAppointmentData.GetTestID(TestAppointmentID);

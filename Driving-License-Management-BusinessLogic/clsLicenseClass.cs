@@ -19,7 +19,9 @@ namespace Driving_License_Management_BusinessLogic
         public byte MinimumAllowedAge { set; get; }
         public byte DefaultValidityLength { set; get; }
         public float ClassFees { set; get; }
-
+        /// <summary>
+        /// Initializes a new instance of the clsLicenseClass class, setting default values for its properties.
+        /// </summary>
         public clsLicenseClass() 
         {
             LicenseClassID = -1;
@@ -30,6 +32,15 @@ namespace Driving_License_Management_BusinessLogic
             ClassFees = 0;
             Mode = enMode.AddNew;
         }
+        /// <summary>
+        /// Initializes a new instance of the clsLicenseClass class with the provided parameters.
+        /// </summary>
+        /// <param name="LicenseClassID">The ID of the license class.</param>
+        /// <param name="ClassName">The name of the license class.</param>
+        /// <param name="ClassDescription">The description of the license class.</param>
+        /// <param name="MinimumAllowedAge">The minimum allowed age for the license class.</param>
+        /// <param name="DefaultValidityLength">The default validity length of the license class.</param>
+        /// <param name="ClassFees">The fees associated with the license class.</param>
         private clsLicenseClass(int LicenseClassID,string ClassName, string ClassDescription, byte MinimumAllowedAge, byte DefaultValidityLength, float ClassFees)
         {
             this.LicenseClassID = LicenseClassID;
@@ -40,17 +51,30 @@ namespace Driving_License_Management_BusinessLogic
             this.ClassFees = ClassFees;
             Mode = enMode.Update;
         }
+        /// <summary>
+        /// Adds a new license class to the database.
+        /// </summary>
+        /// <returns>True if the license class was added successfully, false otherwise.</returns>
         private bool _AddNewLicenseClass()
         {
             //call DataAccess Layer
             int AddedID = clsLicenseClassData.AddNewLicenseClass(this.ClassName, this.ClassDescription, this.MinimumAllowedAge, this.DefaultValidityLength, this.ClassFees);
             return (AddedID != -1);
         }
+        /// <summary>
+        /// Updates an existing license class in the database.
+        /// </summary>
+        /// <returns>True if the license class was updated successfully, false otherwise.</returns>
         private bool _UpdateLicenseClass()
         {
             //call DataAccess Layer
             return clsLicenseClassData.UpdateLicenseClass(this.LicenseClassID, this.ClassName, this.ClassDescription, this.MinimumAllowedAge, this.DefaultValidityLength, this.ClassFees);
         }
+        /// <summary>
+        /// Finds a license class by its ID.
+        /// </summary>
+        /// <param name="LicenseClassID">The ID of the license class to find.</param>
+        /// <returns>A clsLicenseClass object if found, otherwise null.</returns>
         public static clsLicenseClass Find(int LicenseClassID)
         {
             string ClassName = string.Empty;
@@ -67,6 +91,11 @@ namespace Driving_License_Management_BusinessLogic
                 return null;
             }
         }
+        /// <summary>
+        /// Finds a license class by its class name.
+        /// </summary>
+        /// <param name="ClassName">The name of the license class to find.</param>
+        /// <returns>A clsLicenseClass object if found, otherwise null.</returns>
         public static clsLicenseClass Find(string ClassName)
         {
             int LicenseClassID = -1;
@@ -83,10 +112,18 @@ namespace Driving_License_Management_BusinessLogic
                 return null;
             }
         }
+        /// <summary>
+        /// Retrieves all license classes from the database.
+        /// </summary>
+        /// <returns>A DataTable containing all license classes.</returns>
         public static DataTable GetAllLicenseClasses()
         {
             return clsLicenseClassData.GetAllLicenseClasses();
         }
+        /// <summary>
+        /// Saves the current license class to the database based on its current mode.
+        /// </summary>
+        /// <returns>True if the license class was saved successfully, false otherwise.</returns>
         public bool Save()
         {
             switch (Mode)

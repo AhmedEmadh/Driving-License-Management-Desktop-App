@@ -33,6 +33,9 @@ namespace Driving_License_Management_BusinessLogic
         public clsCountry CountryInfo { get; set; }
         private string _ImagePath;
         public string ImagePath { get { return _ImagePath; } set { _ImagePath = value; } }
+        /// <summary>
+        /// Initializes a new instance of the clsPerson class, setting all properties to their default values.
+        /// </summary>
         public clsPerson()
         {
             this.PersonID = -1;
@@ -52,6 +55,22 @@ namespace Driving_License_Management_BusinessLogic
             this.ImagePath = string.Empty;
 
         }
+        /// <summary>
+        /// Initializes a new instance of the clsPerson class with the specified ID, names, nationality, date of birth, gender, address, phone, email, and image path.
+        /// </summary>
+        /// <param name="PersonID">The unique identifier for the person.</param>
+        /// <param name="FirstName">The first name of the person.</param>
+        /// <param name="SecoundName">The second name of the person.</param>
+        /// <param name="ThirdName">The third name of the person.</param>
+        /// <param name="LastName">The last name of the person.</param>
+        /// <param name="NationalNo">The national number of the person.</param>
+        /// <param name="DateOfBirth">The date of birth of the person.</param>
+        /// <param name="Gendor">The gender of the person.</param>
+        /// <param name="Address">The address of the person.</param>
+        /// <param name="Phone">The phone number of the person.</param>
+        /// <param name="Email">The email address of the person.</param>
+        /// <param name="NationalityCountryID">The ID of the country of nationality.</param>
+        /// <param name="ImagePath">The path to the person's image.</param>
         private clsPerson(int PersonID, string FirstName, string SecoundName, string ThirdName, string LastName, string NationalNo, DateTime DateOfBirth, short Gendor, string Address, string Phone, string Email, int NationalityCountryID, string ImagePath)
         {
             this.PersonID = PersonID;
@@ -70,17 +89,30 @@ namespace Driving_License_Management_BusinessLogic
             CountryInfo = clsCountry.Find(this.NationalityCountryID);
             Mode = enMode.Update;
         }
+        /// <summary>
+        /// Adds a new person to the database.
+        /// </summary>
+        /// <returns>True if the person was added successfully, false otherwise.</returns>
         private bool _AddNewPerson()
         {
             //Call DataAccessLayer
             this.PersonID = clsPersonData.AddNewPerson(this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.NationalNo, this.DateOfBirth, this.Gendor, this.Address, this.Phone, this.Email, this.NationalityCountryID, this.ImagePath);
             return (this.PersonID != -1);
         }
+        /// <summary>
+        /// Updates an existing person in the database.
+        /// </summary>
+        /// <returns>True if the person was updated successfully, false otherwise.</returns>
         private bool _UpdatePerson()
         {
             //Call DataAccessLayer
             return clsPersonData.UpdatePerson(this.PersonID, this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.NationalNo, this.DateOfBirth, this.Gendor, this.Address, this.Phone, this.Email, this.NationalityCountryID, this.ImagePath);
         }
+        /// <summary>
+        /// Finds a person in the database by their ID.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person to find.</param>
+        /// <returns>A clsPerson object if found, otherwise null.</returns>
         public static clsPerson Find(int PersonID)
         {
             string FirstName = "", SecoundName = "", ThirdName = "", LastName = "", NationalNo = "", Address = "", Phone = "", Email = "", ImagePath = "";
@@ -98,6 +130,11 @@ namespace Driving_License_Management_BusinessLogic
                 return null;
             }
         }
+        /// <summary>
+        /// Finds a person in the database by their national number.
+        /// </summary>
+        /// <param name="NationalNo">The national number of the person to find.</param>
+        /// <returns>A clsPerson object if found, otherwise null.</returns>
         public static clsPerson Find(string NationalNo)
         {
             int PersonID = -1;
@@ -116,6 +153,10 @@ namespace Driving_License_Management_BusinessLogic
                 return null;
             }
         }
+        /// <summary>
+        /// Saves the person to the database.
+        /// </summary>
+        /// <returns>True if the person was saved successfully, false otherwise.</returns>
         public bool Save()
         {
             switch (Mode)
@@ -140,22 +181,45 @@ namespace Driving_License_Management_BusinessLogic
             }
             return false;
         }
+        /// <summary>
+        /// Retrieves all people from the database.
+        /// </summary>
+        /// <returns>A DataTable containing all people.</returns>
         public static DataTable GetAllPeople()
         {
             return clsPersonData.GetAllPeople();
         }
+        /// <summary>
+        /// Deletes a person from the database.
+        /// </summary>
+        /// <returns>True if the person was deleted successfully, false otherwise.</returns>
         public bool DeletePerson()
         {
             return clsPersonData.DeletePerson(this.PersonID);
         }
+        /// <summary>
+        /// Checks if a person exists in the database.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person to check.</param>
+        /// <returns>True if the person exists, false otherwise.</returns>
         public static bool IsPersonExist(int PersonID)
         {
             return clsPersonData.IsPersonExist(PersonID);
         }
+        /// <summary>
+        /// Checks if a person exists in the database.
+        /// </summary>
+        /// <param name="NationalNo">The national number of the person to check.</param>
+        /// <returns>True if the person exists, false otherwise.</returns>
         public static bool IsPersonExist(string NationalNo)
         {
             return clsPersonData.IsPersonExist(NationalNo);
         }
+        /// <summary>
+        /// Converts a Gendor value to a string.
+        /// </summary>
+        /// <param name="Gendor">The Gendor value to convert.</param>
+        /// <returns>A string representation of the Gendor value.</returns>
         public static string GendorToString(short Gendor)
         {
             if (Gendor == (short)enGendor.Male)

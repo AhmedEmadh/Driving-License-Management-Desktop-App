@@ -19,7 +19,9 @@ namespace Driving_License_Management_BusinessLogic
         public bool TestResult { set; get; }
         public string Notes { set; get; }
         public int CreatedByUserID { set; get; }
-
+        /// <summary>
+        /// Initializes a new instance of the clsTest class, setting all properties to their default values.
+        /// </summary>
         public clsTest()
 
         {
@@ -32,7 +34,15 @@ namespace Driving_License_Management_BusinessLogic
             Mode = enMode.AddNew;
 
         }
-
+        /// <summary>
+        /// Initializes a new instance of the clsTest class.
+        /// </summary>
+        /// <param name="TestID">The ID of the test.</param>
+        /// <param name="TestAppointmentID">The ID of the test appointment.</param>
+        /// <param name="TestResult">The result of the test.</param>
+        /// <param name="Notes">Any notes related to the test.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the test.</param>
+        /// <returns>A new instance of the clsTest class.</returns>
         public clsTest(int TestID, int TestAppointmentID,
             bool TestResult, string Notes, int CreatedByUserID)
 
@@ -46,7 +56,10 @@ namespace Driving_License_Management_BusinessLogic
 
             Mode = enMode.Update;
         }
-
+        /// <summary>
+        /// Adds a new test to the data storage.
+        /// </summary>
+        /// <returns>True if the test was added successfully, false otherwise.</returns>
         private bool _AddNewTest()
         {
             //call DataAccess Layer 
@@ -57,7 +70,10 @@ namespace Driving_License_Management_BusinessLogic
 
             return (this.TestID != -1);
         }
-
+        /// <summary>
+        /// Updates an existing test in the database.
+        /// </summary>
+        /// <returns>True if the test was updated successfully, false otherwise.</returns>
         private bool _UpdateTest()
         {
             //call DataAccess Layer 
@@ -65,7 +81,11 @@ namespace Driving_License_Management_BusinessLogic
             return clsTestData.UpdateTest(this.TestID, this.TestAppointmentID,
                 this.TestResult, this.Notes, this.CreatedByUserID);
         }
-
+        /// <summary>
+        /// Finds a test by its ID.
+        /// </summary>
+        /// <param name="TestID">The ID of the test to find.</param>
+        /// <returns>A clsTest object if found, otherwise null.</returns>
         public static clsTest Find(int TestID)
         {
             int TestAppointmentID = -1;
@@ -82,6 +102,11 @@ namespace Driving_License_Management_BusinessLogic
                 return null;
 
         }
+        /// <summary>
+        /// Finds a test by its test appointment ID.
+        /// </summary>
+        /// <param name="TestAppointmentID">The ID of the test appointment to find.</param>
+        /// <returns>A clsTest object if found, otherwise null.</returns>
         public static clsTest FindByTestAppointmentID(int TestAppointmentID)
         {
             int TestID = -1;
@@ -95,7 +120,12 @@ namespace Driving_License_Management_BusinessLogic
             else
                 return null;
         }
-
+        /// <summary>
+        /// Finds the last test taken by a person for a specific license class and test type.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person who took the test.</param>
+        /// <param name="LicenseClassID">The ID of the license class for which the test was taken.</param>
+        /// <param name="TestTypeID">The type of test that was taken.</
         public static clsTest FindLastTestPerPersonAndLicenseClass
             (int PersonID, int LicenseClassID, clsTestType.enTestType TestTypeID)
         {
@@ -115,13 +145,19 @@ namespace Driving_License_Management_BusinessLogic
                 return null;
 
         }
-
+        /// <summary>
+        /// Retrieves all tests from the database.
+        /// </summary>
+        /// <returns>A DataTable containing all tests.</returns>
         public static DataTable GetAllTests()
         {
             return clsTestData.GetAllTests();
 
         }
-
+        /// <summary>
+        /// Saves the current test to the database based on its current mode.
+        /// </summary>
+        /// <returns>True if the test was saved successfully, false otherwise.</returns>
         public bool Save()
         {
             switch (Mode)
@@ -146,12 +182,19 @@ namespace Driving_License_Management_BusinessLogic
 
             return false;
         }
-
+        /// <summary>
+        /// Retrieves the number of passed tests for a local driving license application.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <returns>The number of passed tests for the specified local driving license application.</returns>
         public static byte GetPassedTestCount(int LocalDrivingLicenseApplicationID)
         {
             return clsTestData.GetPassedTestCount(LocalDrivingLicenseApplicationID);
         }
-
+        /// <summary>
+        /// Checks if the local driving license application has passed all required tests.
+        /// </summary>
+        /// <returns>True if the application has passed all required tests, false otherwise.</returns>
         public static bool PassedAllTests(int LocalDrivingLicenseApplicationID)
         {
             //if total passed test less than 3 it will return false otherwise will return true

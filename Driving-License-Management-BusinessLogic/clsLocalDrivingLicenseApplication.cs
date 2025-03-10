@@ -22,6 +22,13 @@ namespace Driving_License_Management_BusinessLogic
                 return clsPerson.Find(ApplicantPersonID).FullName;
             }
         }
+        /// <summary>
+        /// Initializes a new instance of the clsLocalDrivingLicenseApplication class.
+        /// </summary>
+        /// <remarks>
+        /// This constructor sets the LocalDrivingLicenseApplicationID and LicenseClassID to -1, 
+        /// LicenseClassInfo to null, and Mode to enMode.AddNew.
+        /// </remarks>
         public clsLocalDrivingLicenseApplication()
         {
             this.LocalDrivingLicenseApplicationID = -1;
@@ -29,6 +36,19 @@ namespace Driving_License_Management_BusinessLogic
             LicenseClassInfo = null;
             Mode = enMode.AddNew;
         }
+        /// <summary>
+        /// Initializes a new instance of the clsLocalDrivingLicenseApplication class.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <param name="ApplicationID">The ID of the application.</param>
+        /// <param name="ApplicantPersonID">The ID of the applicant person.</param>
+        /// <param name="ApplicationDate">The date of the application.</param>
+        /// <param name="ApplicationTypeID">The type ID of the application.</param>
+        /// <param name="ApplicationStatus">The status of the application.</param>
+        /// <param name="LastStatusDate">The date of the last status update.</param>
+        /// <param name="PaidFees">The paid fees for the application.</param>
+        /// <param name="CreatedByUsereID">The ID of the user who created the application.</param>
+        /// <param name="LicenseClassID">The ID of the license class.</param>
         private clsLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID, int ApplicationID, int ApplicantPersonID,
             DateTime ApplicationDate, int ApplicationTypeID,
             enApplicationStatus ApplicationStatus, DateTime LastStatusDate,
@@ -40,12 +60,20 @@ namespace Driving_License_Management_BusinessLogic
             this.Mode = enMode.Update;
         }
 
+        /// <summary>
+        /// Adds a new local driving license application to the database.
+        /// </summary>
+        /// <returns>True if the application was added successfully, false otherwise.</returns>
         private bool _AddNewLocalDrivingLicenseApplication()
         {
             this.LocalDrivingLicenseApplicationID = clsLocalDrivingLicenseApplicationData.AddNewLocalDrivingLicenseApplication
                 (this.ApplicationID, this.LicenseClassID);
             return (this.LocalDrivingLicenseApplicationID != -1);
         }
+        /// <summary>
+        /// Updates an existing local driving license application in the database.
+        /// </summary>
+        /// <returns>True if the local driving license application was updated successfully, false otherwise.</returns>
         private bool _UpdateLocalDrivingLicenseApplication()
         {
             return clsLocalDrivingLicenseApplicationData.UpdateLocalDrivingLicenseApplication
@@ -54,6 +82,11 @@ namespace Driving_License_Management_BusinessLogic
                 );
 
         }
+        /// <summary>
+        /// Finds a local driving license application by its ID.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application to find.</param>
+        /// <returns>A clsLocalDrivingLicenseApplication object if found, otherwise null.</returns>
         public static clsLocalDrivingLicenseApplication FindByLocalDrivingAppLicenseID(int LocalDrivingLicenseApplicationID)
         {
             int ApplicationID = -1, LicenseClassID = -1;
@@ -76,6 +109,11 @@ namespace Driving_License_Management_BusinessLogic
                 return null;
             }
         }
+        /// <summary>
+        /// Finds a local driving license application by its associated application ID.
+        /// </summary>
+        /// <param name="ApplicationID">The ID of the application to find.</param>
+        /// <returns>A clsLocalDrivingLicenseApplication object if found, otherwise null.</returns>
         public static clsLocalDrivingLicenseApplication FindByApplicationID(int ApplicationID)
         {
             int LocalDrivingLicenseApplicationID = -1, LicenseClassID = -1;
@@ -101,7 +139,11 @@ namespace Driving_License_Management_BusinessLogic
                 return null;
 
         }
-        public bool Save()
+        /// <summary>
+        /// Saves the local driving license application to the database.
+        /// </summary>
+        /// <returns>True if the application was saved successfully, false otherwise.</returns>
+        public new bool Save()
         {
             base.Mode = (clsApplication.enMode)Mode;
             if (!base.Save())
@@ -124,11 +166,19 @@ namespace Driving_License_Management_BusinessLogic
                     return false;
             }
         }
+        /// <summary>
+        /// Retrieves all local driving license applications from the database.
+        /// </summary>
+        /// <returns>A DataTable containing all local driving license applications.</returns>
         public static DataTable GetAllLocalDrivingLicenseApplications()
         {
             return clsLocalDrivingLicenseApplicationData.GetAllLocalDrivingLicenseApplications();
         }
-        public bool Delete()
+        /// <summary>
+        /// Deletes the local driving license application and its base application.
+        /// </summary>
+        /// <returns>True if both the local driving license application and its base application were deleted successfully, false otherwise.</returns>
+        public new bool Delete()
         {
             bool IsLocalDrivingApplicationDeleted = false;
             bool IsBaseApplicationDeleted = false;
@@ -140,12 +190,21 @@ namespace Driving_License_Management_BusinessLogic
             IsBaseApplicationDeleted = base.Delete();
             return IsBaseApplicationDeleted;
         }
+        /// <summary>
+        /// Checks if the local driving license application has passed a specific test type.
+        /// </summary>
+        /// <param name="TestTypeID">The type of test to check.</param>
+        /// <returns>True if the test has been passed, false otherwise.</returns>
         public bool DoesPassTestType(clsTestType.enTestType TestTypeID)
 
         {
             return clsLocalDrivingLicenseApplicationData.DoesPassTestType(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
-
+        /// <summary>
+        /// Checks if the applicant has passed the required previous test for the given test type.
+        /// </summary>
+        /// <param name="CurrentTestType">The type of test to check for previous test requirements.</param>
+        /// <returns>True if the applicant has passed the required previous test, false otherwise.</returns>
         public bool DoesPassPreviousTest(clsTestType.enTestType CurrentTestType)
         {
 
@@ -172,82 +231,143 @@ namespace Driving_License_Management_BusinessLogic
                     return false;
             }
         }
-
+        /// <summary>
+        /// Checks if a local driving license application has passed a specific test type.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <param name="TestTypeID">The type of test to check.</param>
+        /// <returns>True if the application has passed the test, false otherwise.</returns>
         public static bool DoesPassTestType(int LocalDrivingLicenseApplicationID, clsTestType.enTestType TestTypeID)
 
         {
             return clsLocalDrivingLicenseApplicationData.DoesPassTestType(LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
-
+        /// <summary>
+        /// Checks if the applicant has attended a specific test type.
+        /// </summary>
+        /// <param name="TestTypeID">The type of test to check.</param>
+        /// <returns>True if the applicant has attended the test, false otherwise.</returns>
         public bool DoesAttendTestType(clsTestType.enTestType TestTypeID)
 
         {
             return clsLocalDrivingLicenseApplicationData.DoesAttendTestType(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
-
+        /// <summary>
+        /// Retrieves the total number of trials for a specific test type.
+        /// </summary>
+        /// <param name="TestTypeID">The type of test.</param>
+        /// <returns>The total number of trials for the specified test type.</returns>
         public byte TotalTrialsPerTest(clsTestType.enTestType TestTypeID)
         {
             return clsLocalDrivingLicenseApplicationData.TotalTrialsPerTest(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
-
+        /// <summary>
+        /// Returns the total number of trials for a specific test type.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <param name="TestTypeID">The type of test.</param>
+        /// <returns>The total number of trials for the specified test type.</returns>
         public static byte TotalTrialsPerTest(int LocalDrivingLicenseApplicationID, clsTestType.enTestType TestTypeID)
 
         {
             return clsLocalDrivingLicenseApplicationData.TotalTrialsPerTest(LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
-
+        /// <summary>
+        /// Checks if a driving license applicant has attended a specific test.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the driving license application.</param>
+        /// <param name="TestTypeID">The type of test to check for attendance.</param>
+        /// <returns>True if the applicant has attended the test, false otherwise.</returns>
         public static bool AttendedTest(int LocalDrivingLicenseApplicationID, clsTestType.enTestType TestTypeID)
 
         {
             return clsLocalDrivingLicenseApplicationData.TotalTrialsPerTest(LocalDrivingLicenseApplicationID, (int)TestTypeID) > 0;
         }
-
+        /// <summary>
+        /// Checks if the applicant has attended a test of the specified type.
+        /// </summary>
+        /// <param name="TestTypeID">The type of test to check for attendance.</param>
+        /// <returns>True if the applicant has attended the test, false otherwise.</returns>
         public bool AttendedTest(clsTestType.enTestType TestTypeID)
 
         {
             return clsLocalDrivingLicenseApplicationData.TotalTrialsPerTest(this.LocalDrivingLicenseApplicationID, (int)TestTypeID) > 0;
         }
-
+        /// <summary>
+        /// Checks if there is an active scheduled test for the given LocalDrivingLicenseApplicationID and TestTypeID.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <param name="TestTypeID">The type of test.</param>
+        /// <returns>True if there is an active scheduled test, false otherwise.</returns>
         public static bool IsThereAnActiveScheduledTest(int LocalDrivingLicenseApplicationID, clsTestType.enTestType TestTypeID)
 
         {
 
             return clsLocalDrivingLicenseApplicationData.IsThereAnActiveScheduledTest(LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
-
+        /// <summary>
+        /// Checks if there is an active scheduled test for the given test type.
+        /// </summary>
+        /// <param name="TestTypeID">The type of test to check for active scheduled tests.</param>
+        /// <returns>True if there is an active scheduled test, false otherwise.</returns>
         public bool IsThereAnActiveScheduledTest(clsTestType.enTestType TestTypeID)
 
         {
 
             return clsLocalDrivingLicenseApplicationData.IsThereAnActiveScheduledTest(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
-
+        /// <summary>
+        /// Retrieves the last test taken by the applicant for the specified test type.
+        /// </summary>
+        /// <param name="TestTypeID">The type of test to retrieve the last test for.</param>
+        /// <returns>The last test taken by the applicant for the specified test type, or null if no test is found.</returns>
         public clsTest GetLastTestPerTestType(clsTestType.enTestType TestTypeID)
         {
             return clsTest.FindLastTestPerPersonAndLicenseClass(this.ApplicantPersonID, this.LicenseClassID, TestTypeID);
         }
-
+        /// <summary>
+        /// Returns the number of passed tests for the current local driving license application.
+        /// </summary>
+        /// <returns>byte: The number of passed tests.</returns>
         public byte GetPassedTestCount()
         {
             return clsTest.GetPassedTestCount(this.LocalDrivingLicenseApplicationID);
         }
-
+        /// <summary>
+        /// Returns the number of passed tests for a local driving license application.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <returns>The number of passed tests for the specified local driving license application.</returns>
         public static byte GetPassedTestCount(int LocalDrivingLicenseApplicationID)
         {
             return clsTest.GetPassedTestCount(LocalDrivingLicenseApplicationID);
         }
-
+        /// <summary>
+        /// Checks if the local driving license application has passed all required tests.
+        /// </summary>
+        /// <returns>True if the application has passed all required tests, false otherwise.</returns>
         public bool PassedAllTests()
         {
             return clsTest.PassedAllTests(this.LocalDrivingLicenseApplicationID);
         }
-
+        /// <summary>
+        /// Checks if all tests have been passed for the given local driving license application.
+        /// </summary>
+        /// <param name="LocalDrivingLicenseApplicationID">The ID of the local driving license application.</param>
+        /// <returns>True if all tests have been passed, false otherwise.</returns>
         public static bool PassedAllTests(int LocalDrivingLicenseApplicationID)
         {
             //if total passed test less than 3 it will return false otherwise will return true
             return clsTest.PassedAllTests(LocalDrivingLicenseApplicationID);
         }
-
+        /// <summary>
+        /// Issues a driving license for the first time. This method checks if a driver record exists for the applicant, 
+        /// creates a new driver record if necessary, and then creates a new license record. 
+        /// It returns the ID of the newly issued license if successful, or -1 if an error occurs.
+        /// </summary>
+        /// <param name="Notes">Additional notes for the license issuance.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the license.</param>
+        /// <returns>The ID of the newly issued license, or -1 if an error occurs.</returns>
         public int IssueLicenseForTheFirstTime(string Notes, int CreatedByUserID)
         {
             int DriverID = -1;
@@ -299,12 +419,18 @@ namespace Driving_License_Management_BusinessLogic
             else
                 return -1;
         }
-
+        /// <summary>
+        /// Checks if a license has been issued for the current application.
+        /// </summary>
+        /// <returns>True if a license has been issued, false otherwise.</returns>
         public bool IsLicenseIssued()
         {
             return (GetActiveLicenseID() != -1);
         }
-
+        /// <summary>
+        /// Retrieves the active license ID associated with the current application.
+        /// </summary>
+        /// <returns>The active license ID if found, otherwise a default value.</returns>
         public int GetActiveLicenseID()
         {//this will get the license id that belongs to this application
             return clsLicense.GetActiveLicenseIDByPersonID(this.ApplicantPersonID, this.LicenseClassID);
