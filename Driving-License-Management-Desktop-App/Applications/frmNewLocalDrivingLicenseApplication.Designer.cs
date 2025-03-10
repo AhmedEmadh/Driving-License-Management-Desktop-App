@@ -91,7 +91,7 @@
             this.ctlPersonInformationWithFilter1.Name = "ctlPersonInformationWithFilter1";
             this.ctlPersonInformationWithFilter1.PersonID = -1;
             this.ctlPersonInformationWithFilter1.SearchText = "";
-            this.ctlPersonInformationWithFilter1.SelectedIndex = -1;
+            this.ctlPersonInformationWithFilter1.SelectedIndex = 0;
             this.ctlPersonInformationWithFilter1.ShowAddPersonButton = false;
             this.ctlPersonInformationWithFilter1.Size = new System.Drawing.Size(665, 293);
             this.ctlPersonInformationWithFilter1.TabIndex = 0;
@@ -252,7 +252,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmNewLocalDrivingLicenseApplication";
-            this.Text = "frmNewLocalDrivingLicenseApplication";
+            this.Text = "New Local Driving License Application";
             this.Load += new System.EventHandler(this.frmNewLocalDrivingLicenseApplication_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

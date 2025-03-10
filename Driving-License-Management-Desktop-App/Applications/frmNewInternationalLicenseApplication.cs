@@ -17,11 +17,16 @@ namespace Driving_License_Management_Desktop_App
     {
         clsLicense _License;
         int _InternationalLicenseID;
+        int _LocalDrivingLicenseID = -1;
         public frmNewInternationalLicenseApplication()
         {
             InitializeComponent();
         }
-
+        public frmNewInternationalLicenseApplication(int LocalDrivingLicenseID)
+        {
+            InitializeComponent();
+            _LocalDrivingLicenseID = LocalDrivingLicenseID;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -40,7 +45,13 @@ namespace Driving_License_Management_Desktop_App
 
         private void ctlDriverLicenseInfoWithFilter1_Load(object sender, EventArgs e)
         {
+            if(_LocalDrivingLicenseID != -1)
+            {
+                ctlDriverLicenseInfoWithFilter1.FilterText = _LocalDrivingLicenseID.ToString();
+                ctlDriverLicenseInfoWithFilter1.LicenseID = _LocalDrivingLicenseID;
+                ctlDriverLicenseInfoWithFilter1.FilterEnabled = false;
 
+            }
         }
 
         private void ctlDriverLicenseInfoWithFilter1_OnLicenseSelected(object obj)

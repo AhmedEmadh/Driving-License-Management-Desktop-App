@@ -141,7 +141,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvApplicationTypes);
             this.Name = "frmManageApplicationTypes";
-            this.Text = "frmManageApplicationTypes";
+            this.Text = "Manage Application Types";
             this.Load += new System.EventHandler(this.frmManageApplicationTypes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvApplicationTypes)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

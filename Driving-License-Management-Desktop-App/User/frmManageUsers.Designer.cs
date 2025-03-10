@@ -151,7 +151,7 @@
             // 
             // tbFilter
             // 
-            this.tbFilter.Location = new System.Drawing.Point(201, 168);
+            this.tbFilter.Location = new System.Drawing.Point(204, 168);
             this.tbFilter.Name = "tbFilter";
             this.tbFilter.Size = new System.Drawing.Size(172, 22);
             this.tbFilter.TabIndex = 39;
@@ -170,7 +170,7 @@
             "PersonID",
             "Full Name",
             "Is Active"});
-            this.cbFilterBy.Location = new System.Drawing.Point(73, 167);
+            this.cbFilterBy.Location = new System.Drawing.Point(76, 167);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(121, 24);
             this.cbFilterBy.TabIndex = 38;
@@ -179,7 +179,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 170);
+            this.label4.Location = new System.Drawing.Point(12, 170);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 16);
             this.label4.TabIndex = 37;
@@ -216,7 +216,7 @@
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(1195, 676);
+            this.btnClose.Location = new System.Drawing.Point(1109, 674);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(94, 37);
             this.btnClose.TabIndex = 33;
@@ -249,7 +249,7 @@
             "All",
             "Yes",
             "No"});
-            this.cbFilter.Location = new System.Drawing.Point(201, 167);
+            this.cbFilter.Location = new System.Drawing.Point(204, 167);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(149, 24);
             this.cbFilter.TabIndex = 42;
@@ -261,7 +261,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(1217, 740);
+            this.ClientSize = new System.Drawing.Size(1217, 717);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTitle);
@@ -274,7 +274,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvUsers);
             this.Name = "frmManageUsers";
-            this.Text = "frmManageUsers";
+            this.Text = "Manage Users";
             this.Load += new System.EventHandler(this.frmManageUsers_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

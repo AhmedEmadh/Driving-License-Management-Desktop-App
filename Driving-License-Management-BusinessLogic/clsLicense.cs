@@ -195,7 +195,7 @@ namespace Driving_License_Management_BusinessLogic
         /// </summary>
         /// <param name="PersonID">The ID of the person.</param>
         /// <param name="LicenseClassID">The ID of the license class.</param>
-        /// <returns>The active license ID if found, otherwise a default value.</returns>
+        /// <returns>The active license ID if found, otherwise -1</returns>
         public static int GetActiveLicenseIDByPersonID(int PersonID, int LicenseClassID)
         {
             return clsLicenseData.GetActiveLicenseIDByPersonID(PersonID, LicenseClassID);

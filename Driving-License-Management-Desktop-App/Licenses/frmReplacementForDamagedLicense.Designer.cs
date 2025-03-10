@@ -251,6 +251,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Location = new System.Drawing.Point(683, 460);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(92, 33);
@@ -263,6 +264,7 @@
             // 
             this.ctlDriverLicenseInfoWithFilter1.BackColor = System.Drawing.Color.White;
             this.ctlDriverLicenseInfoWithFilter1.FilterEnabled = true;
+            this.ctlDriverLicenseInfoWithFilter1.FilterText = "";
             this.ctlDriverLicenseInfoWithFilter1.License = null;
             this.ctlDriverLicenseInfoWithFilter1.LicenseID = -1;
             this.ctlDriverLicenseInfoWithFilter1.Location = new System.Drawing.Point(12, 14);
@@ -287,7 +289,7 @@
             this.Controls.Add(this.llblShowLicenseHistory);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmReplacementForDamagedLicense";
-            this.Text = "frmReplacementForDamagedLicense";
+            this.Text = "Replacement For Damaged License";
             this.Load += new System.EventHandler(this.frmReplacementForDamagedLicense_Load);
             this.gbReplacementFor.ResumeLayout(false);
             this.gbReplacementFor.PerformLayout();

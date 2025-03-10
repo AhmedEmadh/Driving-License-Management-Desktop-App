@@ -117,6 +117,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Location = new System.Drawing.Point(198, 166);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 37);
@@ -142,7 +143,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmUpdateApplicationType";
-            this.Text = "frmUpdateApplicationType";
+            this.Text = "Update Application Type";
             this.Load += new System.EventHandler(this.frmUpdateApplicationType_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

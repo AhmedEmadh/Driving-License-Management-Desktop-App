@@ -104,7 +104,7 @@
             this.Controls.Add(this.ctlApplicationBasicInfo1);
             this.Controls.Add(this.ctlDrivingLicenseApplicationInfo1);
             this.Name = "frmIssueDrivingLicense";
-            this.Text = "frmIssueDrivingLicense";
+            this.Text = "Issue Driving License";
             this.Load += new System.EventHandler(this.frmIssueDrivingLicense_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

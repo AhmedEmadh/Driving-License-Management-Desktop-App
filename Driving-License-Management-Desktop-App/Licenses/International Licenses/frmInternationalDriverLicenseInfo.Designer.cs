@@ -75,7 +75,7 @@
             this.Controls.Add(this.ctlInternationalDrivingLicenseInfo1);
             this.Controls.Add(this.btnClose);
             this.Name = "frmInternationalDriverLicenseInfo";
-            this.Text = "frmInternationalDriverLicenseInfo";
+            this.Text = "International Driver License Info";
             this.Load += new System.EventHandler(this.frmInternationalDriverLicenseInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

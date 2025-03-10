@@ -70,6 +70,7 @@
             // 
             this.ctlDriverLicenseInfoWithFilter1.BackColor = System.Drawing.Color.White;
             this.ctlDriverLicenseInfoWithFilter1.FilterEnabled = true;
+            this.ctlDriverLicenseInfoWithFilter1.FilterText = "";
             this.ctlDriverLicenseInfoWithFilter1.License = null;
             this.ctlDriverLicenseInfoWithFilter1.LicenseID = -1;
             this.ctlDriverLicenseInfoWithFilter1.Location = new System.Drawing.Point(17, 49);
@@ -103,7 +104,7 @@
             this.Controls.Add(this.ctlApplicationNewLicenseInfo1);
             this.Controls.Add(this.label1);
             this.Name = "frmRenewDrivingLicense";
-            this.Text = "frmRenewDrivingLicense";
+            this.Text = "Renew Driving License";
             this.Load += new System.EventHandler(this.frmRenewDrivingLicense_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

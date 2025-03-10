@@ -39,7 +39,7 @@
             this.ctlPersonInformation1.Name = "ctlPersonInformation1";
             this.ctlPersonInformation1.PersonID = -1;
             this.ctlPersonInformation1.PersonNationalNo = "";
-            this.ctlPersonInformation1.Size = new System.Drawing.Size(725, 240);
+            this.ctlPersonInformation1.Size = new System.Drawing.Size(640, 210);
             this.ctlPersonInformation1.TabIndex = 0;
             // 
             // btnHiddenClose

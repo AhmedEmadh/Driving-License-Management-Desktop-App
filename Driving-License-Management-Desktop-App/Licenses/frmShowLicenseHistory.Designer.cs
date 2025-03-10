@@ -109,7 +109,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmShowLicenseHistory";
-            this.Text = "frmShowLicenseHistory";
+            this.Text = "Show License History";
             this.Load += new System.EventHandler(this.frmShowLicenseHistory_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);

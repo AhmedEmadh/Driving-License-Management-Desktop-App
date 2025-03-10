@@ -65,7 +65,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLocalDrivingLicenseApplicationInfo";
-            this.Text = "frmLocalDrivingLicenseApplicationInfo";
+            this.Text = "Local Driving License Application Info";
             this.Load += new System.EventHandler(this.frmLocalDrivingLicenseApplicationInfo_Load);
             this.ResumeLayout(false);
 

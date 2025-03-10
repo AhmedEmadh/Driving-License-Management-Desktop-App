@@ -37,6 +37,7 @@ namespace Driving_License_Management_Desktop_App
         }
         private void frmManageDetainedLicences_Load(object sender, EventArgs e)
         {
+            cbFilterBy.SelectedIndex = 0;
             _ReloadData();
         }
 

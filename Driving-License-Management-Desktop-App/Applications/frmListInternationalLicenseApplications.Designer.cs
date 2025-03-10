@@ -211,7 +211,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvDrivers);
             this.Name = "frmListInternationalLicenseApplications";
-            this.Text = "frmListInternationalLicenseApplications";
+            this.Text = "List International License Applications";
             this.Load += new System.EventHandler(this.frmListInternationalLicenseApplications_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -275,8 +275,7 @@ Status
                 if (TotalPassedTests == 3)
                     issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = true;
             }
-
-
+            
         }
 
         private void scheduleWrittenTestToolStripMenuItem_Click(object sender, EventArgs e)

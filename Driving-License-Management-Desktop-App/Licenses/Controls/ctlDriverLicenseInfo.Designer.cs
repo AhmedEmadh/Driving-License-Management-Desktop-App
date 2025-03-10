@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pbPicture = new System.Windows.Forms.PictureBox();
             this.lblIsDetained = new System.Windows.Forms.Label();
             this.lblExpirationDate = new System.Windows.Forms.Label();
             this.lblDriverID = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pbPicture = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.SuspendLayout();
@@ -96,10 +96,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Driver License Info";
             // 
+            // pbPicture
+            // 
+            this.pbPicture.Location = new System.Drawing.Point(563, 27);
+            this.pbPicture.Name = "pbPicture";
+            this.pbPicture.Size = new System.Drawing.Size(167, 172);
+            this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPicture.TabIndex = 26;
+            this.pbPicture.TabStop = false;
+            // 
             // lblIsDetained
             // 
             this.lblIsDetained.AutoSize = true;
-            this.lblIsDetained.Location = new System.Drawing.Point(379, 183);
+            this.lblIsDetained.Location = new System.Drawing.Point(356, 183);
             this.lblIsDetained.Name = "lblIsDetained";
             this.lblIsDetained.Size = new System.Drawing.Size(28, 16);
             this.lblIsDetained.TabIndex = 25;
@@ -108,7 +117,7 @@
             // lblExpirationDate
             // 
             this.lblExpirationDate.AutoSize = true;
-            this.lblExpirationDate.Location = new System.Drawing.Point(379, 158);
+            this.lblExpirationDate.Location = new System.Drawing.Point(377, 158);
             this.lblExpirationDate.Name = "lblExpirationDate";
             this.lblExpirationDate.Size = new System.Drawing.Size(28, 16);
             this.lblExpirationDate.TabIndex = 24;
@@ -117,7 +126,7 @@
             // lblDriverID
             // 
             this.lblDriverID.AutoSize = true;
-            this.lblDriverID.Location = new System.Drawing.Point(379, 130);
+            this.lblDriverID.Location = new System.Drawing.Point(336, 130);
             this.lblDriverID.Name = "lblDriverID";
             this.lblDriverID.Size = new System.Drawing.Size(28, 16);
             this.lblDriverID.TabIndex = 23;
@@ -126,7 +135,7 @@
             // lblDateOfBirth
             // 
             this.lblDateOfBirth.AutoSize = true;
-            this.lblDateOfBirth.Location = new System.Drawing.Point(379, 102);
+            this.lblDateOfBirth.Location = new System.Drawing.Point(358, 102);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
             this.lblDateOfBirth.Size = new System.Drawing.Size(28, 16);
             this.lblDateOfBirth.TabIndex = 22;
@@ -135,7 +144,7 @@
             // lblIsActive
             // 
             this.lblIsActive.AutoSize = true;
-            this.lblIsActive.Location = new System.Drawing.Point(379, 74);
+            this.lblIsActive.Location = new System.Drawing.Point(338, 74);
             this.lblIsActive.Name = "lblIsActive";
             this.lblIsActive.Size = new System.Drawing.Size(28, 16);
             this.lblIsActive.TabIndex = 21;
@@ -144,7 +153,7 @@
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(108, 208);
+            this.lblNotes.Location = new System.Drawing.Point(61, 208);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(28, 16);
             this.lblNotes.TabIndex = 20;
@@ -162,7 +171,7 @@
             // lblIssueDate
             // 
             this.lblIssueDate.AutoSize = true;
-            this.lblIssueDate.Location = new System.Drawing.Point(108, 158);
+            this.lblIssueDate.Location = new System.Drawing.Point(89, 158);
             this.lblIssueDate.Name = "lblIssueDate";
             this.lblIssueDate.Size = new System.Drawing.Size(28, 16);
             this.lblIssueDate.TabIndex = 18;
@@ -171,7 +180,7 @@
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(108, 130);
+            this.lblGender.Location = new System.Drawing.Point(70, 130);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(28, 16);
             this.lblGender.TabIndex = 17;
@@ -180,7 +189,7 @@
             // lblNationalNo
             // 
             this.lblNationalNo.AutoSize = true;
-            this.lblNationalNo.Location = new System.Drawing.Point(108, 102);
+            this.lblNationalNo.Location = new System.Drawing.Point(96, 102);
             this.lblNationalNo.Name = "lblNationalNo";
             this.lblNationalNo.Size = new System.Drawing.Size(28, 16);
             this.lblNationalNo.TabIndex = 16;
@@ -189,7 +198,7 @@
             // lblLicenseID
             // 
             this.lblLicenseID.AutoSize = true;
-            this.lblLicenseID.Location = new System.Drawing.Point(108, 74);
+            this.lblLicenseID.Location = new System.Drawing.Point(88, 74);
             this.lblLicenseID.Name = "lblLicenseID";
             this.lblLicenseID.Size = new System.Drawing.Size(28, 16);
             this.lblLicenseID.TabIndex = 15;
@@ -198,7 +207,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(108, 48);
+            this.lblName.Location = new System.Drawing.Point(62, 48);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(28, 16);
             this.lblName.TabIndex = 14;
@@ -207,7 +216,7 @@
             // lblClass
             // 
             this.lblClass.AutoSize = true;
-            this.lblClass.Location = new System.Drawing.Point(108, 22);
+            this.lblClass.Location = new System.Drawing.Point(59, 24);
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(28, 16);
             this.lblClass.TabIndex = 13;
@@ -329,15 +338,6 @@
             this.label3.Size = new System.Drawing.Size(44, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Class:";
-            // 
-            // pbPicture
-            // 
-            this.pbPicture.Location = new System.Drawing.Point(563, 27);
-            this.pbPicture.Name = "pbPicture";
-            this.pbPicture.Size = new System.Drawing.Size(167, 172);
-            this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbPicture.TabIndex = 26;
-            this.pbPicture.TabStop = false;
             // 
             // ctlDriverLicenseInfo
             // 

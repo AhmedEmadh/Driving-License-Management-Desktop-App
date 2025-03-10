@@ -238,6 +238,7 @@
             // 
             this.ctlDriverLicenseInfoWithFilter1.BackColor = System.Drawing.Color.White;
             this.ctlDriverLicenseInfoWithFilter1.FilterEnabled = true;
+            this.ctlDriverLicenseInfoWithFilter1.FilterText = "";
             this.ctlDriverLicenseInfoWithFilter1.License = null;
             this.ctlDriverLicenseInfoWithFilter1.LicenseID = -1;
             this.ctlDriverLicenseInfoWithFilter1.Location = new System.Drawing.Point(13, 57);
@@ -307,7 +308,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnRelease);
             this.Name = "frmReleaseDetainedLicense";
-            this.Text = "frmReleaseDetainedLicense";
+            this.Text = "Release Detained License";
             this.Load += new System.EventHandler(this.frmReleaseDetainedLicense_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

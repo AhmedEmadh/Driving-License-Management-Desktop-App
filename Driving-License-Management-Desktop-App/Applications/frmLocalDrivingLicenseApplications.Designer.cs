@@ -81,7 +81,7 @@
             this.toolStripMenuItem6,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(335, 292);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(335, 264);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // showApplicationDetailsToolStripMenuItem
@@ -325,7 +325,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvLocalDrivingLicenseApplications);
             this.Name = "frmLocalDrivingLicenseApplications";
-            this.Text = "frmLocalDrivingLicenseApplications";
+            this.Text = "Local Driving License Applications";
             this.Load += new System.EventHandler(this.frmLocalDrivingLicenseApplications_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalDrivingLicenseApplications)).EndInit();

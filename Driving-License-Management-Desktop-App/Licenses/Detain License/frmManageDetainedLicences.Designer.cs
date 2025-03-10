@@ -61,7 +61,7 @@
             this.toolStripMenuItem1,
             this.releaseDetainedLicenseToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(296, 150);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(296, 122);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // showPersonDetailsToolStripMenuItem
@@ -236,7 +236,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvDetainedLicenses);
             this.Name = "frmManageDetainedLicences";
-            this.Text = "frmManageDetainedLicences";
+            this.Text = "Manage Detained Licences";
             this.Load += new System.EventHandler(this.frmManageDetainedLicences_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

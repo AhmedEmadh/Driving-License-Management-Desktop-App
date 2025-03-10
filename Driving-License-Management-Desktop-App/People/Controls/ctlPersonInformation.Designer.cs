@@ -57,7 +57,7 @@
             // lblCPersonID
             // 
             this.lblCPersonID.AutoSize = true;
-            this.lblCPersonID.Location = new System.Drawing.Point(45, 46);
+            this.lblCPersonID.Location = new System.Drawing.Point(18, 30);
             this.lblCPersonID.Name = "lblCPersonID";
             this.lblCPersonID.Size = new System.Drawing.Size(69, 16);
             this.lblCPersonID.TabIndex = 0;
@@ -66,7 +66,7 @@
             // lblCName
             // 
             this.lblCName.AutoSize = true;
-            this.lblCName.Location = new System.Drawing.Point(45, 73);
+            this.lblCName.Location = new System.Drawing.Point(18, 57);
             this.lblCName.Name = "lblCName";
             this.lblCName.Size = new System.Drawing.Size(47, 16);
             this.lblCName.TabIndex = 1;
@@ -75,7 +75,7 @@
             // lblCNationalNo
             // 
             this.lblCNationalNo.AutoSize = true;
-            this.lblCNationalNo.Location = new System.Drawing.Point(45, 99);
+            this.lblCNationalNo.Location = new System.Drawing.Point(18, 83);
             this.lblCNationalNo.Name = "lblCNationalNo";
             this.lblCNationalNo.Size = new System.Drawing.Size(81, 16);
             this.lblCNationalNo.TabIndex = 2;
@@ -84,7 +84,7 @@
             // lblCGender
             // 
             this.lblCGender.AutoSize = true;
-            this.lblCGender.Location = new System.Drawing.Point(45, 124);
+            this.lblCGender.Location = new System.Drawing.Point(18, 108);
             this.lblCGender.Name = "lblCGender";
             this.lblCGender.Size = new System.Drawing.Size(55, 16);
             this.lblCGender.TabIndex = 3;
@@ -93,7 +93,7 @@
             // lblCEmail
             // 
             this.lblCEmail.AutoSize = true;
-            this.lblCEmail.Location = new System.Drawing.Point(45, 149);
+            this.lblCEmail.Location = new System.Drawing.Point(18, 133);
             this.lblCEmail.Name = "lblCEmail";
             this.lblCEmail.Size = new System.Drawing.Size(44, 16);
             this.lblCEmail.TabIndex = 4;
@@ -102,7 +102,7 @@
             // lblCAddress
             // 
             this.lblCAddress.AutoSize = true;
-            this.lblCAddress.Location = new System.Drawing.Point(45, 175);
+            this.lblCAddress.Location = new System.Drawing.Point(18, 159);
             this.lblCAddress.Name = "lblCAddress";
             this.lblCAddress.Size = new System.Drawing.Size(61, 16);
             this.lblCAddress.TabIndex = 5;
@@ -111,7 +111,7 @@
             // lblCDateOfBirth
             // 
             this.lblCDateOfBirth.AutoSize = true;
-            this.lblCDateOfBirth.Location = new System.Drawing.Point(268, 99);
+            this.lblCDateOfBirth.Location = new System.Drawing.Point(241, 109);
             this.lblCDateOfBirth.Name = "lblCDateOfBirth";
             this.lblCDateOfBirth.Size = new System.Drawing.Size(84, 16);
             this.lblCDateOfBirth.TabIndex = 6;
@@ -120,7 +120,7 @@
             // lblCPhone
             // 
             this.lblCPhone.AutoSize = true;
-            this.lblCPhone.Location = new System.Drawing.Point(268, 124);
+            this.lblCPhone.Location = new System.Drawing.Point(241, 134);
             this.lblCPhone.Name = "lblCPhone";
             this.lblCPhone.Size = new System.Drawing.Size(49, 16);
             this.lblCPhone.TabIndex = 7;
@@ -129,7 +129,7 @@
             // lblCCountry
             // 
             this.lblCCountry.AutoSize = true;
-            this.lblCCountry.Location = new System.Drawing.Point(268, 149);
+            this.lblCCountry.Location = new System.Drawing.Point(241, 159);
             this.lblCCountry.Name = "lblCCountry";
             this.lblCCountry.Size = new System.Drawing.Size(55, 16);
             this.lblCCountry.TabIndex = 8;
@@ -138,7 +138,7 @@
             // lblvPersonID
             // 
             this.lblvPersonID.AutoSize = true;
-            this.lblvPersonID.Location = new System.Drawing.Point(132, 46);
+            this.lblvPersonID.Location = new System.Drawing.Point(90, 30);
             this.lblvPersonID.Name = "lblvPersonID";
             this.lblvPersonID.Size = new System.Drawing.Size(28, 16);
             this.lblvPersonID.TabIndex = 9;
@@ -147,7 +147,7 @@
             // lblvName
             // 
             this.lblvName.AutoSize = true;
-            this.lblvName.Location = new System.Drawing.Point(129, 73);
+            this.lblvName.Location = new System.Drawing.Point(67, 57);
             this.lblvName.Name = "lblvName";
             this.lblvName.Size = new System.Drawing.Size(31, 16);
             this.lblvName.TabIndex = 10;
@@ -166,7 +166,7 @@
             // lblvGender
             // 
             this.lblvGender.AutoSize = true;
-            this.lblvGender.Location = new System.Drawing.Point(132, 124);
+            this.lblvGender.Location = new System.Drawing.Point(74, 109);
             this.lblvGender.Name = "lblvGender";
             this.lblvGender.Size = new System.Drawing.Size(28, 16);
             this.lblvGender.TabIndex = 12;
@@ -175,7 +175,7 @@
             // lblvEmail
             // 
             this.lblvEmail.AutoSize = true;
-            this.lblvEmail.Location = new System.Drawing.Point(132, 149);
+            this.lblvEmail.Location = new System.Drawing.Point(63, 134);
             this.lblvEmail.Name = "lblvEmail";
             this.lblvEmail.Size = new System.Drawing.Size(28, 16);
             this.lblvEmail.TabIndex = 13;
@@ -184,7 +184,7 @@
             // lblvAddress
             // 
             this.lblvAddress.AutoSize = true;
-            this.lblvAddress.Location = new System.Drawing.Point(132, 175);
+            this.lblvAddress.Location = new System.Drawing.Point(80, 160);
             this.lblvAddress.Name = "lblvAddress";
             this.lblvAddress.Size = new System.Drawing.Size(28, 16);
             this.lblvAddress.TabIndex = 14;
@@ -193,7 +193,7 @@
             // lblvDateOfBirth
             // 
             this.lblvDateOfBirth.AutoSize = true;
-            this.lblvDateOfBirth.Location = new System.Drawing.Point(358, 99);
+            this.lblvDateOfBirth.Location = new System.Drawing.Point(331, 109);
             this.lblvDateOfBirth.Name = "lblvDateOfBirth";
             this.lblvDateOfBirth.Size = new System.Drawing.Size(28, 16);
             this.lblvDateOfBirth.TabIndex = 15;
@@ -202,7 +202,7 @@
             // lblvPhone
             // 
             this.lblvPhone.AutoSize = true;
-            this.lblvPhone.Location = new System.Drawing.Point(358, 124);
+            this.lblvPhone.Location = new System.Drawing.Point(331, 134);
             this.lblvPhone.Name = "lblvPhone";
             this.lblvPhone.Size = new System.Drawing.Size(28, 16);
             this.lblvPhone.TabIndex = 16;
@@ -211,7 +211,7 @@
             // lblvCountry
             // 
             this.lblvCountry.AutoSize = true;
-            this.lblvCountry.Location = new System.Drawing.Point(358, 149);
+            this.lblvCountry.Location = new System.Drawing.Point(331, 159);
             this.lblvCountry.Name = "lblvCountry";
             this.lblvCountry.Size = new System.Drawing.Size(28, 16);
             this.lblvCountry.TabIndex = 17;
@@ -220,7 +220,7 @@
             // lblvNationalNo
             // 
             this.lblvNationalNo.AutoSize = true;
-            this.lblvNationalNo.Location = new System.Drawing.Point(132, 99);
+            this.lblvNationalNo.Location = new System.Drawing.Point(101, 83);
             this.lblvNationalNo.Name = "lblvNationalNo";
             this.lblvNationalNo.Size = new System.Drawing.Size(28, 16);
             this.lblvNationalNo.TabIndex = 18;
@@ -228,8 +228,26 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblvCountry);
+            this.groupBox1.Controls.Add(this.lblvNationalNo);
+            this.groupBox1.Controls.Add(this.lblvPhone);
             this.groupBox1.Controls.Add(this.llEditPersonInfo);
+            this.groupBox1.Controls.Add(this.lblvDateOfBirth);
             this.groupBox1.Controls.Add(this.pbPersonPicture);
+            this.groupBox1.Controls.Add(this.lblCPersonID);
+            this.groupBox1.Controls.Add(this.lblCCountry);
+            this.groupBox1.Controls.Add(this.lblCName);
+            this.groupBox1.Controls.Add(this.lblCPhone);
+            this.groupBox1.Controls.Add(this.lblvAddress);
+            this.groupBox1.Controls.Add(this.lblCDateOfBirth);
+            this.groupBox1.Controls.Add(this.lblCNationalNo);
+            this.groupBox1.Controls.Add(this.lblvEmail);
+            this.groupBox1.Controls.Add(this.lblCGender);
+            this.groupBox1.Controls.Add(this.lblvGender);
+            this.groupBox1.Controls.Add(this.lblCEmail);
+            this.groupBox1.Controls.Add(this.lblCAddress);
+            this.groupBox1.Controls.Add(this.lblvName);
+            this.groupBox1.Controls.Add(this.lblvPersonID);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(626, 197);
@@ -264,25 +282,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.lblvNationalNo);
-            this.Controls.Add(this.lblvCountry);
-            this.Controls.Add(this.lblvPhone);
-            this.Controls.Add(this.lblvDateOfBirth);
-            this.Controls.Add(this.lblvAddress);
-            this.Controls.Add(this.lblvEmail);
-            this.Controls.Add(this.lblvGender);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblvName);
-            this.Controls.Add(this.lblvPersonID);
-            this.Controls.Add(this.lblCCountry);
-            this.Controls.Add(this.lblCPhone);
-            this.Controls.Add(this.lblCDateOfBirth);
-            this.Controls.Add(this.lblCAddress);
-            this.Controls.Add(this.lblCEmail);
-            this.Controls.Add(this.lblCGender);
-            this.Controls.Add(this.lblCNationalNo);
-            this.Controls.Add(this.lblCName);
-            this.Controls.Add(this.lblCPersonID);
             this.Controls.Add(this.groupBox1);
             this.Name = "ctlPersonInformation";
             this.Size = new System.Drawing.Size(636, 203);

@@ -57,7 +57,7 @@
             // lblIsActive
             // 
             this.lblIsActive.AutoSize = true;
-            this.lblIsActive.Location = new System.Drawing.Point(589, 40);
+            this.lblIsActive.Location = new System.Drawing.Point(542, 40);
             this.lblIsActive.Name = "lblIsActive";
             this.lblIsActive.Size = new System.Drawing.Size(28, 16);
             this.lblIsActive.TabIndex = 5;
@@ -66,7 +66,7 @@
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(363, 40);
+            this.lblUserName.Location = new System.Drawing.Point(260, 40);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(28, 16);
             this.lblUserName.TabIndex = 4;
@@ -84,7 +84,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(526, 40);
+            this.label3.Location = new System.Drawing.Point(479, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 16);
             this.label3.TabIndex = 2;
@@ -93,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(281, 40);
+            this.label2.Location = new System.Drawing.Point(178, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 16);
             this.label2.TabIndex = 1;

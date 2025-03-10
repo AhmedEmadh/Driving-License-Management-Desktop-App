@@ -79,7 +79,18 @@ namespace Driving_License_Management_Desktop_App
 
         private void issueInternationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not yet implemented");
+            int DriverID = _GetCurrentDataRowDriverID();
+            clsDriver Driver = clsDriver.FindByDriverID(DriverID);
+            int LocalDrivingLicenseApplicationID = -1;
+            //Get Local Driving License Application ID from Driver
+            if (Driver != null)
+                LocalDrivingLicenseApplicationID = clsLicense.GetActiveLicenseIDByPersonID(Driver.PersonInfo.PersonID, 3);
+            if(LocalDrivingLicenseApplicationID != -1)
+            new frmNewInternationalLicenseApplication(LocalDrivingLicenseApplicationID).ShowDialog();
+            else
+            {
+                MessageBox.Show("No Active International License found for this driver");
+            }
         }
 
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
@@ -152,6 +163,26 @@ namespace Driving_License_Management_Desktop_App
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        
+        private void issueInternationalLicenseToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            //Issue International License Check
+            int DriverID = _GetCurrentDataRowDriverID();
+            clsDriver Driver = clsDriver.FindByDriverID(DriverID);
+            int LocalDrivingLicenseApplicationID = -1;
+            //Get Local Driving License Application ID from Driver
+            if (Driver != null)
+                LocalDrivingLicenseApplicationID = clsLicense.GetActiveLicenseIDByPersonID(Driver.PersonInfo.PersonID, 3);
+            if (LocalDrivingLicenseApplicationID != -1)
+                issueInternationalLicenseToolStripMenuItem.Enabled = true;
+            else
+                issueInternationalLicenseToolStripMenuItem.Enabled = false;
         }
     }
 }

@@ -309,7 +309,7 @@
             this.Controls.Add(this.llblShowLicensesHistory);
             this.Controls.Add(this.gbApplicationInfo);
             this.Name = "frmNewInternationalLicenseApplication";
-            this.Text = "_";
+            this.Text = "New International License Application";
             this.gbApplicationInfo.ResumeLayout(false);
             this.gbApplicationInfo.PerformLayout();
             this.ResumeLayout(false);

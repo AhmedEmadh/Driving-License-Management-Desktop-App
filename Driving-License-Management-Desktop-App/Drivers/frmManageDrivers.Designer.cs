@@ -60,6 +60,7 @@
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(296, 128);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // showPersonInfoToolStripMenuItem
             // 
@@ -78,6 +79,7 @@
             this.issueInternationalLicenseToolStripMenuItem.Name = "issueInternationalLicenseToolStripMenuItem";
             this.issueInternationalLicenseToolStripMenuItem.Size = new System.Drawing.Size(295, 28);
             this.issueInternationalLicenseToolStripMenuItem.Text = "Issue International License";
+            this.issueInternationalLicenseToolStripMenuItem.DropDownOpening += new System.EventHandler(this.issueInternationalLicenseToolStripMenuItem_DropDownOpening);
             this.issueInternationalLicenseToolStripMenuItem.Click += new System.EventHandler(this.issueInternationalLicenseToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
@@ -211,7 +213,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvDrivers);
             this.Name = "frmManageDrivers";
-            this.Text = "frmManageDrivers";
+            this.Text = "Manage Drivers";
             this.Load += new System.EventHandler(this.frmManageDrivers_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
