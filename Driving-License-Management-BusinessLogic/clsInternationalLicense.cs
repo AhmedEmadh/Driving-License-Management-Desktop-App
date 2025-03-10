@@ -23,7 +23,9 @@ namespace Driving_License_Management_BusinessLogic
         public DateTime ExpirationDate { set; get; }
         public bool IsActive { set; get; }
 
-
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public clsInternationalLicense()
 
         {
@@ -42,7 +44,23 @@ namespace Driving_License_Management_BusinessLogic
             Mode = enMode.AddNew;
 
         }
-
+        /// <summary>
+        /// Initializes a new instance of the clsInternationalLicense class.
+        /// </summary>
+        /// <param name="ApplicationID">The ID of the application.</param>
+        /// <param name="ApplicantPersonID">The ID of the applicant person.</param>
+        /// <param name="ApplicationDate">The date of the application.</param>
+        /// <param name="ApplicationStatus">The status of the application.</param>
+        /// <param name="LastStatusDate">The date of the last status update.</param>
+        /// <param name="PaidFees">The paid fees for the application.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the application.</param>
+        /// <param name="InternationalLicenseID">The ID of the international license.</param>
+        /// <param name="DriverID">The ID of the driver.</param>
+        /// <param name="IssuedUsingLocalLicenseID">The ID of the local license used to issue the international license.</param>
+        /// <param name="IssueDate">The date of issue for the international license.</param>
+        /// <param name="ExpirationDate">The expiration date for the international license.</param>
+        /// <param name="IsActive">A flag indicating whether the international license is active.</param>
+        /// <returns>A new instance of the clsInternationalLicense class.</returns>
         public clsInternationalLicense(int ApplicationID, int ApplicantPersonID,
             DateTime ApplicationDate,
              enApplicationStatus ApplicationStatus, DateTime LastStatusDate,
@@ -74,7 +92,10 @@ namespace Driving_License_Management_BusinessLogic
 
             Mode = enMode.Update;
         }
-
+        /// <summary>
+        /// Adds a new international license to the database.
+        /// </summary>
+        /// <returns>True if the international license was added successfully, false otherwise.</returns>
         private bool _AddNewInternationalLicense()
         {
             //call DataAccess Layer 
@@ -87,7 +108,10 @@ namespace Driving_License_Management_BusinessLogic
 
             return (this.InternationalLicenseID != -1);
         }
-
+        /// <summary>
+        /// Updates an existing international license in the database.
+        /// </summary>
+        /// <returns>True if the international license was updated successfully, false otherwise.</returns>
         private bool _UpdateInternationalLicense()
         {
             //call DataAccess Layer 
@@ -98,6 +122,11 @@ namespace Driving_License_Management_BusinessLogic
                this.IsActive, this.CreatedByUserID);
         }
 
+        /// <summary>
+        /// Finds an international license by its ID.
+        /// </summary>
+        /// <param name="InternationalLicenseID">The ID of the international license to find.</param>
+        /// <returns>A clsInternationalLicense object if found, otherwise null.</returns>
         public static clsInternationalLicense Find(int InternationalLicenseID)
         {
             int ApplicationID = -1;
@@ -128,12 +157,19 @@ namespace Driving_License_Management_BusinessLogic
 
         }
 
+        /// <summary>
+        /// Retrieves all international licenses from the database.
+        /// </summary>
+        /// <returns>A DataTable containing all international licenses.</returns>
         public static DataTable GetAllInternationalLicenses()
         {
             return clsInternationalLicenseData.GetAllInternationalLicenses();
 
         }
-
+        /// <summary>
+        /// Saves the current international license to the database.
+        /// </summary>
+        /// <returns>True if the international license was saved successfully, false otherwise.</returns>
         public bool Save()
         {
 
@@ -165,14 +201,22 @@ namespace Driving_License_Management_BusinessLogic
 
             return false;
         }
-
+        /// <summary>
+        /// Retrieves the ID of the active international license associated with a driver from the database.
+        /// </summary>
+        /// <param name="DriverID">The ID of the driver.</param>
+        /// <returns>The ID of the active international license associated with the driver, or -1 if not found.</returns>
         public static int GetActiveInternationalLicenseIDByDriverID(int DriverID)
         {
 
             return clsInternationalLicenseData.GetActiveInternationalLicenseIDByDriverID(DriverID);
 
         }
-
+        /// <summary>
+        /// Retrieves the international licenses associated with a driver from the database.
+        /// </summary>
+        /// <param name="DriverID">The ID of the driver.</param>
+        /// <returns>A DataTable containing the international licenses associated with the driver.</returns>
         public static DataTable GetDriverInternationalLicenses(int DriverID)
         {
             return clsInternationalLicenseData.GetDriverInternationalLicenses(DriverID);

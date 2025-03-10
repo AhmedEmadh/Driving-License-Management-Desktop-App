@@ -17,7 +17,9 @@ namespace Driving_License_Management_BusinessLogic
         public clsPerson PersonInfo { get; set; }
         public int CreatedByUserID { get; set; }
         DateTime CreatedDate { get; set; }
-
+        /// <summary>
+        /// Initializes a new instance of the clsDriver class with default values.
+        /// </summary>
         public clsDriver()
         {
             this.DriverID = -1;
@@ -26,6 +28,13 @@ namespace Driving_License_Management_BusinessLogic
             this.CreatedDate = DateTime.Now;
             Mode = enMode.AddNew;
         }
+        /// <summary>
+        /// Initializes a new instance of the clsDriver class with the specified driver ID, person ID, created by user ID, and created date.
+        /// </summary>
+        /// <param name="DriverID">The ID of the driver.</param>
+        /// <param name="PersonID">The ID of the person associated with the driver.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the driver.</param>
+        /// <param name="CreatedDate">The date when the driver was created.</param>
         private clsDriver(int DriverID, int PersonID, int CreatedByUserID, DateTime CreatedDate)
         {
             this.DriverID = DriverID;
@@ -36,15 +45,28 @@ namespace Driving_License_Management_BusinessLogic
 
             Mode = enMode.Update;
         }
+        /// <summary>
+        /// Adds a new driver to the system.
+        /// </summary>
+        /// <returns>True if the driver was added successfully, false otherwise.</returns>
         private bool _AddNewDriver()
         {
             this.DriverID = clsDriverData.AddNewDriver(this.PersonID, this.CreatedByUserID);
             return (this.DriverID > 0);
         }
+        /// <summary>
+        /// Updates an existing driver in the system.
+        /// </summary>
+        /// <returns>True if the driver was updated successfully, false otherwise.</returns>
         private bool _UpdateDriver()
         {
             return clsDriverData.UpdateDriver(this.DriverID, this.PersonID, this.CreatedByUserID);
         }
+        /// <summary>
+        /// Finds a driver by its ID.
+        /// </summary>
+        /// <param name="DriverID">The ID of the driver to find.</param>
+        /// <returns>A clsDriver object if found, otherwise null.</returns>
         public static clsDriver FindByDriverID(int DriverID)
         {
             int PersonID = -1, CreatedByUserID = -1;
@@ -52,6 +74,11 @@ namespace Driving_License_Management_BusinessLogic
             clsDriverData.GetDriverInfoByDriverID(DriverID, ref PersonID, ref CreatedByUserID, ref CreatedDate);
             return new clsDriver(DriverID, PersonID, CreatedByUserID, CreatedDate);
         }
+        /// <summary>
+        /// Finds a driver by its associated person ID.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person associated with the driver.</param>
+        /// <returns>A clsDriver object if found, otherwise null.</returns>
         public static clsDriver FindByPersonID(int PersonID)
         {
             int DriverID = -1, CreatedByUserID = -1;
@@ -66,10 +93,18 @@ namespace Driving_License_Management_BusinessLogic
                 return null;
             }
         }
+        /// <summary>
+        /// Retrieves all drivers from the database.
+        /// </summary>
+        /// <returns>A DataTable containing all drivers.</returns>
         public static DataTable GetAllDrivers()
         {
             return clsDriverData.GetAllDrivers();
         }
+        /// <summary>
+        /// Saves the driver to the database.
+        /// </summary>
+        /// <returns>True if the driver was saved successfully, false otherwise.</returns>
         public bool Save()
         {
             switch (Mode)
@@ -89,10 +124,20 @@ namespace Driving_License_Management_BusinessLogic
             }
             return false;
         }
+        /// <summary>
+        /// Retrieves the licenses associated with a driver from the database.
+        /// </summary>
+        /// <param name="DriverID">The ID of the driver.</param>
+        /// <returns>A DataTable containing the licenses associated with the driver.</returns>
         public static DataTable GetLicenses(int DriverID)
         {
             return clsLicense.GetDriverLicenses(DriverID);
         }
+        /// <summary>
+        /// Retrieves the international licenses associated with a driver from the database.
+        /// </summary>
+        /// <param name="DriverID">The ID of the driver.</param>
+        /// <returns>A DataTable containing the international licenses associated with the driver.</returns>
         public static DataTable GetInternationalLicenses(int DriverID)
         {
             return clsInternationalLicense.GetDriverInternationalLicenses(DriverID);

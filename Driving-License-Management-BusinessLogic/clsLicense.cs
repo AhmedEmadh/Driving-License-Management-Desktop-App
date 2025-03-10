@@ -43,6 +43,9 @@ namespace Driving_License_Management_BusinessLogic
                 return clsDetainedLicense.IsLicenseDetained(this.LicenseID);
             }
         }
+        /// <summary>
+        /// Initializes a new instance of the clsLicense class, setting default values for its properties.
+        /// </summary>
         public clsLicense()
         {
             this.LicenseID = -1;
@@ -59,7 +62,20 @@ namespace Driving_License_Management_BusinessLogic
 
             Mode = enMode.AddNew;
         }
-
+        /// <summary>
+        /// Initializes a new instance of the clsLicense class.
+        /// </summary>
+        /// <param name="LicenseID">The ID of the license.</param>
+        /// <param name="ApplicationID">The ID of the application.</param>
+        /// <param name="DriverID">The ID of the driver.</param>
+        /// <param name="LicenseClass">The class of the license.</param>
+        /// <param name="IssueDate">The date of issue for the license.</param>
+        /// <param name="ExpirationDate">The expiration date for the license.</param>
+        /// <param name="Notes">Any additional notes for the license.</param>
+        /// <param name="PaidFees">The paid fees for the license.</param>
+        /// <param name="IsActive">A flag indicating whether the license is active.</param>
+        /// <param name="IssueReason">The reason for issuing the license.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the license.</param>
         private clsLicense(int LicenseID,int ApplicationID,int DriverID,
             int LicenseClass,DateTime IssueDate, DateTime ExpirationDate,
             string Notes, float PaidFees, bool IsActive, enIssueReason IssueReason,
@@ -85,6 +101,10 @@ namespace Driving_License_Management_BusinessLogic
             Mode = enMode.Update;
         }
 
+        /// <summary>
+        /// Adds a new license to the database.
+        /// </summary>
+        /// <returns>True if the license was added successfully, false otherwise.</returns>
         private bool _AddNewLicense()
         {
             int LicenseID = clsLicenseData.AddNewLicense(this.ApplicationID,this.DriverID,this.LicenseClass,this.IssueDate,this.ExpirationDate,this.Notes,this.PaidFees,this.IsActive,(byte)this.IssueReason,this.CreatedByUserID);
@@ -98,11 +118,19 @@ namespace Driving_License_Management_BusinessLogic
                 return false;
             }
         }
+        /// <summary>
+        /// Updates an existing license in the database.
+        /// </summary>
+        /// <returns>True if the license was updated successfully, false otherwise.</returns>
         private bool _UpdateLicense()
         {
             return clsLicenseData.UpdateLicense(LicenseID, ApplicationID, DriverID, LicenseClass, IssueDate, ExpirationDate, Notes, PaidFees, IsActive, (byte)IssueReason, CreatedByUserID); ;
         }
-        
+        /// <summary>
+        /// Finds a license by its ID.
+        /// </summary>
+        /// <param name="LicenseID">The ID of the license to find.</param>
+        /// <returns>A clsLicense object if found, otherwise null.</returns>
         public static clsLicense Find(int LicenseID)
         {
             int ApplicationID = -1, DriverID = -1, LicenseClass = -1, CreatedByUserID = -1;
@@ -120,10 +148,18 @@ namespace Driving_License_Management_BusinessLogic
                 return null;
             }
         }
+        /// <summary>
+        /// Retrieves all licenses from the database.
+        /// </summary>
+        /// <returns>A DataTable containing all licenses.</returns>
         public static DataTable GetAllLicenses()
         {
             return clsLicenseData.GetAllLicenses();
         }
+        /// <summary>
+        /// Saves the license to the database.
+        /// </summary>
+        /// <returns>True if the license was saved successfully, false otherwise.</returns>
         public bool Save()
         {
             switch (Mode)
@@ -144,26 +180,56 @@ namespace Driving_License_Management_BusinessLogic
                     return false;
             }
         }
+        /// <summary>
+        /// Checks if a license exists for a given person ID and license class ID.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person to check.</param>
+        /// <param name="lIcenseClassID">The ID of the license class to check.</param>
+        /// <returns>True if a license exists, false otherwise.</returns>
         public static bool IsLicenseExistByPersonID(int PersonID,int lIcenseClassID)
         {
             return clsLicenseData.GetActiveLicenseIDByPersonID(PersonID, lIcenseClassID) > 0;
         }
+        /// <summary>
+        /// Retrieves the active license ID for a given person and license class.
+        /// </summary>
+        /// <param name="PersonID">The ID of the person.</param>
+        /// <param name="LicenseClassID">The ID of the license class.</param>
+        /// <returns>The active license ID if found, otherwise a default value.</returns>
         public static int GetActiveLicenseIDByPersonID(int PersonID, int LicenseClassID)
         {
             return clsLicenseData.GetActiveLicenseIDByPersonID(PersonID, LicenseClassID);
         }
+        /// <summary>
+        /// Retrieves the licenses associated with a driver from the database.
+        /// </summary>
+        /// <param name="DriverID">The ID of the driver.</param>
+        /// <returns>A DataTable containing the licenses associated with the driver.</returns>
         public static DataTable GetDriverLicenses(int DriverID)
         {
             return clsLicenseData.GetDriverLicenses(DriverID);
         }
+        /// <summary>
+        /// Checks if a license is expired.
+        /// </summary>
+        /// <returns>True if the license is expired, false otherwise.</returns>
         public bool IsLicenseExpired()
         {
             return (this.ExpirationDate < DateTime.Now);
         }
+        /// <summary>
+        /// Deactivates the current license.
+        /// </summary>
+        /// <returns>True if the license was deactivated successfully, false otherwise.</returns>
         public bool DeactivateCurrentLicense()
         {
             return clsLicenseData.DeactivateLicense(this.LicenseID);
         }
+        /// <summary>
+        /// Retrieves the text representation of an issue reason.
+        /// </summary>
+        /// <param name="IssueReason">The issue reason.</param>
+        /// <returns>The text representation of the issue reason.</returns>
         public static string GetIssueReasonText(enIssueReason IssueReason)
         {
             switch (IssueReason)
@@ -180,6 +246,12 @@ namespace Driving_License_Management_BusinessLogic
                     return "First Time";
             }
         }
+        /// <summary>
+        /// Detains a license.
+        /// </summary>
+        /// <param name="FineFees">The fine fees.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the detainment.</param>
+        /// <returns>The detainment ID if successful, otherwise -1.</returns>
         public int Detain(float FineFees, int CreatedByUserID)
         {
             clsDetainedLicense detainedLicense = new clsDetainedLicense();
@@ -196,6 +268,12 @@ namespace Driving_License_Management_BusinessLogic
             }
 
         }
+        /// <summary>
+        /// Releases a detained license.
+        /// </summary>
+        /// <param name="ReleasedByUserID">The ID of the user releasing the license.</param>
+        /// <param name="ApplicationID">The ID of the application used to release the license.</param>
+        /// <returns>True if the license was released successfully, false otherwise.</returns>
         public bool ReleaseDetainedLicense(int ReleasedByUserID,ref int ApplicationID)
         {
             clsApplication Application = new clsApplication();
@@ -217,6 +295,12 @@ namespace Driving_License_Management_BusinessLogic
             return this.DetainedInfo.ReleaseDetainedLicense(ReleasedByUserID, Application.ApplicationID);
 
         }
+        /// <summary>
+        /// Renews a license.
+        /// </summary>
+        /// <param name="Notes">The notes for the renewal.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the renewal.</param>
+        /// <returns>The renewed license if successful, otherwise null.</returns>
         public clsLicense RenewLicense(string Notes, int CreatedByUserID)
         {
             clsApplication Application = new clsApplication();
@@ -259,7 +343,12 @@ namespace Driving_License_Management_BusinessLogic
             return NewLicense;
 
         }
-
+        /// <summary>
+        /// Replaces a license.
+        /// </summary>
+        /// <param name="IssueReason">The issue reason.</param>
+        /// <param name="CreatedByUserID">The ID of the user who created the replacement.</param>
+        /// <returns>The replaced license if successful, otherwise null.</returns>
         public clsLicense Replace(enIssueReason IssueReason, int CreatedByUserID)
         {
 
