@@ -34,7 +34,8 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(560, 337);
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.Location = new System.Drawing.Point(553, 337);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(96, 36);
             this.btnClose.TabIndex = 2;
@@ -49,6 +50,7 @@
             this.ctlUserCard1.Name = "ctlUserCard1";
             this.ctlUserCard1.Size = new System.Drawing.Size(643, 309);
             this.ctlUserCard1.TabIndex = 3;
+            this.ctlUserCard1.UserID = 0;
             // 
             // frmUserInfo
             // 
@@ -60,7 +62,7 @@
             this.Controls.Add(this.ctlUserCard1);
             this.Controls.Add(this.btnClose);
             this.Name = "frmUserInfo";
-            this.Text = "frmUserInfo";
+            this.Text = "User Info";
             this.Load += new System.EventHandler(this.frmUserInfo_Load);
             this.ResumeLayout(false);
 
