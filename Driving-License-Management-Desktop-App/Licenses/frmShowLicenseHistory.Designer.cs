@@ -109,6 +109,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmShowLicenseHistory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Show License History";
             this.Load += new System.EventHandler(this.frmShowLicenseHistory_Load);
             this.contextMenuStrip1.ResumeLayout(false);

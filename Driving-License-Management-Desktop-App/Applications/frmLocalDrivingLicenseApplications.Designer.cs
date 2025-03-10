@@ -325,6 +325,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvLocalDrivingLicenseApplications);
             this.Name = "frmLocalDrivingLicenseApplications";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Local Driving License Applications";
             this.Load += new System.EventHandler(this.frmLocalDrivingLicenseApplications_Load);
             this.contextMenuStrip1.ResumeLayout(false);

@@ -25,6 +25,9 @@ namespace Driving_License_Management_Desktop_App
         }
         private void frmShowLicenseHistory_Load(object sender, EventArgs e)
         {
+            // Skip execution if running inside the Designer
+            if (DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+                return;
             if (_PersonID != -1)
             {
                 ctlPersonInformationWithFilter1.SearchText = _PersonID.ToString();

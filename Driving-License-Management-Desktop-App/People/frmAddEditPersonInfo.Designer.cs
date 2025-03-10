@@ -545,6 +545,7 @@
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
             this.Name = "frmAddEditPersonInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddEditPersonInfo";
             this.Load += new System.EventHandler(this.frmAddEditPersonInfo_Load);
             this.Validating += new System.ComponentModel.CancelEventHandler(this._ValidateEmail);

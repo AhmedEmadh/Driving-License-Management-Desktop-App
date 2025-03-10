@@ -243,6 +243,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDetain);
             this.Name = "frmDetainLicense";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detain License";
             this.Load += new System.EventHandler(this.frmDetainLicense_Load);
             this.groupBox1.ResumeLayout(false);

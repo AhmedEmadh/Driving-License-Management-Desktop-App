@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctlPersonInformation1 = new Driving_License_Management_Desktop_App.ctlPersonInformation();
-            this.ctlloginInfo1 = new Driving_License_Management_Desktop_App.User.ctlloginInfo();
             this.tbCurrentPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,26 +36,9 @@
             this.tbConfirmPassword = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.ctlloginInfo1 = new Driving_License_Management_Desktop_App.User.ctlloginInfo();
+            this.ctlPersonInformation1 = new Driving_License_Management_Desktop_App.ctlPersonInformation();
             this.SuspendLayout();
-            // 
-            // ctlPersonInformation1
-            // 
-            this.ctlPersonInformation1.BackColor = System.Drawing.Color.White;
-            this.ctlPersonInformation1.Location = new System.Drawing.Point(12, 12);
-            this.ctlPersonInformation1.Name = "ctlPersonInformation1";
-            this.ctlPersonInformation1.PersonID = -1;
-            this.ctlPersonInformation1.PersonNationalNo = "";
-            this.ctlPersonInformation1.Size = new System.Drawing.Size(640, 215);
-            this.ctlPersonInformation1.TabIndex = 0;
-            // 
-            // ctlloginInfo1
-            // 
-            this.ctlloginInfo1.BackColor = System.Drawing.Color.White;
-            this.ctlloginInfo1.Location = new System.Drawing.Point(12, 223);
-            this.ctlloginInfo1.Name = "ctlloginInfo1";
-            this.ctlloginInfo1.Size = new System.Drawing.Size(640, 93);
-            this.ctlloginInfo1.TabIndex = 1;
-            this.ctlloginInfo1.UserID = -1;
             // 
             // tbCurrentPassword
             // 
@@ -131,6 +112,25 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.button2_Click);
             // 
+            // ctlloginInfo1
+            // 
+            this.ctlloginInfo1.BackColor = System.Drawing.Color.White;
+            this.ctlloginInfo1.Location = new System.Drawing.Point(12, 223);
+            this.ctlloginInfo1.Name = "ctlloginInfo1";
+            this.ctlloginInfo1.Size = new System.Drawing.Size(640, 93);
+            this.ctlloginInfo1.TabIndex = 1;
+            this.ctlloginInfo1.UserID = -1;
+            // 
+            // ctlPersonInformation1
+            // 
+            this.ctlPersonInformation1.BackColor = System.Drawing.Color.White;
+            this.ctlPersonInformation1.Location = new System.Drawing.Point(12, 12);
+            this.ctlPersonInformation1.Name = "ctlPersonInformation1";
+            this.ctlPersonInformation1.PersonID = -1;
+            this.ctlPersonInformation1.PersonNationalNo = "";
+            this.ctlPersonInformation1.Size = new System.Drawing.Size(640, 215);
+            this.ctlPersonInformation1.TabIndex = 0;
+            // 
             // frmChangePassword
             // 
             this.AcceptButton = this.btnSave;
@@ -150,6 +150,7 @@
             this.Controls.Add(this.ctlloginInfo1);
             this.Controls.Add(this.ctlPersonInformation1);
             this.Name = "frmChangePassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmChangePassword";
             this.Load += new System.EventHandler(this.frmChangePassword_Load);
             this.ResumeLayout(false);

@@ -133,6 +133,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Name = "frmTakeTest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmTakeTest";
             this.Load += new System.EventHandler(this.frmTakeTest_Load);
             this.ResumeLayout(false);

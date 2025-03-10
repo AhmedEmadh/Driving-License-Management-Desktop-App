@@ -309,6 +309,7 @@
             this.Controls.Add(this.llblShowLicensesHistory);
             this.Controls.Add(this.gbApplicationInfo);
             this.Name = "frmNewInternationalLicenseApplication";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New International License Application";
             this.gbApplicationInfo.ResumeLayout(false);
             this.gbApplicationInfo.PerformLayout();

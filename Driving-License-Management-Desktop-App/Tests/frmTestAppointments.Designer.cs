@@ -168,6 +168,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label16);
             this.Name = "frmTestAppointments";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVisionTestAppointments";
             this.Load += new System.EventHandler(this.frmVisionTestAppointments_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -59,7 +59,7 @@
             this.toolStripMenuItem3,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(296, 128);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(296, 100);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // showPersonInfoToolStripMenuItem
@@ -213,6 +213,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvDrivers);
             this.Name = "frmManageDrivers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Drivers";
             this.Load += new System.EventHandler(this.frmManageDrivers_Load);
             this.contextMenuStrip1.ResumeLayout(false);

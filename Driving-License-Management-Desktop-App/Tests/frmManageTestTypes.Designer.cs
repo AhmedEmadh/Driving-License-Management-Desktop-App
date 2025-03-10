@@ -138,6 +138,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvTestTypes);
             this.Name = "frmManageTestTypes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmManageTestTypes";
             this.Load += new System.EventHandler(this.frmManageTestTypes_Load);
             this.contextMenuStrip1.ResumeLayout(false);

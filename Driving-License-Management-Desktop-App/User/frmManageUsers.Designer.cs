@@ -274,6 +274,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvUsers);
             this.Name = "frmManageUsers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Users";
             this.Load += new System.EventHandler(this.frmManageUsers_Load);
             this.contextMenuStrip1.ResumeLayout(false);

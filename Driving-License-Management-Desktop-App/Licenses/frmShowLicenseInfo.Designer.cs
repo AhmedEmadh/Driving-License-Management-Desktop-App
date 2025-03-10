@@ -35,6 +35,7 @@
             // ctlDriverLicenseInfo1
             // 
             this.ctlDriverLicenseInfo1.BackColor = System.Drawing.Color.White;
+            this.ctlDriverLicenseInfo1.LicenseID = -1;
             this.ctlDriverLicenseInfo1.Location = new System.Drawing.Point(13, 13);
             this.ctlDriverLicenseInfo1.Name = "ctlDriverLicenseInfo1";
             this.ctlDriverLicenseInfo1.Size = new System.Drawing.Size(773, 244);
@@ -42,6 +43,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Location = new System.Drawing.Point(695, 263);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(82, 29);
@@ -60,6 +62,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.ctlDriverLicenseInfo1);
             this.Name = "frmShowLicenseInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmShowLicenseInfo";
             this.Load += new System.EventHandler(this.frmShowLicenseInfo_Load);
             this.ResumeLayout(false);

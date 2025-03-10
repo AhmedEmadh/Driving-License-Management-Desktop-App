@@ -104,6 +104,7 @@
             this.Controls.Add(this.ctlApplicationNewLicenseInfo1);
             this.Controls.Add(this.label1);
             this.Name = "frmRenewDrivingLicense";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Renew Driving License";
             this.Load += new System.EventHandler(this.frmRenewDrivingLicense_Load);
             this.ResumeLayout(false);

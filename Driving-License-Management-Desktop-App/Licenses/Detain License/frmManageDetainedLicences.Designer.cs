@@ -236,6 +236,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvDetainedLicenses);
             this.Name = "frmManageDetainedLicences";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Detained Licences";
             this.Load += new System.EventHandler(this.frmManageDetainedLicences_Load);
             this.contextMenuStrip1.ResumeLayout(false);

@@ -289,6 +289,7 @@
             this.Controls.Add(this.llblShowLicenseHistory);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmReplacementForDamagedLicense";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Replacement For Damaged License";
             this.Load += new System.EventHandler(this.frmReplacementForDamagedLicense_Load);
             this.gbReplacementFor.ResumeLayout(false);

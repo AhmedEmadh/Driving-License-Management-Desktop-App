@@ -61,7 +61,8 @@
             this.ctlPersonInformationWithFilter1.Location = new System.Drawing.Point(35, 86);
             this.ctlPersonInformationWithFilter1.Name = "ctlPersonInformationWithFilter1";
             this.ctlPersonInformationWithFilter1.PersonID = -1;
-            this.ctlPersonInformationWithFilter1.SelectedIndex = -1;
+            this.ctlPersonInformationWithFilter1.SearchText = "";
+            this.ctlPersonInformationWithFilter1.SelectedIndex = 0;
             this.ctlPersonInformationWithFilter1.ShowAddPersonButton = true;
             this.ctlPersonInformationWithFilter1.Size = new System.Drawing.Size(652, 279);
             this.ctlPersonInformationWithFilter1.TabIndex = 2;
@@ -76,6 +77,7 @@
             this.Controls.Add(this.ctlPersonInformationWithFilter1);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmFindPerson";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmFindPerson";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmFindPerson_FormClosed);
             this.Load += new System.EventHandler(this.frmFindPerson_Load);
