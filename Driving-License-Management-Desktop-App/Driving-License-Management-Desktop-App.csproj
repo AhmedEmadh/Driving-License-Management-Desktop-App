@@ -100,6 +100,7 @@
     </Compile>
     <Compile Include="Global Classes\clsFormat.cs" />
     <Compile Include="Global Classes\clsGlobal.cs" />
+    <Compile Include="Global Classes\clsSettings.cs" />
     <Compile Include="Global Classes\clsUtil.cs" />
     <Compile Include="Global Classes\clsValidation.cs" />
     <Compile Include="Licenses\Controls\ctlDetainInfo.cs">
