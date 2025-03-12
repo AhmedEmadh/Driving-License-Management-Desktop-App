@@ -18,9 +18,25 @@ namespace Driving_License_Management_Desktop_App
         {
             InitializeComponent();
         }
-
+        void AdjustFontAndSize()
+        {
+            this.Width = (int)(this.Width * (clsSettings.LoginNormalFontSize / 12.0));
+            this.Height = (int)(this.Height * (clsSettings.LoginNormalFontSize / 12.0));
+            lblTitle.Font = new Font( FontFamily.GenericSansSerif,clsSettings.LoginNormalFontSize + 12);
+            label1.Font = new Font(FontFamily.GenericSansSerif, clsSettings.LoginNormalFontSize);
+            label2.Font = new Font(FontFamily.GenericSansSerif, clsSettings.LoginNormalFontSize);
+            cbRememberMe.Font = new Font(FontFamily.GenericSansSerif, clsSettings.LoginNormalFontSize);
+            btnLogin.Font = new Font(FontFamily.GenericSansSerif, clsSettings.LoginNormalFontSize);
+            tbUserName.Font = new Font(FontFamily.GenericSansSerif, clsSettings.LoginNormalFontSize);
+            tbPassword.Font = new Font(FontFamily.GenericSansSerif, clsSettings.LoginNormalFontSize);
+            // Adjust TextBox Size
+            tbUserName.Width = 1920;
+            tbPassword.Width = 1920;
+        }
         private void frmLoginScreen_Load(object sender, EventArgs e)
         {
+            AdjustFontAndSize();
+
             string username="", password="";
             tbUserName.Focus();
             clsGlobal.GetStoredCredential(ref username, ref password);
