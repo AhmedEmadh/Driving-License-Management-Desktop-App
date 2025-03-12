@@ -46,6 +46,7 @@
             this.dgvDetainedLicenses = new System.Windows.Forms.DataGridView();
             this.btnRelease = new System.Windows.Forms.Button();
             this.btnDetain = new System.Windows.Forms.Button();
+            this.cbIsReleased = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetainedLicenses)).BeginInit();
@@ -110,10 +111,12 @@
             // 
             // tbSearch
             // 
-            this.tbSearch.Location = new System.Drawing.Point(201, 172);
+            this.tbSearch.Location = new System.Drawing.Point(249, 172);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(149, 22);
             this.tbSearch.TabIndex = 48;
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
+            this.tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSearch_KeyPress);
             // 
             // cbFilterBy
             // 
@@ -129,8 +132,9 @@
             "Release Application ID"});
             this.cbFilterBy.Location = new System.Drawing.Point(73, 171);
             this.cbFilterBy.Name = "cbFilterBy";
-            this.cbFilterBy.Size = new System.Drawing.Size(121, 24);
+            this.cbFilterBy.Size = new System.Drawing.Size(169, 24);
             this.cbFilterBy.TabIndex = 47;
+            this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -217,6 +221,22 @@
             this.btnDetain.UseVisualStyleBackColor = true;
             this.btnDetain.Click += new System.EventHandler(this.btnDetain_Click);
             // 
+            // cbIsReleased
+            // 
+            this.cbIsReleased.AllowDrop = true;
+            this.cbIsReleased.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIsReleased.FormattingEnabled = true;
+            this.cbIsReleased.Items.AddRange(new object[] {
+            "None",
+            "Yes",
+            "No"});
+            this.cbIsReleased.Location = new System.Drawing.Point(248, 171);
+            this.cbIsReleased.Name = "cbIsReleased";
+            this.cbIsReleased.Size = new System.Drawing.Size(121, 24);
+            this.cbIsReleased.TabIndex = 52;
+            this.cbIsReleased.Visible = false;
+            this.cbIsReleased.SelectedIndexChanged += new System.EventHandler(this.cbIsReleased_SelectedIndexChanged);
+            // 
             // frmManageDetainedLicences
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -224,6 +244,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1493, 724);
+            this.Controls.Add(this.cbIsReleased);
             this.Controls.Add(this.btnDetain);
             this.Controls.Add(this.btnRelease);
             this.Controls.Add(this.lblTitle);
@@ -265,5 +286,6 @@
         private System.Windows.Forms.DataGridView dgvDetainedLicenses;
         private System.Windows.Forms.Button btnRelease;
         private System.Windows.Forms.Button btnDetain;
+        private System.Windows.Forms.ComboBox cbIsReleased;
     }
 }
