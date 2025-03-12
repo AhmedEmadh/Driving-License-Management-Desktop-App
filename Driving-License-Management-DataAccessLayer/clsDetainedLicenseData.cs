@@ -118,7 +118,7 @@ namespace Driving_License_Management_DataAccessLayer
         {
             DataTable dataTable = new DataTable();
             SqlConnection conn = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = "SELECT * FROM DetainedLicenses";
+            string query = "SELECT * FROM DetainedLicenses_View";
             SqlCommand cmd = new SqlCommand(query, conn);
             try
             {
