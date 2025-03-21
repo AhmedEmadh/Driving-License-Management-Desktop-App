@@ -38,8 +38,8 @@
             this.lblCount = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnScheduleTest = new System.Windows.Forms.Button();
-            this.ctlApplicationInfo1 = new Driving_License_Management_Desktop_App.ctlApplicationInfo();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.ctlApplicationInfo1 = new Driving_License_Management_Desktop_App.ctlApplicationInfo();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -131,16 +131,6 @@
             this.btnScheduleTest.UseVisualStyleBackColor = true;
             this.btnScheduleTest.Click += new System.EventHandler(this.btnScheduleTest_Click);
             // 
-            // ctlApplicationInfo1
-            // 
-            this.ctlApplicationInfo1.BackColor = System.Drawing.Color.White;
-            this.ctlApplicationInfo1.LocalDrivingLicenseApplicationID = -1;
-            this.ctlApplicationInfo1.Location = new System.Drawing.Point(-1, 117);
-            this.ctlApplicationInfo1.Name = "ctlApplicationInfo1";
-            this.ctlApplicationInfo1.Size = new System.Drawing.Size(789, 284);
-            this.ctlApplicationInfo1.TabIndex = 10;
-            this.ctlApplicationInfo1.OnLinkClicked += new System.Action<object>(this.ctlApplicationInfo1_OnLinkClicked);
-            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -151,6 +141,16 @@
             this.lblTitle.Size = new System.Drawing.Size(300, 39);
             this.lblTitle.TabIndex = 47;
             this.lblTitle.Text = "Test Appointments";
+            // 
+            // ctlApplicationInfo1
+            // 
+            this.ctlApplicationInfo1.BackColor = System.Drawing.Color.White;
+            this.ctlApplicationInfo1.LocalDrivingLicenseApplicationID = -1;
+            this.ctlApplicationInfo1.Location = new System.Drawing.Point(-1, 117);
+            this.ctlApplicationInfo1.Name = "ctlApplicationInfo1";
+            this.ctlApplicationInfo1.Size = new System.Drawing.Size(789, 284);
+            this.ctlApplicationInfo1.TabIndex = 10;
+            this.ctlApplicationInfo1.OnLinkClicked += new System.Action<object>(this.ctlApplicationInfo1_OnLinkClicked);
             // 
             // frmTestAppointments
             // 
@@ -169,7 +169,7 @@
             this.Controls.Add(this.label16);
             this.Name = "frmTestAppointments";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmVisionTestAppointments";
+            this.Text = "Test Appointments";
             this.Load += new System.EventHandler(this.frmVisionTestAppointments_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

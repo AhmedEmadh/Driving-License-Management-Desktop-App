@@ -115,6 +115,7 @@
             this.ctlScheduledTest1.Size = new System.Drawing.Size(332, 369);
             this.ctlScheduledTest1.TabIndex = 17;
             this.ctlScheduledTest1.TestAppointmentID = -1;
+            this.ctlScheduledTest1.TestID = -1;
             // 
             // frmTakeTest
             // 
@@ -134,7 +135,7 @@
             this.Controls.Add(this.label9);
             this.Name = "frmTakeTest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmTakeTest";
+            this.Text = "Take Test";
             this.Load += new System.EventHandler(this.frmTakeTest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

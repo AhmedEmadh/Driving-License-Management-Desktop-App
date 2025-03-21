@@ -166,7 +166,10 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmScheduleTest_Load(object sender, EventArgs e)
         {
-
+            if (_Mode == enMode.AddNew)
+            {
+                ctlScheduleTest1.Date = DateTime.Now;
+            }
         }
     }
 }

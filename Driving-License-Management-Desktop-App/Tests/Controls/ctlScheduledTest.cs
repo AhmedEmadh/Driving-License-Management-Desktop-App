@@ -27,6 +27,32 @@ namespace Driving_License_Management_Desktop_App.Tests.Controls
                 _SetPicture(_TestType);
             }
         }
+        public int TestID
+        {
+            get
+            {
+                int result;
+                if (int.TryParse(lblTestID.Text, out result))
+                {
+                    return result;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            set
+            {
+                if (value >= 0)
+                {
+                    lblTestID.Text = value.ToString();
+                }
+                else
+                {
+                    lblTestID.Text = "???";
+                }
+            }
+        }
         int _TestAppointmentID = -1;
         public int TestAppointmentID
         {
@@ -51,7 +77,7 @@ namespace Driving_License_Management_Desktop_App.Tests.Controls
         }
         void _SetValues(clsTestAppointment testAppointment)
         {
-            if(testAppointment != null)
+            if (testAppointment != null)
             {
                 TestType = testAppointment.TestTypeID;
                 clsTest test = clsTest.FindByTestAppointmentID(testAppointment.TestAppointmentID);
