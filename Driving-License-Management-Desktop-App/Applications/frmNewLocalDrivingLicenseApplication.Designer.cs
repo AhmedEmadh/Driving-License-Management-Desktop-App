@@ -55,10 +55,10 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(42, 65);
+            this.tabControl1.Location = new System.Drawing.Point(9, 65);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(708, 385);
+            this.tabControl1.Size = new System.Drawing.Size(658, 354);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -68,16 +68,16 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(700, 356);
+            this.tabPage1.Size = new System.Drawing.Size(650, 325);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Personal Info";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(579, 318);
+            this.button1.Location = new System.Drawing.Point(565, 289);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 30);
             this.button1.TabIndex = 1;
             this.button1.Text = "Next";
             this.button1.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@
             this.ctlPersonInformationWithFilter1.SearchText = "";
             this.ctlPersonInformationWithFilter1.SelectedIndex = 0;
             this.ctlPersonInformationWithFilter1.ShowAddPersonButton = false;
-            this.ctlPersonInformationWithFilter1.Size = new System.Drawing.Size(665, 293);
+            this.ctlPersonInformationWithFilter1.Size = new System.Drawing.Size(643, 284);
             this.ctlPersonInformationWithFilter1.TabIndex = 0;
             this.ctlPersonInformationWithFilter1.OnPersonSelected += new System.Action<object>(this.ctlPersonInformationWithFilter1_OnPersonSelected);
             // 
@@ -112,7 +112,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(700, 356);
+            this.tabPage2.Size = new System.Drawing.Size(650, 325);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Application Info";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -123,7 +123,7 @@
             this.cbLicenseClass.FormattingEnabled = true;
             this.cbLicenseClass.Location = new System.Drawing.Point(133, 82);
             this.cbLicenseClass.Name = "cbLicenseClass";
-            this.cbLicenseClass.Size = new System.Drawing.Size(212, 24);
+            this.cbLicenseClass.Size = new System.Drawing.Size(289, 24);
             this.cbLicenseClass.TabIndex = 9;
             this.cbLicenseClass.SelectedIndexChanged += new System.EventHandler(this.cbLicenseClass_SelectedIndexChanged);
             // 
@@ -210,9 +210,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(572, 501);
+            this.btnSave.Location = new System.Drawing.Point(492, 425);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(75, 30);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -221,9 +221,9 @@
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(671, 501);
+            this.btnClose.Location = new System.Drawing.Point(591, 425);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(75, 30);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -234,7 +234,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTitle.Location = new System.Drawing.Point(152, 9);
+            this.lblTitle.Location = new System.Drawing.Point(89, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(525, 36);
             this.lblTitle.TabIndex = 41;
@@ -246,7 +246,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(800, 560);
+            this.ClientSize = new System.Drawing.Size(678, 465);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);

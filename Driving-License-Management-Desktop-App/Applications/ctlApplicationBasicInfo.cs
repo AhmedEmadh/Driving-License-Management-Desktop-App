@@ -23,6 +23,7 @@ namespace Driving_License_Management_Desktop_App.Applications
             }
         }
         private int _ApplicationID;
+        clsApplication _Application;
         public int ApplicationID
         {
             get
@@ -31,18 +32,18 @@ namespace Driving_License_Management_Desktop_App.Applications
             }
             set
             {
-                clsApplication application = clsApplication.FindBaseApplication(value);
-                if (application != null)
+                _Application = clsApplication.FindBaseApplication(value);
+                if (_Application != null)
                 {
                     _ApplicationID = value;
-                    lblAppID.Text = application.ApplicationID.ToString();
-                    lblApplicant.Text = application.ApplicantPersonInfo.FullName;
-                    lblCreatedBy.Text = application.CreatedByUserInfo.UserName;
-                    lblDate.Text = application.ApplicationDate.ToString();
-                    lblFees.Text = application.PaidFees.ToString();
-                    lblStatus.Text = application.StatusText;
-                    lblStatusDate.Text = application.LastStatusDate.ToString();
-                    lblType.Text = application.ApplicationTypeInfo.Title;
+                    lblAppID.Text = _Application.ApplicationID.ToString();
+                    lblApplicant.Text = _Application.ApplicantPersonInfo.FullName;
+                    lblCreatedBy.Text = _Application.CreatedByUserInfo.UserName;
+                    lblDate.Text = _Application.ApplicationDate.ToString();
+                    lblFees.Text = _Application.PaidFees.ToString();
+                    lblStatus.Text = _Application.StatusText;
+                    lblStatusDate.Text = _Application.LastStatusDate.ToString();
+                    lblType.Text = _Application.ApplicationTypeInfo.Title;
                 }
                 else
                 {
@@ -70,10 +71,14 @@ namespace Driving_License_Management_Desktop_App.Applications
         {
 
         }
-        
+
         private void llblViewPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             OnLinkClick_handler();
+            if (_Application != null)
+            {
+                new frmPersonDetails(_Application.ApplicantPersonInfo.PersonID).ShowDialog();
+            }
         }
     }
 }

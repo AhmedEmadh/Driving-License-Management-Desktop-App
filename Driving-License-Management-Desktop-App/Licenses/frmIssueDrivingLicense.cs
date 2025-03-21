@@ -40,11 +40,13 @@ namespace Driving_License_Management_Desktop_App.Licenses
             if (LicenseID > 0)
             {
                 MessageBox.Show($"License Issued Successfully With License ID = {LicenseID}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnIssue.Enabled = false;
             }
             else
             {
                 MessageBox.Show("License Issue Failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
