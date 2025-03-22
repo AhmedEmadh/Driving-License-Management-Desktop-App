@@ -18,7 +18,7 @@ namespace Driving_License_Management_Desktop_App
             SetDPIAware();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLoginScreen());
+            Application.Run(new frmManageDetainedLicences());
         }
 
         [DllImport("user32.dll")]

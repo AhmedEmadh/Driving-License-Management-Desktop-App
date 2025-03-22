@@ -12,7 +12,7 @@ namespace Driving_License_Management_BusinessLogic
     {
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = enMode.AddNew;
-        public enum enGendor
+        public enum enGender
         {
             Male = 0, Female = 1
         }
@@ -21,10 +21,19 @@ namespace Driving_License_Management_BusinessLogic
         public string SecondName { get; set; }
         public string ThirdName { get; set; }
         public string LastName { get; set; }
-        public string FullName { get { return FirstName + " " + SecondName + " " + ThirdName + " " + LastName; } }
+        public string FullName
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(ThirdName))
+                    return FirstName + " " + SecondName + " " + ThirdName + " " + LastName;
+                else
+                    return FirstName + " " + SecondName + " " + LastName;
+            }
+        }
         public string NationalNo { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public short Gendor { get; set; }
+        public short Gender { get; set; }
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
         public string Phone { set; get; }
@@ -45,7 +54,7 @@ namespace Driving_License_Management_BusinessLogic
             this.LastName = string.Empty;
             this.NationalNo = string.Empty;
             this.DateOfBirth = DateTime.Now;
-            this.Gendor = (short)enGendor.Male;
+            this.Gender = (short)enGender.Male;
             this.Address = string.Empty;
             this.PhoneNumber = string.Empty;
             this.Phone = string.Empty;
@@ -65,13 +74,13 @@ namespace Driving_License_Management_BusinessLogic
         /// <param name="LastName">The last name of the person.</param>
         /// <param name="NationalNo">The national number of the person.</param>
         /// <param name="DateOfBirth">The date of birth of the person.</param>
-        /// <param name="Gendor">The gender of the person.</param>
+        /// <param name="Gender">The gender of the person.</param>
         /// <param name="Address">The address of the person.</param>
         /// <param name="Phone">The phone number of the person.</param>
         /// <param name="Email">The email address of the person.</param>
         /// <param name="NationalityCountryID">The ID of the country of nationality.</param>
         /// <param name="ImagePath">The path to the person's image.</param>
-        private clsPerson(int PersonID, string FirstName, string SecoundName, string ThirdName, string LastName, string NationalNo, DateTime DateOfBirth, short Gendor, string Address, string Phone, string Email, int NationalityCountryID, string ImagePath)
+        private clsPerson(int PersonID, string FirstName, string SecoundName, string ThirdName, string LastName, string NationalNo, DateTime DateOfBirth, short Gender, string Address, string Phone, string Email, int NationalityCountryID, string ImagePath)
         {
             this.PersonID = PersonID;
             this.FirstName = FirstName;
@@ -80,7 +89,7 @@ namespace Driving_License_Management_BusinessLogic
             this.LastName = LastName;
             this.NationalNo = NationalNo;
             this.DateOfBirth = DateOfBirth;
-            this.Gendor = Gendor;
+            this.Gender = Gender;
             this.Address = Address;
             this.Phone = Phone;
             this.Email = Email;
@@ -96,7 +105,7 @@ namespace Driving_License_Management_BusinessLogic
         private bool _AddNewPerson()
         {
             //Call DataAccessLayer
-            this.PersonID = clsPersonData.AddNewPerson(this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.NationalNo, this.DateOfBirth, this.Gendor, this.Address, this.Phone, this.Email, this.NationalityCountryID, this.ImagePath);
+            this.PersonID = clsPersonData.AddNewPerson(this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.NationalNo, this.DateOfBirth, this.Gender, this.Address, this.Phone, this.Email, this.NationalityCountryID, this.ImagePath);
             return (this.PersonID != -1);
         }
         /// <summary>
@@ -106,7 +115,7 @@ namespace Driving_License_Management_BusinessLogic
         private bool _UpdatePerson()
         {
             //Call DataAccessLayer
-            return clsPersonData.UpdatePerson(this.PersonID, this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.NationalNo, this.DateOfBirth, this.Gendor, this.Address, this.Phone, this.Email, this.NationalityCountryID, this.ImagePath);
+            return clsPersonData.UpdatePerson(this.PersonID, this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.NationalNo, this.DateOfBirth, this.Gender, this.Address, this.Phone, this.Email, this.NationalityCountryID, this.ImagePath);
         }
         /// <summary>
         /// Finds a person in the database by their ID.
@@ -118,12 +127,12 @@ namespace Driving_License_Management_BusinessLogic
             string FirstName = "", SecoundName = "", ThirdName = "", LastName = "", NationalNo = "", Address = "", Phone = "", Email = "", ImagePath = "";
             DateTime DateOfBirth = DateTime.Now;
             int NationalityCountryID = -1;
-            short Gendor = 0;
+            short Gender = 0;
 
-            bool IsFound = clsPersonData.GetPersonInfoByID(PersonID, ref FirstName, ref SecoundName, ref ThirdName, ref LastName, ref NationalNo, ref DateOfBirth, ref Gendor, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath);
+            bool IsFound = clsPersonData.GetPersonInfoByID(PersonID, ref FirstName, ref SecoundName, ref ThirdName, ref LastName, ref NationalNo, ref DateOfBirth, ref Gender, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath);
             if (IsFound)
             {
-                return new clsPerson(PersonID, FirstName, SecoundName, ThirdName, LastName, NationalNo, DateOfBirth, Gendor, Address, Phone, Email, NationalityCountryID, ImagePath);
+                return new clsPerson(PersonID, FirstName, SecoundName, ThirdName, LastName, NationalNo, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath);
             }
             else
             {
@@ -141,12 +150,12 @@ namespace Driving_License_Management_BusinessLogic
             string FirstName = "", SecoundName = "", ThirdName = "", LastName = "", Address = "", Phone = "", Email = "", ImagePath = "";
             DateTime DateOfBirth = DateTime.Now;
             int NationalityCountryID = -1;
-            short Gendor = 0;
+            short Gender = 0;
 
-            bool IsFound = clsPersonData.GetPersonInfoByNationalNo(NationalNo, ref PersonID, ref FirstName, ref SecoundName, ref ThirdName, ref LastName, ref DateOfBirth, ref Gendor, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath);
+            bool IsFound = clsPersonData.GetPersonInfoByNationalNo(NationalNo, ref PersonID, ref FirstName, ref SecoundName, ref ThirdName, ref LastName, ref DateOfBirth, ref Gender, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath);
             if (IsFound)
             {
-                return new clsPerson(PersonID, FirstName, SecoundName, ThirdName, LastName, NationalNo, DateOfBirth, Gendor, Address, Phone, Email, NationalityCountryID, ImagePath);
+                return new clsPerson(PersonID, FirstName, SecoundName, ThirdName, LastName, NationalNo, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath);
             }
             else
             {
@@ -216,13 +225,13 @@ namespace Driving_License_Management_BusinessLogic
             return clsPersonData.IsPersonExist(NationalNo);
         }
         /// <summary>
-        /// Converts a Gendor value to a string.
+        /// Converts a Gender value to a string.
         /// </summary>
-        /// <param name="Gendor">The Gendor value to convert.</param>
-        /// <returns>A string representation of the Gendor value.</returns>
-        public static string GendorToString(short Gendor)
+        /// <param name="Gender">The Gender value to convert.</param>
+        /// <returns>A string representation of the Gender value.</returns>
+        public static string GenderToString(short Gender)
         {
-            if (Gendor == (short)enGendor.Male)
+            if (Gender == (short)enGender.Male)
             {
                 return "Male";
             }

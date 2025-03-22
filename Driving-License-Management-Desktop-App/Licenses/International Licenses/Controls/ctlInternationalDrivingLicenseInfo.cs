@@ -42,7 +42,7 @@ namespace Driving_License_Management_Desktop_App
             lblDateOfBirth.Text = _InternationalLicense.DriverInfo.PersonInfo.DateOfBirth.ToString();
             lblDriverID.Text = _InternationalLicense.DriverInfo.DriverID.ToString();
             lblExpirationDate.Text = _InternationalLicense.ExpirationDate.ToString();
-            lblGender.Text = _InternationalLicense.DriverInfo.PersonInfo.Gendor.ToString();
+            lblGender.Text = _InternationalLicense.DriverInfo.PersonInfo.Gender.ToString();
             lblILicenseID.Text = _InternationalID.ToString();
             lblIsActive.Text = _InternationalLicense.IsActive.ToString();
             lblIssueDate.Text = _InternationalLicense.IssueDate.ToString();
@@ -53,7 +53,7 @@ namespace Driving_License_Management_Desktop_App
             pbPicture.Image = LoadImage(_InternationalLicense.DriverInfo.PersonInfo.ImagePath);
             if (pbPicture.Image == null)
             {
-                if (_InternationalLicense.DriverInfo.PersonInfo.Gendor == (short)clsPerson.enGendor.Male)
+                if (_InternationalLicense.DriverInfo.PersonInfo.Gender == (short)clsPerson.enGender.Male)
                 {
                     pbPicture.Image = Properties.Resources.Male_512;
                 }

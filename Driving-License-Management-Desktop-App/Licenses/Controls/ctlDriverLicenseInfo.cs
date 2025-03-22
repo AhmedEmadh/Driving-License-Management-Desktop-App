@@ -46,7 +46,7 @@ namespace Driving_License_Management_Desktop_App
         }
         private void _LoadPersonImage()
         {
-            if (_License.DriverInfo.PersonInfo.Gendor == 0)
+            if (_License.DriverInfo.PersonInfo.Gender == 0)
                 pbPicture.Image = Resources.Male_512;
             else
                 pbPicture.Image = Resources.Female_512;
@@ -68,7 +68,7 @@ namespace Driving_License_Management_Desktop_App
                 lblDateOfBirth.Text = _License.DriverInfo.PersonInfo.DateOfBirth.ToString();
                 lblDriverID.Text = _License.DriverInfo.DriverID.ToString();
                 lblExpirationDate.Text = _License.ExpirationDate.ToString();
-                lblGender.Text = _License.DriverInfo.PersonInfo.Gendor.ToString();
+                lblGender.Text = _License.DriverInfo.PersonInfo.Gender.ToString();
                 lblIsActive.Text = _License.IsActive ? "Yes" : "No";
                 lblIsDetained.Text = _License.IsDetained ? "Yes" : "No";
                 lblIssueDate.Text = _License.IssueDate.ToString();

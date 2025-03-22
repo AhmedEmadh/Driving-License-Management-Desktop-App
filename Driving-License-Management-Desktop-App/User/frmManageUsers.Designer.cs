@@ -131,7 +131,7 @@
             // button1
             // 
             this.button1.Image = global::Driving_License_Management_Desktop_App.Properties.Resources.Add_New_User_72;
-            this.button1.Location = new System.Drawing.Point(1106, 92);
+            this.button1.Location = new System.Drawing.Point(815, 94);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 98);
             this.button1.TabIndex = 41;
@@ -143,7 +143,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTitle.Location = new System.Drawing.Point(526, 139);
+            this.lblTitle.Location = new System.Drawing.Point(383, 146);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(278, 46);
             this.lblTitle.TabIndex = 40;
@@ -188,7 +188,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Driving_License_Management_Desktop_App.Properties.Resources.Users_2_400;
-            this.pictureBox1.Location = new System.Drawing.Point(580, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(437, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(190, 131);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -238,7 +238,7 @@
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 24;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsers.Size = new System.Drawing.Size(1188, 474);
+            this.dgvUsers.Size = new System.Drawing.Size(897, 474);
             this.dgvUsers.TabIndex = 32;
             // 
             // cbFilter
@@ -261,7 +261,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(1217, 717);
+            this.ClientSize = new System.Drawing.Size(924, 717);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTitle);

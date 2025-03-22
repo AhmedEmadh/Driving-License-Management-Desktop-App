@@ -182,7 +182,7 @@
             // llblSetImage
             // 
             this.llblSetImage.AutoSize = true;
-            this.llblSetImage.Location = new System.Drawing.Point(700, 286);
+            this.llblSetImage.Location = new System.Drawing.Point(701, 293);
             this.llblSetImage.Name = "llblSetImage";
             this.llblSetImage.Size = new System.Drawing.Size(68, 16);
             this.llblSetImage.TabIndex = 41;
@@ -254,7 +254,7 @@
             this.tbAddress.Multiline = true;
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(529, 82);
-            this.tbAddress.TabIndex = 39;
+            this.tbAddress.TabIndex = 40;
             this.tbAddress.Validating += new System.ComponentModel.CancelEventHandler(this._ValidatingWhiteSpace);
             // 
             // tbNationalNo
@@ -373,7 +373,7 @@
             this.cbCountry.Location = new System.Drawing.Point(502, 203);
             this.cbCountry.Name = "cbCountry";
             this.cbCountry.Size = new System.Drawing.Size(161, 24);
-            this.cbCountry.TabIndex = 51;
+            this.cbCountry.TabIndex = 38;
             // 
             // pictureBox2
             // 
@@ -546,7 +546,7 @@
             this.Controls.Add(this.pictureBox7);
             this.Name = "frmAddEditPersonInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAddEditPersonInfo";
+            this.Text = "Add New Person";
             this.Load += new System.EventHandler(this.frmAddEditPersonInfo_Load);
             this.Validating += new System.ComponentModel.CancelEventHandler(this._ValidateEmail);
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).EndInit();

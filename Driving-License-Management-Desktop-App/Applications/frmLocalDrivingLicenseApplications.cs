@@ -26,6 +26,7 @@ Status
         private static DataTable _dtAllLocalDrivingLicenseApplications = clsLocalDrivingLicenseApplication.GetAllLocalDrivingLicenseApplications();
         private DataTable _dtLocalDrivingLicenseApplications = _dtAllLocalDrivingLicenseApplications.DefaultView.ToTable(false, "LocalDrivingLicenseApplicationID", "ClassName", "NationalNo",
                                                        "FullName", "ApplicationDate", "PassedTestCount", "Status");
+
         public frmLocalDrivingLicenseApplications()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ Status
         private void ScheduleVisionTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int LocalDrivingLicenseApplicationID = _GetCurrentDataRowLocalDrivingLicenseApplicationID();
-            new frmTestAppointments(LocalDrivingLicenseApplicationID,clsTestType.enTestType.VisionTest).ShowDialog();
+            new frmTestAppointments(LocalDrivingLicenseApplicationID, clsTestType.enTestType.VisionTest).ShowDialog();
             _UpdateData();
         }
 
@@ -47,12 +48,30 @@ Status
         {
             this.Close();
         }
-
-        private void frmLocalDrivingLicenseApplications_Load(object sender, EventArgs e)
+        void _AdjustColomns()
+        {
+            dgvLocalDrivingLicenseApplications.Columns["LocalDrivingLicenseApplicationID"].Width = 250;
+            dgvLocalDrivingLicenseApplications.Columns["ClassName"].Width = 250;
+            dgvLocalDrivingLicenseApplications.Columns["NationalNo"].Width = 100;
+            dgvLocalDrivingLicenseApplications.Columns["FullName"].Width = 250;
+            dgvLocalDrivingLicenseApplications.Columns["ApplicationDate"].Width = 200;
+            dgvLocalDrivingLicenseApplications.Columns["PassedTestCount"].Width = 150;
+            dgvLocalDrivingLicenseApplications.Columns["Status"].Width = 100;
+        }
+        void _InitalizeDataGridView()
+        {
+            _UpdateData();
+            _AdjustColomns();
+        }
+        void _Load()
         {
             cbFilterBy.SelectedIndex = 0;
-            _UpdateData();
+            _InitalizeDataGridView();
 
+        }
+        private void frmLocalDrivingLicenseApplications_Load(object sender, EventArgs e)
+        {
+            _Load();
         }
 
         private void ctlManagePersons1_OnAdd(object obj)
@@ -68,7 +87,9 @@ Status
         }
         void _UpdateData()
         {
-            dgvLocalDrivingLicenseApplications.DataSource = clsLocalDrivingLicenseApplication.GetAllLocalDrivingLicenseApplications();
+            _dtLocalDrivingLicenseApplications = clsLocalDrivingLicenseApplication.GetAllLocalDrivingLicenseApplications();
+            _dtLocalDrivingLicenseApplications.DefaultView.Sort = "LocalDrivingLicenseApplicationID DESC";
+            dgvLocalDrivingLicenseApplications.DataSource = _dtLocalDrivingLicenseApplications.DefaultView.ToTable();
             lblRecordsCount.Text = dgvLocalDrivingLicenseApplications.Rows.Count.ToString();
         }
         private void editApplicationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -275,7 +296,7 @@ Status
                 if (TotalPassedTests == 3)
                     issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = true;
             }
-            
+
         }
 
         private void scheduleWrittenTestToolStripMenuItem_Click(object sender, EventArgs e)

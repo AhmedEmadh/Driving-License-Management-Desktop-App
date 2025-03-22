@@ -13,8 +13,8 @@ namespace Test
     {
         public static void Test_GetPersonInfoByID()
         {
-            //clsPersonData.GetPersonInfoByID(PersonID, ref FirstName, ref SecondName, ref ThirdName, ref LastName, ref NationalNo, ref DateOfBirth, ref Gendor, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath);
-            //Gendor: 0 = Male, 1 = Female
+            //clsPersonData.GetPersonInfoByID(PersonID, ref FirstName, ref SecondName, ref ThirdName, ref LastName, ref NationalNo, ref DateOfBirth, ref Gender, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath);
+            //Gender: 0 = Male, 1 = Female
             int PersonID = -1;
             string FirstName = null;
             string SecondName = null;
@@ -22,7 +22,7 @@ namespace Test
             string LastName = null;
             string NationalNo = null;
             DateTime DateOfBirth = DateTime.Now;
-            short Gendor = 0;
+            short Gender = 0;
             string Address = null;
             string Phone = null;
             string Email = null;
@@ -37,7 +37,7 @@ namespace Test
                 Console.WriteLine("Invalid ID");
                 return;
             }
-            if (clsPersonData.GetPersonInfoByID(PersonID, ref FirstName, ref SecondName, ref ThirdName, ref LastName, ref NationalNo, ref DateOfBirth, ref Gendor, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath))
+            if (clsPersonData.GetPersonInfoByID(PersonID, ref FirstName, ref SecondName, ref ThirdName, ref LastName, ref NationalNo, ref DateOfBirth, ref Gender, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath))
             {
                 Console.WriteLine("Person Info");
                 Console.WriteLine(FirstName);
@@ -46,7 +46,7 @@ namespace Test
                 Console.WriteLine(LastName);
                 Console.WriteLine(NationalNo);
                 Console.WriteLine(DateOfBirth);
-                Console.WriteLine(Gendor);
+                Console.WriteLine(Gender);
                 Console.WriteLine(Address);
                 Console.WriteLine(Phone);
                 Console.WriteLine(Email);
@@ -62,7 +62,7 @@ namespace Test
         }
         public static void Test_GetPersonInfoByNationalNo()
         {
-            //clsPersonData.GetPersonInfoByNationalNo(NationalNo, ref PersonID, ref FirstName, ref SecondName, ref ThirdName, ref LastName, ref DateOfBirth, ref Gendor, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath);
+            //clsPersonData.GetPersonInfoByNationalNo(NationalNo, ref PersonID, ref FirstName, ref SecondName, ref ThirdName, ref LastName, ref DateOfBirth, ref Gender, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath);
             string NationalNo = null;
             int PersonID = -1;
             string FirstName = null;
@@ -70,7 +70,7 @@ namespace Test
             string ThirdName = null;
             string LastName = null;
             DateTime DateOfBirth = DateTime.Now;
-            short Gendor = 0;
+            short Gender = 0;
             string Address = null;
             string Phone = null;
             string Email = null;
@@ -83,7 +83,7 @@ namespace Test
             {
                 NationalNo = line;
             }
-            if(clsPersonData.GetPersonInfoByNationalNo(NationalNo,ref PersonID,ref FirstName,ref SecondName,ref ThirdName,ref LastName,ref DateOfBirth,ref Gendor,ref Address,ref Phone,ref Email,ref NationalityCountryID,ref ImagePath))
+            if(clsPersonData.GetPersonInfoByNationalNo(NationalNo,ref PersonID,ref FirstName,ref SecondName,ref ThirdName,ref LastName,ref DateOfBirth,ref Gender,ref Address,ref Phone,ref Email,ref NationalityCountryID,ref ImagePath))
             {
                 Console.WriteLine("Person Info");
                 Console.WriteLine(PersonID);
@@ -92,7 +92,7 @@ namespace Test
                 Console.WriteLine(ThirdName);
                 Console.WriteLine(LastName);
                 Console.WriteLine(DateOfBirth);
-                Console.WriteLine(Gendor);
+                Console.WriteLine(Gender);
                 Console.WriteLine(Address);
                 Console.WriteLine(Phone);
                 Console.WriteLine(Email);
@@ -108,14 +108,14 @@ namespace Test
         }
         public static void AddNewPerson()
         {
-            //clsPersonData.AddNewPerson(FirstName, SecondName, ThirdName, LastName, NationalNo, DateOfBirth, Gendor, Address, Phone, Email, NationalityCountryID, ImagePath);
+            //clsPersonData.AddNewPerson(FirstName, SecondName, ThirdName, LastName, NationalNo, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath);
             string FirstName = null;
             string SecondName = null;
             string ThirdName = null;
             string LastName = null;
             string NationalNo = null;
             DateTime DateOfBirth = DateTime.Now;
-            short Gendor = 0;
+            short Gender = 0;
             string Address = null;
             string Phone = null;
             string Email = null;
@@ -158,11 +158,11 @@ namespace Test
             {
                 DateOfBirth = Convert.ToDateTime(line);
             }
-            Console.WriteLine("Enter Gendor");
+            Console.WriteLine("Enter Gender");
             line = Console.ReadLine();
-            if (line.Length > 0 && short.TryParse(line, out Gendor))
+            if (line.Length > 0 && short.TryParse(line, out Gender))
             {
-                Gendor = Convert.ToInt16(line);
+                Gender = Convert.ToInt16(line);
             }
             Console.WriteLine("Enter Address");
             line = Console.ReadLine();
@@ -195,7 +195,7 @@ namespace Test
                 ImagePath = line;
             }
 
-            int PersonID = clsPersonData.AddNewPerson(FirstName, SecondName, ThirdName, LastName, NationalNo, DateOfBirth, Gendor, Address, Phone, Email, NationalityCountryID, ImagePath);
+            int PersonID = clsPersonData.AddNewPerson(FirstName, SecondName, ThirdName, LastName, NationalNo, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath);
             if (PersonID > 0)
             {
                 Console.WriteLine("Person ID");
@@ -211,7 +211,7 @@ namespace Test
         }
         public static void Test_UpdatePerson()
         {
-            //clsPersonData.UpdatePerson(PersonID, FirstName, SecondName, ThirdName, LastName, NationalNo, DateOfBirth, Gendor, Address, Phone, Email, NationalityCountryID, ImagePath);
+            //clsPersonData.UpdatePerson(PersonID, FirstName, SecondName, ThirdName, LastName, NationalNo, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath);
             int PersonID = -1;
             string FirstName = null;
             string SecondName = null;
@@ -219,7 +219,7 @@ namespace Test
             string LastName = null;
             string NationalNo = null;
             DateTime DateOfBirth = DateTime.Now;
-            short Gendor = 0;
+            short Gender = 0;
             string Address = null;
             string Phone = null;
             string Email = null;
@@ -270,11 +270,11 @@ namespace Test
             {
                 DateOfBirth = Convert.ToDateTime(line);
             }
-            Console.WriteLine("Enter Gendor");
+            Console.WriteLine("Enter Gender");
             line = Console.ReadLine();
-            if (line.Length > 0 && short.TryParse(line, out Gendor))
+            if (line.Length > 0 && short.TryParse(line, out Gender))
             {
-                Gendor = Convert.ToInt16(line);
+                Gender = Convert.ToInt16(line);
             }
             Console.WriteLine("Enter Address");
             line = Console.ReadLine();
@@ -307,7 +307,7 @@ namespace Test
                 ImagePath = line;
             }
 
-            if(clsPersonData.UpdatePerson(PersonID, FirstName, SecondName, ThirdName, LastName, NationalNo, DateOfBirth, Gendor, Address, Phone, Email, NationalityCountryID, ImagePath))
+            if(clsPersonData.UpdatePerson(PersonID, FirstName, SecondName, ThirdName, LastName, NationalNo, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath))
             {
                 Console.WriteLine("Person ID Updated");
                 Console.WriteLine("=================================");
@@ -332,7 +332,7 @@ namespace Test
                 Console.WriteLine(row["LastName"]);
                 Console.WriteLine(row["NationalNo"]);
                 Console.WriteLine(row["DateOfBirth"]);
-                Console.WriteLine(row["Gendor"]);
+                Console.WriteLine(row["Gender"]);
                 Console.WriteLine(row["Address"]);
                 Console.WriteLine(row["Phone"]);
                 Console.WriteLine(row["Email"]);

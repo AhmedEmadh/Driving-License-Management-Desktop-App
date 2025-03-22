@@ -107,6 +107,7 @@ namespace Driving_License_Management_DataAccessLayer
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 Result.Load(reader);
+                Result.Columns[0].DataType = typeof(int);
             }
             catch (Exception ex)
             {
