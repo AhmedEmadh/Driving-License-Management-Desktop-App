@@ -99,15 +99,15 @@ namespace Driving_License_Management_Desktop_App
 
         }
 
-        private void ctlApplicationBasicInfo1_OnLinkClick(object obj)
-        {
-            //Calling OnLinkClick Event
-            OnLinkClick_handler();
-            clsLocalDrivingLicenseApplication localDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_LocalDrivingLicenseApplicationID);
-            int PersonID = localDrivingLicenseApplication.ApplicantPersonInfo.PersonID;
-            new frmPersonDetails(PersonID).ShowDialog();
+        //private void ctlApplicationBasicInfo1_OnLinkClick(object obj)
+        //{
+        //    //Calling OnLinkClick Event
+        //    OnLinkClick_handler();
+        //    clsLocalDrivingLicenseApplication localDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_LocalDrivingLicenseApplicationID);
+        //    int PersonID = localDrivingLicenseApplication.ApplicantPersonInfo.PersonID;
+        //    new frmPersonDetails(PersonID).ShowDialog();
 
-        }
+        //}
 
         private void ctlApplicationBasicInfo1_Load(object sender, EventArgs e)
         {

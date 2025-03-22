@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPersonalInfo = new System.Windows.Forms.TabPage();
+            this.ctlPersonInformationWithFilter1 = new Driving_License_Management_Desktop_App.ctlPersonInformationWithFilter();
             this.button5 = new System.Windows.Forms.Button();
             this.tapLoginInfo = new System.Windows.Forms.TabPage();
             this.cbIsActive = new System.Windows.Forms.CheckBox();
@@ -44,7 +45,6 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.ctlPersonInformationWithFilter1 = new Driving_License_Management_Desktop_App.ctlPersonInformationWithFilter();
             this.tabControl1.SuspendLayout();
             this.tabPersonalInfo.SuspendLayout();
             this.tapLoginInfo.SuspendLayout();
@@ -73,6 +73,19 @@
             this.tabPersonalInfo.Text = "Personal Info";
             this.tabPersonalInfo.UseVisualStyleBackColor = true;
             this.tabPersonalInfo.Click += new System.EventHandler(this.tabPersonalInfo_Click);
+            // 
+            // ctlPersonInformationWithFilter1
+            // 
+            this.ctlPersonInformationWithFilter1.BackColor = System.Drawing.Color.White;
+            this.ctlPersonInformationWithFilter1.FilterEnabled = true;
+            this.ctlPersonInformationWithFilter1.Location = new System.Drawing.Point(18, 7);
+            this.ctlPersonInformationWithFilter1.Name = "ctlPersonInformationWithFilter1";
+            this.ctlPersonInformationWithFilter1.PersonID = -1;
+            this.ctlPersonInformationWithFilter1.SearchText = "";
+            this.ctlPersonInformationWithFilter1.SelectedIndex = 0;
+            this.ctlPersonInformationWithFilter1.ShowAddPersonButton = false;
+            this.ctlPersonInformationWithFilter1.Size = new System.Drawing.Size(651, 285);
+            this.ctlPersonInformationWithFilter1.TabIndex = 3;
             // 
             // button5
             // 
@@ -209,7 +222,7 @@
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.button4_Click);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblTitle
             // 
@@ -221,19 +234,6 @@
             this.lblTitle.Size = new System.Drawing.Size(277, 46);
             this.lblTitle.TabIndex = 11;
             this.lblTitle.Text = "Add New User";
-            // 
-            // ctlPersonInformationWithFilter1
-            // 
-            this.ctlPersonInformationWithFilter1.BackColor = System.Drawing.Color.White;
-            this.ctlPersonInformationWithFilter1.FilterEnabled = true;
-            this.ctlPersonInformationWithFilter1.Location = new System.Drawing.Point(18, 7);
-            this.ctlPersonInformationWithFilter1.Name = "ctlPersonInformationWithFilter1";
-            this.ctlPersonInformationWithFilter1.PersonID = -1;
-            this.ctlPersonInformationWithFilter1.SearchText = "";
-            this.ctlPersonInformationWithFilter1.SelectedIndex = 0;
-            this.ctlPersonInformationWithFilter1.ShowAddPersonButton = false;
-            this.ctlPersonInformationWithFilter1.Size = new System.Drawing.Size(651, 285);
-            this.ctlPersonInformationWithFilter1.TabIndex = 3;
             // 
             // frmAddEditUserInfo
             // 
@@ -248,7 +248,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "frmAddEditUserInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAddEditUserInfo";
+            this.Text = "Add/Edit User";
             this.Load += new System.EventHandler(this.frmAddEditUserInfo_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPersonalInfo.ResumeLayout(false);

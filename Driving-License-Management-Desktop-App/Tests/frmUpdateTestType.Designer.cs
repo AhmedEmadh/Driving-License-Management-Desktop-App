@@ -162,7 +162,7 @@
             this.Controls.Add(this.label2);
             this.Name = "frmUpdateTestType";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmUpdateTestType";
+            this.Text = "Update Test Type";
             this.Load += new System.EventHandler(this.frmUpdateTestType_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

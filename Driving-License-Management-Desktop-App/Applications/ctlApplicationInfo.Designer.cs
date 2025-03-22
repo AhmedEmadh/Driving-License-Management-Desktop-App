@@ -47,7 +47,6 @@
             this.ctlApplicationBasicInfo1.Name = "ctlApplicationBasicInfo1";
             this.ctlApplicationBasicInfo1.Size = new System.Drawing.Size(785, 161);
             this.ctlApplicationBasicInfo1.TabIndex = 6;
-            this.ctlApplicationBasicInfo1.OnLinkClick += new System.Action<object>(this.ctlApplicationBasicInfo1_OnLinkClick);
             this.ctlApplicationBasicInfo1.Load += new System.EventHandler(this.ctlApplicationBasicInfo1_Load);
             // 
             // ctlApplicationInfo

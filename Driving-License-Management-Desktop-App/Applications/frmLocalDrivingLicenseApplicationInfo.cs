@@ -27,11 +27,11 @@ namespace Driving_License_Management_Desktop_App.Applications
             ctlApplicationInfo1.LocalDrivingLicenseApplicationID = _ApplicationID;
         }
 
-        private void ctlApplicationInfo1_OnLinkClicked(object obj)
-        {
-            clsLocalDrivingLicenseApplication localApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_ApplicationID);
-            int PersonID = localApplication.ApplicantPersonInfo.PersonID;
-            new frmPersonDetails(PersonID).ShowDialog();
-        }
+        //private void ctlApplicationInfo1_OnLinkClicked(object obj)
+        //{
+        //    clsLocalDrivingLicenseApplication localApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_ApplicationID);
+        //    int PersonID = localApplication.ApplicantPersonInfo.PersonID;
+        //    new frmPersonDetails(PersonID).ShowDialog();
+        //}
     }
 }

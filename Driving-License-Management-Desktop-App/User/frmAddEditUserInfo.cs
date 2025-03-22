@@ -1,4 +1,5 @@
 ﻿using Driving_License_Management_BusinessLogic;
+using Driving_License_Management_Desktop_App.Global_Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,8 +28,6 @@ namespace Driving_License_Management_Desktop_App
         void _FillLoginInfo(clsUser User)
         {
             tbUserName.Text = User.UserName;
-            tbPassword.Text = User.Password;
-            tbConfirmPassword.Text = User.Password;
             cbIsActive.Checked = User.IsActive;
             lblUserIDValue.Text = User.UserID.ToString();
         }
@@ -153,52 +152,6 @@ namespace Driving_License_Management_Desktop_App
             }
 
         }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (_Mode == Mode.AddNew)
-            {
-                clsUser objUser = new clsUser();
-                objUser.PersonID = ctlPersonInformationWithFilter1.PersonID;
-                objUser.UserName = tbUserName.Text;
-                objUser.Password = tbPassword.Text;
-
-                objUser.IsActive = cbIsActive.Checked;
-                if (tbPassword.Text == tbConfirmPassword.Text)
-                {
-                    if (objUser.Save())
-                    {
-                        MessageBox.Show("User Information Saved Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        lblUserIDValue.Text = objUser.UserID.ToString();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error in Saving User Information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Password and Confirm Password does not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-            }
-            else
-            {
-                if(tbPassword.Text == tbConfirmPassword.Text)
-                {
-                    _User.Password = tbPassword.Text;
-                    _User.Save();
-                    MessageBox.Show("User Information Saved Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Password and Confirm Password does not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-            }
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -220,6 +173,53 @@ namespace Driving_License_Management_Desktop_App
                         _DisableLoginInfo();
                     }
                 }
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (_Mode == Mode.AddNew)
+            {
+                clsUser objUser = new clsUser();
+                objUser.PersonID = ctlPersonInformationWithFilter1.PersonID;
+                objUser.UserName = tbUserName.Text;
+                objUser.IsActive = cbIsActive.Checked;
+                if (tbPassword.Text == tbConfirmPassword.Text)
+                {
+                    if (tbPassword.Text != "")
+                        objUser.Password = clsGlobal.ComputeHash(tbPassword.Text);
+                    if (objUser.Save())
+                    {
+                        MessageBox.Show("User Information Saved Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        lblUserIDValue.Text = objUser.UserID.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error in Saving User Information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Password and Confirm Password does not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                if (tbPassword.Text == tbConfirmPassword.Text)
+                {
+                    if (tbPassword.Text != "")
+                        _User.Password = clsGlobal.ComputeHash(tbPassword.Text);
+                    _User.UserName = tbUserName.Text;
+                    _User.IsActive = cbIsActive.Checked;
+                    _User.Save();
+                    MessageBox.Show("User Information Saved Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Password and Confirm Password does not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
         }
     }

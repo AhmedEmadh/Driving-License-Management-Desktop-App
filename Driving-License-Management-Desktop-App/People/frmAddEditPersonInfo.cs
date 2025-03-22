@@ -153,8 +153,9 @@ namespace Driving_License_Management_Desktop_App
         {
             openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
             openFileDialog1.FilterIndex = 1;
-            openFileDialog1.RestoreDirectory = true;
-
+            openFileDialog1.RestoreDirectory = false;
+            // Clear search filter
+            openFileDialog1.FileName = "";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string selectedFilePath = openFileDialog1.FileName;
@@ -166,7 +167,10 @@ namespace Driving_License_Management_Desktop_App
         private void llblRemove_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ((LinkLabel)sender).Visible = false;
-            pbPersonImage.Image = null;
+            if (rbMale.Checked == true)
+                pbPersonImage.Image = Resources.Male_512;
+            else
+                pbPersonImage.Image = Resources.Female_512;
             pbPersonImage.ImageLocation = null;
 
 
@@ -261,7 +265,7 @@ namespace Driving_License_Management_Desktop_App
                 _PersonID = _Person.PersonID;
                 //Change form mode to update
                 _SetModeToUpdateMode();
-                
+
                 MessageBox.Show("Person information saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //Trigger the event to send data back to the caller form
                 DataBack?.Invoke(this, _PersonID);
