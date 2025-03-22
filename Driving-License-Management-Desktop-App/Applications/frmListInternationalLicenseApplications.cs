@@ -24,10 +24,26 @@ namespace Driving_License_Management_Desktop_App
             dgvDrivers.DataSource = clsInternationalLicense.GetAllInternationalLicenses();
             lblRecordsCount.Text = dgvDrivers.Rows.Count.ToString();
         }
+        void _AdjustColomns()
+        {
+            dgvDrivers.Columns[0].Width = 175;
+            dgvDrivers.Columns[1].Width = 100;
+            dgvDrivers.Columns[2].Width = 75;
+            dgvDrivers.Columns[3].Width = 200;
+            dgvDrivers.Columns[4].Width = 200;
+            dgvDrivers.Columns[5].Width = 200;
+            dgvDrivers.Columns[6].Width = 200;
+            dgvDrivers.Columns[7].Width = 200;
+        }
+        void _InitalizeDataGridView()
+        {
+            _ReloadData();
+            _AdjustColomns();
+        }
         private void frmListInternationalLicenseApplications_Load(object sender, EventArgs e)
         {
             cbFilterBy.SelectedIndex = 0;
-            _ReloadData();
+            _InitalizeDataGridView();
         }
         int _GetInternationalLicenseID()
         {

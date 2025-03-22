@@ -17,7 +17,7 @@ namespace Driving_License_Management_Desktop_App
         private static DataTable _dtAllPeople = clsPerson.GetAllPeople();
         private DataTable _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "NationalNo",
                                                        "FirstName", "SecondName", "ThirdName", "LastName",
-                                                       "GendorCaption", "DateOfBirth", "CountryName",
+                                                       "GenderCaption", "DateOfBirth", "CountryName",
                                                        "Phone", "Email");
         public frmManagePeople()
         {
@@ -83,6 +83,8 @@ namespace Driving_License_Management_Desktop_App
 
                 dgvPeople.Columns[10].HeaderText = "Email";
                 dgvPeople.Columns[10].Width = 170;
+
+                _RefreshData();
             }
         }
         private void frmManagePeople_Load(object sender, EventArgs e)
@@ -128,8 +130,15 @@ namespace Driving_License_Management_Desktop_App
             _dtAllPeople = clsPerson.GetAllPeople();
             _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "NationalNo",
                                                            "FirstName", "SecondName", "ThirdName", "LastName",
-                                                           "GendorCaption", "DateOfBirth", "CountryName",
+                                                           "GenderCaption", "DateOfBirth", "CountryName",
                                                            "Phone", "Email");
+
+            // Create a new DataTable with the converted PersonID column
+            _dtPeople.Columns["PersonID"].DataType = typeof(int);
+
+            
+            // Sort Data based on PersonID in Descending order
+            _dtPeople.DefaultView.Sort = "PersonID DESC";
 
             // Rebind the DataGridView to the updated data
             dgvPeople.DataSource = _dtPeople;
@@ -188,7 +197,7 @@ namespace Driving_License_Management_Desktop_App
                     break;
 
                 case "Gender":
-                    FilterColumn = "GendorCaption";
+                    FilterColumn = "GenderCaption";
                     break;
 
                 case "Phone":

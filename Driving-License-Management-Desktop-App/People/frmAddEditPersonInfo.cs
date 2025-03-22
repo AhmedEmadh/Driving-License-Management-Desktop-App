@@ -31,11 +31,13 @@ namespace Driving_License_Management_Desktop_App
         {
             _Mode = enMode.AddNew;
             lblTitle.Text = "Add New Person";
+            this.Text = "Add New Person";
         }
         void _SetModeToUpdateMode()
         {
             _Mode = enMode.Update;
             lblTitle.Text = "Update Person";
+            this.Text = "Update Person Information";
         }
 
         public frmAddEditPersonInfo()
@@ -117,13 +119,14 @@ namespace Driving_License_Management_Desktop_App
             tbEmail.Text = _Person.Email;
             dtpDateOfBirth.Value = _Person.DateOfBirth;
             cbCountry.SelectedIndex = cbCountry.FindString(_Person.CountryInfo.CountryName);
-            if (_Person.Gendor == 0)
+            if (_Person.Gender == 0)
                 rbMale.Checked = true;
             else
                 rbFemale.Checked = true;
             if (_Person.ImagePath != "")
             {
                 pbPersonImage.ImageLocation = _Person.ImagePath;
+                llblRemove.Visible = true;
             }
         }
         private void frmAddEditPersonInfo_Load(object sender, EventArgs e)
@@ -248,7 +251,7 @@ namespace Driving_License_Management_Desktop_App
             _Person.DateOfBirth = dtpDateOfBirth.Value;
             _Person.Address = tbAddress.Text.Trim();
             _Person.Phone = tbPhone.Text.Trim();
-            _Person.Gendor = (short)(rbMale.Checked ? 0 : 1);
+            _Person.Gender = (short)(rbMale.Checked ? 0 : 1);
             _Person.Email = tbEmail.Text.Trim();
             _Person.NationalityCountryID = NationalityCountryID;
             _Person.ImagePath = pbPersonImage.ImageLocation;
@@ -258,7 +261,7 @@ namespace Driving_License_Management_Desktop_App
                 _PersonID = _Person.PersonID;
                 //Change form mode to update
                 _SetModeToUpdateMode();
-                lblTitle.Text = "Update Person";
+                
                 MessageBox.Show("Person information saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //Trigger the event to send data back to the caller form
                 DataBack?.Invoke(this, _PersonID);

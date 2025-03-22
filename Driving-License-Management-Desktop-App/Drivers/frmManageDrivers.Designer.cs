@@ -99,7 +99,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTitle.Location = new System.Drawing.Point(526, 144);
+            this.lblTitle.Location = new System.Drawing.Point(361, 146);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(299, 46);
             this.lblTitle.TabIndex = 40;
@@ -143,7 +143,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Driving_License_Management_Desktop_App.Properties.Resources.People_400;
-            this.pictureBox1.Location = new System.Drawing.Point(580, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(415, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(190, 131);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -193,7 +193,7 @@
             this.dgvDrivers.RowHeadersWidth = 51;
             this.dgvDrivers.RowTemplate.Height = 24;
             this.dgvDrivers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDrivers.Size = new System.Drawing.Size(1470, 474);
+            this.dgvDrivers.Size = new System.Drawing.Size(1054, 474);
             this.dgvDrivers.TabIndex = 32;
             // 
             // frmManageDrivers
@@ -202,7 +202,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(1490, 732);
+            this.ClientSize = new System.Drawing.Size(1078, 732);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.cbFilterBy);

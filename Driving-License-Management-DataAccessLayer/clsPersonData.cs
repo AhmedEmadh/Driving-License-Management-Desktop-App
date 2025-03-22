@@ -22,14 +22,16 @@ namespace Driving_License_Management_DataAccessLayer
         /// <param name="LastName">The person's last name.</param>
         /// <param name="NationalNo">The person's national number.</param>
         /// <param name="DateOfBirth">The person's date of birth.</param>
-        /// <param name="Gendor">The person's gender.</param>
+        /// <param name="
+        /// 
+        /// ">The person's gender.</param>
         /// <param name="Address">The person's address.</param>
         /// <param name="Phone">The person's phone number.</param>
         /// <param name="Email">The person's email address.</param>
         /// <param name="NationalityCountryID">The ID of the person's nationality country.</param>
         /// <param name="ImagePath">The path to the person's image.</param>
         /// <returns>True if the person's information was successfully retrieved; otherwise, false.</returns>
-        public static bool GetPersonInfoByID(int PersonID, ref string FirstName, ref string SecondName, ref string ThirdName, ref string LastName, ref string NationalNo, ref DateTime DateOfBirth, ref short Gendor, ref string Address, ref string Phone, ref string Email, ref int NationalityCountryID, ref string ImagePath)
+        public static bool GetPersonInfoByID(int PersonID, ref string FirstName, ref string SecondName, ref string ThirdName, ref string LastName, ref string NationalNo, ref DateTime DateOfBirth, ref short Gender, ref string Address, ref string Phone, ref string Email, ref int NationalityCountryID, ref string ImagePath)
         {
             bool isSuccess = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
@@ -48,7 +50,7 @@ namespace Driving_License_Management_DataAccessLayer
                     LastName = reader["LastName"].ToString();
                     NationalNo = reader["NationalNo"].ToString();
                     DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
-                    Gendor = Convert.ToInt16(reader["Gendor"]);
+                    Gender = Convert.ToInt16(reader["Gender"]);
                     Address = reader["Address"].ToString();
                     Phone = reader["Phone"].ToString();
                     Email = reader["Email"]!=DBNull.Value ? reader["Email"].ToString() : "";
@@ -82,7 +84,7 @@ namespace Driving_License_Management_DataAccessLayer
         /// <param name="ThirdName">The third name of the person.</param>
         /// <param name="LastName">The last name of the person.</param>
         /// <param name="DateOfBirth">The date of birth of the person.</param>
-        /// <param name="Gendor">The gender of the person.</param>
+        /// <param name="Gender">The gender of the person.</param>
         /// <param name="Address">The address of the person.</param>
         /// <param name="Phone">The phone number of the person.</param>
         /// <param name="Email">The email address of the person.</param>
@@ -91,7 +93,7 @@ namespace Driving_License_Management_DataAccessLayer
         /// <returns>True if the person's information is retrieved successfully, false otherwise.</returns>
         public static bool GetPersonInfoByNationalNo(string NationalNo, ref int PersonID, ref string FirstName, ref string SecondName,
                                                      ref string ThirdName, ref string LastName, ref DateTime DateOfBirth,
-                                                     ref short Gendor, ref string Address, ref string Phone, ref string Email,
+                                                     ref short Gender, ref string Address, ref string Phone, ref string Email,
                                                      ref int NationalityCountryID, ref string ImagePath)
         {
             bool isSuccess = false;
@@ -111,7 +113,7 @@ namespace Driving_License_Management_DataAccessLayer
                     ThirdName = reader["ThirdName"] != DBNull.Value ? reader["ThirdName"].ToString() : "";
                     LastName = reader["LastName"].ToString();
                     DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
-                    Gendor = Convert.ToInt16(reader["Gendor"]);
+                    Gender = Convert.ToInt16(reader["Gender"]);
                     Address = reader["Address"].ToString();
                     Phone = reader["Phone"].ToString();
                     Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : "";
@@ -144,14 +146,14 @@ namespace Driving_License_Management_DataAccessLayer
         /// <param name="LastName">The last name of the person.</param>
         /// <param name="NationalNo">The national number of the person.</param>
         /// <param name="DateOfBirth">The date of birth of the person.</param>
-        /// <param name="Gendor">The gender of the person.</param>
+        /// <param name="Gender">The gender of the person.</param>
         /// <param name="Address">The address of the person.</param>
         /// <param name="Phone">The phone number of the person.</param>
         /// <param name="Email">The email address of the person.</param>
         /// <param name="NationalityCountryID">The ID of the person's nationality country.</param>
         /// <param name="ImagePath">The path to the person's image.</param>
         /// <returns>The ID of the added person, or -1 if the operation fails.</returns>
-        public static int AddNewPerson(string FirstName, string SecondName, string ThirdName, string LastName, string NationalNo, DateTime DateOfBirth, short Gendor, string Address, string Phone, string Email, int NationalityCountryID, string ImagePath)
+        public static int AddNewPerson(string FirstName, string SecondName, string ThirdName, string LastName, string NationalNo, DateTime DateOfBirth, short Gender, string Address, string Phone, string Email, int NationalityCountryID, string ImagePath)
         {
             int PersonID = -1;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
@@ -163,14 +165,14 @@ namespace Driving_License_Management_DataAccessLayer
                                ,ThirdName
                                ,LastName
                                ,DateOfBirth
-                               ,Gendor
+                               ,Gender
                                ,Address
                                ,Phone
                                ,Email
                                ,NationalityCountryID
                                ,ImagePath)
                          VALUES
-                               (@NationalNo, @FirstName, @SecondName, @ThirdName, @LastName, @DateOfBirth, @Gendor, @Address, @Phone, @Email, @NationalityCountryID, @ImagePath);
+                               (@NationalNo, @FirstName, @SecondName, @ThirdName, @LastName, @DateOfBirth, @Gender, @Address, @Phone, @Email, @NationalityCountryID, @ImagePath);
                          SELECT SCOPE_IDENTITY();
              ";
             SqlCommand command = new SqlCommand(query, connection);
@@ -183,7 +185,7 @@ namespace Driving_License_Management_DataAccessLayer
                 command.Parameters.AddWithValue("@ThirdName", DBNull.Value);
             command.Parameters.AddWithValue("@LastName", LastName);
             command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
-            command.Parameters.AddWithValue("@Gendor", Gendor);
+            command.Parameters.AddWithValue("@Gender", Gender);
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@Phone", Phone);
             if(Email != string.Empty && Email != null)
@@ -221,14 +223,14 @@ namespace Driving_License_Management_DataAccessLayer
         /// <param name="LastName">The last name of the person.</param>
         /// <param name="NationalNo">The national number of the person.</param>
         /// <param name="DateOfBirth">The date of birth of the person.</param>
-        /// <param name="Gendor">The gender of the person.</param>
+        /// <param name="Gender">The gender of the person.</param>
         /// <param name="Address">The address of the person.</param>
         /// <param name="Phone">The phone number of the person.</param>
         /// <param name="Email">The email address of the person.</param>
         /// <param name="NationalityCountryID">The ID of the nationality country of the person.</param>
         /// <param name="ImagePath">The path to the image of the person.</param>
         /// <returns>True if the person record is updated successfully, false otherwise.</returns>
-        public static bool UpdatePerson(int PersonID, string FirstName, string SecondName, string ThirdName, string LastName, string NationalNo, DateTime DateOfBirth, short Gendor, string Address, string Phone, string Email, int NationalityCountryID, string ImagePath)
+        public static bool UpdatePerson(int PersonID, string FirstName, string SecondName, string ThirdName, string LastName, string NationalNo, DateTime DateOfBirth, short Gender, string Address, string Phone, string Email, int NationalityCountryID, string ImagePath)
         {
             bool isSuccess = false;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
@@ -241,7 +243,7 @@ namespace Driving_License_Management_DataAccessLayer
                                ,LastName = @LastName
                                ,NationalNo = @NationalNo
                                ,DateOfBirth = @DateOfBirth
-                               ,Gendor = @Gendor
+                               ,Gender = @Gender
                                ,Address = @Address
                                ,Phone = @Phone
                                ,Email = @Email
@@ -260,7 +262,7 @@ namespace Driving_License_Management_DataAccessLayer
             command.Parameters.AddWithValue("@LastName", LastName);
             command.Parameters.AddWithValue("@NationalNo", NationalNo);
             command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
-            command.Parameters.AddWithValue("@Gendor", Gendor);
+            command.Parameters.AddWithValue("@Gender", Gender);
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@Phone", Phone);
             if (Email != string.Empty && Email != null)
@@ -299,10 +301,10 @@ namespace Driving_License_Management_DataAccessLayer
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
             string query = @"SELECT PersonID, NationalNo, FirstName, SecondName, ThirdName, LastName,DateOfBirth, 
                                 CASE
-								WHEN People.Gendor = '0' THEN 'Male'
+								WHEN People.Gender = '0' THEN 'Male'
 								ELSE 'Female'
 								END
-								AS GendorCaption, Address, Phone, Email, Countries.CountryName, ImagePath FROM People
+								AS GenderCaption, Address, Phone, Email, Countries.CountryName, ImagePath FROM People
                                 INNER JOIN Countries ON People.NationalityCountryID = Countries.CountryID
             ";
             SqlCommand command = new SqlCommand(query, connection);
@@ -311,6 +313,8 @@ namespace Driving_License_Management_DataAccessLayer
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 Result.Load(reader);
+
+                Result.Columns[0].DataType = typeof(int);
             }
             catch (Exception ex)
             {

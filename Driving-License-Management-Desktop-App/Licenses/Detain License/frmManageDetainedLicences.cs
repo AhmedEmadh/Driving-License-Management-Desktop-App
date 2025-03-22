@@ -32,19 +32,32 @@ namespace Driving_License_Management_Desktop_App
         void _ReloadData()
         {
             _dtAllDetainedLicences = clsDetainedLicense.GetAllDetainedLicenses();
-            dgvDetainedLicenses.DataSource = _dtAllDetainedLicences;
+            _dtAllDetainedLicences.DefaultView.Sort = "DetainID DESC";
+            dgvDetainedLicenses.DataSource = _dtAllDetainedLicences.DefaultView.ToTable();
             lblRecordsCount.Text = _dtAllDetainedLicences.Rows.Count.ToString();
+        }
+        void _AdjustColomns()
+        {
+            dgvDetainedLicenses.Columns["DetainID"].Width = 75;
+            dgvDetainedLicenses.Columns["LicenseID"].Width = 100;
+            dgvDetainedLicenses.Columns["DetainDate"].Width = 200;
+            dgvDetainedLicenses.Columns["IsReleased"].Width = 100;
+            dgvDetainedLicenses.Columns["FineFees"].Width = 100;
+            dgvDetainedLicenses.Columns["ReleaseDate"].Width = 200;
+            dgvDetainedLicenses.Columns["NationalNo"].Width = 200;
+            dgvDetainedLicenses.Columns["FullName"].Width = 250;
+            dgvDetainedLicenses.Columns["ReleaseApplicationID"].Width = 175;
+        }
+        void _InitalizeDataGridView()
+        {
+            _ReloadData();
+            _AdjustColomns();
         }
         private void frmManageDetainedLicences_Load(object sender, EventArgs e)
         {
             cbFilterBy.SelectedIndex = 0;
             cbIsReleased.SelectedIndex = 0;
-            _ReloadData();
-        }
-
-        private void ctlShowDataWithFilter1_Load(object sender, EventArgs e)
-        {
-
+            _InitalizeDataGridView();
         }
 
         private void ctlShowDataWithFilter1_OnClose(object obj)
@@ -111,6 +124,7 @@ namespace Driving_License_Management_Desktop_App
             if (cbFilterBy.SelectedItem.ToString() == "None")
             {
                 tbSearch.Visible = false;
+                cbIsReleased.Visible = false;
             }
             else
             {
@@ -137,8 +151,8 @@ namespace Driving_License_Management_Desktop_App
                     Full Name
                     Release Application ID
              */
+            cbIsReleased.SelectedIndex = 0;
             SetTextBoxAndComboboxVisibility();
-
         }
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
@@ -177,6 +191,7 @@ namespace Driving_License_Management_Desktop_App
             if (tbSearch.Text.Trim() == "" || FilterColumn == "None")
             {
                 _dtAllDetainedLicences.DefaultView.RowFilter = "";
+                dgvDetainedLicenses.DataSource = _dtAllDetainedLicences.DefaultView.ToTable();
                 lblRecordsCount.Text = _dtAllDetainedLicences.Rows.Count.ToString();
                 return;
             }
@@ -192,7 +207,7 @@ namespace Driving_License_Management_Desktop_App
                 // String fields (like Full Name or National No.)
                 _dtAllDetainedLicences.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, tbSearch.Text.Trim());
             }
-
+            dgvDetainedLicenses.DataSource = _dtAllDetainedLicences.DefaultView.ToTable();
             lblRecordsCount.Text = _dtAllDetainedLicences.DefaultView.Count.ToString();
         }
 
@@ -218,12 +233,14 @@ namespace Driving_License_Management_Desktop_App
                     _dtAllDetainedLicences.DefaultView.RowFilter = "[IsReleased] = False";
                     break;
             }
+            dgvDetainedLicenses.DataSource = _dtAllDetainedLicences.DefaultView.ToTable();
+            lblRecordsCount.Text = _dtAllDetainedLicences.DefaultView.Count.ToString();
 
         }
 
         private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (cbFilterBy.SelectedItem.ToString() == "Detain ID")
+            if (cbFilterBy.SelectedItem.ToString() == "Detain ID" || cbFilterBy.SelectedItem.ToString() == "Release Application ID")
             {
                 // Prevent the user from entering non-numeric characters in numeric fields
                 if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))

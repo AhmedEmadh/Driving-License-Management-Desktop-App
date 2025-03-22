@@ -71,10 +71,10 @@ namespace Driving_License_Management_Desktop_App
                     lblvPhone.Text = _Person.Phone;
                     lblvName.Text = _Person.FullName;
                     lblvPersonID.Text = _Person.PersonID.ToString();
-                    lblvGender.Text = clsPerson.GendorToString(_Person.Gendor);
+                    lblvGender.Text = clsPerson.GenderToString(_Person.Gender);
                     if (string.IsNullOrEmpty(_Person.ImagePath))
                     {
-                        if (_Person.Gendor == (short)clsPerson.enGendor.Male)
+                        if (_Person.Gender == (short)clsPerson.enGender.Male)
                         {
                             pbPersonPicture.Image = Resources.Male_512;
                         }
@@ -130,10 +130,10 @@ namespace Driving_License_Management_Desktop_App
                     lblvPhone.Text = _Person.Phone;
                     lblvName.Text = _Person.FullName;
                     lblvPersonID.Text = _Person.PersonID.ToString();
-                    lblvGender.Text = clsPerson.GendorToString(_Person.Gendor);
+                    lblvGender.Text = clsPerson.GenderToString(_Person.Gender);
                     if (string.IsNullOrEmpty(_Person.ImagePath))
                     {
-                        if (_Person.Gendor == (short)clsPerson.enGendor.Male)
+                        if (_Person.Gender == (short)clsPerson.enGender.Male)
                         {
                             pbPersonPicture.Image = Resources.Male_512;
                         }
