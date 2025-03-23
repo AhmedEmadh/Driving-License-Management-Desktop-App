@@ -52,11 +52,12 @@ Status
         {
             dgvLocalDrivingLicenseApplications.Columns["LocalDrivingLicenseApplicationID"].Width = 250;
             dgvLocalDrivingLicenseApplications.Columns["ClassName"].Width = 250;
+
             dgvLocalDrivingLicenseApplications.Columns["NationalNo"].Width = 100;
             dgvLocalDrivingLicenseApplications.Columns["FullName"].Width = 250;
             dgvLocalDrivingLicenseApplications.Columns["ApplicationDate"].Width = 200;
             dgvLocalDrivingLicenseApplications.Columns["PassedTestCount"].Width = 150;
-            dgvLocalDrivingLicenseApplications.Columns["Status"].Width = 100;
+            dgvLocalDrivingLicenseApplications.Columns["Status"].Width = 107;
         }
         void _InitalizeDataGridView()
         {

@@ -82,7 +82,7 @@ namespace Driving_License_Management_Desktop_App
 
 
                 dgvPeople.Columns[10].HeaderText = "Email";
-                dgvPeople.Columns[10].Width = 170;
+                dgvPeople.Columns[10].Width = 166;
 
                 _RefreshData();
             }

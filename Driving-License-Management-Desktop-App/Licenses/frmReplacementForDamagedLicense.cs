@@ -43,7 +43,7 @@ namespace Driving_License_Management_Desktop_App
 
         private void frmReplacementForDamagedLicense_Load(object sender, EventArgs e)
         {
-
+            llblShowLicenseHistory.Enabled = false;
         }
         clsApplication _Application;
         int _CreateNewApplication()
@@ -144,7 +144,7 @@ namespace Driving_License_Management_Desktop_App
             lblOldLicenseID.Text = Sender.License.LicenseID.ToString();
             lblReplacedLicenseID.Text = "???";
             btnIssueReplacement.Enabled = true;
-
+            llblShowLicenseHistory.Enabled = true;
             if(_License != null)
             {
                 if (_License.IsActive)
@@ -167,6 +167,7 @@ namespace Driving_License_Management_Desktop_App
         {
             btnIssueReplacement.Enabled = false;
             llblShowNewLicensesInfo.Enabled = false;
+            llblShowLicenseHistory.Enabled = false;
         }
     }
 }

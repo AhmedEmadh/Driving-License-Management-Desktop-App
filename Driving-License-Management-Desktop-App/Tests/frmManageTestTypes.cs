@@ -26,18 +26,31 @@ namespace Driving_License_Management_Desktop_App
             _dt.Columns[2].ColumnName = "Description";
             _dt.Columns[3].ColumnName = "Fees";
             dgvTestTypes.DataSource = _dt;
-            //set width
-            dgvTestTypes.Columns[0].Width = 50;
-            dgvTestTypes.Columns[1].Width = 120;
-            dgvTestTypes.Columns[2].Width = 237;
-            dgvTestTypes.Columns[3].Width = 100;
+            ////set width
+            //dgvTestTypes.Columns[0].Width = 50;
+            //dgvTestTypes.Columns[1].Width = 120;
+            //dgvTestTypes.Columns[2].Width = 237;
+            //dgvTestTypes.Columns[3].Width = 100;
             //Update Record Count
             lblRecordsCount.Text = _dt.Rows.Count.ToString();
 
         }
-        private void frmManageTestTypes_Load(object sender, EventArgs e)
+        void _AdjustColomns()
+        {
+            dgvTestTypes.Columns[0].Width = 50;
+            dgvTestTypes.Columns[1].Width = 170;
+            dgvTestTypes.Columns[2].Width = 374;
+            dgvTestTypes.Columns[3].Width = 100;
+        }
+        void _InitalizeDataGridView()
         {
             _LoadData();
+            _AdjustColomns();
+        }
+        private void frmManageTestTypes_Load(object sender, EventArgs e)
+        {
+            _InitalizeDataGridView();
+            
         }
 
         private void ctlShowData1_OnClose(object obj)

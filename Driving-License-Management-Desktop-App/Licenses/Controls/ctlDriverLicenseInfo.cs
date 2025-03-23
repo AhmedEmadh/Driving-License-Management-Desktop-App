@@ -60,6 +60,18 @@ namespace Driving_License_Management_Desktop_App
                     MessageBox.Show("Could not find this image: = " + ImagePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
+        string _GetGender(int Gender)
+        {
+            switch (Gender)
+            {
+                case 0:
+                    return "Male";
+                case 1:
+                    return "Female";
+                default:
+                    return "Unknown";
+            }
+        }
         void _SetValues()
         {
             if (_License != null)
@@ -68,7 +80,7 @@ namespace Driving_License_Management_Desktop_App
                 lblDateOfBirth.Text = _License.DriverInfo.PersonInfo.DateOfBirth.ToString();
                 lblDriverID.Text = _License.DriverInfo.DriverID.ToString();
                 lblExpirationDate.Text = _License.ExpirationDate.ToString();
-                lblGender.Text = _License.DriverInfo.PersonInfo.Gender.ToString();
+                lblGender.Text = _GetGender(_License.DriverInfo.PersonInfo.Gender);
                 lblIsActive.Text = _License.IsActive ? "Yes" : "No";
                 lblIsDetained.Text = _License.IsDetained ? "Yes" : "No";
                 lblIssueDate.Text = _License.IssueDate.ToString();

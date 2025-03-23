@@ -219,6 +219,7 @@
             // llblShowLicenseHistory
             // 
             this.llblShowLicenseHistory.AutoSize = true;
+            this.llblShowLicenseHistory.Enabled = false;
             this.llblShowLicenseHistory.Location = new System.Drawing.Point(23, 459);
             this.llblShowLicenseHistory.Name = "llblShowLicenseHistory";
             this.llblShowLicenseHistory.Size = new System.Drawing.Size(135, 16);
