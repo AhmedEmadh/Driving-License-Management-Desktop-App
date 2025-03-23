@@ -63,7 +63,7 @@
             this.Controls.Add(this.ctlDriverLicenseInfo1);
             this.Name = "frmShowLicenseInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmShowLicenseInfo";
+            this.Text = "Show License Info";
             this.Load += new System.EventHandler(this.frmShowLicenseInfo_Load);
             this.ResumeLayout(false);
 

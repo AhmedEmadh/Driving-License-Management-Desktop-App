@@ -29,11 +29,20 @@ namespace Driving_License_Management_Desktop_App
         {
             this.Close();
         }
-
-        private void frmManageApplicationTypes_Load(object sender, EventArgs e)
+        void _AdjustColomns()
+        {
+            dgvApplicationTypes.Columns[0].Width = 50;
+            dgvApplicationTypes.Columns[1].Width = 374;
+            dgvApplicationTypes.Columns[2].Width = 100;
+        }
+        void _InitalizeDataGridView()
         {
             _UpdateData();
-
+            _AdjustColomns();
+        }
+        private void frmManageApplicationTypes_Load(object sender, EventArgs e)
+        {
+            _InitalizeDataGridView();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
