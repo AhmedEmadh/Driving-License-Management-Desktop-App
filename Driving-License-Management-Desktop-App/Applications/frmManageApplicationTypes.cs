@@ -24,15 +24,10 @@ namespace Driving_License_Management_Desktop_App
         {
             this.Close();
         }
-
-        private void ctlShowData1_OnClose(object obj)
-        {
-            this.Close();
-        }
         void _AdjustColomns()
         {
             dgvApplicationTypes.Columns[0].Width = 50;
-            dgvApplicationTypes.Columns[1].Width = 374;
+            dgvApplicationTypes.Columns[1].Width = 369;
             dgvApplicationTypes.Columns[2].Width = 100;
         }
         void _InitalizeDataGridView()
@@ -67,9 +62,9 @@ namespace Driving_License_Management_Desktop_App
             _dt.Columns[2].ColumnName = "Fees";
             dgvApplicationTypes.DataSource = _dt;
             //set width of columns
-            dgvApplicationTypes.Columns[0].Width = 50;
-            dgvApplicationTypes.Columns[1].Width = 226;
-            dgvApplicationTypes.Columns[2].Width = 100;
+            //dgvApplicationTypes.Columns[0].Width = 50;
+            //dgvApplicationTypes.Columns[1].Width = 226;
+            //dgvApplicationTypes.Columns[2].Width = 100;
             lblRecordsCount.Text = _dt.Rows.Count.ToString();
         }
         private void btnClose_Click(object sender, EventArgs e)
