@@ -90,5 +90,16 @@ namespace Driving_License_Management_Desktop_App.Licenses.Controls
             int LicenseID = _GetCurrentDataRowLicenseID();
             new frmShowLicenseInfo(LicenseID).ShowDialog();
         }
+        int _GetCurrentDataRowInternationalLicenseID()
+        {
+            int CurrentRow = dgvInternationalLicenseHistory.CurrentRow.Index;
+            int InternationalDrivingLicenseID = int.Parse(dgvInternationalLicenseHistory.CurrentRow.Cells[0].Value.ToString());
+            return InternationalDrivingLicenseID;
+        }
+        private void showLicenseInfoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            int InternationalLicenseID = _GetCurrentDataRowInternationalLicenseID();
+            new frmInternationalDriverLicenseInfo(InternationalLicenseID).ShowDialog();
+        }
     }
 }

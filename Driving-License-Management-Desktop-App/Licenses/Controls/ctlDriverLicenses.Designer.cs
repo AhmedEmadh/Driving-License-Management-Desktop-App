@@ -199,13 +199,14 @@
             this.cmsInternationalLicenses.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showLicenseInfoToolStripMenuItem1});
             this.cmsInternationalLicenses.Name = "cmsInternationalLicenses";
-            this.cmsInternationalLicenses.Size = new System.Drawing.Size(217, 32);
+            this.cmsInternationalLicenses.Size = new System.Drawing.Size(217, 60);
             // 
             // showLicenseInfoToolStripMenuItem1
             // 
             this.showLicenseInfoToolStripMenuItem1.Name = "showLicenseInfoToolStripMenuItem1";
             this.showLicenseInfoToolStripMenuItem1.Size = new System.Drawing.Size(216, 28);
             this.showLicenseInfoToolStripMenuItem1.Text = "Show License Info";
+            this.showLicenseInfoToolStripMenuItem1.Click += new System.EventHandler(this.showLicenseInfoToolStripMenuItem1_Click);
             // 
             // label6
             // 
